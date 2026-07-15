@@ -1,24 +1,24 @@
-// TODO: swap placeholders with real Houser Construction details.
+// Houser Construction — real business info from client intake.
+// Email domain pending (no custom domain yet). Update when finalized.
 export const business = {
   name: "Houser Construction",
   legalName: "Houser Construction LLC",
   tagline: "Built to last.",
+  secondaryTagline: "The old is gone, the new has come.",
   description:
-    "Houser Construction is a general contractor building durable, well-crafted commercial and residential projects. Design-build, remodeling, and construction management delivered on time and on budget.",
-  phone: "(907) 000-0000",
-  phoneHref: "tel:+19070000000",
-  email: "hello@houserconstruction.com",
-  emailHref: "mailto:hello@houserconstruction.com",
+    "Houser Construction is an Alaska general contractor delivering new construction and remodels across residential, commercial, and government projects. Taking the old and making the new — solving today's problems by building for tomorrow.",
+  phone: "(907) 310-6828",
+  phoneHref: "tel:+19073106828",
+  // TODO: swap to hello@houserconstruction.com once the domain is live.
+  email: "houserconstruction@gmail.com",
+  emailHref: "mailto:houserconstruction@gmail.com",
   address: {
-    street: "1234 Example Ave",
-    city: "Anchorage",
+    city: "Alaska",
     region: "AK",
-    postal: "99501",
     country: "US",
   },
-  serviceArea: "Anchorage and South-Central Alaska",
-  hours: "Mon–Fri · 8am–5pm",
-  regNumber: "[AK Reg. # ____]",
+  serviceArea: "Alaska",
+  regNumber: "Licensed · Bonded · Insured",
   socials: {
     instagram: "#",
     facebook: "#",
@@ -27,93 +27,93 @@ export const business = {
 } as const;
 
 export const stats = [
-  { value: "25+", label: "Years Building" },
-  { value: "180+", label: "Projects Delivered" },
-  { value: "98%", label: "On-Time Completion" },
-  { value: "0", label: "Recordable Incidents 2025" },
+  { value: "12+", label: "Years Experience" },
+  { value: "AK", label: "Statewide Coverage" },
+  { value: "3", label: "Sectors: Residential · Commercial · Government" },
+  { value: "100%", label: "Licensed · Bonded · Insured" },
 ] as const;
 
 export const services = [
   {
-    slug: "general-contracting",
-    title: "General Contracting",
+    slug: "new-construction",
+    title: "New Construction",
     blurb:
-      "Full-scope construction management from mobilization to closeout, with a single point of accountability.",
-  },
-  {
-    slug: "design-build",
-    title: "Design-Build",
-    blurb:
-      "Architecture and construction under one contract — faster schedules, tighter budgets, fewer surprises.",
+      "Ground-up residential and commercial builds — planned, permitted, and delivered with a single accountable team.",
   },
   {
     slug: "remodeling",
     title: "Remodeling & Renovation",
     blurb:
-      "Whole-home and tenant-improvement renovations executed with respect for the existing structure.",
+      "Whole-home renovations and tenant improvements. Taking the old and making the new, without cutting corners.",
   },
   {
     slug: "commercial",
     title: "Commercial",
     blurb:
-      "Retail, office, and light-industrial builds delivered to spec, on schedule, and inspection-ready.",
+      "Retail, office, and mixed-use construction built to spec, on schedule, and inspection-ready.",
   },
   {
-    slug: "residential",
-    title: "Residential",
+    slug: "government",
+    title: "Government Contracting",
     blurb:
-      "Custom homes and additions built to withstand Alaskan winters — thoughtful details, tight envelopes.",
+      "Public-sector project delivery with the documentation, compliance, and reporting these contracts require.",
   },
   {
-    slug: "project-management",
-    title: "Project Management",
+    slug: "real-estate",
+    title: "Real Estate & Subdivisions",
     blurb:
-      "Owner's-rep and PM services for clients who bring their own trades and need experienced oversight.",
+      "Development-focused real estate — from residential flips to full subdivisions. Before-and-afters you can see.",
+  },
+  {
+    slug: "decks-fences",
+    title: "Decks, Fences & Exteriors",
+    blurb:
+      "Exterior carpentry built for Alaskan weather — decks, fences, and outdoor structures that hold up season after season.",
   },
 ] as const;
 
 export const projects = [
   {
     n: "01",
-    name: "Cook Inlet Residence",
-    category: "Residential",
+    name: "Residential Remodel",
+    category: "Before & After",
     image:
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=70",
   },
   {
     n: "02",
-    name: "Midtown Office Fit-Out",
-    category: "Commercial",
-    image:
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=70",
-  },
-  {
-    n: "03",
-    name: "Turnagain Renovation",
-    category: "Remodel",
+    name: "Custom Deck Build",
+    category: "Exterior",
     image:
       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=70",
   },
   {
-    n: "04",
-    name: "Spenard Warehouse",
-    category: "Commercial",
+    n: "03",
+    name: "Cedar Fence Install",
+    category: "Exterior",
     image:
       "https://images.unsplash.com/photo-1590725175735-df0f6f7dfd1c?auto=format&fit=crop&w=1600&q=70",
   },
   {
-    n: "05",
-    name: "Hillside Custom Home",
-    category: "Design-Build",
+    n: "04",
+    name: "Real Estate Renovation",
+    category: "Residential",
     image:
       "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=70",
   },
   {
-    n: "06",
-    name: "Downtown Retail Build",
-    category: "Commercial",
+    n: "05",
+    name: "Strip Mall Development",
+    category: "Commercial · Coming Soon",
     image:
       "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=70",
+  },
+  {
+    n: "06",
+    name: "Government Contract",
+    category: "Public Sector · Coming Soon",
+    image:
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=70",
   },
 ] as const;
 
@@ -143,44 +143,44 @@ export const processSteps = [
 export const testimonials = [
   {
     quote:
-      "Houser delivered on every commitment — schedule, budget, quality. They ran the site like professionals should.",
-    name: "M. Callahan",
-    role: "Owner, Midtown Office",
+      "Clear communication from day one, and the finished remodel looks better than we imagined. Highly recommend.",
+    name: "Residential Client",
+    role: "Anchorage, AK",
   },
   {
     quote:
-      "Best remodel experience we've had. Clear communication, real craftsmanship, and no last-minute surprises.",
-    name: "J. & R. Whitaker",
-    role: "Turnagain Homeowners",
+      "Deck turned out solid — built to last through Alaska winters. Fair pricing and honest timeline.",
+    name: "Homeowner",
+    role: "Mat-Su Valley",
   },
   {
     quote:
-      "They caught issues our architect missed and solved them without drama. We'll build with Houser again.",
-    name: "S. Novak",
-    role: "Developer, Spenard Retail",
+      "Professional, on time, and cleaned up after themselves every day. We'll be calling them for the next project.",
+    name: "Property Owner",
+    role: "Alaska",
   },
 ] as const;
 
 export const faqs = [
   {
     q: "What areas does Houser Construction serve?",
-    a: "We build across Anchorage and South-Central Alaska, including the Mat-Su Valley and the Kenai Peninsula on select projects.",
+    a: "We build across Alaska — residential, commercial, and government projects statewide.",
   },
   {
     q: "Are you licensed, bonded, and insured?",
-    a: "Yes. Houser Construction is fully licensed in Alaska, bonded, and carries general liability and workers' compensation insurance. License number available on request.",
+    a: "Yes. Houser Construction is fully licensed in Alaska, bonded, and carries general liability and workers' compensation insurance.",
   },
   {
     q: "What types of projects do you take on?",
-    a: "General contracting, design-build, commercial fit-outs, custom residential construction, and full-scope remodels. If it needs to last a generation, we're a fit.",
+    a: "New construction and remodels across residential, commercial, and government contracting. We also handle exterior work — decks, fences, outdoor structures — and real estate development including subdivisions.",
   },
   {
     q: "How do I get a quote?",
-    a: "Send us a note through the contact form or call the office. We'll set a site visit within a week and follow up with a written estimate.",
+    a: "Send us a note through the contact form or call the office. We'll set a site visit and follow up with a written estimate.",
   },
   {
-    q: "How long does a typical project take?",
-    a: "Remodels run 8–16 weeks. Custom homes and commercial builds range from six months to over a year depending on scope, permitting, and season.",
+    q: "Do you handle real estate projects?",
+    a: "Yes. We take on renovation and development work for real estate — from single-property flips to full subdivisions.",
   },
   {
     q: "Do you offer a warranty?",
