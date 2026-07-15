@@ -125,9 +125,9 @@ function Hero() {
             <span className="text-white/85">Built for Alaska.</span>
           </h1>
           <p className="mt-8 max-w-xl text-lg text-white/85 leading-relaxed">
-            New construction and remodels across residential, commercial, and
-            government projects statewide. Taking the old and making the new —
-            solving today's problems by building for tomorrow.
+            New construction and remodels for homes, businesses, and public
+            agencies across the state. Twelve years of hands-on work in Alaska,
+            behind every job we take on.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
