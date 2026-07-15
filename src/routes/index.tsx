@@ -221,8 +221,8 @@ function Services() {
             title="What we build."
           >
             <p className="text-charcoal/85">
-              New construction, remodels, and real estate development — across
-              residential, commercial, and government projects statewide.
+              From ground-up builds to remodels and real estate development,
+              statewide.
             </p>
           </SectionHeading>
 
