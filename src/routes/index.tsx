@@ -125,9 +125,9 @@ function Hero() {
             <span className="text-white/85">Built for Alaska.</span>
           </h1>
           <p className="mt-8 max-w-xl text-lg text-white/85 leading-relaxed">
-            New construction and remodels across residential, commercial, and
-            government projects statewide. Taking the old and making the new —
-            solving today's problems by building for tomorrow.
+            New construction and remodels for homes, businesses, and public
+            agencies across the state. Twelve years of hands-on work in Alaska,
+            behind every job we take on.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
@@ -172,14 +172,14 @@ function Positioning() {
         <div className="md:col-span-7 md:col-start-6">
           <Reveal delay={0.1}>
             <p className="text-lg text-charcoal leading-relaxed">
-              Houser Construction takes on new builds and remodels across
-              residential, commercial, and government work — with a dozen years
-              of hands-on experience behind every decision on site.
+              Houser Construction builds new homes and commercial spaces,
+              renovates the ones already standing, and takes on public
+              contracts across Alaska.
             </p>
             <p className="mt-6 text-lg text-charcoal/85 leading-relaxed">
-              We're a licensed, bonded, and insured Alaska contractor building
-              what our clients actually need — from full renovations to
-              ground-up construction and real estate development.
+              We're a licensed, bonded, and insured Alaska contractor. Twelve
+              years in, we've kept the operation small on purpose so the
+              person you meet is the person running your job.
             </p>
           </Reveal>
 
@@ -221,8 +221,8 @@ function Services() {
             title="What we build."
           >
             <p className="text-charcoal/85">
-              New construction, remodels, and real estate development — across
-              residential, commercial, and government projects statewide.
+              From ground-up builds to remodels and real estate development,
+              statewide.
             </p>
           </SectionHeading>
 

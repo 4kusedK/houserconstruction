@@ -6,7 +6,7 @@ export const business = {
   tagline: "Built to last.",
   secondaryTagline: "The old is gone, the new has come.",
   description:
-    "Houser Construction is an Alaska general contractor delivering new construction and remodels across residential, commercial, and government projects. Taking the old and making the new — solving today's problems by building for tomorrow.",
+    "Houser Construction is a licensed Alaska general contractor. We handle new builds, remodels, and development work for homeowners, businesses, and public agencies across the state.",
   phone: "(907) 310-6828",
   phoneHref: "tel:+19073106828",
   // TODO: swap to hello@houserconstruction.com once the domain is live.
@@ -39,37 +39,37 @@ export const services = [
     slug: "new-construction",
     title: "New Construction",
     blurb:
-      "Ground-up residential and commercial builds — planned, permitted, and delivered with a single accountable team.",
+      "Ground-up homes and commercial buildings. One crew from permit through final walkthrough, so nothing falls between trades.",
   },
   {
     slug: "remodeling",
     title: "Remodeling & Renovation",
     blurb:
-      "Whole-home renovations and tenant improvements. Taking the old and making the new, without cutting corners.",
+      "Whole-home renovations, additions, and tenant improvements. We work in older buildings without cutting corners on what's behind the walls.",
   },
   {
     slug: "commercial",
     title: "Commercial",
     blurb:
-      "Retail, office, and mixed-use construction built to spec, on schedule, and inspection-ready.",
+      "Retail, office, and mixed-use builds. Delivered on schedule and ready for inspection the first time through.",
   },
   {
     slug: "government",
     title: "Government Contracting",
     blurb:
-      "Public-sector project delivery with the documentation, compliance, and reporting these contracts require.",
+      "Public-sector work with the paperwork, compliance, and reporting these jobs require. Federal, state, and municipal contracts welcome.",
   },
   {
     slug: "real-estate",
     title: "Real Estate & Subdivisions",
     blurb:
-      "Development-focused real estate — from residential flips to full subdivisions. Before-and-afters you can see.",
+      "Development work ranging from single-property flips to full residential subdivisions. Before-and-afters you can walk through.",
   },
   {
     slug: "decks-fences",
     title: "Decks, Fences & Exteriors",
     blurb:
-      "Exterior carpentry built for Alaskan weather — decks, fences, and outdoor structures that hold up season after season.",
+      "Exterior carpentry built for Alaskan weather. Decks, fences, and outdoor structures that still look right after a few winters.",
   },
 ] as const;
 
@@ -122,22 +122,22 @@ export const processSteps = [
   {
     n: "01",
     title: "Consultation",
-    body: "We meet on site, listen to your goals, and map the constraints — schedule, budget, code, and climate.",
+    body: "We walk the site with you, talk through what you want, and note the real constraints: schedule, budget, code, and Alaska weather.",
   },
   {
     n: "02",
     title: "Estimate & Design",
-    body: "Fixed-scope pricing, clear drawings, and a realistic timeline before a single nail is driven.",
+    body: "You get a fixed scope, clear drawings, and a realistic timeline before anyone breaks ground.",
   },
   {
     n: "03",
     title: "Build",
-    body: "Licensed crews, weekly reporting, and disciplined site management from foundation to finish.",
+    body: "Licensed crews on site with weekly updates, so you always know where the job stands.",
   },
   {
     n: "04",
     title: "Closeout",
-    body: "Punch-list to zero, documented as-builts, and a warranty walkthrough you'll actually want to attend.",
+    body: "We finish the punch list, hand over the as-builts, and walk the project with you before we call it done.",
   },
 ] as const;
 
@@ -150,7 +150,7 @@ export const testimonials = [
   },
   {
     quote:
-      "Deck turned out solid — built to last through Alaska winters. Fair pricing and honest timeline.",
+      "Deck turned out solid and built to last through Alaska winters. Fair pricing and an honest timeline.",
     name: "Homeowner",
     role: "Mat-Su Valley",
   },
@@ -165,26 +165,26 @@ export const testimonials = [
 export const faqs = [
   {
     q: "What areas does Houser Construction serve?",
-    a: "We build across Alaska — residential, commercial, and government projects statewide.",
+    a: "We work across Alaska. Residential, commercial, and public projects, statewide.",
   },
   {
     q: "Are you licensed, bonded, and insured?",
-    a: "Yes. Houser Construction is fully licensed in Alaska, bonded, and carries general liability and workers' compensation insurance.",
+    a: "Yes. Houser Construction is fully licensed in Alaska, bonded, and carries general liability and workers' compensation coverage.",
   },
   {
     q: "What types of projects do you take on?",
-    a: "New construction and remodels across residential, commercial, and government contracting. We also handle exterior work — decks, fences, outdoor structures — and real estate development including subdivisions.",
+    a: "New construction and remodels for homes, businesses, and government agencies. We also handle exterior work like decks and fences, plus real estate development including subdivisions.",
   },
   {
     q: "How do I get a quote?",
-    a: "Send us a note through the contact form or call the office. We'll set a site visit and follow up with a written estimate.",
+    a: "Send a note through the contact form or call the office. We'll schedule a site visit and follow up with a written estimate.",
   },
   {
     q: "Do you handle real estate projects?",
-    a: "Yes. We take on renovation and development work for real estate — from single-property flips to full subdivisions.",
+    a: "Yes. We take on renovation and development work, from single-property flips to full subdivisions.",
   },
   {
     q: "Do you offer a warranty?",
-    a: "Every Houser project carries a one-year workmanship warranty, with manufacturer warranties passed through on installed products and systems.",
+    a: "Every Houser project carries a one-year workmanship warranty. Manufacturer warranties on installed products and systems pass through to you.",
   },
 ] as const;
