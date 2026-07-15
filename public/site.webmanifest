@@ -1,0 +1,11 @@
+{
+  "name": "Houser Construction",
+  "short_name": "Houser",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FBFCFD",
+  "theme_color": "#0A2342",
+  "icons": [
+    { "src": "/favicon.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
