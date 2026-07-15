@@ -23,17 +23,17 @@ const HERO_IMG =
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Houser Construction — Built to Last | Anchorage General Contractor" },
+      { title: "Houser Construction — Built to Last | Alaska General Contractor" },
       {
         name: "description",
         content:
-          "Houser Construction is a licensed Alaska general contractor delivering design-build, commercial, and residential projects on time and on budget. Serving Anchorage and South-Central Alaska.",
+          "Houser Construction is a licensed Alaska general contractor delivering new construction, remodels, commercial, and government projects statewide. The old is gone, the new has come.",
       },
       { property: "og:title", content: "Houser Construction — Built to Last" },
       {
         property: "og:description",
         content:
-          "Design-build, commercial, and residential construction across Anchorage and South-Central Alaska.",
+          "New construction, remodels, commercial, and government contracting across Alaska.",
       },
       { property: "og:url", content: "/" },
       { property: "og:type", content: "website" },
@@ -52,15 +52,13 @@ export const Route = createFileRoute("/")({
           areaServed: business.serviceArea,
           address: {
             "@type": "PostalAddress",
-            streetAddress: business.address.street,
             addressLocality: business.address.city,
             addressRegion: business.address.region,
-            postalCode: business.address.postal,
             addressCountry: business.address.country,
           },
-          openingHours: "Mo-Fr 08:00-17:00",
         }),
       },
+
       {
         type: "application/ld+json",
         children: JSON.stringify({
