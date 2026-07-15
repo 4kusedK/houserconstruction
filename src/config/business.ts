@@ -29,9 +29,10 @@ export const business = {
 export const stats = [
   { value: "12+", label: "Years Experience" },
   { value: "AK", label: "Statewide Coverage" },
-  { value: "3", label: "Sectors: Residential · Commercial · Government" },
+  { value: "3", label: "Sectors Served" },
   { value: "100%", label: "Licensed · Bonded · Insured" },
 ] as const;
+
 
 export const services = [
   {
