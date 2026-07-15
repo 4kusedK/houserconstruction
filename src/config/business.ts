@@ -6,7 +6,7 @@ export const business = {
   tagline: "Built to last.",
   secondaryTagline: "The old is gone, the new has come.",
   description:
-    "Houser Construction is an Alaska general contractor delivering new construction and remodels across residential, commercial, and government projects. Taking the old and making the new — solving today's problems by building for tomorrow.",
+    "Houser Construction is a licensed Alaska general contractor. We handle new builds, remodels, and development work for homeowners, businesses, and public agencies across the state.",
   phone: "(907) 310-6828",
   phoneHref: "tel:+19073106828",
   // TODO: swap to hello@houserconstruction.com once the domain is live.
