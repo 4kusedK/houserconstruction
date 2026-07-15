@@ -122,22 +122,22 @@ export const processSteps = [
   {
     n: "01",
     title: "Consultation",
-    body: "We meet on site, listen to your goals, and map the constraints — schedule, budget, code, and climate.",
+    body: "We walk the site with you, talk through what you want, and note the real constraints: schedule, budget, code, and Alaska weather.",
   },
   {
     n: "02",
     title: "Estimate & Design",
-    body: "Fixed-scope pricing, clear drawings, and a realistic timeline before a single nail is driven.",
+    body: "You get a fixed scope, clear drawings, and a realistic timeline before anyone breaks ground.",
   },
   {
     n: "03",
     title: "Build",
-    body: "Licensed crews, weekly reporting, and disciplined site management from foundation to finish.",
+    body: "Licensed crews on site with weekly updates, so you always know where the job stands.",
   },
   {
     n: "04",
     title: "Closeout",
-    body: "Punch-list to zero, documented as-builts, and a warranty walkthrough you'll actually want to attend.",
+    body: "We finish the punch list, hand over the as-builts, and walk the project with you before we call it done.",
   },
 ] as const;
 
@@ -150,7 +150,7 @@ export const testimonials = [
   },
   {
     quote:
-      "Deck turned out solid — built to last through Alaska winters. Fair pricing and honest timeline.",
+      "Deck turned out solid and built to last through Alaska winters. Fair pricing and an honest timeline.",
     name: "Homeowner",
     role: "Mat-Su Valley",
   },
@@ -165,26 +165,26 @@ export const testimonials = [
 export const faqs = [
   {
     q: "What areas does Houser Construction serve?",
-    a: "We build across Alaska — residential, commercial, and government projects statewide.",
+    a: "We work across Alaska. Residential, commercial, and public projects, statewide.",
   },
   {
     q: "Are you licensed, bonded, and insured?",
-    a: "Yes. Houser Construction is fully licensed in Alaska, bonded, and carries general liability and workers' compensation insurance.",
+    a: "Yes. Houser Construction is fully licensed in Alaska, bonded, and carries general liability and workers' compensation coverage.",
   },
   {
     q: "What types of projects do you take on?",
-    a: "New construction and remodels across residential, commercial, and government contracting. We also handle exterior work — decks, fences, outdoor structures — and real estate development including subdivisions.",
+    a: "New construction and remodels for homes, businesses, and government agencies. We also handle exterior work like decks and fences, plus real estate development including subdivisions.",
   },
   {
     q: "How do I get a quote?",
-    a: "Send us a note through the contact form or call the office. We'll set a site visit and follow up with a written estimate.",
+    a: "Send a note through the contact form or call the office. We'll schedule a site visit and follow up with a written estimate.",
   },
   {
     q: "Do you handle real estate projects?",
-    a: "Yes. We take on renovation and development work for real estate — from single-property flips to full subdivisions.",
+    a: "Yes. We take on renovation and development work, from single-property flips to full subdivisions.",
   },
   {
     q: "Do you offer a warranty?",
-    a: "Every Houser project carries a one-year workmanship warranty, with manufacturer warranties passed through on installed products and systems.",
+    a: "Every Houser project carries a one-year workmanship warranty. Manufacturer warranties on installed products and systems pass through to you.",
   },
 ] as const;
