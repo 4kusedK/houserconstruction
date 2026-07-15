@@ -87,14 +87,14 @@ export function SiteFooter() {
           <div className="md:col-span-2">
             <h3 className="eyebrow text-white/60 mb-4">Office</h3>
             <address className="not-italic text-sm text-white/85 leading-relaxed">
-              {business.address.street}
+              Based in {business.address.city}
               <br />
-              {business.address.city}, {business.address.region}{" "}
-              {business.address.postal}
-              <br />
-              <span className="text-white/60">{business.hours}</span>
+              <span className="text-white/60">
+                Serving {business.serviceArea} statewide
+              </span>
             </address>
           </div>
+
         </div>
 
         <div className="mt-16 pt-8 border-t border-white/10">
