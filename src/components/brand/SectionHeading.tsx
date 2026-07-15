@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 
 export function SectionHeading({
   eyebrow,
+  number,
   title,
   align = "left",
   onDark = false,
@@ -9,6 +10,7 @@ export function SectionHeading({
   children,
 }: {
   eyebrow?: string;
+  number?: string;
   title: React.ReactNode;
   align?: "left" | "center";
   onDark?: boolean;
@@ -36,6 +38,14 @@ export function SectionHeading({
               onDark ? "text-white/70" : "text-silver",
             )}
           >
+            {number ? (
+              <>
+                <span className={onDark ? "text-white" : "text-navy"}>
+                  {number}
+                </span>
+                <span className="mx-2 opacity-60">—</span>
+              </>
+            ) : null}
             {eyebrow}
           </span>
         </div>

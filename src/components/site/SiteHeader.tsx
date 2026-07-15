@@ -1,10 +1,11 @@
 import { Link } from "@tanstack/react-router";
-import { Menu, X } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 
 import { Logo } from "@/components/brand/Logo";
 import { BrandButton } from "@/components/brand/BrandButton";
+import { business } from "@/config/business";
 import { cn } from "@/lib/utils";
 
 const NAV = [
@@ -50,18 +51,18 @@ export function SiteHeader({ overHero = false }: { overHero?: boolean }) {
             : "bg-transparent border-b border-transparent",
         )}
       >
-        <div className="mx-auto max-w-[1200px] px-6 flex items-center justify-between h-16 md:h-20">
+        <div className="mx-auto max-w-[1200px] px-6 flex items-center justify-between h-20 md:h-24">
           <Link
             to="/"
             className="flex items-center gap-3"
             aria-label="Houser Construction — home"
           >
             {scrolled ? (
-              <Logo variant="symbol" className="h-9 w-auto" />
+              <Logo variant="symbol" className="h-10 w-auto" />
             ) : (
               <Logo
                 variant={overHero ? "full-white" : "full"}
-                className="h-10 md:h-11 w-auto"
+                className="h-12 md:h-14 w-auto"
               />
             )}
           </Link>
@@ -84,10 +85,23 @@ export function SiteHeader({ overHero = false }: { overHero?: boolean }) {
                 {item.label}
               </a>
             ))}
+            <a
+              href={business.phoneHref}
+              className={cn(
+                "hidden lg:inline-flex items-center gap-2 font-ui text-[13px] font-bold uppercase tracking-[0.14em] transition-colors",
+                isLight
+                  ? "text-navy hover:text-red"
+                  : "text-white/90 hover:text-white",
+              )}
+              aria-label={`Call ${business.phone}`}
+            >
+              <Phone className="h-4 w-4" />
+              {business.phone}
+            </a>
             <BrandButton
               as="a"
               href="/#contact"
-              variant={isLight ? "accent" : "accent"}
+              variant="accent"
               size="sm"
             >
               Get a quote
@@ -122,8 +136,8 @@ export function SiteHeader({ overHero = false }: { overHero?: boolean }) {
             exit={reduce ? { opacity: 0 } : { opacity: 0, y: -12 }}
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="flex items-center justify-between h-16 md:h-20 px-6 border-b border-white/10">
-              <Logo variant="full-white" className="h-10 w-auto" />
+            <div className="flex items-center justify-between h-20 md:h-24 px-6 border-b border-white/10">
+              <Logo variant="full-white" className="h-12 w-auto" />
               <button
                 onClick={() => setOpen(false)}
                 className="inline-flex h-11 w-11 items-center justify-center text-white"
@@ -146,7 +160,7 @@ export function SiteHeader({ overHero = false }: { overHero?: boolean }) {
                   {item.label}
                 </a>
               ))}
-              <div className="pt-8">
+              <div className="pt-8 flex flex-col gap-3">
                 <BrandButton
                   as="a"
                   href="/#contact"
@@ -156,6 +170,13 @@ export function SiteHeader({ overHero = false }: { overHero?: boolean }) {
                 >
                   Get a quote
                 </BrandButton>
+                <a
+                  href={business.phoneHref}
+                  className="font-ui text-sm font-bold uppercase tracking-[0.14em] text-white/80 hover:text-white inline-flex items-center gap-2"
+                >
+                  <Phone className="h-4 w-4" />
+                  {business.phone}
+                </a>
               </div>
             </nav>
           </motion.div>
