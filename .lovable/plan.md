@@ -1,91 +1,102 @@
+# Houser Construction — Home Page UX/UI Audit & Polish Plan
 
-# Houser Construction — Phase 1 (Home + shell)
+## Quick take
 
-Build a clean, premium, industrial-editorial marketing site for Houser Construction. This phase ships the design system, shared header/footer, and the full Home page. About / Services / Projects / Process / Contact / 404 come in a follow-up pass after your review.
+The foundation is strong: brand system is applied consistently, typography hierarchy reads as "industrial-editorial," navy/red accents feel right for a contractor. The issues are mostly **weight, contrast, and one weak conversion moment** — not a redesign.
 
-## Stack decisions
+Below: your two specific fixes, then an honest audit with concrete changes I'd recommend. Everything stays inside the current brand system (navy `#0A2342` / red `#B5121B` / Chakra Petch + Archivo + Inter).
 
-- Keep the project's native stack: TanStack Start (file routing) + Vite + TS + Tailwind v4 + shadcn/ui + Framer Motion. No react-router-dom, no react-helmet-async — TanStack's `head()` gives real SSR meta tags, which is strictly better for SEO/AEO.
-- All meta/OG/JSON-LD via per-route `head()`; sitewide defaults in `__root.tsx`.
-- Business details (phone, email, address, service area, reg #) rendered from a single `src/config/business.ts` with `TODO` placeholders so you can swap them in one place later.
+---
 
-## Brand system integration
+## 1. Your two reported issues
 
-Unpack the uploaded zip and wire it in as ground truth:
+### a. Logo too small in header
+- **Desktop:** bump full-color logo from `h-10 md:h-11` → `h-12 md:h-14`, and increase header height `h-16 md:h-20` → `h-20 md:h-24` so proportions stay right.
+- **When scrolled (condensed):** bump the symbol mark from `h-9` → `h-10`.
+- **Mobile menu top bar:** bump reversed logo from `h-10` → `h-12`.
 
-- Extract logos to `src/assets/logo/` (full-color, white-reversed, symbol color + white) and import them as ES modules.
-- Favicon = symbol mark; replace `public/favicon.ico` and add PNG icons + `theme-color #0A2342` + web manifest.
-- Port the design system into `src/styles.css` under Tailwind v4 `@theme`:
-  - Colors: navy `#0A2342`, red `#B5121B`, silver `#7E838A`, charcoal `#3C4046`, paper `#FBFCFD` / `#F2F4F7`, plus navy + red + grey ramps. Mapped as semantic tokens (`--color-background`, `--color-primary` = navy, `--color-accent` = red, `--color-foreground` = charcoal, `--color-muted-foreground` = silver, `--color-ring` = `#2A578F`, etc.) so shadcn stays consistent.
-  - Radii: 2 / 4 / 8 px (no pills except tags).
-  - Shadows: navy-tinted xs → lg per spec.
-  - Spacing: 4px base scale.
-  - Motion tokens: 120/200/320ms, `cubic-bezier(0.16,1,0.3,1)`.
-- Fonts loaded via `<link>` in `__root.tsx` head (Google Fonts): Chakra Petch 700, Archivo 700–900, Inter 400–600. Registered as `--font-display` (Chakra Petch), `--font-ui` (Archivo), `--font-sans` (Inter).
-- Reference the uploaded design-system component prompts (`components/core/*.prompt.md`) for `Button`, `Badge`, `Card`, `Rule`, `SectionHeading`, `Input`, and brand `Logo` / `LicenseLine` — reimplement as typed React + Tailwind using shadcn primitives where useful.
+### b. "Request an estimate" button blends into background (Contact CTA band)
+Root cause: the button is red, and behind it on desktop there's a red panel (`absolute right-0 w-1/3 bg-red`). The red button sits directly on top of the red block → almost invisible.
 
-## Shared layout (built once, reused)
+Fix — change the CTA band composition:
+- **Drop the split red panel.** Replace with an all-navy band that has a subtle red diagonal accent (top-right corner rule, ~2px) or a red vertical rule between copy and CTA column. Keeps brand energy, removes the collision.
+- **Primary CTA becomes white-on-navy with red hover** (higher contrast against dark navy than red-on-red). Alternative: keep red button, but move it onto a white/paper inset card that floats on the navy — creates a "quote card" moment.
+- Secondary phone button stays `outline-light`.
+- Add a third supporting line under CTAs: "Typical reply in 1 business day · Free site visit."
 
-- `src/routes/__root.tsx` extended with:
-  - Google Fonts `<link>` tags + font preconnect.
-  - Sitewide meta defaults, `og:site_name`, theme-color, manifest, favicon (symbol).
-  - Organization / GeneralContractor JSON-LD sitewide.
-- `SiteHeader`: transparent over hero, condenses on scroll to a compact white bar with the symbol mark. Desktop nav (Work / Services / About / Process / Contact) + red "Get a quote" button. Mobile → full-screen navy overlay menu with the reversed logo, large Chakra Petch links, focus trap, ESC + backdrop close, `prefers-reduced-motion` respected.
-- `SiteFooter`: navy background, white reversed logo, three link columns, office block (address / phone / email / hours), socials, reg # line, certification/accreditation logo row (placeholder greys), fine-print bar.
+I'll pick the "white primary + red hover, red diagonal rule accent" direction unless you prefer the floating quote card.
 
-## Reusable primitives
+---
 
-Under `src/components/`:
+## 2. Broader UI/UX audit — what I'd change
 
-- `ui/Button` (variants: `primary` red, `ghost` outline navy, `link`), `Badge`, `Card`, `Input`, `Rule` (2px red or 3px navy).
-- `SectionHeading` — eyebrow (Archivo 700 / 13px / 0.18em / silver, uppercase) + 2px red rule + Chakra Petch H2.
-- `ServiceCard`, `ProjectCard` (numbered `01 / 06` caption, navy hover overlay with project name), `StatBar`, `CTABand`, `Logo`, `LicenseLine`.
-- `motion/Reveal` — subtle fade + 12px slide-up on scroll, gated by `useReducedMotion`.
+### Structure & flow (keep, tweak, add)
 
-## Home page (`src/routes/index.tsx` — replaces placeholder)
+**Keep as-is:** Hero → Positioning → StatBar → Services → Projects → Process → Testimonials → Credentials → FAQ → CTA. The ordering matches how a commercial buyer evaluates a GC.
 
-Sections top to bottom:
+**Tweak:**
+- **Hero:** headline "Built to last. / Built with intent." is good, but the sub-headline is muted white/70 and reads soft. Increase to white/85 and consider swapping the second line for something more specific to Alaska ("Built for Alaska.") — grounds the brand geographically in the first 2 seconds.
+- **StatBar:** the four stats are strong but sit low-contrast on `paper-sunk`. Make the numbers larger (`display-lg` instead of `display-md`) and add a thin red rule above each number — turns a passive strip into a proof moment.
+- **Services grid:** the hover-flip-to-navy is nice but hides content until interaction. Add a persistent `→` arrow bottom-right of each card that slides on hover, so the affordance is visible without hovering.
+- **Projects gallery:** currently 2-column all the way down. Editorial contractors (SOM, Turner) use a **broken/asymmetric grid** — first project full-width, then 2-col, then a wide + narrow pair. Same components, more magazine feel. Low-risk win.
+- **Testimonials:** three columns of text-only quotes on solid navy reads flat. Add a small circular monogram (initials in Chakra Petch on navy-mid) beside each name — costs nothing, adds humanity.
 
-1. **Hero** — full-viewport architectural Unsplash photo, navy overlay, reversed logo in header, oversized Chakra Petch headline ("Built to last."), one-line subhead, primary red "Get a quote" + ghost "View our work". Scroll-cue chevron.
-2. **Positioning statement** — short paragraph, generous whitespace, eyebrow + red rule.
-3. **StatBar** — 4 stats (years, projects, on-time %, safety record). Thin hairline dividers.
-4. **Services overview** — 6 `ServiceCard`s (General Contracting, Design-Build, Remodeling, Commercial, Residential, Project Management) in a 3-col grid → 2 → 1.
-5. **Featured projects** — horizontal-scroll gallery of 6 `ProjectCard`s with numbered captions and navy hover overlays.
-6. **Why choose us / process** — 4 numbered steps, chamfered corners, Archivo labels.
-7. **Testimonials** — 2–3 quotes, Chakra Petch pull-quote treatment, silver attribution.
-8. **Certifications / trust row** — greyscale placeholder marks with tooltip labels.
-9. **FAQ** — 4–6 Q&A items (service area, licensed/insured, project types, quote process, timeline, warranty) with `FAQPage` JSON-LD in `head()`.
-10. **Final red CTA band** — full-bleed navy → red accent, headline + "Start your project" button.
-11. **Footer** (shared).
+**Add:**
+- **"Currently building" ticker** just below the StatBar — one line: `Now on site: Cook Inlet Residence · Midtown Fit-Out · Hillside Custom Home`. Auto-marquees slowly. Reinforces "we're active" — a huge trust signal for GCs. Optional, but very brand-appropriate.
+- **Sticky "Get a quote" bar on mobile** (thin, navy, appears after scrolling past hero). Mobile conversion for contractors is almost entirely phone/quote taps.
 
-Home `head()` sets title, description, canonical `/`, OG/Twitter, and stacks `GeneralContractor` + `FAQPage` JSON-LD.
+### Visual system
 
-Copy: realistic construction voice (not lorem), reg # rendered as `[AK Reg. # ____]` from `business.ts`.
+**Colors — no changes to the palette itself.** But two distribution tweaks:
+- Red is currently used only for accents/rules/buttons. Introduce **one full-red editorial moment** — e.g. a numbered "01 / 02 / 03 / 04" strip on the Process section with red backgrounds behind the numerals — so red isn't only "danger button" red.
+- The `charcoal/80` body color on `paper` is fine but slightly washed. Move body copy to `charcoal` full strength; reserve `/80` for secondary text only.
 
-Photography: curated Unsplash architectural/construction URLs with `srcset`, explicit width/height, `loading="lazy"` (hero eager + preloaded).
+**Typography — keep the pairing.** Two refinements:
+- Hero H1 could gain 1 weight of drama with a `tabular-nums` display treatment on the year in the eyebrow ("Est. 2000") — small detail, feels intentional.
+- Section eyebrows are good but repetitive ("The Studio," "What we do," "How we work," "Selected work," "Client voice," "Credentials," "Answers"). Standardize to a **numbered system** — `01 — Studio`, `02 — Services`, `03 — Work`, etc. Turns the page into a chaptered document, which fits the "built to last" tone.
 
-## SEO / AEO / infra (this phase)
+**Motion:** current Reveal fades are tasteful. Add **one signature moment** — a red horizontal rule that draws in from left as sections enter viewport. One repeatable gesture > many micro-animations.
 
-- `public/robots.txt` allowing all + sitemap pointer (relative until domain set).
-- `src/routes/sitemap[.]xml.ts` server route listing `/` now; extended when later pages land.
-- `public/site.webmanifest` with name, theme-color `#0A2342`, symbol icons.
-- Semantic HTML, single H1, descriptive alts, focus rings, ≥44px targets, ≥16px base, `lang="en"` on `<html>`.
+**Density:** section padding is `py-24 md:py-32` everywhere. Vary it — the Positioning and Testimonials sections can be tighter (`py-20`) so the page has a rhythm instead of one metronome tempo.
 
-## Accessibility
+### UX / conversion
 
-- AA contrast enforced (silver only for ≥18px or non-essential text).
-- Visible focus ring `#2A578F`.
-- Mobile menu: focus trap, ESC to close, `aria-expanded`, `aria-controls`.
-- All icon buttons get `aria-label`. `prefers-reduced-motion` disables Framer reveals.
+- **Header:** add phone number as a tap-to-call link on desktop (top-right, before "Get a quote"). Contractors get called more than emailed. Small `font-ui` treatment, navy → red on hover.
+- **Projects:** each card links to `#` — dead. Either link to a real detail page (Phase 2) or replace with `role="img"` non-links until Phase 2, so users don't get a broken affordance.
+- **FAQ:** first FAQ should be pre-opened (`<details open>`) — invites scanning.
+- **Contact band:** already covered above. Also add the email + phone as inline text underneath the buttons for users who prefer to copy rather than click.
 
-## Out of scope (phase 2, after your review)
+### Accessibility & SEO (small)
+- Hero scroll-down chevron animates infinitely (`animate-bounce`) — gate on `prefers-reduced-motion`.
+- Add `aria-label` to the projects grid ("Selected projects").
+- Add `alt` text per project image using project name + category instead of just name.
 
-About, Services (overview + detail sections), Projects index + detail template, Process, Contact (form + map + validation), 404, expanded sitemap, BreadcrumbList + Service JSON-LD on inner pages. Contact form submission left as a `TODO` for Lovable Cloud wiring.
+---
+
+## What I'd build now (Phase 1.5)
+
+If you approve, I'd ship in this order in one pass:
+
+1. **Header:** larger logo (desktop + scrolled + mobile), taller header, add phone link.
+2. **Hero:** stronger sub-headline contrast, gate chevron animation.
+3. **StatBar:** larger numerals + red rule above each.
+4. **Services:** persistent arrow affordance on cards.
+5. **Projects:** asymmetric grid (1 wide + 2×2 + 1 wide + 1 narrow pair), better alts, remove dead links.
+6. **Process:** red numeral treatment (the "editorial red moment").
+7. **Testimonials:** monogram circles.
+8. **FAQ:** first item open by default.
+9. **Contact CTA band:** rebuild — drop split red panel, white primary button with red hover, red diagonal rule accent, add reply-time microcopy + inline contact fallback.
+10. **Section eyebrows:** numbered `01 — Studio` system.
+11. **Mobile:** sticky quote bar after hero.
+
+Skipped for later (they're bigger swings and belong with Phase 2 pages): "Currently building" ticker, signature red-rule reveal motion, project detail pages.
 
 ## Technical notes
 
-- Tailwind v4 tokens live in `src/styles.css` under `@theme` / `@theme inline`; no `tailwind.config.js`.
-- Fonts via `<link>` in root `head().links` (never `@import` remote URLs in CSS on v4).
-- Framer Motion added via `bun add framer-motion`.
-- Logo assets imported as ES modules from `src/assets/logo/` (not `public/`) so Vite hashes them.
-- No new deps beyond `framer-motion`; shadcn primitives already present.
+- All changes are frontend/presentation only — no schema, no server functions, no new packages.
+- Files touched: `SiteHeader.tsx`, `routes/index.tsx`, `SectionHeading.tsx` (add optional `number` prop), possibly `styles.css` (one new utility for the red rule reveal if I add it now).
+- No changes to `business.ts` content, no routing changes, no dependency changes.
+
+---
+
+Want me to build Phase 1.5 as scoped above? Or trim/expand the list — happy to drop any item you disagree with (e.g. skip the numbered eyebrows or the asymmetric project grid) before I implement.
