@@ -87,14 +87,14 @@ export function SiteFooter() {
           <div className="md:col-span-2">
             <h3 className="eyebrow text-white/60 mb-4">Office</h3>
             <address className="not-italic text-sm text-white/85 leading-relaxed">
-              {business.address.street}
+              Based in {business.address.city}
               <br />
-              {business.address.city}, {business.address.region}{" "}
-              {business.address.postal}
-              <br />
-              <span className="text-white/60">{business.hours}</span>
+              <span className="text-white/60">
+                Serving {business.serviceArea} statewide
+              </span>
             </address>
           </div>
+
         </div>
 
         <div className="mt-16 pt-8 border-t border-white/10">
@@ -103,10 +103,11 @@ export function SiteFooter() {
             <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
               {[
                 "Licensed AK Contractor",
-                "AGC Member",
-                "OSHA 30 Certified",
-                "Bonded & Insured",
+                "Bonded",
+                "Insured",
+                "12+ Years Experience",
               ].map((c) => (
+
                 <span
                   key={c}
                   className="font-ui text-[11px] font-bold uppercase tracking-[0.18em] text-white/40 border border-white/15 px-3 py-2 rounded-sm"

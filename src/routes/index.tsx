@@ -23,17 +23,17 @@ const HERO_IMG =
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Houser Construction — Built to Last | Anchorage General Contractor" },
+      { title: "Houser Construction — Built to Last | Alaska General Contractor" },
       {
         name: "description",
         content:
-          "Houser Construction is a licensed Alaska general contractor delivering design-build, commercial, and residential projects on time and on budget. Serving Anchorage and South-Central Alaska.",
+          "Houser Construction is a licensed Alaska general contractor delivering new construction, remodels, commercial, and government projects statewide. The old is gone, the new has come.",
       },
       { property: "og:title", content: "Houser Construction — Built to Last" },
       {
         property: "og:description",
         content:
-          "Design-build, commercial, and residential construction across Anchorage and South-Central Alaska.",
+          "New construction, remodels, commercial, and government contracting across Alaska.",
       },
       { property: "og:url", content: "/" },
       { property: "og:type", content: "website" },
@@ -52,15 +52,13 @@ export const Route = createFileRoute("/")({
           areaServed: business.serviceArea,
           address: {
             "@type": "PostalAddress",
-            streetAddress: business.address.street,
             addressLocality: business.address.city,
             addressRegion: business.address.region,
-            postalCode: business.address.postal,
             addressCountry: business.address.country,
           },
-          openingHours: "Mo-Fr 08:00-17:00",
         }),
       },
+
       {
         type: "application/ld+json",
         children: JSON.stringify({
@@ -118,7 +116,7 @@ function Hero() {
           <div className="flex items-center gap-3 mb-6">
             <span className="h-[2px] w-10 bg-red" aria-hidden />
             <span className="eyebrow text-white/80">
-              Construction · <span className="tabular-nums">Est. 2000</span>
+              Alaska General Contractor · <span className="tabular-nums">12+ Yrs Experience</span>
             </span>
           </div>
           <h1 className="display-xl text-white">
@@ -127,10 +125,11 @@ function Hero() {
             <span className="text-white/85">Built for Alaska.</span>
           </h1>
           <p className="mt-8 max-w-xl text-lg text-white/85 leading-relaxed">
-            A general contractor delivering design-build, commercial, and
-            residential projects across {business.serviceArea} — on schedule,
-            on budget, and built to outlive the trend cycle.
+            New construction and remodels across residential, commercial, and
+            government projects statewide. Taking the old and making the new —
+            solving today's problems by building for tomorrow.
           </p>
+
           <div className="mt-10 flex flex-wrap gap-4">
             <BrandButton as="a" href="/#contact" variant="accent" size="lg">
               Get a quote <ArrowRight className="h-4 w-4" />
@@ -166,23 +165,24 @@ function Positioning() {
               </span>
             </div>
             <h2 className="display-lg text-navy">
-              A contractor that acts like a partner.
+              The old is gone. The new has come.
             </h2>
           </Reveal>
         </div>
         <div className="md:col-span-7 md:col-start-6">
           <Reveal delay={0.1}>
             <p className="text-lg text-charcoal leading-relaxed">
-              We build for owners who care how their buildings are put
-              together — every joint, every transition, every detail. Our crews
-              are licensed, our schedules are honest, and our reporting is
-              weekly, not when-asked.
+              Houser Construction takes on new builds and remodels across
+              residential, commercial, and government work — with a dozen years
+              of hands-on experience behind every decision on site.
             </p>
             <p className="mt-6 text-lg text-charcoal/85 leading-relaxed">
-              The result is a building you can trust — and a process you
-              actually want to be part of.
+              We're a licensed, bonded, and insured Alaska contractor building
+              what our clients actually need — from full renovations to
+              ground-up construction and real estate development.
             </p>
           </Reveal>
+
         </div>
       </div>
     </section>
@@ -218,13 +218,14 @@ function Services() {
           <SectionHeading
             eyebrow="Services"
             number="02"
-            title="Six disciplines. One accountable team."
+            title="What we build."
           >
             <p className="text-charcoal/85">
-              Every service is led by a licensed superintendent and backed by
-              in-house project management — no handoffs, no finger-pointing.
+              New construction, remodels, and real estate development — across
+              residential, commercial, and government projects statewide.
             </p>
           </SectionHeading>
+
         </Reveal>
 
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-hairline border border-hairline">
@@ -438,11 +439,11 @@ function Testimonials() {
 function Certifications() {
   const items = [
     "AK Licensed Contractor",
-    "AGC Member",
-    "OSHA 30 Certified",
-    "EPA RRP Certified",
-    "Bonded & Insured",
+    "Bonded",
+    "Insured",
+    "12+ Years Experience",
   ];
+
   return (
     <section className="py-16 bg-paper-sunk border-y border-hairline">
       <div className="mx-auto max-w-[1200px] px-6">
@@ -548,12 +549,13 @@ function FinalCTA() {
             <BrandButton
               as="a"
               href={business.emailHref}
+              variant="accent"
               size="lg"
               block
-              className="bg-white text-navy border-white hover:bg-red hover:text-white hover:border-red"
             >
               Request an estimate <ArrowRight className="h-4 w-4" />
             </BrandButton>
+
             <BrandButton
               as="a"
               href={business.phoneHref}
