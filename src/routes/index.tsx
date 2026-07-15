@@ -116,7 +116,7 @@ function Hero() {
           <div className="flex items-center gap-3 mb-6">
             <span className="h-[2px] w-10 bg-red" aria-hidden />
             <span className="eyebrow text-white/80">
-              Construction · <span className="tabular-nums">Est. 2000</span>
+              Alaska General Contractor · <span className="tabular-nums">12+ Yrs Experience</span>
             </span>
           </div>
           <h1 className="display-xl text-white">
@@ -125,10 +125,11 @@ function Hero() {
             <span className="text-white/85">Built for Alaska.</span>
           </h1>
           <p className="mt-8 max-w-xl text-lg text-white/85 leading-relaxed">
-            A general contractor delivering design-build, commercial, and
-            residential projects across {business.serviceArea} — on schedule,
-            on budget, and built to outlive the trend cycle.
+            New construction and remodels across residential, commercial, and
+            government projects statewide. Taking the old and making the new —
+            solving today's problems by building for tomorrow.
           </p>
+
           <div className="mt-10 flex flex-wrap gap-4">
             <BrandButton as="a" href="/#contact" variant="accent" size="lg">
               Get a quote <ArrowRight className="h-4 w-4" />
