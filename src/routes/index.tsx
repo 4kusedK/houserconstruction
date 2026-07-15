@@ -548,12 +548,13 @@ function FinalCTA() {
             <BrandButton
               as="a"
               href={business.emailHref}
+              variant="accent"
               size="lg"
               block
-              className="bg-white text-navy border-white hover:bg-red hover:text-white hover:border-red"
             >
               Request an estimate <ArrowRight className="h-4 w-4" />
             </BrandButton>
+
             <BrandButton
               as="a"
               href={business.phoneHref}
