@@ -438,11 +438,11 @@ function Testimonials() {
 function Certifications() {
   const items = [
     "AK Licensed Contractor",
-    "AGC Member",
-    "OSHA 30 Certified",
-    "EPA RRP Certified",
-    "Bonded & Insured",
+    "Bonded",
+    "Insured",
+    "12+ Years Experience",
   ];
+
   return (
     <section className="py-16 bg-paper-sunk border-y border-hairline">
       <div className="mx-auto max-w-[1200px] px-6">
