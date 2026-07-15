@@ -218,13 +218,14 @@ function Services() {
           <SectionHeading
             eyebrow="Services"
             number="02"
-            title="Six disciplines. One accountable team."
+            title="What we build."
           >
             <p className="text-charcoal/85">
-              Every service is led by a licensed superintendent and backed by
-              in-house project management — no handoffs, no finger-pointing.
+              New construction, remodels, and real estate development — across
+              residential, commercial, and government projects statewide.
             </p>
           </SectionHeading>
+
         </Reveal>
 
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-hairline border border-hairline">
