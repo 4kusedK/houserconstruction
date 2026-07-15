@@ -172,14 +172,14 @@ function Positioning() {
         <div className="md:col-span-7 md:col-start-6">
           <Reveal delay={0.1}>
             <p className="text-lg text-charcoal leading-relaxed">
-              Houser Construction takes on new builds and remodels across
-              residential, commercial, and government work — with a dozen years
-              of hands-on experience behind every decision on site.
+              Houser Construction builds new homes and commercial spaces,
+              renovates the ones already standing, and takes on public
+              contracts across Alaska.
             </p>
             <p className="mt-6 text-lg text-charcoal/85 leading-relaxed">
-              We're a licensed, bonded, and insured Alaska contractor building
-              what our clients actually need — from full renovations to
-              ground-up construction and real estate development.
+              We're a licensed, bonded, and insured Alaska contractor. Twelve
+              years in, we've kept the operation small on purpose so the
+              person you meet is the person running your job.
             </p>
           </Reveal>
 
