@@ -39,37 +39,37 @@ export const services = [
     slug: "new-construction",
     title: "New Construction",
     blurb:
-      "Ground-up residential and commercial builds — planned, permitted, and delivered with a single accountable team.",
+      "Ground-up homes and commercial buildings. One crew from permit through final walkthrough, so nothing falls between trades.",
   },
   {
     slug: "remodeling",
     title: "Remodeling & Renovation",
     blurb:
-      "Whole-home renovations and tenant improvements. Taking the old and making the new, without cutting corners.",
+      "Whole-home renovations, additions, and tenant improvements. We work in older buildings without cutting corners on what's behind the walls.",
   },
   {
     slug: "commercial",
     title: "Commercial",
     blurb:
-      "Retail, office, and mixed-use construction built to spec, on schedule, and inspection-ready.",
+      "Retail, office, and mixed-use builds. Delivered on schedule and ready for inspection the first time through.",
   },
   {
     slug: "government",
     title: "Government Contracting",
     blurb:
-      "Public-sector project delivery with the documentation, compliance, and reporting these contracts require.",
+      "Public-sector work with the paperwork, compliance, and reporting these jobs require. Federal, state, and municipal contracts welcome.",
   },
   {
     slug: "real-estate",
     title: "Real Estate & Subdivisions",
     blurb:
-      "Development-focused real estate — from residential flips to full subdivisions. Before-and-afters you can see.",
+      "Development work ranging from single-property flips to full residential subdivisions. Before-and-afters you can walk through.",
   },
   {
     slug: "decks-fences",
     title: "Decks, Fences & Exteriors",
     blurb:
-      "Exterior carpentry built for Alaskan weather — decks, fences, and outdoor structures that hold up season after season.",
+      "Exterior carpentry built for Alaskan weather. Decks, fences, and outdoor structures that still look right after a few winters.",
   },
 ] as const;
 
