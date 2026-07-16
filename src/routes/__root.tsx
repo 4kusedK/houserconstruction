@@ -82,10 +82,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "Houser Construction" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { title: "Houser Construction — Built to Last | Alaska General Contractor" },
+      { property: "og:title", content: "Houser Construction — Built to Last | Alaska General Contractor" },
+      { name: "twitter:title", content: "Houser Construction — Built to Last | Alaska General Contractor" },
+      { name: "description", content: "Houser Construction is a licensed Alaska general contractor delivering new construction, remodels, commercial, and government projects statewide. The old is gone, the new has come." },
+      { property: "og:description", content: "Houser Construction is a licensed Alaska general contractor delivering new construction, remodels, commercial, and government projects statewide. The old is gone, the new has come." },
+      { name: "twitter:description", content: "Houser Construction is a licensed Alaska general contractor delivering new construction, remodels, commercial, and government projects statewide. The old is gone, the new has come." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/605747e1-f771-4c50-bd55-7c22226f097e/id-preview-83e17859--f7683538-e72b-4065-9fc9-a79fdec108bb.lovable.app-1784159257652.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/605747e1-f771-4c50-bd55-7c22226f097e/id-preview-83e17859--f7683538-e72b-4065-9fc9-a79fdec108bb.lovable.app-1784159257652.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.png", type: "image/png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       {
         rel: "preconnect",

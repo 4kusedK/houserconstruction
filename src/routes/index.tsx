@@ -29,11 +29,11 @@ export const Route = createFileRoute("/")({
         content:
           "Houser Construction is a licensed Alaska general contractor delivering new construction, remodels, commercial, and government projects statewide. The old is gone, the new has come.",
       },
-      { property: "og:title", content: "Houser Construction — Built to Last" },
+      { property: "og:title", content: "Houser Construction — Built to Last | Alaska General Contractor" },
       {
         property: "og:description",
         content:
-          "New construction, remodels, commercial, and government contracting across Alaska.",
+          "Houser Construction is a licensed Alaska general contractor delivering new construction, remodels, commercial, and government projects statewide. The old is gone, the new has come.",
       },
       { property: "og:url", content: "/" },
       { property: "og:type", content: "website" },
