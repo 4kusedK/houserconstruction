@@ -182,7 +182,7 @@ function Positioning() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden py-32 md:py-48 bg-sand"
+      className="relative overflow-hidden py-32 md:py-48 bg-background blueprint-grid"
     >
       <span
         aria-hidden
@@ -217,7 +217,7 @@ function Positioning() {
                 <div className="photo-warm absolute inset-0" />
                 <span
                   aria-hidden
-                  className="absolute bottom-0 left-0 h-1 w-24 bg-timber"
+                  className="absolute bottom-0 left-0 h-1 w-24 bg-red"
                 />
 
               </div>
@@ -226,7 +226,7 @@ function Positioning() {
 
           <div className="md:col-span-5 md:col-start-8 md:pt-6">
             <Reveal delay={0.1}>
-              <blockquote className="border-l-2 border-timber pl-4">
+              <blockquote className="border-l-2 border-red pl-4">
                 <p className="display-md italic text-navy">
                   &ldquo;The person who walks your site is the person who
                   answers the phone.&rdquo;
@@ -291,7 +291,7 @@ function ProjectsGallery() {
   return (
     <section
       id="work"
-      className="relative overflow-hidden py-28 md:py-40 bg-sand"
+      className="relative overflow-hidden py-28 md:py-40 bg-background blueprint-grid"
     >
       <span
         aria-hidden
@@ -400,7 +400,7 @@ function ProjectsGallery() {
                     <h3 className="display-md text-navy mt-1">{p.name}</h3>
                     <span
                       aria-hidden
-                      className="mt-3 block h-[2px] w-8 bg-timber"
+                      className="mt-3 block h-[2px] w-8 bg-red"
                     />
 
                   </div>
@@ -488,7 +488,7 @@ function Certifications() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-sand-sunk border-y border-timber/20">
+    <section className="py-16 md:py-24 bg-background blueprint-grid border-y border-hairline">
       <div className="mx-auto max-w-[1200px] px-6">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
           <p className="eyebrow">Credentials</p>
