@@ -179,6 +179,14 @@ export const faqs = [
     a: "We work across Alaska, statewide. Most of our residential and commercial projects are in Anchorage, Eagle River, Palmer, Wasilla and the wider Mat-Su Valley, and Girdwood, but we travel for the right job anywhere in the state.",
   },
   {
+    q: "Do you build in the Mat-Su Valley?",
+    a: "Yes. We build throughout the Mat-Su Valley, including Palmer and Wasilla, and the Valley is one of our busiest areas alongside Anchorage. New construction, additions, and exterior work are all regular work for us out there.",
+  },
+  {
+    q: "Do you do remodels in Anchorage?",
+    a: "Yes. Anchorage remodels are a core part of what we do, from single-room renovations in Turnagain and Government Hill to whole-home remodels across the city, and we also remodel in Eagle River and Girdwood.",
+  },
+  {
     q: "Is Houser Construction family owned?",
     a: "Yes. Houser Construction is family owned and operated. The people who meet you at the start are the ones running your project through to the end.",
   },
