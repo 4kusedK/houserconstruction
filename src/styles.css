@@ -199,20 +199,21 @@
 @utility eyebrow {
   font-family: var(--font-ui);
   font-weight: 700;
-  font-size: 13px;
+  font-size: 11px;
   line-height: 1;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--silver);
 }
 
 @utility display-2xl {
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 700;
   font-size: clamp(52px, 9vw, 96px);
   line-height: 0.98;
   letter-spacing: -0.02em;
 }
+
 
 @utility display-xl {
   font-family: var(--font-display);
