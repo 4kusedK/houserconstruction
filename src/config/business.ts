@@ -19,14 +19,11 @@ export const business = {
   },
   serviceArea: "Alaska",
   regNumber: "Licensed · Bonded · Insured",
-  // TODO: confirm with client — real Instagram handle and URL.
-  instagramHandle: "@houserconstruction",
   socials: {
-    instagram: "https://www.instagram.com/",
+    instagram: "#",
     facebook: "#",
     linkedin: "#",
   },
-
 } as const;
 
 export const stats = [
@@ -69,9 +66,50 @@ export const services = [
   },
 ] as const;
 
-// Projects now live in src/config/projects.ts — see HOW-TO-ADD-A-PROJECT.md.
-
-
+export const projects = [
+  {
+    n: "01",
+    name: "Residential Remodel",
+    category: "Before & After",
+    image:
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=70",
+  },
+  {
+    n: "02",
+    name: "Custom Deck Build",
+    category: "Exterior",
+    image:
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=70",
+  },
+  {
+    n: "03",
+    name: "Cedar Fence Install",
+    category: "Exterior",
+    image:
+      "https://images.unsplash.com/photo-1590725175735-df0f6f7dfd1c?auto=format&fit=crop&w=1600&q=70",
+  },
+  {
+    n: "04",
+    name: "Real Estate Renovation",
+    category: "Residential",
+    image:
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=70",
+  },
+  {
+    n: "05",
+    name: "Strip Mall Development",
+    category: "Commercial · Coming Soon",
+    image:
+      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=70",
+  },
+  {
+    n: "06",
+    name: "Community Restoration",
+    category: "Community · Coming Soon",
+    image:
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=70",
+  },
+] as const;
 
 export const processSteps = [
   {

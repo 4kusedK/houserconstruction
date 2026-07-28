@@ -8,11 +8,9 @@ import { BrandButton } from "@/components/brand/BrandButton";
 import { business } from "@/config/business";
 
 const NAV = [
-  { label: "Home", to: "/" },
-  { label: "About", to: "/about" },
-  { label: "Work", to: "/work" },
-] as const;
-
+  { label: "About", href: "/#about" },
+  { label: "Work", href: "/#work" },
+];
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -46,18 +44,14 @@ export function SiteHeader() {
             aria-label="Primary"
           >
             {NAV.map((item) => (
-              <Link
-                key={item.to}
-                to={item.to}
-                activeOptions={{ exact: item.to === "/" }}
-                activeProps={{ className: "text-red" }}
+              <a
+                key={item.href}
+                href={item.href}
                 className="font-ui text-[13px] font-bold uppercase tracking-[0.14em] text-navy hover:text-red transition-colors"
               >
                 {item.label}
-              </Link>
+              </a>
             ))}
-
-
             <a
               href={business.phoneHref}
               className="hidden lg:inline-flex items-center gap-2 font-ui text-[13px] font-bold uppercase tracking-[0.14em] text-navy hover:text-red transition-colors"
@@ -111,15 +105,14 @@ export function SiteHeader() {
               aria-label="Mobile"
             >
               {NAV.map((item) => (
-                <Link
-                  key={item.to}
-                  to={item.to}
+                <a
+                  key={item.href}
+                  href={item.href}
                   onClick={() => setOpen(false)}
                   className="font-display text-4xl font-bold text-white hover:text-red-bright transition-colors"
                 >
                   {item.label}
-                </Link>
-
+                </a>
               ))}
               <div className="pt-8 flex flex-col gap-3">
                 <BrandButton

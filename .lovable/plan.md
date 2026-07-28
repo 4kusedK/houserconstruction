@@ -1,42 +1,48 @@
-# Pass B v2 — Portfolio Architecture
+## Goal
 
-Confirmed current state: the site is still a single homepage (`src/routes/index.tsx`, 558 lines) with Hero, StatBar, Projects, Testimonials, Certifications, FAQ, ClosingBand, CTA. `src/config/projects.ts`, `/about`, `/work`, the new brand components, and `HOW-TO-ADD-A-PROJECT.md` do not exist. `src/assets/` contains only the logo and `promise-handshake.jpg` — the previously "generated" hero and project images are not on disk either.
+Reposition the single-page site from a quote funnel to a company portfolio: identity, family ownership, and community forward; estimate CTAs, services grid, and process steps out.
 
-## What gets built
+## Typography
 
-### 1. Project content model
-New `src/config/projects.ts` as the single source of truth: slug, place name, category, year, location, summary, situation/work narrative, scope list, before/after pair, gallery, optional pull quote, `featured` flag. Six seeded entries with place names (not service labels), each flagged `TODO: confirm with client`. The `projects` array is removed from `business.ts` along with its dead imports.
+- `src/routes/__root.tsx`: swap the Google Fonts stylesheet to the Barlow + Archivo + Inter URL.
+- `src/styles.css`: `--font-display: "Barlow", "Archivo", ui-sans-serif, sans-serif`; relax tracking one step in `display-xl` (-0.01em), `display-lg` (-0.01em), `display-md` (-0.005em). `--font-ui` and `--font-sans` untouched.
 
-### 2. Placeholder imagery
-Generate a hero background plus before/after and gallery placeholders so every route renders with real pictures instead of grey boxes. Images live in `src/assets/` and are wired through the project model. Hero: I'll use the original Unsplash steel-frame photo you said you liked, unless you'd rather have a generated Alaska build shot.
+## Header (`SiteHeader.tsx`)
 
-### 3. Components — `src/components/brand/`
-- `ProjectImage` — aspect-ratio wrapper, graceful fallback when a photo is missing
-- `BeforeAfter` — CSS-only split, no JS slider
-- `ProjectCard` — image, place name, category, year
-- `NumberedSection` — `01 —` eyebrow + heading system
-- `ContactSection` — shared block used by home and project pages
+Permanently solid white bar (`bg-white border-b border-hairline`). Remove the `overHero` prop, the `scrolled` state and scroll listener, and every `isLight` branch. Logo always `variant="full"` at `h-14 md:h-16`. Nav becomes About + Work + phone link + red `Contact` button. Mobile menu matches, with a Contact button at the bottom. Escape handling, dialog semantics, and aria-labels preserved.
 
-### 4. Routes
-- `/` rebuilt short: Hero (`Trusted / to serve / with excellence.`) → full-bleed featured before/after → `01 — Our word` → `02 — What we've built` (asymmetric two-up) → closing band → `03 — Let's talk`. Testimonials, FAQ, stat bar, certifications come off the homepage.
-- `/about` — intro, "Our story" chronology with client copy prompts, photo cluster, value bar, people grid
-- `/work` — category filter pills (useState), masonry-ish card grid, Instagram link
-- `/work/$slug` — title block, full-bleed before/after, situation/work, scope list, gallery, optional pull quote, contact section. Includes `notFoundComponent` and `errorComponent`.
+`index.tsx` line 82 passes `<SiteHeader overHero />` — that prop goes away in the same pass.
 
-### 5. Chrome, SEO, handoff
-- Header nav becomes exactly Home · About · Work + red Contact button (`/#contact`), using `<Link>` for real routes
-- Footer: dead links and services column removed, Instagram surfaced
-- Per-route `head()` metadata; `sitemap[.]xml.ts` emits `/about`, `/work`, and every project slug
-- `HOW-TO-ADD-A-PROJECT.md` at repo root
+## Home page (`src/routes/index.tsx`)
+
+- **Hero**: eyebrow `Alaska General Contractor · Family Owned`; headline `Trusted to serve` / `with excellence.` (second line at `text-white/85`); new paragraph; both buttons and their flex wrapper deleted; chevron stays. Because the header is now opaque, hero top padding increases so the composition isn't hidden behind the bar.
+- **01 — Our word** (keeps `id="about"`): eyebrow `01 — Our word`, headline "A handshake still means something.", two-paragraph body as specified, plus a full-height handshake image in one grid column, imported from `src/assets/promise-handshake.jpg`.
+- **Value bar**: `md:grid-cols-3`, no `tabular-nums`, driven by the new three-item `stats` array.
+- **Delete** the `Services` and `Process` sections, `SERVICE_ICONS`, and every import left unused (`services`, `processSteps`, `HardHat`, `Compass`, `Ruler`, `ShieldCheck`).
+- **Work (02)**: remove the `View all` button; project 06 replaced (not removed) so the index-based `spans`/`aspects` arrays stay valid.
+- **Certifications**: `12+ Years Experience` → `Family Owned & Operated`.
+- **Closing band** (new, between FAQ and Contact): navy/white full-width, red rule accent, headline "Building better communities.", body copy, then the set-apart line "The old is gone. The new has come." in larger display type. No number or eyebrow.
+- **Contact (05)**: headline "Let's talk.", new body, reply-time line deleted, primary button "Email us"; phone button and detail list unchanged.
+- **Mobile sticky bar**: one full-width red Contact button to `/#contact`.
+- **Renumber** eyebrows to 01 Our word, 02 Work, 03 Client voice, 04 Answers, 05 Start the conversation.
+
+## Footer (`SiteFooter.tsx`)
+
+Delete the Services column (its `/#services` links would otherwise scroll nowhere); Company = About, Work, Careers; Contact drops "Get a quote"; grid columns rebalanced across the remaining blocks; credential chip swap to `Family Owned & Operated`; blurb rewritten to the family-owned line.
+
+## `src/config/business.ts`
+
+New `tagline` and `description`; three-item `stats`; delete the `government` service entry (rest of `services` and `processSteps` parked); project 06 → "Community Restoration"; FAQ: drop "How do I get a quote?", strip government agencies from the project-types answer, add the "Is Houser family owned?" entry.
+
+## SEO / meta
+
+Title `Houser Construction — Trusted to Serve | Alaska General Contractor` and the new description across `__root.tsx` and `index.tsx` (title, og:title, twitter:title, all descriptions). `GeneralContractor` JSON-LD picks up `business.description`; `FAQPage` JSON-LD regenerates from `faqs`.
 
 ## Technical notes
 
-- Typography tokens in `src/styles.css`: `display-hero` clamp 52→96px, `display-lg` clamp(32px,5.5vw,56px), `display-md` clamp(22px,3vw,30px), `eyebrow` 10px/0.2em, body Inter 16/1.65.
-- File-based routing: `src/routes/work/index.tsx` → `createFileRoute("/work/")`, `src/routes/work/$slug.tsx` → `createFileRoute("/work/$slug")`.
-- No new dependencies. Same navy/red/Barlow system.
-- Verification: typecheck plus screenshots of all four routes at 375px and desktop.
+- A referenced-but-missing image breaks the build, so I'll generate a placeholder handshake JPG at `src/assets/promise-handshake.jpg` (no Unsplash hotlink) for you to swap out when the real photo arrives.
+- No new dependencies, no new routes, no changes under `src/components/ui/`, brand color tokens unchanged, `Reveal`/framer-motion and the brand components stay in use.
 
-## Risks
+## Flag for the client
 
-- Removing `projects` from `business.ts` breaks `index.tsx` until it is rebuilt — both land in the same pass.
-- FAQ JSON-LD currently sits on the homepage; with the FAQ section gone I'll move the FAQ content to `/about` and keep its structured data with it rather than dropping it.
+Every gallery image is still stock. On a portfolio-first site the work *is* the site — real Houser project photography is the highest-value outstanding asset, along with real testimonial names.
