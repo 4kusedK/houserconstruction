@@ -125,7 +125,7 @@ function Hero() {
     >
       <img
         src={heroImg}
-        alt="Finished Alaska home at dusk with a metal roof and spruce and mountains behind it"
+        alt="Modern commercial building in Alaska with snow-capped mountains and spruce trees in the background"
         className="absolute inset-0 h-full w-full object-cover"
         width={1920}
         height={1280}
