@@ -58,7 +58,7 @@ export function SiteFooter() {
           </div>
 
           {COLS.map((col) => (
-            <div key={col.heading} className="md:col-span-2">
+            <div key={col.heading} className="md:col-span-3">
               <h3 className="eyebrow text-white/60 mb-4">{col.heading}</h3>
               <ul className="space-y-3">
                 {col.links.map((l) => (
@@ -75,7 +75,7 @@ export function SiteFooter() {
             </div>
           ))}
 
-          <div className="md:col-span-2">
+          <div className="md:col-span-4 md:col-start-9">
             <h3 className="eyebrow text-white/60 mb-4">Office</h3>
             <address className="not-italic text-sm text-white/85 leading-relaxed">
               Based in {business.address.city}
@@ -96,7 +96,7 @@ export function SiteFooter() {
                 "Licensed AK Contractor",
                 "Bonded",
                 "Insured",
-                "12+ Years Experience",
+                "Family Owned & Operated",
               ].map((c) => (
 
                 <span
