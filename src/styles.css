@@ -229,3 +229,50 @@
   line-height: 1.1;
   letter-spacing: -0.005em;
 }
+
+/* --- Surface texture & editorial accents --- */
+
+@utility blueprint-grid {
+  background-image:
+    linear-gradient(to right, color-mix(in oklab, var(--navy) 6%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--navy) 6%, transparent) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+@utility blueprint-grid-dark {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+@utility ghost-number {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(120px, 20vw, 240px);
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+  color: transparent;
+  -webkit-text-stroke: 1px color-mix(in oklab, var(--navy) 14%, transparent);
+  user-select: none;
+  pointer-events: none;
+}
+
+@utility ghost-number-light {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(120px, 20vw, 240px);
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.14);
+  user-select: none;
+  pointer-events: none;
+}
+
+@utility rule-red {
+  display: block;
+  height: 2px;
+  width: 2.5rem;
+  background: var(--red);
+}
