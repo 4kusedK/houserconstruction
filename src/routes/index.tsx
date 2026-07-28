@@ -18,8 +18,8 @@ import {
 } from "@/config/business";
 import { useEffect, useState } from "react";
 
-// TODO: client photo — replace with a real Houser Construction finished home
-// or jobsite once client photography is available.
+// TODO: replace with a real Houser Construction project photo once available.
+// This is a generated placeholder used to set the commercial-Alaska tone.
 import heroImg from "@/assets/hero-home.jpg";
 
 
@@ -125,7 +125,7 @@ function Hero() {
     >
       <img
         src={heroImg}
-        alt="Finished Alaska home at dusk with a metal roof and spruce and mountains behind it"
+        alt="Modern commercial building in Alaska with snow-capped mountains and spruce trees in the background"
         className="absolute inset-0 h-full w-full object-cover"
         width={1920}
         height={1280}

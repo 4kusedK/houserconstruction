@@ -1,31 +1,33 @@
-## 1. Credentials band → match the "Commercial / Statewide" stat bar
+Plan: Replace the current hero-home.jpg with a new generated image that better fits the commercial-Alaska vibe.
 
-`src/routes/index.tsx` (Credentials section, ~line 490-517)
+Current state
+- The Hero in src/routes/index.tsx imports heroImg from src/assets/hero-home.jpg.
+- The existing image is a generated dusk-and-spruce scene; the user feels it doesn't fit the brand.
 
-Today: a single-row navy strip with a small "Credentials" eyebrow and four bordered pill chips.
+Goal
+- Create a hero image that reads as a real photograph: an Alaskan landscape with a clean, modern commercial/flex building, or a strong architectural detail shot.
+- Keep it compatible with the navy/red overlay and white text.
+- Avoid AI tells (no impossible geometry, no oversaturated surreal colors, no weird hands/signage).
 
-Change it to the same visual system as the stat bar:
-- Surface: `bg-navy-deep` (same as stat bar) instead of `bg-navy`, keeping `navy-depth` gradient and the red top rule.
-- Padding: `py-16 md:py-24` to match.
-- Layout: 4-column grid on desktop (`grid-cols-2 md:grid-cols-4`) with `md:divide-x md:divide-white/10`, same column padding rhythm as the stat bar.
-- Each credential becomes a stat-style block:
-  - short red `h-[2px] w-10` rule on top
-  - the credential as a `display-sm`-scale white headline (e.g. **Licensed** / **Bonded** / **Insured** / **Family Owned**)
-  - a small `eyebrow text-white/60` qualifier underneath (e.g. "State of Alaska", "Fully bonded", "Liability & workers' comp", "Steve & David Houser")
-- Drop the "Credentials" eyebrow and the chip borders — the section reads as a second stat band.
-- Wrap each in `Reveal` with staggered delay, matching the stat bar.
+Steps
 
-Net effect: two navy bands with identical grammar — one for capability, one for credentials.
+1. Generate a new hero image
+   - Save to src/assets/hero-home.jpg (or a new name like hero-alaska.jpg if we want to keep the old file for comparison).
+   - Prompt direction: photorealistic, documentary-style, modern commercial or mixed-use building in an Alaska setting, natural dusk or overcast light, subtle mountains or spruce in the background, clean lines, muted palette, no visible people, no unreadable signage, 16:9-ish landscape composition.
+   - Use the agent generate_image tool at standard quality; review for obvious AI artifacts before wiring it in.
 
-## 2. More prominent logo in the sticky nav
+2. Wire the new image into the Hero
+   - Update the import in src/routes/index.tsx.
+   - Update the alt text to describe the actual image (e.g., "Modern commercial building against an Alaskan landscape").
+   - Keep the existing gradient overlay and text layout intact.
 
-`src/components/site/SiteHeader.tsx`
-- Bar height: `h-16 md:h-20` → `h-20 md:h-24` so a larger mark fits without cramping.
-- Logo: `h-14 md:h-16` → `h-16 md:h-20`.
-- Mobile menu panel header matched to the same heights so the overlay logo lines up with the bar logo.
+3. Verify in preview
+   - Check desktop and mobile: the image should read clearly behind the white headline, the gradient should still provide enough contrast, and the focal point should not fight with the text.
+   - If contrast is weak, adjust the gradient opacity slightly.
 
-`src/routes/index.tsx`
-- Hero top padding is offset for the fixed header; bump it by the same 4/4 units so the hero headline doesn't slide under the taller bar.
+4. Optional: generate one alt if the first isn't right
+   - If the user wants options after seeing the first image, generate 1–2 alternates with different compositions (architectural detail vs. wide landscape) and present them side by side before finalizing.
 
-## Verification
-- Home at 1280px and 375px: taller header doesn't clip the hero, credential blocks wrap two-up on mobile without orphan words.
+Out of scope
+- No changes to other sections, typography, or colors unless the image forces a contrast fix.
+- No new pages or backend work.
