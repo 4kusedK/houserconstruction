@@ -142,7 +142,7 @@ function Hero() {
           Steve &amp; David Houser · Alaska
         </span>
       </div>
-      <div className="relative mx-auto max-w-[1200px] px-6 pt-44 md:pt-56 pb-24 min-h-[100svh] flex flex-col justify-end">
+      <div className="relative mx-auto max-w-[1200px] px-6 pt-48 md:pt-60 pb-24 min-h-[100svh] flex flex-col justify-end">
 
         <div className="max-w-3xl">
           <div className="flex items-center gap-3 mb-6">
@@ -487,34 +487,31 @@ function Testimonials() {
 
 function Certifications() {
   const items = [
-    "AK Licensed Contractor",
-    "Bonded",
-    "Insured",
-    "Family Owned & Operated",
+    { value: "Licensed", label: "State of Alaska contractor" },
+    { value: "Bonded", label: "Fully bonded on every job" },
+    { value: "Insured", label: "Liability & workers' comp" },
+    { value: "Family Owned", label: "Steve & David Houser" },
   ];
 
   return (
-    <section className="relative overflow-hidden py-16 md:py-24 bg-navy text-white">
-      <span aria-hidden className="absolute top-0 left-0 h-1 w-40 bg-red" />
+    <section className="relative overflow-hidden bg-navy-deep text-white">
       <span aria-hidden className="navy-depth" />
-      <div className="relative mx-auto max-w-[1200px] px-6">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
-          <p className="eyebrow text-white/70">Credentials</p>
-          <div className="flex flex-wrap items-center gap-3">
-            {items.map((c) => (
-              <span
-                key={c}
-                className="font-ui text-xs font-bold uppercase tracking-[0.18em] text-white/75 border border-white/15 rounded-sm px-4 py-2.5"
-              >
-                {c}
-              </span>
-            ))}
-          </div>
-        </div>
+      <span aria-hidden className="absolute top-0 left-0 h-1 w-40 bg-red" />
+      <div className="relative mx-auto max-w-[1200px] px-6 py-16 md:py-24 grid grid-cols-2 md:grid-cols-4 gap-y-10 md:gap-y-0 md:divide-x md:divide-white/10">
+        {items.map((c, i) => (
+          <Reveal key={c.value} delay={i * 0.08}>
+            <div className={i === 0 ? "md:pr-8" : "md:px-8"}>
+              <span className="block h-[2px] w-10 bg-red mb-5" aria-hidden />
+              <div className="display-md text-white">{c.value}</div>
+              <div className="eyebrow mt-4 text-white/60">{c.label}</div>
+            </div>
+          </Reveal>
+        ))}
       </div>
     </section>
   );
 }
+
 
 function FAQ() {
   return (
