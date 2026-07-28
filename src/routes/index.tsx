@@ -261,6 +261,7 @@ function Positioning() {
 function StatBar() {
   return (
     <section className="relative overflow-hidden bg-navy-deep text-white">
+      <span aria-hidden className="navy-depth" />
       <span aria-hidden className="absolute top-0 left-0 h-1 w-40 bg-red" />
       <div className="relative mx-auto max-w-[1200px] px-6 py-16 md:py-24 grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-y-0 md:divide-x md:divide-white/10">
         {stats.map((s, i) => (
