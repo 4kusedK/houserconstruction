@@ -1,70 +1,31 @@
-## Repositioning: Commercial-first, family as trust signal
+## 1. Credentials band → match the "Commercial / Statewide" stat bar
 
-### Governing principle
-Commercial capability is the subject of the site. Family ownership is the reason to trust the work — it appears as a credential, never as the headline.
+`src/routes/index.tsx` (Credentials section, ~line 490-517)
 
-### `src/config/business.ts`
-- `description` leads with capability: "Licensed Alaska general contractor working statewide on commercial, real estate, and residential projects."
-- `tagline` and `secondaryTagline` unchanged.
-- `serviceAreaLine` mentions commercial and real estate before residential.
-- Reweight `services` and `processSteps` copy toward commercial language (not currently rendered, but kept aligned).
-- `stats[0]` becomes capability-led with family as sub-label: value **"Commercial"**, label **"Retail, office, mixed-use · Family owned"**. Stats 2 and 3 unchanged.
-- FAQ answers rebalanced: "Do you take on commercial projects?" and "What types of projects do you take on?" lead with commercial and real estate, then residential. "Is Houser Construction family owned?" gets a one-line yes that pivots back to capability.
+Today: a single-row navy strip with a small "Credentials" eyebrow and four bordered pill chips.
 
-### `src/routes/index.tsx`
+Change it to the same visual system as the stat bar:
+- Surface: `bg-navy-deep` (same as stat bar) instead of `bg-navy`, keeping `navy-depth` gradient and the red top rule.
+- Padding: `py-16 md:py-24` to match.
+- Layout: 4-column grid on desktop (`grid-cols-2 md:grid-cols-4`) with `md:divide-x md:divide-white/10`, same column padding rhythm as the stat bar.
+- Each credential becomes a stat-style block:
+  - short red `h-[2px] w-10` rule on top
+  - the credential as a `display-sm`-scale white headline (e.g. **Licensed** / **Bonded** / **Insured** / **Family Owned**)
+  - a small `eyebrow text-white/60` qualifier underneath (e.g. "State of Alaska", "Fully bonded", "Liability & workers' comp", "Steve & David Houser")
+- Drop the "Credentials" eyebrow and the chip borders — the section reads as a second stat band.
+- Wrap each in `Reveal` with staggered delay, matching the stat bar.
 
-**Hero**
-- Headline stays "Trusted to serve with excellence."
-- Vertical rail label: "Family Owned · Alaska" → **"Steve & David Houser · Alaska"**.
-- Subhead → "Licensed Alaska general contractor working statewide on commercial, real estate, and residential projects. David runs the day-to-day with Steve Houser at his side."
+Net effect: two navy bands with identical grammar — one for capability, one for credentials.
 
-**Positioning section**
-- Eyebrow "Our philosophy" → **"How we work"**.
-- Title "A handshake still means something." → **"Built on partnership."**
-- Body copy shifts from sentiment to accountability: direct client access, no handoffs, one point of contact from estimate through closeout.
-- David's quote stays, framed as operational accountability.
-- CTA "Meet the family" → **"Meet the team"**.
-- Handshake image kept; alt text describes a contractor–client handshake.
+## 2. More prominent logo in the sticky nav
 
-**Stat bar** — picks up the reweighted `stats` from config.
+`src/components/site/SiteHeader.tsx`
+- Bar height: `h-16 md:h-20` → `h-20 md:h-24` so a larger mark fits without cramping.
+- Logo: `h-14 md:h-16` → `h-16 md:h-20`.
+- Mobile menu panel header matched to the same heights so the overlay logo lines up with the bar logo.
 
-**Gallery**
-- Retitle "Places we've put our name on." → **"Selected work"**.
-- Section intro copy carries the commercial/real-estate weight.
-- **Project category labels are NOT invented.** Card labels stay as-is unless the client confirms the real project type. Relabeling placeholder projects as commercial would put an unverifiable claim on the page — the same credibility problem we removed "Coming Soon" for. Flag in `TODO-CLIENT` that a confirmed commercial and a confirmed real-estate project should replace two placeholders.
-- Alt text rewritten to describe project type and location; drop "coming soon" phrasing without asserting the photo is a Houser job.
+`src/routes/index.tsx`
+- Hero top padding is offset for the fixed header; bump it by the same 4/4 units so the hero headline doesn't slide under the taller bar.
 
-**Credentials band** — reorder chips: AK Licensed Contractor, Bonded, Insured, Family Owned & Operated.
-
-**Closing / Contact band**
-- Replace "That is the part of this work that matters to our family." with "That is the standard we build to — on every lot, in every borough, for every client."
-- Keep "The old is gone. The new has come."
-
-**SEO metadata** — title, description, og:description, and JSON-LD `description` all lead with commercial/real estate; family ownership appears only as a trailing trust phrase.
-
-### `src/routes/about.tsx`
-- Hero headline "A father, a son, and one standard." → **"A construction partner for Alaska."** Subhead leads with capability, then names David and Steve.
-- Story: opening reframed around partnership and direct accountability rather than family origin sentiment. "The old is gone. The new has come." stays.
-- Owners: Steve → **"Founder & Partner"**, David → **"Owner & Project Lead"**. Bios rewritten to operational roles (Steve: field standard, quality, safety, closeout. David: estimating, client relationships, execution). Quotes kept.
-- Values: "Family first" → **"Direct accountability"** — "No account managers between you and the crew running the job." Other two unchanged.
-- About CTA unchanged.
-- About page metadata updated to match (title no longer "A Father, A Son").
-
-### `src/components/site/SiteFooter.tsx`
-- Blurb → "Licensed Alaska general contractor working statewide on commercial, real estate, and residential projects. Built and run by David and Steve Houser."
-- "Where we work" mentions commercial and real estate before residential.
-- "Family Owned & Operated" credential chip stays.
-
-### `src/components/site/SiteHeader.tsx`
-No changes.
-
-### Imagery
-No visual swaps this pass — framing and alt text only.
-
-### Verification
-- Typecheck and build.
-- Home and About at 1280px and 375px: confirm new headline/subhead don't overflow and the stat bar sub-label wraps cleanly.
-- Confirm "family" appears only as credential/sub-label, never as a section heading or lead value proposition.
-
-### Files affected
-`src/config/business.ts`, `src/routes/index.tsx`, `src/routes/about.tsx`, `src/components/site/SiteFooter.tsx`. No token or CSS changes.
+## Verification
+- Home at 1280px and 375px: taller header doesn't clip the hero, credential blocks wrap two-up on mobile without orphan words.
