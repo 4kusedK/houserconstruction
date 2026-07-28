@@ -221,13 +221,13 @@ function Positioning() {
 
           <div className="md:col-span-5 md:col-start-8 md:pt-6">
             <Reveal delay={0.1}>
-              <blockquote className="border-l-2 border-red pl-6">
-                <p className="display-md text-navy">
-                  The person who walks your site is the person who answers the
-                  phone.
+              <blockquote className="border-l-2 border-red pl-4">
+                <p className="display-md italic text-navy">
+                  &ldquo;The person who walks your site is the person who
+                  answers the phone.&rdquo;
                 </p>
                 <p className="mt-4 font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-timber">
-                  — David Houser
+                  David Houser
                 </p>
               </blockquote>
               <p className="mt-12 text-lg text-charcoal leading-[1.6]">
