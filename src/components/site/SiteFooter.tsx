@@ -36,21 +36,21 @@ export function SiteFooter() {
               <a
                 href={business.socials.instagram}
                 aria-label="Instagram"
-                className="inline-flex h-10 w-10 items-center justify-center border border-white/20 hover:border-red hover:text-red transition-colors rounded-sm"
+                className="inline-flex h-10 w-10 items-center justify-center border border-white/20 hover:bg-timber hover:border-timber hover:text-white transition-colors rounded-sm"
               >
                 <Instagram className="h-4 w-4" />
               </a>
               <a
                 href={business.socials.facebook}
                 aria-label="Facebook"
-                className="inline-flex h-10 w-10 items-center justify-center border border-white/20 hover:border-red hover:text-red transition-colors rounded-sm"
+                className="inline-flex h-10 w-10 items-center justify-center border border-white/20 hover:bg-timber hover:border-timber hover:text-white transition-colors rounded-sm"
               >
                 <Facebook className="h-4 w-4" />
               </a>
               <a
                 href={business.socials.linkedin}
                 aria-label="LinkedIn"
-                className="inline-flex h-10 w-10 items-center justify-center border border-white/20 hover:border-red hover:text-red transition-colors rounded-sm"
+                className="inline-flex h-10 w-10 items-center justify-center border border-white/20 hover:bg-timber hover:border-timber hover:text-white transition-colors rounded-sm"
               >
                 <Linkedin className="h-4 w-4" />
               </a>
@@ -59,7 +59,7 @@ export function SiteFooter() {
 
           {COLS.map((col) => (
             <div key={col.heading} className="md:col-span-3">
-              <h3 className="eyebrow text-white/60 mb-4">{col.heading}</h3>
+              <h3 className="eyebrow text-timber mb-4">{col.heading}</h3>
               <ul className="space-y-3">
                 {col.links.map((l) => (
                   <li key={l.label}>
@@ -76,7 +76,7 @@ export function SiteFooter() {
           ))}
 
           <div className="md:col-span-4 md:col-start-9">
-            <h3 className="eyebrow text-white/60 mb-4">Office</h3>
+            <h3 className="eyebrow text-timber mb-4">Office</h3>
             <address className="not-italic text-sm text-white/85 leading-relaxed">
               Based in {business.address.city}
               <br />

@@ -45,8 +45,9 @@ export function BrandButton({
 }: Props) {
   const classes = cn(
     "inline-flex items-center justify-center gap-2 rounded-[4px] font-ui font-bold uppercase tracking-[0.08em] leading-none",
-    "transition-colors duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+    "transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
     "disabled:opacity-50 disabled:pointer-events-none",
+    "hover:-translate-y-0.5 hover:shadow-md",
     VARIANTS[variant],
     SIZES[size],
     block && "w-full",

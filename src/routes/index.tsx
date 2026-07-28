@@ -128,15 +128,16 @@ function Hero() {
               Alaska General Contractor · Family Owned
             </span>
           </div>
-          <h1 className="display-xl text-white">
+          <h1 className="display-2xl text-white">
             Trusted to serve
             <br />
             <span className="text-white/85">with excellence.</span>
           </h1>
-          <p className="mt-8 max-w-xl text-lg text-white/85 leading-relaxed">
+          <p className="mt-8 max-w-xl text-lg text-white/85 leading-[1.6]">
             A family owned Alaska contractor building new homes, restoring the
             ones already standing, and developing property across the state.
           </p>
+          <span className="mt-10 block h-[2px] w-16 bg-red" aria-hidden />
         </div>
       </div>
       <a
@@ -179,7 +180,7 @@ function Positioning() {
         <div className="mt-16 md:mt-24 grid md:grid-cols-12 gap-x-16 gap-y-16 items-start">
           <div className="md:col-span-6">
             <Reveal delay={0.05}>
-              <div className="relative overflow-hidden aspect-[4/5]">
+              <div className="relative overflow-hidden aspect-[4/5] photo-frame">
                 <img
                   src={HANDSHAKE_IMG}
                   alt="A Houser Construction contractor shaking hands with a homeowner"
@@ -188,6 +189,7 @@ function Positioning() {
                   height={1408}
                   className="absolute inset-0 h-full w-full object-cover"
                 />
+                <div className="photo-warm absolute inset-0" />
                 <span
                   aria-hidden
                   className="absolute bottom-0 left-0 h-1 w-24 bg-red"
@@ -203,18 +205,21 @@ function Positioning() {
                   The person who walks your site is the person who answers the
                   phone.
                 </p>
+                <p className="mt-4 font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-timber">
+                  — David Houser
+                </p>
               </blockquote>
-              <p className="mt-12 text-lg text-charcoal leading-relaxed">
+              <p className="mt-12 text-lg text-charcoal leading-[1.6]">
                 Houser Construction is family owned and family run. When we tell
                 you how a job will go, that is how it goes.
               </p>
-              <p className="mt-8 text-lg text-charcoal/80 leading-relaxed">
+              <p className="mt-8 text-lg text-charcoal/80 leading-[1.6]">
                 We kept the company small on purpose. Whoever stands behind the
                 finished work still lives in the community it was built for.
               </p>
               <Link
                 to="/about"
-                className="mt-12 inline-flex items-center gap-2 font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-navy hover:text-red transition-colors"
+                className="mt-12 inline-flex items-center gap-2 font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-navy hover:text-timber transition-colors link-underline"
               >
                 Meet the family <ArrowRight className="h-4 w-4" />
               </Link>
@@ -233,14 +238,13 @@ function StatBar() {
       <span aria-hidden className="absolute top-0 left-0 h-1 w-40 bg-red" />
       <div className="relative mx-auto max-w-[1200px] px-6 py-16 md:py-24 grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-y-0 md:divide-x md:divide-white/10">
         {stats.map((s, i) => (
-          <div
-            key={s.label}
-            className={i === 0 ? "md:pr-8" : "md:px-8"}
-          >
-            <span className="rule-red mb-5" aria-hidden />
-            <div className="display-lg text-white">{s.value}</div>
-            <div className="eyebrow mt-4 text-white/60">{s.label}</div>
-          </div>
+          <Reveal key={s.label} delay={i * 0.08}>
+            <div className={i === 0 ? "md:pr-8" : "md:px-8"}>
+              <span className="rule-red mb-5" aria-hidden />
+              <div className="display-lg text-white">{s.value}</div>
+              <div className="eyebrow mt-4 text-white/60">{s.label}</div>
+            </div>
+          </Reveal>
         ))}
       </div>
     </section>
@@ -276,13 +280,26 @@ function ProjectsGallery() {
           {projects.map((p, i) => (
             <li key={p.n}>
               <Reveal delay={(i % 3) * 0.05}>
-                <div className="group relative overflow-hidden aspect-[4/3] bg-navy border border-hairline">
+                <div className="group relative overflow-hidden aspect-[4/3] bg-navy photo-frame shadow-sm transition-shadow duration-300 hover:shadow-md">
                   <img
                     src={p.image}
                     alt={`${p.name} by Houser Construction`}
                     loading="lazy"
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-red/20 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  <span
+                    aria-hidden
+                    className="absolute bottom-0 left-0 h-1 w-0 bg-red transition-all duration-500 group-hover:w-16"
+                  />
+                </div>
+                <div className="mt-4">
+                  <p className="font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-timber">
+                    {p.category}
+                  </p>
+                  <h3 className="font-display text-lg font-bold text-navy mt-1">
+                    {p.name}
+                  </h3>
                 </div>
               </Reveal>
             </li>
@@ -386,7 +403,7 @@ function Certifications() {
 
 function FAQ() {
   return (
-    <section className="py-28 md:py-40 bg-sand">
+    <section className="py-28 md:py-40 bg-sand-sunk">
       <div className="mx-auto max-w-[1200px] px-6 grid md:grid-cols-12 gap-12">
         <div className="md:col-span-4">
           <Reveal>
@@ -413,7 +430,7 @@ function FAQ() {
                       +
                     </span>
                   </summary>
-                  <p className="mt-4 text-charcoal/85 leading-relaxed">
+                  <p className="mt-4 text-charcoal/85 leading-[1.6]">
                     {f.a}
                   </p>
                 </details>
@@ -428,7 +445,7 @@ function FAQ() {
 
 function ClosingBand() {
   return (
-    <section className="relative overflow-hidden bg-navy-deep text-white">
+    <section className="relative overflow-hidden bg-navy-deep text-white blueprint-grid-dark">
       <span
         aria-hidden
         className="absolute top-0 left-0 h-1 w-40 md:w-64 bg-red"
@@ -438,7 +455,7 @@ function ClosingBand() {
           <h2 className="display-lg text-white">
             Building better communities.
           </h2>
-          <p className="mt-8 text-lg text-white/80 leading-relaxed max-w-2xl">
+          <p className="mt-8 text-lg text-white/80 leading-[1.6] max-w-2xl">
             Every structure we put up outlasts the contract that paid for it.
             Houses become homes, empty lots become neighborhoods, and worn out
             buildings get another life. That is the part of this work that
@@ -457,7 +474,7 @@ function FinalCTA() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-navy text-white"
+      className="relative overflow-hidden bg-navy text-white blueprint-grid-dark"
     >
       {/* Editorial red rule accent, top-right */}
       <span

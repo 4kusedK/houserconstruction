@@ -206,6 +206,14 @@
   color: var(--silver);
 }
 
+@utility display-2xl {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(52px, 9vw, 96px);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+}
+
 @utility display-xl {
   font-family: var(--font-display);
   font-weight: 700;
@@ -275,4 +283,40 @@
   height: 2px;
   width: 2.5rem;
   background: var(--red);
+}
+
+@utility photo-frame {
+  border: 1px solid var(--hairline);
+  box-shadow: var(--shadow-sm);
+}
+
+@utility photo-warm {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, color-mix(in oklab, var(--timber) 12%, transparent) 0%, transparent 60%);
+    pointer-events: none;
+  }
+}
+
+@utility link-underline {
+  position: relative;
+  text-decoration: none;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background: var(--red);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  &:hover::after {
+    transform: scaleX(1);
+  }
 }

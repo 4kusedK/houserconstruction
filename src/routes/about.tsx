@@ -187,7 +187,7 @@ function Story() {
 
 function PortraitPlaceholder({ initials }: { initials: string }) {
   return (
-    <div className="relative aspect-[4/5] w-full overflow-hidden bg-navy blueprint-grid-dark border border-hairline">
+    <div className="relative aspect-[4/5] w-full overflow-hidden bg-navy blueprint-grid-dark border border-hairline photo-frame">
       <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
         <span className="font-display text-5xl font-bold text-white/25 tracking-tight">
           {initials}
@@ -240,15 +240,16 @@ function Owners() {
 
         <Reveal delay={0.1}>
           <figure className="mt-20 md:mt-28">
-            <div className="relative aspect-[16/7] overflow-hidden border border-white/10">
+            <div className="relative aspect-[16/7] overflow-hidden border border-white/10 photo-frame">
               <img
                 src={CREW_IMG}
                 alt="Houser Construction crew on an Alaska job site"
                 loading="lazy"
                 className="absolute inset-0 h-full w-full object-cover"
               />
+              <div className="photo-warm absolute inset-0" />
             </div>
-            <figcaption className="mt-4 font-ui text-[11px] font-bold uppercase tracking-[0.24em] text-white/45">
+            <figcaption className="mt-4 font-ui text-[11px] font-bold uppercase tracking-[0.24em] text-timber">
               Team photo of Steve &amp; David coming soon
             </figcaption>
           </figure>
@@ -292,7 +293,7 @@ function Values() {
 
 function AboutCTA() {
   return (
-    <section className="relative overflow-hidden bg-navy-deep text-white">
+    <section className="relative overflow-hidden bg-navy-deep text-white blueprint-grid-dark">
       <span aria-hidden className="absolute top-0 right-0 h-1 w-40 md:w-64 bg-red" />
       <div className="relative mx-auto max-w-[1200px] px-6 py-24 md:py-36 flex flex-col md:flex-row md:items-end md:justify-between gap-10">
         <div className="max-w-2xl">
