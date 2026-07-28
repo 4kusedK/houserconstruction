@@ -12,13 +12,19 @@ import {
   business,
   stats,
   projects,
+  featuredProject,
   testimonials,
   faqs,
 } from "@/config/business";
 import { useEffect, useState } from "react";
 
+// TODO: client photo — replace with a real Houser Construction residential
+// jobsite or finished Alaska home once photography is available.
 const HERO_IMG =
-  "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=2400&q=75";
+  "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=2400&q=75";
+
+// TODO: confirm founding year with client.
+const FOUNDED_YEAR = "2013";
 
 const SITE_URL = "https://houserconstruction.net";
 const OG_IMAGE = `${SITE_URL}/og-houser-construction.jpg`;
