@@ -381,7 +381,7 @@ function Certifications() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-sand-sunk border-y border-hairline">
+    <section className="py-16 md:py-24 bg-background border-y border-hairline">
       <div className="mx-auto max-w-[1200px] px-6">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
           <p className="eyebrow">Credentials</p>
