@@ -251,13 +251,23 @@ function StatBar() {
 
 function ProjectsGallery() {
   return (
-    <section id="work" className="py-28 md:py-40 bg-paper-sunk">
-      <div className="mx-auto max-w-[1200px] px-6">
+    <section
+      id="work"
+      className="relative overflow-hidden py-28 md:py-40 bg-background"
+    >
+      <span
+        aria-hidden
+        className="ghost-number absolute -top-8 left-4 md:left-10 hidden sm:block"
+      >
+        02
+      </span>
+      <div className="relative mx-auto max-w-[1200px] px-6">
         <Reveal>
           <div className="mb-16 md:mb-20">
             <SectionHeading eyebrow="Gallery" number="02" title="Our work." />
           </div>
         </Reveal>
+
 
         <ul
           aria-label="Photo gallery of Houser Construction work"
