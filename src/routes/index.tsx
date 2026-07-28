@@ -280,13 +280,26 @@ function ProjectsGallery() {
           {projects.map((p, i) => (
             <li key={p.n}>
               <Reveal delay={(i % 3) * 0.05}>
-                <div className="group relative overflow-hidden aspect-[4/3] bg-navy border border-hairline">
+                <div className="group relative overflow-hidden aspect-[4/3] bg-navy photo-frame shadow-sm transition-shadow duration-300 hover:shadow-md">
                   <img
                     src={p.image}
                     alt={`${p.name} by Houser Construction`}
                     loading="lazy"
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-red/20 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  <span
+                    aria-hidden
+                    className="absolute bottom-0 left-0 h-1 w-0 bg-red transition-all duration-500 group-hover:w-16"
+                  />
+                </div>
+                <div className="mt-4">
+                  <p className="font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-timber">
+                    {p.category}
+                  </p>
+                  <h3 className="font-display text-lg font-bold text-navy mt-1">
+                    {p.name}
+                  </h3>
                 </div>
               </Reveal>
             </li>
