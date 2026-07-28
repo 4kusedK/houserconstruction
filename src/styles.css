@@ -98,6 +98,10 @@
   --paper: oklch(0.992 0.002 258);         /* #FBFCFD */
   --paper-sunk: oklch(0.968 0.003 258);    /* #F2F4F7 */
   --hairline: oklch(0.905 0.006 258);      /* ~#DCE0E9 */
+  --sand: oklch(0.965 0.012 85);           /* warm paper */
+  --sand-sunk: oklch(0.936 0.019 82);      /* warm sunk band */
+  --timber: oklch(0.62 0.085 62);          /* warm timber accent */
+
 
   /* Semantic mapping */
   --radius: 4px;
