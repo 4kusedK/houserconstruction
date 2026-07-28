@@ -58,6 +58,9 @@
   --color-paper: var(--paper);
   --color-paper-sunk: var(--paper-sunk);
   --color-hairline: var(--hairline);
+  --color-sand: var(--sand);
+  --color-sand-sunk: var(--sand-sunk);
+  --color-timber: var(--timber);
 
   /* Chart / sidebar passthroughs (kept so shadcn utilities compile) */
   --color-chart-1: var(--chart-1);
