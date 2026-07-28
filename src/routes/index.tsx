@@ -274,7 +274,12 @@ function StatBar() {
 
 
 
-const TILE_HEIGHTS = ["h-[215px]", "h-[150px]", "h-[190px]"] as const;
+// Deliberately unequal heights so the row does not read as a flat grid.
+const TILE_HEIGHTS = [
+  "h-[200px] md:h-[215px]",
+  "h-[200px] md:h-[150px]",
+  "h-[200px] md:h-[190px]",
+] as const;
 
 function ProjectsGallery() {
   const f = featuredProject;
