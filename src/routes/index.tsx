@@ -6,8 +6,8 @@ import { SiteFooter } from "@/components/site/SiteFooter";
 import { SectionHeading } from "@/components/brand/SectionHeading";
 import { BrandButton } from "@/components/brand/BrandButton";
 import { Reveal } from "@/components/brand/Reveal";
-const HANDSHAKE_IMG =
-  "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=75";
+import handshakeImg from "@/assets/promise-handshake.jpg";
+
 import {
   business,
   stats,
