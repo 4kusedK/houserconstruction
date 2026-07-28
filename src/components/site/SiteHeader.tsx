@@ -6,27 +6,15 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Logo } from "@/components/brand/Logo";
 import { BrandButton } from "@/components/brand/BrandButton";
 import { business } from "@/config/business";
-import { cn } from "@/lib/utils";
 
 const NAV = [
-  { label: "Work", href: "/#work" },
-  { label: "Services", href: "/#services" },
   { label: "About", href: "/#about" },
-  { label: "Process", href: "/#process" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Work", href: "/#work" },
 ];
 
-export function SiteHeader({ overHero = false }: { overHero?: boolean }) {
-  const [scrolled, setScrolled] = useState(false);
+export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const reduce = useReducedMotion();
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => {
     if (!open) return;
@@ -39,32 +27,16 @@ export function SiteHeader({ overHero = false }: { overHero?: boolean }) {
     };
   }, [open]);
 
-  const isLight = scrolled || !overHero;
-
   return (
     <>
-      <header
-        className={cn(
-          "fixed top-0 inset-x-0 z-40 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]",
-          isLight
-            ? "bg-white/95 backdrop-blur border-b border-hairline"
-            : "bg-transparent border-b border-transparent",
-        )}
-      >
+      <header className="fixed top-0 inset-x-0 z-40 bg-white border-b border-hairline">
         <div className="mx-auto max-w-[1200px] px-6 flex items-center justify-between h-20 md:h-24">
           <Link
             to="/"
             className="flex items-center gap-3"
             aria-label="Houser Construction — home"
           >
-            {scrolled ? (
-              <Logo variant="symbol" className="h-10 w-auto" />
-            ) : (
-              <Logo
-                variant={overHero ? "full-white" : "full"}
-                className="h-12 md:h-14 w-auto"
-              />
-            )}
+            <Logo variant="full" className="h-14 md:h-16 w-auto" />
           </Link>
 
           <nav
@@ -75,45 +47,27 @@ export function SiteHeader({ overHero = false }: { overHero?: boolean }) {
               <a
                 key={item.href}
                 href={item.href}
-                className={cn(
-                  "font-ui text-[13px] font-bold uppercase tracking-[0.14em] transition-colors",
-                  isLight
-                    ? "text-navy hover:text-red"
-                    : "text-white/90 hover:text-white",
-                )}
+                className="font-ui text-[13px] font-bold uppercase tracking-[0.14em] text-navy hover:text-red transition-colors"
               >
                 {item.label}
               </a>
             ))}
             <a
               href={business.phoneHref}
-              className={cn(
-                "hidden lg:inline-flex items-center gap-2 font-ui text-[13px] font-bold uppercase tracking-[0.14em] transition-colors",
-                isLight
-                  ? "text-navy hover:text-red"
-                  : "text-white/90 hover:text-white",
-              )}
+              className="hidden lg:inline-flex items-center gap-2 font-ui text-[13px] font-bold uppercase tracking-[0.14em] text-navy hover:text-red transition-colors"
               aria-label={`Call ${business.phone}`}
             >
               <Phone className="h-4 w-4" />
               {business.phone}
             </a>
-            <BrandButton
-              as="a"
-              href="/#contact"
-              variant="accent"
-              size="sm"
-            >
-              Get a quote
+            <BrandButton as="a" href="/#contact" variant="accent" size="sm">
+              Contact
             </BrandButton>
           </nav>
 
           <button
             onClick={() => setOpen(true)}
-            className={cn(
-              "md:hidden inline-flex h-11 w-11 items-center justify-center rounded-sm",
-              isLight ? "text-navy" : "text-white",
-            )}
+            className="md:hidden inline-flex h-11 w-11 items-center justify-center rounded-sm text-navy"
             aria-label="Open menu"
             aria-expanded={open}
             aria-controls="mobile-menu"
@@ -137,7 +91,7 @@ export function SiteHeader({ overHero = false }: { overHero?: boolean }) {
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="flex items-center justify-between h-20 md:h-24 px-6 border-b border-white/10">
-              <Logo variant="full-white" className="h-12 w-auto" />
+              <Logo variant="full-white" className="h-14 w-auto" />
               <button
                 onClick={() => setOpen(false)}
                 className="inline-flex h-11 w-11 items-center justify-center text-white"
@@ -168,7 +122,7 @@ export function SiteHeader({ overHero = false }: { overHero?: boolean }) {
                   size="lg"
                   onClick={() => setOpen(false)}
                 >
-                  Get a quote
+                  Contact
                 </BrandButton>
                 <a
                   href={business.phoneHref}
