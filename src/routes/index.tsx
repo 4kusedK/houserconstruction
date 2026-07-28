@@ -18,10 +18,10 @@ import {
 } from "@/config/business";
 import { useEffect, useState } from "react";
 
-// TODO: client photo — replace with a real Houser Construction residential
-// jobsite or finished Alaska home once photography is available.
-const HERO_IMG =
-  "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=2400&q=75";
+// TODO: client photo — replace with a real Houser Construction finished home
+// or jobsite once client photography is available.
+import heroImg from "@/assets/hero-home.jpg";
+
 
 // TODO: confirm founding year with client.
 const FOUNDED_YEAR = "2013";
@@ -124,12 +124,15 @@ function Hero() {
       className="relative min-h-[100svh] w-full overflow-hidden bg-navy-deep text-white"
     >
       <img
-        src={HERO_IMG}
-        alt="Finished residential home in Alaska"
+        src={heroImg}
+        alt="Finished Alaska home at dusk with a metal roof and spruce and mountains behind it"
         className="absolute inset-0 h-full w-full object-cover"
+        width={1920}
+        height={1280}
         fetchPriority="high"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/85 via-navy-deep/60 to-navy-deep/95" />
+      <div aria-hidden className="absolute inset-0 blueprint-grid-dark" />
       <div
         aria-hidden
         className="hidden lg:flex absolute left-6 top-1/2 -translate-y-1/2 items-center gap-4 [writing-mode:vertical-rl] rotate-180"
@@ -143,7 +146,7 @@ function Hero() {
 
         <div className="max-w-3xl">
           <div className="flex items-center gap-3 mb-6">
-            <span className="h-[2px] w-10 bg-red" aria-hidden />
+            <span className="h-[2px] w-10 bg-timber" aria-hidden />
             <span className="eyebrow text-white/80">
               Steve &amp; David Houser · Since {FOUNDED_YEAR}
             </span>
@@ -154,12 +157,14 @@ function Hero() {
             <span className="text-white/85">with excellence.</span>
           </h1>
           <p className="mt-8 max-w-xl text-lg text-white/85 leading-[1.6]">
-            A father-and-son contractor building new homes, restoring the
-            ones already standing, and developing property across Alaska.
+            A father-and-son contractor building new homes and commercial
+            spaces, restoring the ones already standing, and developing
+            property across Alaska.
           </p>
 
-          <span className="mt-10 block h-[2px] w-16 bg-red" aria-hidden />
+          <span className="mt-10 block h-[2px] w-16 bg-timber" aria-hidden />
         </div>
+
       </div>
       <a
         href="/#about"
