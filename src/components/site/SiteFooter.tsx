@@ -114,14 +114,8 @@ export function SiteFooter() {
               © {new Date().getFullYear()} {business.legalName}. All rights
               reserved. · {business.regNumber}
             </div>
-            <div className="flex gap-6">
-              <a href="#" className="hover:text-white transition-colors">
-                Privacy
-              </a>
-              <a href="#" className="hover:text-white transition-colors">
-                Terms
-              </a>
-            </div>
+            {/* Privacy / Terms links intentionally removed — see TODO-LEGAL.md.
+                Restore them the moment the site collects data or adds analytics. */}
           </div>
         </div>
       </div>
