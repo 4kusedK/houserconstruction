@@ -38,29 +38,22 @@ export function SiteFooter() {
               stand behind our work across {business.serviceArea}.
             </p>
 
-            <div className="mt-6 flex items-center gap-3">
-              <a
-                href={business.socials.instagram}
-                aria-label="Instagram"
-                className="inline-flex h-10 w-10 items-center justify-center border border-white/20 hover:bg-timber hover:border-timber hover:text-white transition-colors rounded-sm"
-              >
-                <Instagram className="h-4 w-4" />
-              </a>
-              <a
-                href={business.socials.facebook}
-                aria-label="Facebook"
-                className="inline-flex h-10 w-10 items-center justify-center border border-white/20 hover:bg-timber hover:border-timber hover:text-white transition-colors rounded-sm"
-              >
-                <Facebook className="h-4 w-4" />
-              </a>
-              <a
-                href={business.socials.linkedin}
-                aria-label="LinkedIn"
-                className="inline-flex h-10 w-10 items-center justify-center border border-white/20 hover:bg-timber hover:border-timber hover:text-white transition-colors rounded-sm"
-              >
-                <Linkedin className="h-4 w-4" />
-              </a>
-            </div>
+            {SOCIALS.length > 0 && (
+              <div className="mt-6 flex items-center gap-3">
+                {SOCIALS.map(({ key, label, Icon, href }) => (
+                  <a
+                    key={key}
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    aria-label={label}
+                    className="inline-flex h-10 w-10 items-center justify-center border border-white/20 hover:bg-timber hover:border-timber hover:text-white transition-colors rounded-sm"
+                  >
+                    <Icon className="h-4 w-4" />
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
 
           {COLS.map((col) => (
