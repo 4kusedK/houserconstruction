@@ -36,7 +36,7 @@ export function SiteHeader() {
             className="flex items-center gap-3 shrink-0"
             aria-label="Houser Construction — home"
           >
-            <Logo variant="full" className="h-16 md:h-20 w-auto" />
+            <Logo variant="full" className="h-14 md:h-16 w-auto" />
           </Link>
 
           <nav

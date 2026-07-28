@@ -72,10 +72,10 @@ export const Route = createFileRoute("/")({
           ],
           address: {
             "@type": "PostalAddress",
-            addressLocality: business.address.city,
             addressRegion: business.address.region,
             addressCountry: business.address.country,
           },
+
         }),
       },
 
