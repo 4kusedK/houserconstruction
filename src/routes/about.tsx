@@ -163,7 +163,7 @@ function Story() {
       <div className="relative mx-auto max-w-[1200px] px-6 grid md:grid-cols-12 gap-x-16 gap-y-14 items-start">
         <div className="md:col-span-5">
           <Reveal>
-            <SectionHeading eyebrow="Our story" title="How it started." />
+            <SectionHeading eyebrow="Our story" title="How the company runs." />
           </Reveal>
         </div>
         <div className="md:col-span-6 md:col-start-7">
