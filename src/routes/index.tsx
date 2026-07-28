@@ -286,7 +286,7 @@ function ProjectsGallery() {
   return (
     <section
       id="work"
-      className="relative overflow-hidden py-28 md:py-40 bg-background"
+      className="relative overflow-hidden py-28 md:py-40 bg-sand"
     >
       <span
         aria-hidden
@@ -299,11 +299,11 @@ function ProjectsGallery() {
           <div className="mb-16 md:mb-20">
             <SectionHeading
               eyebrow="Gallery"
-              number="02"
               title="Places we've put our name on."
             />
           </div>
         </Reveal>
+
 
         {/* Featured before & after */}
         <Reveal>
@@ -355,7 +355,7 @@ function ProjectsGallery() {
                   </p>
                   <h3 className="display-md text-navy mt-1">{f.name}</h3>
                 </div>
-                <span className="font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-red inline-flex items-center gap-2 shrink-0">
+                <span className="font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-timber inline-flex items-center gap-2 shrink-0">
                   View project <ArrowRight className="h-4 w-4" />
                 </span>
               </div>
@@ -386,7 +386,7 @@ function ProjectsGallery() {
                       loading="lazy"
                       className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-red/20 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-timber/25 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                   </div>
                   <div className="mt-4">
                     <p className="font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-timber">
@@ -395,8 +395,9 @@ function ProjectsGallery() {
                     <h3 className="display-md text-navy mt-1">{p.name}</h3>
                     <span
                       aria-hidden
-                      className="mt-3 block h-[2px] w-8 bg-red"
+                      className="mt-3 block h-[2px] w-8 bg-timber"
                     />
+
                   </div>
                 </Link>
               </Reveal>
