@@ -1,26 +1,32 @@
 ## What changes
 
-### 1. Sand sections become white with the blueprint grid
-In `src/routes/index.tsx`:
-- Philosophy section (`bg-sand`) → `bg-background blueprint-grid`
-- Gallery section (`bg-sand`) → `bg-background blueprint-grid`
-- Credentials band (`bg-sand-sunk border-y border-timber/20`) → `bg-background blueprint-grid` with a hairline border top/bottom so the band still reads as a distinct strip
+### 1. Grid only on white sections
+Remove `blueprint-grid-dark` everywhere (navy surfaces read as flat navy again):
+- `src/routes/index.tsx`: hero grid overlay (the absolute `blueprint-grid-dark` div), stat/quote band, and any other navy band using it
+- `src/routes/about.tsx`: portrait placeholder frame, story navy band, closing navy band
 
-In `src/routes/about.tsx`:
-- The `bg-sand blueprint-grid` story section → `bg-background blueprint-grid` (keeps its existing grid, just loses the warm tint)
+Keep `blueprint-grid` on all white (`bg-background`) sections — philosophy, gallery, about story, credentials-adjacent white areas.
 
-FAQ and the navy bands stay exactly as they are.
+### 2. All warm (sand/timber) bars become red
+Every small accent bar/rule currently `bg-timber` switches to `bg-red`:
+- Hero: vertical rail bar and the rule under the headline
+- Stat band: top-left bar and the per-stat rules
+- Process/steps rule, contact rule
+- Any remaining timber rules in `about.tsx`
 
-### 2. Timber bars/rules in those sections become red
-Inside the now-white sections, the small accent marks currently on `bg-timber` switch to `bg-red`:
-- Philosophy: the 1×24 bar under the photo, the pull-quote rule
-- Gallery: the small rules under card labels
-- Credentials: the leading rule and border tint
+### 3. Credentials section goes navy
+`src/routes/index.tsx` credentials band: `bg-background blueprint-grid border-y border-hairline` → `bg-navy text-white`, no grid. Labels/chips shift to white/70 with white/15 borders so contrast holds.
 
-Timber stays where it lives on navy (footer headings, hero rail, closing band) so the warm accent isn't wiped out entirely.
+### 4. Sand/timber sub-text → new color
+Warm timber text (card labels, footer headings, contact icons, nav hover, figcaptions) is the "sand" text you're seeing. Replacement, using existing brand tokens:
+- On white: `text-silver` (#7E838A) — neutral, quiet, already the eyebrow color, so labels stop competing with headlines
+- On navy: `text-white/70`
+- Red stays reserved for bars/rules and the primary CTA, so it keeps its punch
 
-### 3. Verify
-Screenshot the homepage at 1280px and 375px to check the grid isn't too loud on large white areas and that the red marks read as deliberate rather than scattered.
+That removes warm brown from the palette entirely and leaves navy + red + neutral grays — the tightest read of the brand.
+
+### 5. Verify
+Screenshot home and about at 1280px and 375px to confirm the navy credentials band doesn't create two heavy navy blocks back to back, and that red marks read deliberate.
 
 ### Technical notes
-Presentation-only class swaps in `src/routes/index.tsx` and `src/routes/about.tsx`. No token changes in `src/styles.css`, so reverting is a clean swap back to `bg-sand` / `bg-timber`.
+Presentation-only class swaps in `src/routes/index.tsx`, `src/routes/about.tsx`, `src/components/site/SiteHeader.tsx`, and `src/components/site/SiteFooter.tsx`. No token changes in `src/styles.css`; the `timber` token stays defined so any of this can be swapped back cleanly.

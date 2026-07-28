@@ -47,14 +47,14 @@ export function SiteHeader() {
               <a
                 key={item.href}
                 href={item.href}
-                className="font-ui text-[13px] font-semibold tracking-[0.06em] text-navy hover:text-timber transition-colors link-underline"
+                className="font-ui text-[13px] font-semibold tracking-[0.06em] text-navy hover:text-red transition-colors link-underline"
               >
                 {item.label}
               </a>
             ))}
             <a
               href={business.phoneHref}
-              className="hidden lg:inline-flex items-center gap-2 font-ui text-[13px] font-semibold tracking-[0.06em] text-navy hover:text-timber transition-colors link-underline"
+              className="hidden lg:inline-flex items-center gap-2 font-ui text-[13px] font-semibold tracking-[0.06em] text-navy hover:text-red transition-colors link-underline"
               aria-label={`Call ${business.phone}`}
             >
               <Phone className="h-4 w-4" />
