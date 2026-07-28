@@ -18,8 +18,8 @@ import {
 } from "@/config/business";
 import { useEffect, useState } from "react";
 
-// TODO: client photo — replace with a real Houser Construction finished home
-// or jobsite once client photography is available.
+// TODO: replace with a real Houser Construction project photo once available.
+// This is a generated placeholder used to set the commercial-Alaska tone.
 import heroImg from "@/assets/hero-home.jpg";
 
 
