@@ -27,7 +27,7 @@ export const business = {
 } as const;
 
 export const stats = [
-  { value: "Family", value2: "Owned & Operated", label: "Owned & Operated" },
+  { value: "Family", label: "Owned & Operated" },
   { value: "Alaska", label: "Built Here, Serving Statewide" },
   { value: "100%", label: "Licensed · Bonded · Insured" },
 ] as const;
