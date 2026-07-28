@@ -225,7 +225,7 @@ function Positioning() {
 
           <div className="md:col-span-5 md:col-start-8 md:pt-6">
             <Reveal delay={0.1}>
-              <blockquote className="border-l-2 border-red pl-4">
+              <blockquote className="border-l-2 border-timber pl-4">
                 <p className="display-md italic text-navy">
                   &ldquo;The person who walks your site is the person who
                   answers the phone.&rdquo;
@@ -260,7 +260,7 @@ function Positioning() {
 function StatBar() {
   return (
     <section className="relative overflow-hidden bg-navy-deep text-white blueprint-grid-dark">
-      <span aria-hidden className="absolute top-0 left-0 h-1 w-40 bg-red" />
+      <span aria-hidden className="absolute top-0 left-0 h-1 w-40 bg-timber" />
       <div className="relative mx-auto max-w-[1200px] px-6 py-16 md:py-24 grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-y-0 md:divide-x md:divide-white/10">
         {stats.map((s, i) => (
           <Reveal key={s.label} delay={i * 0.08}>

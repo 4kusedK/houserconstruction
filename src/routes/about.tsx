@@ -163,7 +163,7 @@ function Story() {
       <div className="relative mx-auto max-w-[1200px] px-6 grid md:grid-cols-12 gap-x-16 gap-y-14 items-start">
         <div className="md:col-span-5">
           <Reveal>
-            <SectionHeading eyebrow="Our story" number="01" title="How it started." />
+            <SectionHeading eyebrow="Our story" title="How it started." />
           </Reveal>
         </div>
         <div className="md:col-span-6 md:col-start-7">
@@ -221,7 +221,6 @@ function Owners() {
         <Reveal>
           <SectionHeading
             eyebrow="The owners"
-            number="02"
             title="Who you'll be working with."
             onDark
           />
@@ -274,7 +273,6 @@ function Values() {
           <div className="mb-16 md:mb-20">
             <SectionHeading
               eyebrow="What we hold to"
-              number="03"
               title="Three things that don't move."
             />
           </div>
