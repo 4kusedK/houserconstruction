@@ -18,11 +18,24 @@ export const business = {
     country: "US",
   },
   serviceArea: "Alaska",
+  // Statewide coverage. The hubs below are examples for humans and search
+  // engines — they are NOT a limit on where Houser Construction works.
+  serviceAreaHubs: [
+    "Anchorage",
+    "Eagle River",
+    "Palmer",
+    "Wasilla",
+    "Mat-Su Valley",
+    "Girdwood",
+  ],
+  serviceAreaLine:
+    "Alaska statewide — from Anchorage and Eagle River to Palmer, Wasilla and the Mat-Su Valley, Girdwood, and beyond.",
   regNumber: "Licensed · Bonded · Insured",
+  // Leave blank until real profile URLs are supplied — blank entries are not rendered.
   socials: {
-    instagram: "#",
-    facebook: "#",
-    linkedin: "#",
+    instagram: "",
+    facebook: "",
+    linkedin: "",
   },
 } as const;
 
