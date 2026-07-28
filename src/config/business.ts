@@ -19,11 +19,14 @@ export const business = {
   },
   serviceArea: "Alaska",
   regNumber: "Licensed · Bonded · Insured",
+  // TODO: confirm with client — real Instagram handle and URL.
+  instagramHandle: "@houserconstruction",
   socials: {
-    instagram: "#",
+    instagram: "https://www.instagram.com/",
     facebook: "#",
     linkedin: "#",
   },
+
 } as const;
 
 export const stats = [
