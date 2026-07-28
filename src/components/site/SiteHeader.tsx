@@ -30,13 +30,14 @@ export function SiteHeader() {
   return (
     <>
       <header className="fixed top-0 inset-x-0 z-40 bg-white border-b border-hairline">
-        <div className="mx-auto max-w-[1200px] px-6 flex items-center justify-between h-16 md:h-20 overflow-visible">
+        <div className="mx-auto max-w-[1200px] px-6 flex items-center justify-between h-20 md:h-24 overflow-visible">
           <Link
             to="/"
             className="flex items-center gap-3 shrink-0"
             aria-label="Houser Construction — home"
           >
-            <Logo variant="full" className="h-14 md:h-16 w-auto" />
+            <Logo variant="full" className="h-16 md:h-20 w-auto" />
+
           </Link>
 
           <nav
