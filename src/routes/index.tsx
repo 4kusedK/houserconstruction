@@ -24,7 +24,6 @@ import heroImg from "@/assets/hero-home.jpg";
 
 
 // TODO: confirm founding year with client.
-const FOUNDED_YEAR = "2013";
 
 const SITE_URL = "https://houserconstruction.net";
 const OG_IMAGE = `${SITE_URL}/og-houser-construction.jpg`;
