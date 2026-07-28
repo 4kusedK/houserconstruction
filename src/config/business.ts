@@ -3,10 +3,10 @@
 export const business = {
   name: "Houser Construction",
   legalName: "Houser Construction LLC",
-  tagline: "Built to last.",
+  tagline: "Trusted to serve with excellence.",
   secondaryTagline: "The old is gone, the new has come.",
   description:
-    "Houser Construction is a licensed Alaska general contractor. We handle new builds, remodels, and development work for homeowners, businesses, and public agencies across the state.",
+    "Houser Construction is a family owned, licensed Alaska general contractor. We build new homes and commercial spaces, restore the ones already standing, and take on real estate development across the state.",
   phone: "(907) 310-6828",
   phoneHref: "tel:+19073106828",
   // TODO: swap to hello@houserconstruction.com once the domain is live.
@@ -27,9 +27,8 @@ export const business = {
 } as const;
 
 export const stats = [
-  { value: "12+", label: "Years Experience" },
-  { value: "AK", label: "Statewide Coverage" },
-  { value: "3", label: "Sectors Served" },
+  { value: "Family", value2: "Owned & Operated", label: "Owned & Operated" },
+  { value: "Alaska", label: "Built Here, Serving Statewide" },
   { value: "100%", label: "Licensed · Bonded · Insured" },
 ] as const;
 
