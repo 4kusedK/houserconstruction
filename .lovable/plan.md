@@ -1,83 +1,52 @@
 ## My take
 
-Strong brief — the core insight is right: the site is well-built but generic, and specificity (names, towns, real places) is what makes a contractor site convincing. I'd do almost all of it. Three notes first:
+Strong brief — I'd do essentially all of it. The three highest-value items are removing the fabricated testimonials, moving the gallery onto `sand`, and halving the red. Two notes:
 
-**Already done in the last pass** (section 8 is mostly stale):
+- **Testimonials:** agreed, fabricated named quotes on a live commercial site are a real liability. Empty array + component returns `null`.
+- **Handshake:** §4 says use the local `src/assets/promise-handshake.jpg`, but you also want a different handshake photo. I'll do both — replace the local asset file with a new image (a Black hand and a white hand meeting), keep it a local import, drop the Unsplash constant.
 
-- Canonical and `og:url` are already absolute on both routes.
-- Homepage/root `og:image` already points at a local `og-houser-construction.jpg` on our domain; About uses the same local asset, not Unsplash.
-- About already has its own `twitter:title` / `twitter:description`.
-- Footer socials, Careers, Privacy, Terms are already gone — no `href="#"` remains.
-- About crew alt text already reads as a neutral reference photo.
-- `areaServed` already lists Anchorage, Eagle River, Palmer, Wasilla, Mat-Su Valley, Girdwood, plus State: Alaska.
-- Projects 05 and 06 ("Coming Soon") are already removed — four remain.
-
-So section 8 and 9 are complete; I'll verify rather than rebuild them.
-
-**One disagreement.** Merging the Credentials strip into the value bar contradicts "no sections removed," and the value-bar cell would have to drop "100% Licensed · Bonded · Insured" to make room for Anchorage. My call: keep all three sections, but say it differently in each place — value bar takes the towns, the Credentials strip stays as the place that carries license/bond/insurance detail, footer chips stay. That removes the repetition without deleting a section. Say the word if you'd rather I delete the strip.
-
-**TODO placeholders.** Founding year, real project names/locations, real client names, and the hero photo all get visible `TODO:` comments in code so David's answers slot straight in.
+Verified against the code: `HANDSHAKE_IMG` and `HERO_IMG` are indeed hardcoded Unsplash URLs; blueprint grid is on five sections (philosophy, stat bar, testimonials, closing, contact — hero is the sixth surface); `--sand`, `--sand-sunk`, `--timber` tokens all exist and timber is barely used.
 
 ---
 
 ## Plan
 
-### 1. Hero
+### 1. Imagery
+- **Hero:** new photo — a finished building rather than the current one. Marked `TODO: client photo`.
+- **Handshake:** generate/source a warm close-crop handshake between a Black person and a white person, save over `src/assets/promise-handshake.jpg`, import it in `index.tsx`, delete `HANDSHAKE_IMG`, write accurate alt text.
 
-- Delete the "Family Owned · Alaska" chip; keep the rotated left rail.
-- Eyebrow becomes `Steve & David Houser · Since {YEAR}` with a TODO for the year.
-- Fix the double space in the H1.
-- Paragraph opens "A father-and-son contractor…".
-- Swap the commercial concrete-pour photo for a finished Alaska home or commercial building or jobsite (Unsplash), marked TODO: client photo.
+### 2. Testimonials removed
+`testimonials = [] as const` with the TODO comment; `Testimonials` returns `null` on empty. Section disappears entirely.
 
-### 2. Header
+### 3. Statewide, no city base
+- Schema `address` drops `addressLocality`, keeps `addressRegion: "AK"` + country; `areaServed` unchanged.
+- `business.address.city` removed; `serviceArea` phrasing made explicitly base-less.
+- Stat bar middle: `Statewide` / `Wherever the job is`.
+- Footer Office block → statewide line (town names stay for search).
 
-- Logo to `h-14 md:h-16`; nav letter-spacing down to ~`0.06em` with a lighter, less shouty treatment so the logo leads.
+### 4. Commercial weight
+New FAQ "Do you take on commercial projects?" (named in the FAQPage JSON-LD), commercial category on a gallery item, and commercial named in the hero paragraph. Hero stays residential visually.
 
-### 3. Value bar
+### 5. Surface rhythm
+Hero `navy-deep` → Philosophy `sand` → Stat bar `navy-deep` → Gallery `sand` → Credentials `sand-sunk` (warm hairlines) → FAQ `background` → Closing + Contact merged into one `navy` section split by `border-t border-white/12`.
 
-- Middle column: value `Anchorage`, label `Mat-Su · Palmer · Wasilla`.
-- Credentials strip stays (see note above).
+### 6. Blueprint grid on two sections
+Hero and stat bar only; removed from philosophy, closing, contact (testimonials go away anyway).
 
-### 4. Philosophy
+### 7. Ghost numbers only
+Drop the `number` prop from every `SectionHeading` usage; watermarks carry the sequence. `SectionHeading` keeps the prop, just unused.
 
-- Promote David's line to a pull quote: italic, `display-md`, `border-l-2 border-red pl-4`, attributed "David Houser" in eyebrow style beneath.
+### 8. Red halved
+Red kept on: contact button, before/after divider + badge, one rule per section heading, closing/contact top-left rule. Everything else — eyebrow rules, category labels, tile rules, `link-underline`, mail/phone icons — moves to `timber`.
 
-### 5. Gallery — the main change
+### 9. Type
+`display-2xl` weight 800→700; `eyebrow` 13px→11px, tracking 0.18em→0.2em; header logo to `h-14 md:h-16`.
 
-Heading: "Places we've put our name on."
-
-**Featured before/after** (full width, CSS only):
-
-- Two equal images side by side split by a 3px red vertical divider; stacks on mobile with the divider becoming a 3px red horizontal rule.
-- `BEFORE` / `AFTER` labels bottom-left at `text-white/60`; red "Before & After" badge top-left.
-- `h-[180px] md:h-[320px]`; caption row beneath — category · location left, "View project →" in red right.
-
-**Staggered three-up below:**
-
-- `grid-cols-[1.4fr_1fr_1fr]` on md+, single column mobile; heights ~215/150/190px; middle tile `pt-8` to break the top edge.
-- Each tile: image → `{category} · {location}` eyebrow → name in `display-md` → 32px 2px red rule.
-
-**Naming:** all projects renamed to places (Turnagain, Birch Ridge, Government Hill, Palmer Church Hall), with category + town as metadata. Each gets a TODO to confirm the real name and location.
-
-Every tile is a `<Link to="/#contact">` for now, with visible focus states, so `/work` is a one-line swap later.
-
-### 6. Testimonials
-
-Section stays. Attribution becomes first name + last initial + neighborhood (e.g. "Jenna R. · Turnagain"), TODO-marked pending real permission. Card gains a hairline divider and a small circular avatar placeholder with name above, location below.
-
-### 7. FAQ
-
-Add "Do you build in the Mat-Su Valley?" and "Do you do remodels in Anchorage?", each naming the towns in the first sentence. Verify both land in the existing `FAQPage` JSON-LD.
-
-### 8–9. Technical
-
-Verify the already-shipped items above and fix anything that regressed. No new work expected.
+### 10. Closing paragraph
+Town list removed; ends on "...that matters to our family."
 
 ### Checks
-
-375px pass on hero and gallery, build green, no `href="#"`, alt text on every new image.
+375px pass on every section, build green, FAQ schema includes the new entry, alt text and focus states preserved.
 
 ### Technical notes
-
-Files touched: `src/routes/index.tsx`, `src/config/business.ts` (projects, stats, testimonials, faqs), `src/components/site/SiteHeader.tsx`. No new dependencies; gallery is pure grid/height/padding. `src/components/ui/` untouched.
+Files: `src/routes/index.tsx`, `src/config/business.ts`, `src/components/site/SiteFooter.tsx`, `src/components/site/SiteHeader.tsx`, `src/styles.css`, `src/assets/promise-handshake.jpg`. No new dependencies; `src/components/ui/` untouched; `services`/`processSteps` left in place.
