@@ -554,6 +554,7 @@ function FAQ() {
 function ClosingAndContact() {
   return (
     <section className="relative overflow-hidden bg-navy text-white">
+      <span aria-hidden className="navy-depth" />
       <span
         aria-hidden
         className="absolute top-0 left-0 h-1 w-40 md:w-64 bg-red"
