@@ -229,22 +229,24 @@ function Positioning() {
 
 function StatBar() {
   return (
-    <section className="bg-paper-sunk border-y border-hairline">
-      <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-24 grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-y-0 md:divide-x md:divide-hairline">
+    <section className="relative overflow-hidden bg-navy-deep text-white blueprint-grid-dark">
+      <span aria-hidden className="absolute top-0 left-0 h-1 w-40 bg-red" />
+      <div className="relative mx-auto max-w-[1200px] px-6 py-16 md:py-24 grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-y-0 md:divide-x md:divide-white/10">
         {stats.map((s, i) => (
           <div
             key={s.label}
             className={i === 0 ? "md:pr-8" : "md:px-8"}
           >
-            <span className="block h-[2px] w-10 bg-red mb-5" aria-hidden />
-            <div className="display-lg text-navy">{s.value}</div>
-            <div className="eyebrow mt-4">{s.label}</div>
+            <span className="rule-red mb-5" aria-hidden />
+            <div className="display-lg text-white">{s.value}</div>
+            <div className="eyebrow mt-4 text-white/60">{s.label}</div>
           </div>
         ))}
       </div>
     </section>
   );
 }
+
 
 
 function ProjectsGallery() {
