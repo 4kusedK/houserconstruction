@@ -307,8 +307,11 @@ function ProjectsGallery() {
           <div className="mb-16 md:mb-20">
             <SectionHeading
               eyebrow="Gallery"
-              title="Places we've put our name on."
-            />
+              title="Selected work."
+            >
+              Commercial, real estate, and residential projects across Alaska —
+              ground-up builds, restoration, and development.
+            </SectionHeading>
           </div>
         </Reveal>
 
@@ -569,9 +572,9 @@ function ClosingAndContact() {
           </h2>
           <p className="mt-8 text-lg text-white/80 leading-[1.6] max-w-2xl">
             Every structure we put up outlasts the contract that paid for it.
-            Houses become homes, empty lots become neighborhoods, and worn out
-            buildings get another life. That is the part of this work that
-            matters to our family.
+            Storefronts open, empty lots become neighborhoods, and worn out
+            buildings get another life. That is the standard we build to — on
+            every lot, in every borough, for every client.
           </p>
           <p className="mt-12 display-md text-white/90">
             The old is gone. The new has come.
