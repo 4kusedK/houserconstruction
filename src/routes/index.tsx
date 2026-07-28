@@ -180,7 +180,7 @@ function Positioning() {
         <div className="mt-16 md:mt-24 grid md:grid-cols-12 gap-x-16 gap-y-16 items-start">
           <div className="md:col-span-6">
             <Reveal delay={0.05}>
-              <div className="relative overflow-hidden aspect-[4/5]">
+              <div className="relative overflow-hidden aspect-[4/5] photo-frame">
                 <img
                   src={HANDSHAKE_IMG}
                   alt="A Houser Construction contractor shaking hands with a homeowner"
@@ -189,6 +189,7 @@ function Positioning() {
                   height={1408}
                   className="absolute inset-0 h-full w-full object-cover"
                 />
+                <div className="photo-warm absolute inset-0" />
                 <span
                   aria-hidden
                   className="absolute bottom-0 left-0 h-1 w-24 bg-red"
@@ -204,18 +205,21 @@ function Positioning() {
                   The person who walks your site is the person who answers the
                   phone.
                 </p>
+                <p className="mt-4 font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-timber">
+                  — David Houser
+                </p>
               </blockquote>
-              <p className="mt-12 text-lg text-charcoal leading-relaxed">
+              <p className="mt-12 text-lg text-charcoal leading-[1.6]">
                 Houser Construction is family owned and family run. When we tell
                 you how a job will go, that is how it goes.
               </p>
-              <p className="mt-8 text-lg text-charcoal/80 leading-relaxed">
+              <p className="mt-8 text-lg text-charcoal/80 leading-[1.6]">
                 We kept the company small on purpose. Whoever stands behind the
                 finished work still lives in the community it was built for.
               </p>
               <Link
                 to="/about"
-                className="mt-12 inline-flex items-center gap-2 font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-navy hover:text-red transition-colors"
+                className="mt-12 inline-flex items-center gap-2 font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-navy hover:text-timber transition-colors link-underline"
               >
                 Meet the family <ArrowRight className="h-4 w-4" />
               </Link>
@@ -234,14 +238,13 @@ function StatBar() {
       <span aria-hidden className="absolute top-0 left-0 h-1 w-40 bg-red" />
       <div className="relative mx-auto max-w-[1200px] px-6 py-16 md:py-24 grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-y-0 md:divide-x md:divide-white/10">
         {stats.map((s, i) => (
-          <div
-            key={s.label}
-            className={i === 0 ? "md:pr-8" : "md:px-8"}
-          >
-            <span className="rule-red mb-5" aria-hidden />
-            <div className="display-lg text-white">{s.value}</div>
-            <div className="eyebrow mt-4 text-white/60">{s.label}</div>
-          </div>
+          <Reveal key={s.label} delay={i * 0.08}>
+            <div className={i === 0 ? "md:pr-8" : "md:px-8"}>
+              <span className="rule-red mb-5" aria-hidden />
+              <div className="display-lg text-white">{s.value}</div>
+              <div className="eyebrow mt-4 text-white/60">{s.label}</div>
+            </div>
+          </Reveal>
         ))}
       </div>
     </section>
