@@ -381,10 +381,10 @@ function Certifications() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-background border-y border-hairline">
+    <section className="py-16 md:py-24 bg-sand-sunk border-y border-hairline">
       <div className="mx-auto max-w-[1200px] px-6">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
-          <p className="eyebrow text-timber">Credentials</p>
+          <p className="eyebrow">Credentials</p>
           <div className="flex flex-wrap items-center gap-x-8 gap-y-3">
             {items.map((c) => (
               <span
@@ -403,7 +403,7 @@ function Certifications() {
 
 function FAQ() {
   return (
-    <section className="py-28 md:py-40 bg-sand-sunk">
+    <section className="py-28 md:py-40 bg-background">
       <div className="mx-auto max-w-[1200px] px-6 grid md:grid-cols-12 gap-12">
         <div className="md:col-span-4">
           <Reveal>
