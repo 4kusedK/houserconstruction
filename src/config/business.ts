@@ -158,7 +158,7 @@ export const testimonials = [
 export const faqs = [
   {
     q: "What areas does Houser Construction serve?",
-    a: "We work across Alaska. Residential and commercial projects, statewide.",
+    a: "We work across Alaska, statewide. Most of our residential and commercial projects are in Anchorage, Eagle River, Palmer, Wasilla and the wider Mat-Su Valley, and Girdwood, but we travel for the right job anywhere in the state.",
   },
   {
     q: "Is Houser Construction family owned?",
