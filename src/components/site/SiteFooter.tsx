@@ -34,8 +34,9 @@ export function SiteFooter() {
           <div className="md:col-span-5">
             <Logo variant="full-white" className="h-12 w-auto" />
             <p className="mt-6 text-sm text-white/70 max-w-sm leading-relaxed">
-              A family owned Alaska general contractor. We build, restore, and
-              stand behind our work anywhere in the state.
+              Licensed Alaska general contractor working statewide on
+              commercial, real estate, and residential projects. Built and run
+              by David and Steve Houser.
             </p>
 
 
@@ -81,9 +82,9 @@ export function SiteFooter() {
               Alaska statewide — no fixed base
               <br />
               <span className="text-white/60">
-                Residential and commercial work in Anchorage, Eagle River,
-                Palmer, Wasilla and the Mat-Su Valley, Girdwood, and wherever
-                else the contract takes us.
+                Commercial, real estate, and residential work in Anchorage,
+                Eagle River, Palmer, Wasilla and the Mat-Su Valley, Girdwood,
+                and wherever else the contract takes us.
               </span>
             </address>
           </div>

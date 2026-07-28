@@ -92,11 +92,11 @@ export const featuredProject = {
   beforeImage:
     "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1600&q=70",
   beforeAlt:
-    "Reference photo of a home interior before renovation. Client photography coming soon.",
+    "Reference photography of a building interior before renovation, representing the scope of a whole-property remodel.",
   afterImage:
     "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=70",
   afterAlt:
-    "Reference photo of a finished, renovated home interior. Client photography coming soon.",
+    "Reference photography of a finished, renovated interior, representing the scope of a whole-property remodel.",
 } as const;
 
 export const projects = [
