@@ -49,32 +49,32 @@ export const stats = [
 
 export const services = [
   {
-    slug: "new-construction",
-    title: "New Construction",
-    blurb:
-      "Ground-up homes and commercial buildings. One crew from permit through final walkthrough, so nothing falls between trades.",
-  },
-  {
-    slug: "remodeling",
-    title: "Remodeling & Renovation",
-    blurb:
-      "Whole-home renovations, additions, and tenant improvements. We work in older buildings without cutting corners on what's behind the walls.",
-  },
-  {
     slug: "commercial",
     title: "Commercial",
     blurb:
-      "Retail, office, and mixed-use builds. Delivered on schedule and ready for inspection the first time through.",
+      "Retail, office, mixed-use, and institutional builds, plus tenant improvements and commercial restoration. Delivered on schedule and ready for inspection the first time through.",
   },
   {
     slug: "real-estate",
-    title: "Real Estate & Subdivisions",
+    title: "Real Estate & Development",
     blurb:
-      "Development work ranging from single-property flips to full residential subdivisions. Before-and-afters you can walk through.",
+      "Development work ranging from single-property repositioning to full residential subdivisions. Before-and-afters you can walk through.",
+  },
+  {
+    slug: "new-construction",
+    title: "New Construction",
+    blurb:
+      "Ground-up commercial buildings and homes. One crew from permit through final walkthrough, so nothing falls between trades.",
+  },
+  {
+    slug: "remodeling",
+    title: "Remodeling & Restoration",
+    blurb:
+      "Tenant improvements, whole-building renovations, and additions. We work in older buildings without cutting corners on what's behind the walls.",
   },
   {
     slug: "decks-fences",
-    title: "Decks, Fences & Exteriors",
+    title: "Exteriors & Site Work",
     blurb:
       "Exterior carpentry built for Alaskan weather. Decks, fences, and outdoor structures that still look right after a few winters.",
   },
