@@ -212,74 +212,30 @@ function StatBar() {
 
 
 function ProjectsGallery() {
-  // Asymmetric magazine grid: 6-col track.
-  // p1 full, p2 half, p3 half, p4 2/3, p5 1/3, p6 full.
-  const spans = [
-    "md:col-span-6",
-    "md:col-span-3",
-    "md:col-span-3",
-    "md:col-span-4",
-    "md:col-span-2",
-    "md:col-span-6",
-  ];
-  const aspects = [
-    "aspect-[16/7]",
-    "aspect-[4/3]",
-    "aspect-[4/3]",
-    "aspect-[3/2]",
-    "aspect-[3/4]",
-    "aspect-[16/7]",
-  ];
-
   return (
     <section id="work" className="py-24 md:py-32 bg-paper-sunk">
       <div className="mx-auto max-w-[1200px] px-6">
         <Reveal>
           <div className="mb-14">
-            <SectionHeading
-              eyebrow="Work"
-              number="02"
-              title="Recent projects."
-            />
+            <SectionHeading eyebrow="Gallery" number="02" title="Our work." />
           </div>
         </Reveal>
-      </div>
 
-      <div className="mx-auto max-w-[1200px] px-6">
         <ul
-          aria-label="Selected projects"
-          className="grid grid-cols-1 md:grid-cols-6 gap-6 list-none p-0"
+          aria-label="Photo gallery of Houser Construction work"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 list-none p-0"
         >
           {projects.map((p, i) => (
-            <li key={p.n} className={spans[i]}>
-              <Reveal delay={i * 0.05}>
-                <figure
-                  className={`group relative overflow-hidden bg-navy ${aspects[i]}`}
-                >
+            <li key={p.n}>
+              <Reveal delay={(i % 3) * 0.05}>
+                <div className="group relative overflow-hidden aspect-[4/3] bg-navy border border-hairline">
                   <img
                     src={p.image}
-                    alt={`${p.name} — ${p.category} project by Houser Construction`}
+                    alt={`${p.name} by Houser Construction`}
                     loading="lazy"
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/85 via-navy-deep/20 to-transparent" />
-                  <figcaption className="absolute inset-0 p-6 md:p-8 flex flex-col justify-between text-white">
-                    <div className="flex items-center gap-2">
-                      <span className="font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-white/70 tabular-nums">
-                        {p.n} / 0{projects.length}
-                      </span>
-                    </div>
-                    <div>
-                      <div className="eyebrow text-white/70 mb-2">
-                        {p.category}
-                      </div>
-                      <h3 className="font-display text-2xl md:text-3xl font-bold">
-                        {p.name}
-                      </h3>
-                      <div className="mt-4 h-[2px] w-10 bg-red transition-all duration-300 group-hover:w-20" />
-                    </div>
-                  </figcaption>
-                </figure>
+                </div>
               </Reveal>
             </li>
           ))}
@@ -288,6 +244,7 @@ function ProjectsGallery() {
     </section>
   );
 }
+
 
 
 function initials(name: string) {
