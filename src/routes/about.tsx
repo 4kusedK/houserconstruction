@@ -250,7 +250,7 @@ function Owners() {
             <div className="relative aspect-[16/7] overflow-hidden border border-white/10 photo-frame">
               <img
                 src={CREW_IMG}
-                alt="Houser Construction crew on an Alaska job site"
+                alt="Reference photo of an Alaska job site. Photography of the Houser Construction crew is coming soon."
                 loading="lazy"
                 className="absolute inset-0 h-full w-full object-cover"
               />
