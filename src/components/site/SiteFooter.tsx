@@ -23,59 +23,63 @@ export function SiteFooter() {
               stand behind our work across {business.serviceArea}.
             </p>
 
-            <div className="mt-6 flex items-center gap-3">
-              <a
-                href={business.socials.instagram}
-                aria-label="Instagram"
-                className="inline-flex h-10 w-10 items-center justify-center border border-white/20 hover:border-red hover:text-red transition-colors rounded-sm"
-              >
+            <a
+              href={business.socials.instagram}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="mt-6 inline-flex items-center gap-3 text-sm text-white/85 hover:text-red-bright transition-colors"
+            >
+              <span className="inline-flex h-10 w-10 items-center justify-center border border-white/20 rounded-sm">
                 <Instagram className="h-4 w-4" />
-              </a>
-              <a
-                href={business.socials.facebook}
-                aria-label="Facebook"
-                className="inline-flex h-10 w-10 items-center justify-center border border-white/20 hover:border-red hover:text-red transition-colors rounded-sm"
-              >
-                <Facebook className="h-4 w-4" />
-              </a>
-              <a
-                href={business.socials.linkedin}
-                aria-label="LinkedIn"
-                className="inline-flex h-10 w-10 items-center justify-center border border-white/20 hover:border-red hover:text-red transition-colors rounded-sm"
-              >
-                <Linkedin className="h-4 w-4" />
-              </a>
-            </div>
+              </span>
+              <span className="font-ui text-[12px] font-bold uppercase tracking-[0.14em]">
+                {business.instagramHandle}
+              </span>
+            </a>
           </div>
 
-          {COLS.map((col) => (
-            <div key={col.heading} className="md:col-span-3">
-              <h3 className="eyebrow text-white/60 mb-4">{col.heading}</h3>
-              <ul className="space-y-3">
-                {col.links.map((l) => (
-                  <li key={l.label}>
-                    <a
-                      href={l.href}
-                      className="text-sm text-white/85 hover:text-white transition-colors"
-                    >
-                      {l.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          <div className="md:col-span-3">
+            <h3 className="eyebrow text-white/60 mb-4">Pages</h3>
+            <ul className="space-y-3">
+              {PAGES.map((p) => (
+                <li key={p.to}>
+                  <Link
+                    to={p.to}
+                    className="text-sm text-white/85 hover:text-white transition-colors"
+                  >
+                    {p.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-          <div className="md:col-span-4 md:col-start-9">
-            <h3 className="eyebrow text-white/60 mb-4">Office</h3>
-            <address className="not-italic text-sm text-white/85 leading-relaxed">
-              Based in {business.address.city}
-              <br />
-              <span className="text-white/60">
-                Serving {business.serviceArea} statewide
-              </span>
+          <div className="md:col-span-4">
+            <h3 className="eyebrow text-white/60 mb-4">Contact</h3>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href={business.phoneHref}
+                  className="text-sm text-white/85 hover:text-white transition-colors"
+                >
+                  {business.phone}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={business.emailHref}
+                  className="text-sm text-white/85 hover:text-white transition-colors break-all"
+                >
+                  {business.email}
+                </a>
+              </li>
+            </ul>
+            <address className="not-italic text-sm text-white/60 leading-relaxed mt-4">
+              Based in {business.address.city} · Serving{" "}
+              {business.serviceArea} statewide
             </address>
           </div>
+
 
         </div>
 
