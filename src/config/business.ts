@@ -86,7 +86,7 @@ export const projects = [
     name: "Cedar Fence Install",
     category: "Exterior",
     image:
-      "https://images.unsplash.com/photo-1590725175735-df0f6f7dfd1c?auto=format&fit=crop&w=1600&q=70",
+      "https://images.unsplash.com/photo-1416331108676-a22ccb276e35?auto=format&fit=crop&w=1600&q=70",
   },
   {
     n: "04",
