@@ -447,7 +447,7 @@ function Testimonials() {
                 <blockquote className="font-display text-xl leading-snug text-white flex-1">
                   &ldquo;{t.quote}&rdquo;
                 </blockquote>
-                <figcaption className="mt-8 flex items-center gap-4">
+                <figcaption className="mt-8 pt-6 border-t border-white/15 flex items-center gap-4">
                   <span
                     aria-hidden
                     className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-navy-mid border border-white/15 font-display text-sm font-bold text-white tabular-nums"
