@@ -150,7 +150,7 @@ function Positioning() {
               <span className="h-[2px] w-8 bg-red" aria-hidden />
               <span className="eyebrow">
                 <span className="text-navy">01</span>
-                <span className="mx-2 opacity-60">—</span>Our word
+                <span className="mx-2 opacity-60">—</span>Our philosophy
               </span>
             </div>
             <h2 className="display-lg text-navy">
@@ -172,8 +172,8 @@ function Positioning() {
           <Reveal delay={0.1}>
             <div className="relative overflow-hidden aspect-[4/5]">
               <img
-                src={handshakeImg}
-                alt="A Houser Construction contractor shaking hands with a homeowner at an Alaska job site"
+                src={HANDSHAKE_IMG}
+                alt="A Houser Construction contractor shaking hands with a homeowner"
                 loading="lazy"
                 width={1200}
                 height={1408}
