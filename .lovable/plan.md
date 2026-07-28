@@ -1,51 +1,83 @@
-## Answers to your bracketed notes
+## My take
 
-**Testimonials stay.** You and the client like them — I'll leave the Client voice section as-is. I'd only add attribution (first name + town) when David supplies real ones.
+Strong brief — the core insight is right: the site is well-built but generic, and specificity (names, towns, real places) is what makes a contractor site convincing. I'd do almost all of it. Three notes first:
 
-**Privacy/Terms.** Agreed, don't lose the thread. I'll remove the dead footer links now and drop a `TODO-LEGAL.md` at the repo root noting exactly when they become required (contact form that stores data, analytics/tracking scripts, or any email capture). If we wire up Formspree or Google Analytics later, that's the trigger.
+**Already done in the last pass** (section 8 is mostly stale):
 
-**Statewide vs. towns.** Yes, still list towns — but framed as *statewide with hubs*, not as a limited service area. Search doesn't have a "whole state" query; people type "general contractor Wasilla." A page that says "Statewide — from Anchorage and the Mat-Su Valley to the Kenai and beyond" reads truthfully to a human *and* gives crawlers the town tokens. It never claims he's regional. Schema handles this cleanly: `areaServed` becomes the `State: Alaska` plus a few `City` entries as examples.
+- Canonical and `og:url` are already absolute on both routes.
+- Homepage/root `og:image` already points at a local `og-houser-construction.jpg` on our domain; About uses the same local asset, not Unsplash.
+- About already has its own `twitter:title` / `twitter:description`.
+- Footer socials, Careers, Privacy, Terms are already gone — no `href="#"` remains.
+- About crew alt text already reads as a neutral reference photo.
+- `areaServed` already lists Anchorage, Eagle River, Palmer, Wasilla, Mat-Su Valley, Girdwood, plus State: Alaska.
+- Projects 05 and 06 ("Coming Soon") are already removed — four remain.
 
-**FAQ.** Keeping your existing questions. Instead of adding two location FAQs, I'll fold the coverage answer into one existing FAQ's body copy (the "where do you work" style one) so the statewide + hub-town language lands in `FAQPage` schema without new questions. If none of the current FAQs is a natural fit, I'll add exactly one: "Do you work outside Anchorage?" — answered statewide.
+So section 8 and 9 are complete; I'll verify rather than rebuild them.
+
+**One disagreement.** Merging the Credentials strip into the value bar contradicts "no sections removed," and the value-bar cell would have to drop "100% Licensed · Bonded · Insured" to make room for Anchorage. My call: keep all three sections, but say it differently in each place — value bar takes the towns, the Credentials strip stays as the place that carries license/bond/insurance detail, footer chips stay. That removes the repetition without deleting a section. Say the word if you'd rather I delete the strip.
+
+**TODO placeholders.** Founding year, real project names/locations, real client names, and the hero photo all get visible `TODO:` comments in code so David's answers slot straight in.
 
 ---
 
-## Revised plan
+## Plan
 
-### 1. Credibility
+### 1. Hero
 
-- Keep the testimonials (unchanged).
-- Fix the crew photo alt text so it doesn't assert something the caption denies — describe it as a reference/job-site photo.
-- Drop projects 05 and 06 ("Coming Soon") from the homepage gallery until real work replaces them.
+- Delete the "Family Owned · Alaska" chip; keep the rotated left rail.
+- Eyebrow becomes `Steve & David Houser · Since {YEAR}` with a TODO for the year.
+- Fix the double space in the H1.
+- Paragraph opens "A father-and-son contractor…".
+- Swap the commercial concrete-pour photo for a finished Alaska home or commercial building or jobsite (Unsplash), marked TODO: client photo.
 
-### 2. Metadata correctness
+### 2. Header
 
-- Absolute `canonical` + `og:url`: `https://houserconstruction.net/` on Home, `https://houserconstruction.net/about` on About.
-- Add route-specific `twitter:title` / `twitter:description` to About so it stops inheriting the homepage's.
-- Generate a branded 1200×630 OG image, ship it as a local asset, and use its absolute URL for `og:image` / `twitter:image` on the leaf routes — replacing the r2.dev preview screenshot and About's hotlinked Unsplash image.
-- Note: platforms cache link previews; shared links won't update until they re-scrape (can be forced in each platform's debugger).
+- Logo to `h-14 md:h-16`; nav letter-spacing down to ~`0.06em` with a lighter, less shouty treatment so the logo leads.
 
-### 3. Dead links
+### 3. Value bar
 
-- Socials: render only `business.socials` entries with a real URL — the row hides itself until David provides Instagram/Facebook.
-- Remove Careers from the footer.
-- Remove Privacy and Terms links; add `TODO-LEGAL.md` documenting the conditions that make them required.
+- Middle column: value `Anchorage`, label `Mat-Su · Palmer · Wasilla`.
+- Credentials strip stays (see note above).
 
-### 4. Local SEO (statewide framing)
+### 4. Philosophy
 
-- Add a `serviceArea` block to `business.ts`: statewide primary, with hub examples (Anchorage, Eagle River, Palmer, Wasilla / Mat-Su Valley, Girdwood).
-- Work that phrasing into body copy — closing band and the footer Office block — always as "Alaska statewide, from X to Y," never as a limited region.
-- Expand `areaServed` in the `GeneralContractor` JSON-LD to `State: Alaska` plus `City` entries.
-- Fold statewide coverage language into an existing FAQ answer (or add one coverage FAQ if none fits).
-- Client action, off-site: claim the Google Business Profile using the exact phone and email on the site. Highest-leverage item on this list.
+- Promote David's line to a pull quote: italic, `display-md`, `border-l-2 border-red pl-4`, attributed "David Houser" in eyebrow style beneath.
 
-### 5. `/work` (separate build, after real photos)
+### 5. Gallery — the main change
 
-- `src/config/projects.ts` content model (slug, name, town, category, scope, images, optional before/after pair).
-- `/work` index with filterable grid; homepage `#work` becomes a teaser linking there.
-- `/work/$slug` detail route with per-project `head()`.
-- `HOW-TO-ADD-A-PROJECT.md` for handoff.
+Heading: "Places we've put our name on."
+
+**Featured before/after** (full width, CSS only):
+
+- Two equal images side by side split by a 3px red vertical divider; stacks on mobile with the divider becoming a 3px red horizontal rule.
+- `BEFORE` / `AFTER` labels bottom-left at `text-white/60`; red "Before & After" badge top-left.
+- `h-[180px] md:h-[320px]`; caption row beneath — category · location left, "View project →" in red right.
+
+**Staggered three-up below:**
+
+- `grid-cols-[1.4fr_1fr_1fr]` on md+, single column mobile; heights ~215/150/190px; middle tile `pt-8` to break the top edge.
+- Each tile: image → `{category} · {location}` eyebrow → name in `display-md` → 32px 2px red rule.
+
+**Naming:** all projects renamed to places (Turnagain, Birch Ridge, Government Hill, Palmer Church Hall), with category + town as metadata. Each gets a TODO to confirm the real name and location.
+
+Every tile is a `<Link to="/#contact">` for now, with visible focus states, so `/work` is a one-line swap later.
+
+### 6. Testimonials
+
+Section stays. Attribution becomes first name + last initial + neighborhood (e.g. "Jenna R. · Turnagain"), TODO-marked pending real permission. Card gains a hairline divider and a small circular avatar placeholder with name above, location below.
+
+### 7. FAQ
+
+Add "Do you build in the Mat-Su Valley?" and "Do you do remodels in Anchorage?", each naming the towns in the first sentence. Verify both land in the existing `FAQPage` JSON-LD.
+
+### 8–9. Technical
+
+Verify the already-shipped items above and fix anything that regressed. No new work expected.
+
+### Checks
+
+375px pass on hero and gallery, build green, no `href="#"`, alt text on every new image.
 
 ### Technical notes
 
-Steps 1–4 are one pass touching `src/config/business.ts`, `src/routes/index.tsx`, `src/routes/about.tsx`, `src/routes/__root.tsx`, `src/components/site/SiteFooter.tsx`, plus one new OG image asset and `TODO-LEGAL.md`. `sitemap.xml` updates when `/work` lands in step 5.
+Files touched: `src/routes/index.tsx`, `src/config/business.ts` (projects, stats, testimonials, faqs), `src/components/site/SiteHeader.tsx`. No new dependencies; gallery is pure grid/height/padding. `src/components/ui/` untouched.

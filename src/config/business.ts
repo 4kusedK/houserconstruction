@@ -41,7 +41,7 @@ export const business = {
 
 export const stats = [
   { value: "Family", label: "Owned & Operated" },
-  { value: "Alaska", label: "Built Here, Serving Statewide" },
+  { value: "Anchorage", label: "Mat-Su · Palmer · Wasilla" },
   { value: "100%", label: "Licensed · Bonded · Insured" },
 ] as const;
 
@@ -79,32 +79,50 @@ export const services = [
   },
 ] as const;
 
+// TODO: confirm real project names, locations and photography with client.
+// Projects are named after places, never services — the category and town
+// carry the "what and where" underneath.
+export const featuredProject = {
+  n: "00",
+  // TODO: confirm real project name and location with client.
+  name: "Turnagain",
+  category: "Whole-home remodel",
+  location: "Anchorage, AK",
+  beforeImage:
+    "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1600&q=70",
+  beforeAlt:
+    "Reference photo of a home interior before renovation. Client photography coming soon.",
+  afterImage:
+    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=70",
+  afterAlt:
+    "Reference photo of a finished, renovated home interior. Client photography coming soon.",
+} as const;
+
 export const projects = [
   {
     n: "01",
-    name: "Residential Remodel",
-    category: "Before & After",
-    image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=70",
-  },
-  {
-    n: "02",
-    name: "Custom Deck Build",
-    category: "Exterior",
+    // TODO: confirm real project name and location with client.
+    name: "Birch Ridge",
+    category: "New construction",
+    location: "Palmer, AK",
     image:
       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=70",
   },
   {
-    n: "03",
-    name: "Cedar Fence Install",
-    category: "Exterior",
+    n: "02",
+    // TODO: confirm real project name and location with client.
+    name: "Government Hill",
+    category: "Exterior & decks",
+    location: "Anchorage, AK",
     image:
       "https://images.unsplash.com/photo-1416331108676-a22ccb276e35?auto=format&fit=crop&w=1600&q=70",
   },
   {
-    n: "04",
-    name: "Real Estate Renovation",
-    category: "Residential",
+    n: "03",
+    // TODO: confirm real project name and location with client.
+    name: "Palmer Church Hall",
+    category: "Commercial restoration",
+    location: "Palmer, AK",
     image:
       "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=70",
   },
@@ -133,24 +151,25 @@ export const processSteps = [
   },
 ] as const;
 
+// TODO: replace with real client names and towns, with written permission.
 export const testimonials = [
   {
     quote:
       "Clear communication from day one, and the finished remodel looks better than we imagined. Highly recommend.",
-    name: "Residential Client",
-    role: "Anchorage, AK",
+    name: "Jenna R.",
+    role: "Turnagain, Anchorage",
   },
   {
     quote:
       "Deck turned out solid and built to last through Alaska winters. Fair pricing and an honest timeline.",
-    name: "Homeowner",
-    role: "Mat-Su Valley",
+    name: "Mark T.",
+    role: "Wasilla, Mat-Su Valley",
   },
   {
     quote:
       "Professional, on time, and cleaned up after themselves every day. We'll be calling them for the next project.",
-    name: "Property Owner",
-    role: "Alaska",
+    name: "Dana K.",
+    role: "Palmer, AK",
   },
 ] as const;
 
@@ -158,6 +177,14 @@ export const faqs = [
   {
     q: "What areas does Houser Construction serve?",
     a: "We work across Alaska, statewide. Most of our residential and commercial projects are in Anchorage, Eagle River, Palmer, Wasilla and the wider Mat-Su Valley, and Girdwood, but we travel for the right job anywhere in the state.",
+  },
+  {
+    q: "Do you build in the Mat-Su Valley?",
+    a: "Yes. We build throughout the Mat-Su Valley, including Palmer and Wasilla, and the Valley is one of our busiest areas alongside Anchorage. New construction, additions, and exterior work are all regular work for us out there.",
+  },
+  {
+    q: "Do you do remodels in Anchorage?",
+    a: "Yes. Anchorage remodels are a core part of what we do, from single-room renovations in Turnagain and Government Hill to whole-home remodels across the city, and we also remodel in Eagle River and Girdwood.",
   },
   {
     q: "Is Houser Construction family owned?",

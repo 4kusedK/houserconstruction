@@ -12,13 +12,19 @@ import {
   business,
   stats,
   projects,
+  featuredProject,
   testimonials,
   faqs,
 } from "@/config/business";
 import { useEffect, useState } from "react";
 
+// TODO: client photo — replace with a real Houser Construction residential
+// jobsite or finished Alaska home once photography is available.
 const HERO_IMG =
-  "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=2400&q=75";
+  "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=2400&q=75";
+
+// TODO: confirm founding year with client.
+const FOUNDED_YEAR = "2013";
 
 const SITE_URL = "https://houserconstruction.net";
 const OG_IMAGE = `${SITE_URL}/og-houser-construction.jpg`;
@@ -119,7 +125,7 @@ function Hero() {
     >
       <img
         src={HERO_IMG}
-        alt="Modern architectural build at dusk"
+        alt="Finished residential home in Alaska"
         className="absolute inset-0 h-full w-full object-cover"
         fetchPriority="high"
       />
@@ -139,7 +145,7 @@ function Hero() {
           <div className="flex items-center gap-3 mb-6">
             <span className="h-[2px] w-10 bg-red" aria-hidden />
             <span className="eyebrow text-white/80">
-              Alaska General Contractor · Family Owned
+              Steve &amp; David Houser · Since {FOUNDED_YEAR}
             </span>
           </div>
           <h1 className="display-2xl text-white">
@@ -148,9 +154,10 @@ function Hero() {
             <span className="text-white/85">with excellence.</span>
           </h1>
           <p className="mt-8 max-w-xl text-lg text-white/85 leading-[1.6]">
-            A family owned Alaska contractor building new homes, restoring the
-            ones already standing, and developing property across the state.
+            A father-and-son contractor building new homes, restoring the
+            ones already standing, and developing property across Alaska.
           </p>
+
           <span className="mt-10 block h-[2px] w-16 bg-red" aria-hidden />
         </div>
       </div>
@@ -214,13 +221,13 @@ function Positioning() {
 
           <div className="md:col-span-5 md:col-start-8 md:pt-6">
             <Reveal delay={0.1}>
-              <blockquote className="border-l-2 border-red pl-6">
-                <p className="display-md text-navy">
-                  The person who walks your site is the person who answers the
-                  phone.
+              <blockquote className="border-l-2 border-red pl-4">
+                <p className="display-md italic text-navy">
+                  &ldquo;The person who walks your site is the person who
+                  answers the phone.&rdquo;
                 </p>
                 <p className="mt-4 font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-timber">
-                  — David Houser
+                  David Houser
                 </p>
               </blockquote>
               <p className="mt-12 text-lg text-charcoal leading-[1.6]">
@@ -267,7 +274,15 @@ function StatBar() {
 
 
 
+// Deliberately unequal heights so the row does not read as a flat grid.
+const TILE_HEIGHTS = [
+  "h-[200px] md:h-[215px]",
+  "h-[200px] md:h-[150px]",
+  "h-[200px] md:h-[190px]",
+] as const;
+
 function ProjectsGallery() {
+  const f = featuredProject;
   return (
     <section
       id="work"
@@ -282,39 +297,108 @@ function ProjectsGallery() {
       <div className="relative mx-auto max-w-[1200px] px-6">
         <Reveal>
           <div className="mb-16 md:mb-20">
-            <SectionHeading eyebrow="Gallery" number="02" title="Our work." />
+            <SectionHeading
+              eyebrow="Gallery"
+              number="02"
+              title="Places we've put our name on."
+            />
           </div>
         </Reveal>
 
+        {/* Featured before & after */}
+        <Reveal>
+          <article className="mb-16 md:mb-24">
+            <Link
+              to="/"
+              hash="contact"
+              aria-label={`${f.name} — ${f.category} in ${f.location}`}
+              className="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red"
+            >
+              <div className="relative overflow-hidden bg-navy photo-frame">
+                <div className="grid grid-cols-1 md:grid-cols-2">
+                  <div className="relative h-[180px] md:h-[320px] overflow-hidden">
+                    <img
+                      src={f.beforeImage}
+                      alt={f.beforeAlt}
+                      loading="lazy"
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+                    />
+                    <span className="absolute bottom-3 left-4 font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-white/60">
+                      Before
+                    </span>
+                  </div>
+                  <div className="relative h-[180px] md:h-[320px] overflow-hidden">
+                    <img
+                      src={f.afterImage}
+                      alt={f.afterAlt}
+                      loading="lazy"
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+                    />
+                    <span className="absolute bottom-3 left-4 font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-white/60">
+                      After
+                    </span>
+                  </div>
+                </div>
+                {/* divider: horizontal on mobile, vertical on desktop */}
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute left-0 right-0 top-[180px] h-[3px] bg-red md:inset-y-0 md:left-1/2 md:right-auto md:top-0 md:h-auto md:w-[3px] md:-translate-x-1/2"
+                />
+                <span className="absolute top-0 left-0 bg-red px-3 py-1.5 font-ui text-[10px] font-bold uppercase tracking-[0.2em] text-white">
+                  Before &amp; After
+                </span>
+              </div>
+              <div className="mt-4 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
+                <div className="min-w-0">
+                  <p className="font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-timber">
+                    {f.category} · {f.location}
+                  </p>
+                  <h3 className="display-md text-navy mt-1">{f.name}</h3>
+                </div>
+                <span className="font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-red inline-flex items-center gap-2 shrink-0">
+                  View project <ArrowRight className="h-4 w-4" />
+                </span>
+              </div>
+            </Link>
+          </article>
+        </Reveal>
 
+        {/* Staggered three-up */}
         <ul
           aria-label="Photo gallery of Houser Construction work"
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 list-none p-0"
+          className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr_1fr] gap-8 md:gap-10 list-none p-0"
         >
           {projects.map((p, i) => (
-            <li key={p.n}>
-              <Reveal delay={(i % 3) * 0.05}>
-                <div className="group relative overflow-hidden aspect-[4/3] bg-navy photo-frame shadow-sm transition-shadow duration-300 hover:shadow-md">
-                  <img
-                    src={p.image}
-                    alt={`${p.name} by Houser Construction`}
-                    loading="lazy"
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-red/20 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                  <span
-                    aria-hidden
-                    className="absolute bottom-0 left-0 h-1 w-0 bg-red transition-all duration-500 group-hover:w-16"
-                  />
-                </div>
-                <div className="mt-4">
-                  <p className="font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-timber">
-                    {p.category}
-                  </p>
-                  <h3 className="font-display text-lg font-bold text-navy mt-1">
-                    {p.name}
-                  </h3>
-                </div>
+            <li key={p.n} className={i === 1 ? "md:pt-8" : undefined}>
+              <Reveal delay={i * 0.05}>
+                <Link
+                  to="/"
+                  hash="contact"
+                  aria-label={`${p.name} — ${p.category} in ${p.location}`}
+                  className="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red"
+                >
+                  <div
+                    className={`relative overflow-hidden bg-navy photo-frame shadow-sm transition-shadow duration-300 hover:shadow-md ${TILE_HEIGHTS[i] ?? "h-[200px] md:h-[190px]"}`}
+                  >
+                    <img
+                      src={p.image}
+                      alt={`${p.name} in ${p.location} — ${p.category} by Houser Construction`}
+                      loading="lazy"
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-red/20 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  </div>
+                  <div className="mt-4">
+                    <p className="font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-timber">
+                      {p.category} · {p.location}
+                    </p>
+                    <h3 className="display-md text-navy mt-1">{p.name}</h3>
+                    <span
+                      aria-hidden
+                      className="mt-3 block h-[2px] w-8 bg-red"
+                    />
+                  </div>
+                </Link>
               </Reveal>
             </li>
           ))}
@@ -363,7 +447,7 @@ function Testimonials() {
                 <blockquote className="font-display text-xl leading-snug text-white flex-1">
                   &ldquo;{t.quote}&rdquo;
                 </blockquote>
-                <figcaption className="mt-8 flex items-center gap-4">
+                <figcaption className="mt-8 pt-6 border-t border-white/15 flex items-center gap-4">
                   <span
                     aria-hidden
                     className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-navy-mid border border-white/15 font-display text-sm font-bold text-white tabular-nums"
