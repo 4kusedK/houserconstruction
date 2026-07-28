@@ -378,7 +378,7 @@ function ProjectsGallery() {
                   className="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red"
                 >
                   <div
-                    className={`relative overflow-hidden bg-navy photo-frame shadow-sm transition-shadow duration-300 hover:shadow-md h-[200px] md:${TILE_HEIGHTS[i] ?? "h-[190px]"}`}
+                    className={`relative overflow-hidden bg-navy photo-frame shadow-sm transition-shadow duration-300 hover:shadow-md ${TILE_HEIGHTS[i] ?? "h-[200px] md:h-[190px]"}`}
                   >
                     <img
                       src={p.image}
