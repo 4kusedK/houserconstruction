@@ -20,7 +20,7 @@
 
   /* Fonts */
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Chakra Petch", "Archivo", ui-sans-serif, sans-serif;
+  --font-display: "Barlow", "Archivo", ui-sans-serif, sans-serif;
   --font-ui: "Archivo", "Inter", ui-sans-serif, sans-serif;
 
   /* Semantic color map (shadcn-compatible) */
@@ -204,7 +204,7 @@
   font-weight: 700;
   font-size: clamp(44px, 7vw, 76px);
   line-height: 1.02;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 @utility display-lg {
@@ -212,7 +212,7 @@
   font-weight: 700;
   font-size: clamp(34px, 4.6vw, 52px);
   line-height: 1.05;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.01em;
 }
 
 @utility display-md {
@@ -220,5 +220,5 @@
   font-weight: 700;
   font-size: clamp(26px, 3vw, 36px);
   line-height: 1.1;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.005em;
 }

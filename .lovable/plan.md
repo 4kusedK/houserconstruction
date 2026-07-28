@@ -1,44 +1,48 @@
-
 ## Goal
 
-Rewrite the site copy so it reads like a working Alaska contractor wrote it, not ChatGPT. Fix the tells without changing layout, components, or the visual design.
+Reposition the single-page site from a quote funnel to a company portfolio: identity, family ownership, and community forward; estimate CTAs, services grid, and process steps out.
 
-## What flags the site as AI right now
+## Typography
 
-1. **Em dashes in prose — everywhere.** 10+ instances across hero, positioning, services intro, service blurbs, process, testimonials, FAQs. This is the loudest tell.
-2. **Repeated parallel triads.** "residential, commercial, and government" appears 5+ times in a few hundred words. AI loves rule-of-three.
-3. **Buzzy/aphoristic lines.** "Taking the old and making the new — solving today's problems by building for tomorrow." "Built what our clients actually need." "With a dozen years of hands-on experience behind every decision on site." Reads like a generated tagline stack.
-4. **Over-polished hedges.** "actually," "single accountable team," "before a single nail is driven," "punch-list to zero," "you'll actually want to attend." Cute, and cute is a tell.
-5. **Symmetrical FAQ answers.** Every answer starts with a confident restatement. Real business copy is more varied and blunter.
+- `src/routes/__root.tsx`: swap the Google Fonts stylesheet to the Barlow + Archivo + Inter URL.
+- `src/styles.css`: `--font-display: "Barlow", "Archivo", ui-sans-serif, sans-serif`; relax tracking one step in `display-xl` (-0.01em), `display-lg` (-0.01em), `display-md` (-0.005em). `--font-ui` and `--font-sans` untouched.
 
-## What stays (not AI tells — intentional design)
+## Header (`SiteHeader.tsx`)
 
-- Decorative em dash separators inside eyebrow labels (`01 — Studio`, `<span className="mx-2 opacity-60">—</span>`). These are visual dividers in `SectionHeading.tsx` and the section eyebrows, not prose. Keep.
-- `aria-label` and code comments containing `—`. Not user-facing copy. Keep.
-- Overall structure, headings hierarchy, and section order.
+Permanently solid white bar (`bg-white border-b border-hairline`). Remove the `overHero` prop, the `scrolled` state and scroll listener, and every `isLight` branch. Logo always `variant="full"` at `h-14 md:h-16`. Nav becomes About + Work + phone link + red `Contact` button. Mobile menu matches, with a Contact button at the bottom. Escape handling, dialog semantics, and aria-labels preserved.
 
-## Fix strategy (per file)
+`index.tsx` line 82 passes `<SiteHeader overHero />` — that prop goes away in the same pass.
 
-### `src/config/business.ts`
-- `description`: drop the "Taking the old and making the new — solving…" aphorism. Replace with a plain one-liner about what they do and where.
-- Service blurbs: rewrite each of the 6 without em dashes. Shorter, more concrete, less symmetrical. Vary sentence length so they don't all read like the same template.
-- `processSteps`: rewrite the 4 bodies. Kill "before a single nail is driven," "punch-list to zero," "you'll actually want to attend."
-- `testimonials`: strip em dashes, loosen phrasing so the three quotes don't share cadence.
-- `faqs`: rewrite answers to vary the openings and drop em dashes. Keep facts identical.
+## Home page (`src/routes/index.tsx`)
 
-### `src/routes/index.tsx`
-- Hero paragraph (line 127-131): remove em dash line, rewrite as two short sentences. Cut "solving today's problems by building for tomorrow."
-- Positioning section (lines 174-183): rewrite both paragraphs. Drop "with a dozen years of hands-on experience behind every decision on site" and "what our clients actually need."
-- Services intro (lines 223-226): rewrite without em dash, drop the third repeat of the residential/commercial/government triad.
-- Leave `<title>` and `og:title` alone (the `—` there is standard title separator, not an AI tell).
+- **Hero**: eyebrow `Alaska General Contractor · Family Owned`; headline `Trusted to serve` / `with excellence.` (second line at `text-white/85`); new paragraph; both buttons and their flex wrapper deleted; chevron stays. Because the header is now opaque, hero top padding increases so the composition isn't hidden behind the bar.
+- **01 — Our word** (keeps `id="about"`): eyebrow `01 — Our word`, headline "A handshake still means something.", two-paragraph body as specified, plus a full-height handshake image in one grid column, imported from `src/assets/promise-handshake.jpg`.
+- **Value bar**: `md:grid-cols-3`, no `tabular-nums`, driven by the new three-item `stats` array.
+- **Delete** the `Services` and `Process` sections, `SERVICE_ICONS`, and every import left unused (`services`, `processSteps`, `HardHat`, `Compass`, `Ruler`, `ShieldCheck`).
+- **Work (02)**: remove the `View all` button; project 06 replaced (not removed) so the index-based `spans`/`aspects` arrays stay valid.
+- **Certifications**: `12+ Years Experience` → `Family Owned & Operated`.
+- **Closing band** (new, between FAQ and Contact): navy/white full-width, red rule accent, headline "Building better communities.", body copy, then the set-apart line "The old is gone. The new has come." in larger display type. No number or eyebrow.
+- **Contact (05)**: headline "Let's talk.", new body, reply-time line deleted, primary button "Email us"; phone button and detail list unchanged.
+- **Mobile sticky bar**: one full-width red Contact button to `/#contact`.
+- **Renumber** eyebrows to 01 Our word, 02 Work, 03 Client voice, 04 Answers, 05 Start the conversation.
 
-## What the plan does NOT touch
+## Footer (`SiteFooter.tsx`)
 
-- No component, layout, styling, or token changes.
-- No new pages, routes, or features.
-- No business logic.
-- Design em-dash separators inside eyebrow chips remain as-is.
+Delete the Services column (its `/#services` links would otherwise scroll nowhere); Company = About, Work, Careers; Contact drops "Get a quote"; grid columns rebalanced across the remaining blocks; credential chip swap to `Family Owned & Operated`; blurb rewritten to the family-owned line.
 
-## Deliverable
+## `src/config/business.ts`
 
-Two files edited: `src/config/business.ts` and `src/routes/index.tsx`. Copy reads cleaner, more human, no em dashes in prose, less repetition, no aphorisms. Same length ballpark, same information, same visual layout.
+New `tagline` and `description`; three-item `stats`; delete the `government` service entry (rest of `services` and `processSteps` parked); project 06 → "Community Restoration"; FAQ: drop "How do I get a quote?", strip government agencies from the project-types answer, add the "Is Houser family owned?" entry.
+
+## SEO / meta
+
+Title `Houser Construction — Trusted to Serve | Alaska General Contractor` and the new description across `__root.tsx` and `index.tsx` (title, og:title, twitter:title, all descriptions). `GeneralContractor` JSON-LD picks up `business.description`; `FAQPage` JSON-LD regenerates from `faqs`.
+
+## Technical notes
+
+- A referenced-but-missing image breaks the build, so I'll generate a placeholder handshake JPG at `src/assets/promise-handshake.jpg` (no Unsplash hotlink) for you to swap out when the real photo arrives.
+- No new dependencies, no new routes, no changes under `src/components/ui/`, brand color tokens unchanged, `Reveal`/framer-motion and the brand components stay in use.
+
+## Flag for the client
+
+Every gallery image is still stock. On a portfolio-first site the work *is* the site — real Houser project photography is the highest-value outstanding asset, along with real testimonial names.

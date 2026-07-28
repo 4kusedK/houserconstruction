@@ -7,17 +7,8 @@ const COLS = [
     heading: "Company",
     links: [
       { label: "About", href: "/#about" },
-      { label: "Process", href: "/#process" },
+      { label: "Work", href: "/#work" },
       { label: "Careers", href: "#" },
-    ],
-  },
-  {
-    heading: "Services",
-    links: [
-      { label: "General Contracting", href: "/#services" },
-      { label: "Design-Build", href: "/#services" },
-      { label: "Commercial", href: "/#services" },
-      { label: "Residential", href: "/#services" },
     ],
   },
   {
@@ -25,7 +16,6 @@ const COLS = [
     links: [
       { label: business.phone, href: business.phoneHref },
       { label: business.email, href: business.emailHref },
-      { label: "Get a quote", href: "/#contact" },
     ],
   },
 ];
@@ -35,12 +25,13 @@ export function SiteFooter() {
     <footer className="bg-navy text-white">
       <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-24">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
-          <div className="md:col-span-4">
+          <div className="md:col-span-5">
             <Logo variant="full-white" className="h-12 w-auto" />
-            <p className="mt-6 text-sm text-white/70 max-w-xs leading-relaxed">
-              A general contractor building durable commercial and residential
-              projects across {business.serviceArea}.
+            <p className="mt-6 text-sm text-white/70 max-w-sm leading-relaxed">
+              A family owned Alaska general contractor. We build, restore, and
+              stand behind our work across {business.serviceArea}.
             </p>
+
             <div className="mt-6 flex items-center gap-3">
               <a
                 href={business.socials.instagram}
@@ -67,7 +58,7 @@ export function SiteFooter() {
           </div>
 
           {COLS.map((col) => (
-            <div key={col.heading} className="md:col-span-2">
+            <div key={col.heading} className="md:col-span-3">
               <h3 className="eyebrow text-white/60 mb-4">{col.heading}</h3>
               <ul className="space-y-3">
                 {col.links.map((l) => (
@@ -84,7 +75,7 @@ export function SiteFooter() {
             </div>
           ))}
 
-          <div className="md:col-span-2">
+          <div className="md:col-span-4 md:col-start-9">
             <h3 className="eyebrow text-white/60 mb-4">Office</h3>
             <address className="not-italic text-sm text-white/85 leading-relaxed">
               Based in {business.address.city}
@@ -105,7 +96,7 @@ export function SiteFooter() {
                 "Licensed AK Contractor",
                 "Bonded",
                 "Insured",
-                "12+ Years Experience",
+                "Family Owned & Operated",
               ].map((c) => (
 
                 <span
