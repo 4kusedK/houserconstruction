@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ChevronDown, Phone, Mail } from "lucide-react";
 
 import { SiteHeader } from "@/components/site/SiteHeader";
