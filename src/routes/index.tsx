@@ -152,7 +152,7 @@ function Hero() {
 
 function Positioning() {
   return (
-    <section id="about" className="py-20 md:py-28 bg-background">
+    <section id="about" className="py-28 md:py-40 bg-background">
       <div className="mx-auto max-w-[1200px] px-6 grid md:grid-cols-12 gap-12 items-start">
         <div className="md:col-span-5">
           <Reveal>
@@ -166,18 +166,24 @@ function Positioning() {
             <h2 className="display-lg text-navy">
               A handshake still means something.
             </h2>
-            <p className="mt-8 text-lg text-charcoal leading-relaxed">
+            <p className="mt-10 text-lg text-charcoal leading-relaxed">
               Houser Construction is family owned and family run. When we tell
               you how a job will go, that is how it goes. No layers of managers
               between you and the people holding the tools.
             </p>
-            <p className="mt-6 text-lg text-charcoal/85 leading-relaxed">
-              We kept the company small on purpose. The person who walks your
-              site is the person who answers the phone, stands behind the
-              finished work, and still lives in the community it was built for.
+            <blockquote className="mt-12 border-l-2 border-red pl-6">
+              <p className="display-md text-navy">
+                The person who walks your site is the person who answers the
+                phone.
+              </p>
+            </blockquote>
+            <p className="mt-12 text-lg text-charcoal/85 leading-relaxed">
+              We kept the company small on purpose. Whoever stands behind the
+              finished work still lives in the community it was built for.
             </p>
           </Reveal>
         </div>
+
         <div className="md:col-span-6 md:col-start-7">
           <Reveal delay={0.1}>
             <div className="relative overflow-hidden aspect-[4/5]">
