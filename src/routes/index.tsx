@@ -403,7 +403,7 @@ function Certifications() {
 
 function FAQ() {
   return (
-    <section className="py-28 md:py-40 bg-sand-sunk">
+    <section className="py-28 md:py-40 bg-background">
       <div className="mx-auto max-w-[1200px] px-6 grid md:grid-cols-12 gap-12">
         <div className="md:col-span-4">
           <Reveal>
