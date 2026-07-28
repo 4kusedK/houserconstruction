@@ -125,7 +125,7 @@ function Hero() {
     >
       <img
         src={HERO_IMG}
-        alt="Modern architectural build at dusk"
+        alt="Finished residential home in Alaska"
         className="absolute inset-0 h-full w-full object-cover"
         fetchPriority="high"
       />
@@ -145,7 +145,7 @@ function Hero() {
           <div className="flex items-center gap-3 mb-6">
             <span className="h-[2px] w-10 bg-red" aria-hidden />
             <span className="eyebrow text-white/80">
-              Alaska General Contractor · Family Owned
+              Steve &amp; David Houser · Since {FOUNDED_YEAR}
             </span>
           </div>
           <h1 className="display-2xl text-white">
@@ -154,9 +154,10 @@ function Hero() {
             <span className="text-white/85">with excellence.</span>
           </h1>
           <p className="mt-8 max-w-xl text-lg text-white/85 leading-[1.6]">
-            A family owned Alaska contractor building new homes, restoring the
-            ones already standing, and developing property across the state.
+            A father-and-son contractor building new homes, restoring the
+            ones already standing, and developing property across Alaska.
           </p>
+
           <span className="mt-10 block h-[2px] w-16 bg-red" aria-hidden />
         </div>
       </div>
