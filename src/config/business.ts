@@ -53,12 +53,6 @@ export const services = [
       "Retail, office, and mixed-use builds. Delivered on schedule and ready for inspection the first time through.",
   },
   {
-    slug: "government",
-    title: "Government Contracting",
-    blurb:
-      "Public-sector work with the paperwork, compliance, and reporting these jobs require. Federal, state, and municipal contracts welcome.",
-  },
-  {
     slug: "real-estate",
     title: "Real Estate & Subdivisions",
     blurb:
