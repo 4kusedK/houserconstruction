@@ -176,7 +176,7 @@ function Positioning() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden py-32 md:py-48 bg-sand blueprint-grid"
+      className="relative overflow-hidden py-32 md:py-48 bg-sand"
     >
       <span
         aria-hidden
@@ -188,11 +188,9 @@ function Positioning() {
         <Reveal>
           <div className="flex items-center gap-3 mb-6">
             <span className="rule-red" aria-hidden />
-            <span className="eyebrow">
-              <span className="text-navy">01</span>
-              <span className="mx-2 opacity-60">—</span>Our philosophy
-            </span>
+            <span className="eyebrow">Our philosophy</span>
           </div>
+
           <h2 className="display-lg text-navy max-w-3xl">
             A handshake still means something.
           </h2>
@@ -203,8 +201,8 @@ function Positioning() {
             <Reveal delay={0.05}>
               <div className="relative overflow-hidden aspect-[4/5] photo-frame">
                 <img
-                  src={HANDSHAKE_IMG}
-                  alt="A Houser Construction contractor shaking hands with a homeowner"
+                  src={handshakeImg}
+                  alt="A contractor and a client shaking hands inside a partly framed build"
                   loading="lazy"
                   width={1200}
                   height={1408}
@@ -213,8 +211,9 @@ function Positioning() {
                 <div className="photo-warm absolute inset-0" />
                 <span
                   aria-hidden
-                  className="absolute bottom-0 left-0 h-1 w-24 bg-red"
+                  className="absolute bottom-0 left-0 h-1 w-24 bg-timber"
                 />
+
               </div>
             </Reveal>
           </div>
