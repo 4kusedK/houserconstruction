@@ -1,17 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, ChevronDown, ShieldCheck, HardHat, Ruler, Compass, Phone, Mail } from "lucide-react";
+import { ArrowRight, ChevronDown, Phone, Mail } from "lucide-react";
 
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SectionHeading } from "@/components/brand/SectionHeading";
 import { BrandButton } from "@/components/brand/BrandButton";
 import { Reveal } from "@/components/brand/Reveal";
+import handshakeImg from "@/assets/promise-handshake.jpg";
 import {
   business,
   stats,
-  services,
   projects,
-  processSteps,
   testimonials,
   faqs,
 } from "@/config/business";
@@ -23,17 +22,17 @@ const HERO_IMG =
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Houser Construction — Built to Last | Alaska General Contractor" },
+      { title: "Houser Construction — Trusted to Serve | Alaska General Contractor" },
       {
         name: "description",
         content:
-          "Houser Construction is a licensed Alaska general contractor delivering new construction, remodels, commercial, and government projects statewide. The old is gone, the new has come.",
+          "Houser Construction is a family owned, licensed Alaska general contractor. New construction, remodels, and real estate development, built to serve Alaskan communities with excellence.",
       },
-      { property: "og:title", content: "Houser Construction — Built to Last | Alaska General Contractor" },
+      { property: "og:title", content: "Houser Construction — Trusted to Serve | Alaska General Contractor" },
       {
         property: "og:description",
         content:
-          "Houser Construction is a licensed Alaska general contractor delivering new construction, remodels, commercial, and government projects statewide. The old is gone, the new has come.",
+          "Houser Construction is a family owned, licensed Alaska general contractor. New construction, remodels, and real estate development, built to serve Alaskan communities with excellence.",
       },
       { property: "og:url", content: "/" },
       { property: "og:type", content: "website" },
@@ -79,17 +78,16 @@ export const Route = createFileRoute("/")({
 function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <SiteHeader overHero />
+      <SiteHeader />
       <main>
         <Hero />
         <Positioning />
         <StatBar />
-        <Services />
         <ProjectsGallery />
-        <Process />
         <Testimonials />
         <Certifications />
         <FAQ />
+        <ClosingBand />
         <FinalCTA />
       </main>
       <SiteFooter />
@@ -111,33 +109,23 @@ function Hero() {
         fetchPriority="high"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/85 via-navy-deep/60 to-navy-deep/95" />
-      <div className="relative mx-auto max-w-[1200px] px-6 pt-40 md:pt-48 pb-24 min-h-[100svh] flex flex-col justify-end">
+      <div className="relative mx-auto max-w-[1200px] px-6 pt-52 md:pt-64 pb-24 min-h-[100svh] flex flex-col justify-end">
         <div className="max-w-3xl">
           <div className="flex items-center gap-3 mb-6">
             <span className="h-[2px] w-10 bg-red" aria-hidden />
             <span className="eyebrow text-white/80">
-              Alaska General Contractor · <span className="tabular-nums">12+ Yrs Experience</span>
+              Alaska General Contractor · Family Owned
             </span>
           </div>
           <h1 className="display-xl text-white">
-            Built to last.
+            Trusted to serve
             <br />
-            <span className="text-white/85">Built for Alaska.</span>
+            <span className="text-white/85">with excellence.</span>
           </h1>
           <p className="mt-8 max-w-xl text-lg text-white/85 leading-relaxed">
-            New construction and remodels for homes, businesses, and public
-            agencies across the state. Twelve years of hands-on work in Alaska,
-            behind every job we take on.
+            A family owned Alaska contractor building new homes, restoring the
+            ones already standing, and developing property across the state.
           </p>
-
-          <div className="mt-10 flex flex-wrap gap-4">
-            <BrandButton as="a" href="/#contact" variant="accent" size="lg">
-              Get a quote <ArrowRight className="h-4 w-4" />
-            </BrandButton>
-            <BrandButton as="a" href="/#work" variant="outline-light" size="lg">
-              View our work
-            </BrandButton>
-          </div>
         </div>
       </div>
       <a
@@ -154,35 +142,48 @@ function Hero() {
 function Positioning() {
   return (
     <section id="about" className="py-20 md:py-28 bg-background">
-      <div className="mx-auto max-w-[1200px] px-6 grid md:grid-cols-12 gap-12">
-        <div className="md:col-span-4">
+      <div className="mx-auto max-w-[1200px] px-6 grid md:grid-cols-12 gap-12 items-start">
+        <div className="md:col-span-5">
           <Reveal>
             <div className="flex items-center gap-3 mb-4">
               <span className="h-[2px] w-8 bg-red" aria-hidden />
               <span className="eyebrow">
                 <span className="text-navy">01</span>
-                <span className="mx-2 opacity-60">—</span>Studio
+                <span className="mx-2 opacity-60">—</span>Our word
               </span>
             </div>
             <h2 className="display-lg text-navy">
-              The old is gone. The new has come.
+              A handshake still means something.
             </h2>
-          </Reveal>
-        </div>
-        <div className="md:col-span-7 md:col-start-6">
-          <Reveal delay={0.1}>
-            <p className="text-lg text-charcoal leading-relaxed">
-              Houser Construction builds new homes and commercial spaces,
-              renovates the ones already standing, and takes on public
-              contracts across Alaska.
+            <p className="mt-8 text-lg text-charcoal leading-relaxed">
+              Houser Construction is family owned and family run. When we tell
+              you how a job will go, that is how it goes. No layers of managers
+              between you and the people holding the tools.
             </p>
             <p className="mt-6 text-lg text-charcoal/85 leading-relaxed">
-              We're a licensed, bonded, and insured Alaska contractor. Twelve
-              years in, we've kept the operation small on purpose so the
-              person you meet is the person running your job.
+              We kept the company small on purpose. The person who walks your
+              site is the person who answers the phone, stands behind the
+              finished work, and still lives in the community it was built for.
             </p>
           </Reveal>
-
+        </div>
+        <div className="md:col-span-6 md:col-start-7">
+          <Reveal delay={0.1}>
+            <div className="relative overflow-hidden aspect-[4/5]">
+              <img
+                src={handshakeImg}
+                alt="A Houser Construction contractor shaking hands with a homeowner at an Alaska job site"
+                loading="lazy"
+                width={1200}
+                height={1408}
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+              <span
+                aria-hidden
+                className="absolute bottom-0 left-0 h-1 w-24 bg-red"
+              />
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>
@@ -192,14 +193,14 @@ function Positioning() {
 function StatBar() {
   return (
     <section className="bg-paper-sunk border-y border-hairline">
-      <div className="mx-auto max-w-[1200px] px-6 py-14 md:py-20 grid grid-cols-2 md:grid-cols-4 gap-y-10 md:gap-y-0 md:divide-x md:divide-hairline">
+      <div className="mx-auto max-w-[1200px] px-6 py-14 md:py-20 grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-y-0 md:divide-x md:divide-hairline">
         {stats.map((s, i) => (
           <div
             key={s.label}
             className={i === 0 ? "md:pr-8" : "md:px-8"}
           >
             <span className="block h-[2px] w-10 bg-red mb-5" aria-hidden />
-            <div className="display-lg text-navy tabular-nums">{s.value}</div>
+            <div className="display-lg text-navy">{s.value}</div>
             <div className="eyebrow mt-4">{s.label}</div>
           </div>
         ))}
@@ -208,60 +209,6 @@ function StatBar() {
   );
 }
 
-const SERVICE_ICONS = [HardHat, Compass, Ruler, ShieldCheck, HardHat, Compass];
-
-function Services() {
-  return (
-    <section id="services" className="py-24 md:py-32 bg-background">
-      <div className="mx-auto max-w-[1200px] px-6">
-        <Reveal>
-          <SectionHeading
-            eyebrow="Services"
-            number="02"
-            title="What we build."
-          >
-            <p className="text-charcoal/85">
-              From ground-up builds to remodels and real estate development,
-              statewide.
-            </p>
-          </SectionHeading>
-
-        </Reveal>
-
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-hairline border border-hairline">
-          {services.map((s, i) => {
-            const Icon = SERVICE_ICONS[i % SERVICE_ICONS.length];
-            return (
-              <div
-                key={s.slug}
-                className="group relative bg-white p-8 md:p-10 transition-colors duration-300 hover:bg-navy hover:text-white"
-              >
-                <div className="flex items-start justify-between mb-8">
-                  <div className="h-10 w-10 border-2 border-navy group-hover:border-white flex items-center justify-center text-navy group-hover:text-white transition-colors">
-                    <Icon className="h-5 w-5" />
-                  </div>
-                  <span className="eyebrow group-hover:text-white/60">
-                    0{i + 1}
-                  </span>
-                </div>
-                <h3 className="font-display text-2xl font-bold text-navy group-hover:text-white leading-tight">
-                  {s.title}
-                </h3>
-                <p className="mt-4 text-sm leading-relaxed text-charcoal/80 group-hover:text-white/75">
-                  {s.blurb}
-                </p>
-                <ArrowRight
-                  aria-hidden
-                  className="absolute bottom-6 right-6 h-5 w-5 text-navy group-hover:text-red-bright transition-all duration-300 -translate-x-1 opacity-70 group-hover:translate-x-0 group-hover:opacity-100"
-                />
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function ProjectsGallery() {
   // Asymmetric magazine grid: 6-col track.
@@ -287,15 +234,12 @@ function ProjectsGallery() {
     <section id="work" className="py-24 md:py-32 bg-paper-sunk">
       <div className="mx-auto max-w-[1200px] px-6">
         <Reveal>
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+          <div className="mb-14">
             <SectionHeading
               eyebrow="Work"
-              number="03"
+              number="02"
               title="Recent projects."
             />
-            <BrandButton as="a" href="/#work" variant="outline" size="md">
-              View all <ArrowRight className="h-4 w-4" />
-            </BrandButton>
           </div>
         </Reveal>
       </div>
@@ -344,44 +288,6 @@ function ProjectsGallery() {
   );
 }
 
-function Process() {
-  return (
-    <section id="process" className="py-24 md:py-32 bg-background">
-      <div className="mx-auto max-w-[1200px] px-6">
-        <Reveal>
-          <SectionHeading
-            eyebrow="Process"
-            number="04"
-            title="Four steps. No surprises."
-          />
-        </Reveal>
-
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-px bg-hairline border border-hairline">
-          {processSteps.map((step) => (
-            <div key={step.n} className="bg-white relative flex flex-col">
-              <div className="bg-red text-white px-6 py-4 flex items-baseline justify-between">
-                <span className="font-display text-3xl font-bold tabular-nums leading-none">
-                  {step.n}
-                </span>
-                <span className="font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-white/80">
-                  Step
-                </span>
-              </div>
-              <div className="p-8 md:p-10 flex-1">
-                <h3 className="font-display text-xl font-bold text-navy">
-                  {step.title}
-                </h3>
-                <p className="mt-3 text-sm text-charcoal/85 leading-relaxed">
-                  {step.body}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function initials(name: string) {
   return name
@@ -400,7 +306,7 @@ function Testimonials() {
         <Reveal>
           <SectionHeading
             eyebrow="Client voice"
-            number="05"
+            number="03"
             title="Owners who've been through it."
             onDark
           />
@@ -441,7 +347,7 @@ function Certifications() {
     "AK Licensed Contractor",
     "Bonded",
     "Insured",
-    "12+ Years Experience",
+    "Family Owned & Operated",
   ];
 
   return (
@@ -473,7 +379,7 @@ function FAQ() {
           <Reveal>
             <SectionHeading
               eyebrow="Answers"
-              number="06"
+              number="04"
               title="Frequently asked."
             />
           </Reveal>
@@ -507,6 +413,33 @@ function FAQ() {
   );
 }
 
+function ClosingBand() {
+  return (
+    <section className="relative overflow-hidden bg-navy-deep text-white">
+      <span
+        aria-hidden
+        className="absolute top-0 left-0 h-1 w-40 md:w-64 bg-red"
+      />
+      <div className="relative mx-auto max-w-[1200px] px-6 py-24 md:py-32">
+        <div className="max-w-3xl">
+          <h2 className="display-lg text-white">
+            Building better communities.
+          </h2>
+          <p className="mt-8 text-lg text-white/80 leading-relaxed max-w-2xl">
+            Every structure we put up outlasts the contract that paid for it.
+            Houses become homes, empty lots become neighborhoods, and worn out
+            buildings get another life. That is the part of this work that
+            matters to our family.
+          </p>
+          <p className="mt-12 display-md text-white/90">
+            The old is gone. The new has come.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function FinalCTA() {
   return (
     <section
@@ -528,19 +461,16 @@ function FinalCTA() {
           <div className="flex items-center gap-3 mb-6">
             <span className="h-[2px] w-10 bg-red" aria-hidden />
             <span className="eyebrow text-white/70">
-              <span className="text-white">07</span>
-              <span className="mx-2 opacity-60">—</span>Start your project
+              <span className="text-white">05</span>
+              <span className="mx-2 opacity-60">—</span>Start the conversation
             </span>
           </div>
           <h2 className="display-lg text-white max-w-2xl">
-            Have a build in mind? Let&apos;s scope it properly.
+            Let&apos;s talk.
           </h2>
           <p className="mt-6 text-white/80 max-w-xl text-lg leading-relaxed">
-            Tell us about your project. We&apos;ll follow up within one business
-            day to schedule a site visit and put a real estimate in your hands.
-          </p>
-          <p className="mt-4 text-sm text-white/60">
-            Typical reply in 1 business day · Free site visit · No pressure.
+            Whether you have drawings in hand or just an idea of what you want
+            built, reach out. We are happy to talk it through.
           </p>
         </div>
 
@@ -553,7 +483,7 @@ function FinalCTA() {
               size="lg"
               block
             >
-              Request an estimate <ArrowRight className="h-4 w-4" />
+              Email us <ArrowRight className="h-4 w-4" />
             </BrandButton>
 
             <BrandButton
@@ -615,20 +545,12 @@ function MobileStickyCTA() {
       }`}
       aria-hidden={!show}
     >
-      <div className="bg-navy border-t border-white/10 px-4 py-3 flex items-center gap-2">
-        <a
-          href={business.phoneHref}
-          className="inline-flex items-center justify-center gap-2 h-11 px-4 border-2 border-white/60 text-white font-ui font-bold text-[12px] uppercase tracking-[0.14em] rounded-[4px]"
-          aria-label={`Call ${business.phone}`}
-        >
-          <Phone className="h-4 w-4" />
-          Call
-        </a>
+      <div className="bg-navy border-t border-white/10 px-4 py-3">
         <a
           href="/#contact"
-          className="flex-1 inline-flex items-center justify-center gap-2 h-11 px-4 bg-red text-white font-ui font-bold text-[12px] uppercase tracking-[0.14em] rounded-[4px]"
+          className="w-full inline-flex items-center justify-center gap-2 h-11 px-4 bg-red text-white font-ui font-bold text-[12px] uppercase tracking-[0.14em] rounded-[4px]"
         >
-          Get a quote <ArrowRight className="h-4 w-4" />
+          Contact <ArrowRight className="h-4 w-4" />
         </a>
       </div>
     </div>
