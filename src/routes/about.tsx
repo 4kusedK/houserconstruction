@@ -169,11 +169,10 @@ function Story() {
         <div className="md:col-span-6 md:col-start-7">
           <Reveal delay={0.08}>
             <p className="text-lg text-charcoal leading-relaxed">
-              Houser Construction started the way most good things in a family
-              do: two people who trusted each other decided to do the work
-              themselves. Steve had spent a career in the trades. David grew up
-              on his job sites, learning that a level is honest even when a
-              schedule is not.
+              Houser Construction was built on direct accountability — one crew,
+              one standard, one point of contact. Steve had spent a career in
+              the trades running jobs and crews. David came up on those sites
+              and now runs the company, with his father as partner.
             </p>
             <blockquote className="mt-12 border-l-2 border-red pl-6">
               <p className="display-md text-navy">
@@ -181,9 +180,11 @@ function Story() {
               </p>
             </blockquote>
             <p className="mt-12 text-lg text-charcoal/85 leading-relaxed">
-              Today we build new homes, take on full remodels, and develop real
-              estate across Alaska. The company stayed small on purpose. When
-              you hire us, you get the family, not a subcontracted stand-in.
+              Today the work is primarily commercial and real estate — ground-up
+              builds, tenant improvements, restoration, and development —
+              with residential construction and remodels alongside it, anywhere
+              in Alaska. The structure stayed lean on purpose: when you hire us,
+              the people who priced the job are the people delivering it.
             </p>
           </Reveal>
         </div>
@@ -249,7 +250,7 @@ function Owners() {
             <div className="relative aspect-[16/7] overflow-hidden border border-white/10 photo-frame">
               <img
                 src={CREW_IMG}
-                alt="Reference photo of an Alaska job site. Photography of the Houser Construction crew is coming soon."
+                alt="Reference photography of an Alaska job site, representing the type of work Houser Construction takes on."
                 loading="lazy"
                 className="absolute inset-0 h-full w-full object-cover"
               />
