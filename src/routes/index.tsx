@@ -110,7 +110,17 @@ function Hero() {
         fetchPriority="high"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/85 via-navy-deep/60 to-navy-deep/95" />
+      <div
+        aria-hidden
+        className="hidden lg:flex absolute left-6 top-1/2 -translate-y-1/2 items-center gap-4 [writing-mode:vertical-rl] rotate-180"
+      >
+        <span className="h-16 w-[2px] bg-red" />
+        <span className="font-ui text-[11px] font-bold uppercase tracking-[0.28em] text-white/60">
+          Family Owned · Alaska
+        </span>
+      </div>
       <div className="relative mx-auto max-w-[1200px] px-6 pt-44 md:pt-56 pb-24 min-h-[100svh] flex flex-col justify-end">
+
         <div className="max-w-3xl">
           <div className="flex items-center gap-3 mb-6">
             <span className="h-[2px] w-10 bg-red" aria-hidden />
@@ -142,7 +152,7 @@ function Hero() {
 
 function Positioning() {
   return (
-    <section id="about" className="py-20 md:py-28 bg-background">
+    <section id="about" className="py-28 md:py-40 bg-background">
       <div className="mx-auto max-w-[1200px] px-6 grid md:grid-cols-12 gap-12 items-start">
         <div className="md:col-span-5">
           <Reveal>
@@ -156,18 +166,24 @@ function Positioning() {
             <h2 className="display-lg text-navy">
               A handshake still means something.
             </h2>
-            <p className="mt-8 text-lg text-charcoal leading-relaxed">
+            <p className="mt-10 text-lg text-charcoal leading-relaxed">
               Houser Construction is family owned and family run. When we tell
               you how a job will go, that is how it goes. No layers of managers
               between you and the people holding the tools.
             </p>
-            <p className="mt-6 text-lg text-charcoal/85 leading-relaxed">
-              We kept the company small on purpose. The person who walks your
-              site is the person who answers the phone, stands behind the
-              finished work, and still lives in the community it was built for.
+            <blockquote className="mt-12 border-l-2 border-red pl-6">
+              <p className="display-md text-navy">
+                The person who walks your site is the person who answers the
+                phone.
+              </p>
+            </blockquote>
+            <p className="mt-12 text-lg text-charcoal/85 leading-relaxed">
+              We kept the company small on purpose. Whoever stands behind the
+              finished work still lives in the community it was built for.
             </p>
           </Reveal>
         </div>
+
         <div className="md:col-span-6 md:col-start-7">
           <Reveal delay={0.1}>
             <div className="relative overflow-hidden aspect-[4/5]">
@@ -194,7 +210,7 @@ function Positioning() {
 function StatBar() {
   return (
     <section className="bg-paper-sunk border-y border-hairline">
-      <div className="mx-auto max-w-[1200px] px-6 py-14 md:py-20 grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-y-0 md:divide-x md:divide-hairline">
+      <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-24 grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-y-0 md:divide-x md:divide-hairline">
         {stats.map((s, i) => (
           <div
             key={s.label}
@@ -213,17 +229,17 @@ function StatBar() {
 
 function ProjectsGallery() {
   return (
-    <section id="work" className="py-24 md:py-32 bg-paper-sunk">
+    <section id="work" className="py-28 md:py-40 bg-paper-sunk">
       <div className="mx-auto max-w-[1200px] px-6">
         <Reveal>
-          <div className="mb-14">
+          <div className="mb-16 md:mb-20">
             <SectionHeading eyebrow="Gallery" number="02" title="Our work." />
           </div>
         </Reveal>
 
         <ul
           aria-label="Photo gallery of Houser Construction work"
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 list-none p-0"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 list-none p-0"
         >
           {projects.map((p, i) => (
             <li key={p.n}>
@@ -259,7 +275,7 @@ function initials(name: string) {
 
 function Testimonials() {
   return (
-    <section className="py-20 md:py-28 bg-navy text-white">
+    <section className="py-28 md:py-40 bg-navy text-white">
       <div className="mx-auto max-w-[1200px] px-6">
         <Reveal>
           <SectionHeading
@@ -269,7 +285,7 @@ function Testimonials() {
             onDark
           />
         </Reveal>
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="mt-16 md:mt-20 grid grid-cols-1 md:grid-cols-3 gap-10">
           {testimonials.map((t, i) => (
             <Reveal key={t.name} delay={i * 0.08}>
               <figure className="border-t border-white/15 pt-8 h-full flex flex-col">
@@ -309,7 +325,7 @@ function Certifications() {
   ];
 
   return (
-    <section className="py-16 bg-paper-sunk border-y border-hairline">
+    <section className="py-16 md:py-24 bg-paper-sunk border-y border-hairline">
       <div className="mx-auto max-w-[1200px] px-6">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
           <p className="eyebrow">Credentials</p>
@@ -331,7 +347,7 @@ function Certifications() {
 
 function FAQ() {
   return (
-    <section className="py-24 md:py-32 bg-background">
+    <section className="py-28 md:py-40 bg-background">
       <div className="mx-auto max-w-[1200px] px-6 grid md:grid-cols-12 gap-12">
         <div className="md:col-span-4">
           <Reveal>
@@ -378,7 +394,7 @@ function ClosingBand() {
         aria-hidden
         className="absolute top-0 left-0 h-1 w-40 md:w-64 bg-red"
       />
-      <div className="relative mx-auto max-w-[1200px] px-6 py-24 md:py-32">
+      <div className="relative mx-auto max-w-[1200px] px-6 py-28 md:py-40">
         <div className="max-w-3xl">
           <h2 className="display-lg text-white">
             Building better communities.
@@ -414,7 +430,7 @@ function FinalCTA() {
         className="absolute top-0 right-0 h-40 md:h-64 w-1 bg-red"
       />
 
-      <div className="relative mx-auto max-w-[1200px] px-6 py-24 md:py-32 grid md:grid-cols-12 gap-12 items-start">
+      <div className="relative mx-auto max-w-[1200px] px-6 py-28 md:py-40 grid md:grid-cols-12 gap-12 items-start">
         <div className="md:col-span-7">
           <div className="flex items-center gap-3 mb-6">
             <span className="h-[2px] w-10 bg-red" aria-hidden />
