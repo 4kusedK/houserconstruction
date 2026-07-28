@@ -46,14 +46,16 @@ export function SiteHeader() {
             aria-label="Primary"
           >
             {NAV.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
+              <Link
+                key={item.to}
+                to={item.to}
+                activeOptions={{ exact: item.to === "/" }}
+                activeProps={{ className: "text-red" }}
                 className="font-ui text-[13px] font-bold uppercase tracking-[0.14em] text-navy hover:text-red transition-colors"
               >
                 {item.label}
-              </a>
-            ))}
+              </Link>
+
             <a
               href={business.phoneHref}
               className="hidden lg:inline-flex items-center gap-2 font-ui text-[13px] font-bold uppercase tracking-[0.14em] text-navy hover:text-red transition-colors"
