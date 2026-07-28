@@ -64,7 +64,7 @@ export const Route = createFileRoute("/about")({
       {
         property: "og:description",
         content:
-          "Meet the family behind Houser Construction: David and Steve Houser, a father and son building across Alaska.",
+          "Houser Construction builds commercial, real estate, and residential projects across Alaska. Run by David Houser in partnership with his father Steve.",
       },
       { property: "og:url", content: `${SITE_URL}/about` },
       { property: "og:type", content: "profile" },
@@ -73,7 +73,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "twitter:description",
         content:
-          "Meet the family behind Houser Construction: David and Steve Houser, a father and son building across Alaska.",
+          "Houser Construction builds commercial, real estate, and residential projects across Alaska. Run by David Houser in partnership with his father Steve.",
       },
       { property: "og:image", content: OG_IMAGE },
       { name: "twitter:image", content: OG_IMAGE },
@@ -137,14 +137,14 @@ function AboutHero() {
           <span className="eyebrow text-white/80">Profile</span>
         </div>
         <h1 className="display-xl text-white max-w-3xl">
-          A father, a son,
+          A construction partner
           <br />
-          <span className="text-white/85">and one standard.</span>
+          <span className="text-white/85">for Alaska.</span>
         </h1>
         <p className="mt-8 max-w-xl text-lg text-white/85 leading-relaxed">
-          Houser Construction is family owned and family run. Steve and David
-          Houser build across Alaska, and the name on the truck is the same one
-          on the family mailbox.
+          Houser Construction builds commercial, real estate, and residential
+          projects statewide. David Houser runs the day-to-day, with Steve
+          Houser as partner.
         </p>
       </div>
     </section>
