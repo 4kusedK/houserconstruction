@@ -1,24 +1,15 @@
+import { Link } from "@tanstack/react-router";
+import { Instagram } from "lucide-react";
+
 import { Logo } from "@/components/brand/Logo";
 import { business } from "@/config/business";
-import { Facebook, Instagram, Linkedin } from "lucide-react";
 
-const COLS = [
-  {
-    heading: "Company",
-    links: [
-      { label: "About", href: "/#about" },
-      { label: "Work", href: "/#work" },
-      { label: "Careers", href: "#" },
-    ],
-  },
-  {
-    heading: "Contact",
-    links: [
-      { label: business.phone, href: business.phoneHref },
-      { label: business.email, href: business.emailHref },
-    ],
-  },
-];
+const PAGES = [
+  { label: "Home", to: "/" },
+  { label: "About", to: "/about" },
+  { label: "Work", to: "/work" },
+] as const;
+
 
 export function SiteFooter() {
   return (
