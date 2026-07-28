@@ -20,6 +20,9 @@ import { useEffect, useState } from "react";
 const HERO_IMG =
   "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=2400&q=75";
 
+const SITE_URL = "https://houserconstruction.net";
+const OG_IMAGE = `${SITE_URL}/og-houser-construction.jpg`;
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -35,10 +38,12 @@ export const Route = createFileRoute("/")({
         content:
           "Houser Construction is a family owned, licensed Alaska general contractor. New construction, remodels, and real estate development, built to serve Alaskan communities with excellence.",
       },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: `${SITE_URL}/` },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: OG_IMAGE },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/` }],
     scripts: [
       {
         type: "application/ld+json",
@@ -49,7 +54,16 @@ export const Route = createFileRoute("/")({
           description: business.description,
           telephone: business.phone,
           email: business.email,
-          areaServed: business.serviceArea,
+          url: SITE_URL,
+          image: OG_IMAGE,
+          areaServed: [
+            { "@type": "State", name: "Alaska" },
+            ...business.serviceAreaHubs.map((city) => ({
+              "@type": "City",
+              name: city,
+              containedInPlace: { "@type": "State", name: "Alaska" },
+            })),
+          ],
           address: {
             "@type": "PostalAddress",
             addressLocality: business.address.city,
