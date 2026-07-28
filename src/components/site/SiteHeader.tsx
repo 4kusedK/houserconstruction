@@ -111,14 +111,15 @@ export function SiteHeader() {
               aria-label="Mobile"
             >
               {NAV.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
+                <Link
+                  key={item.to}
+                  to={item.to}
                   onClick={() => setOpen(false)}
                   className="font-display text-4xl font-bold text-white hover:text-red-bright transition-colors"
                 >
                   {item.label}
-                </a>
+                </Link>
+
               ))}
               <div className="pt-8 flex flex-col gap-3">
                 <BrandButton
