@@ -8,9 +8,11 @@ import { BrandButton } from "@/components/brand/BrandButton";
 import { business } from "@/config/business";
 
 const NAV = [
-  { label: "About", href: "/#about" },
-  { label: "Work", href: "/#work" },
-];
+  { label: "Home", to: "/" },
+  { label: "About", to: "/about" },
+  { label: "Work", to: "/work" },
+] as const;
+
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
