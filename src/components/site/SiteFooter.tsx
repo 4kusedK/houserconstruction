@@ -36,21 +36,21 @@ export function SiteFooter() {
               <a
                 href={business.socials.instagram}
                 aria-label="Instagram"
-                className="inline-flex h-10 w-10 items-center justify-center border border-white/20 hover:border-red hover:text-red transition-colors rounded-sm"
+                className="inline-flex h-10 w-10 items-center justify-center border border-white/20 hover:bg-timber hover:border-timber hover:text-white transition-colors rounded-sm"
               >
                 <Instagram className="h-4 w-4" />
               </a>
               <a
                 href={business.socials.facebook}
                 aria-label="Facebook"
-                className="inline-flex h-10 w-10 items-center justify-center border border-white/20 hover:border-red hover:text-red transition-colors rounded-sm"
+                className="inline-flex h-10 w-10 items-center justify-center border border-white/20 hover:bg-timber hover:border-timber hover:text-white transition-colors rounded-sm"
               >
                 <Facebook className="h-4 w-4" />
               </a>
               <a
                 href={business.socials.linkedin}
                 aria-label="LinkedIn"
-                className="inline-flex h-10 w-10 items-center justify-center border border-white/20 hover:border-red hover:text-red transition-colors rounded-sm"
+                className="inline-flex h-10 w-10 items-center justify-center border border-white/20 hover:bg-timber hover:border-timber hover:text-white transition-colors rounded-sm"
               >
                 <Linkedin className="h-4 w-4" />
               </a>
