@@ -6,7 +6,7 @@ export const business = {
   tagline: "Trusted to serve with excellence.",
   secondaryTagline: "The old is gone, the new has come.",
   description:
-    "Houser Construction is a family owned, licensed Alaska general contractor. We build new homes and commercial spaces, restore the ones already standing, and take on real estate development across the state.",
+    "Houser Construction is a licensed Alaska general contractor working statewide on commercial, real estate, and residential projects. We build new commercial spaces and homes, restore the ones already standing, and take on development across the state. Family owned and operated.",
   phone: "(907) 310-6828",
   phoneHref: "tel:+19073106828",
   // TODO: swap to hello@houserconstruction.com once the domain is live.
@@ -29,7 +29,7 @@ export const business = {
     "Girdwood",
   ],
   serviceAreaLine:
-    "Alaska statewide — from Anchorage and Eagle River to Palmer, Wasilla and the Mat-Su Valley, Girdwood, and beyond.",
+    "Commercial, real estate, and residential work across Alaska — from Anchorage and Eagle River to Palmer, Wasilla and the Mat-Su Valley, Girdwood, and beyond.",
   regNumber: "Licensed · Bonded · Insured",
   // Leave blank until real profile URLs are supplied — blank entries are not rendered.
   socials: {
@@ -40,7 +40,7 @@ export const business = {
 } as const;
 
 export const stats = [
-  { value: "Family", label: "Owned & Operated" },
+  { value: "Commercial", label: "Retail, office, mixed-use · Family owned" },
   { value: "Statewide", label: "Wherever the job is" },
   { value: "100%", label: "Licensed · Bonded · Insured" },
 ] as const;
