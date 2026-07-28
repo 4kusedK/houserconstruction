@@ -153,7 +153,7 @@ function AboutHero() {
 
 function Story() {
   return (
-    <section className="relative overflow-hidden py-28 md:py-40 bg-sand blueprint-grid">
+    <section className="relative overflow-hidden py-28 md:py-40 bg-background blueprint-grid">
       <span
         aria-hidden
         className="ghost-number absolute -top-6 right-4 md:right-10 hidden sm:block"

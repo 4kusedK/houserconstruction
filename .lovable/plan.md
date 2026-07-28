@@ -1,19 +1,26 @@
-## Verdict
+## What changes
 
-The design is still on brand. Navy #0A2342 anchors every dark surface, Barlow is unchanged, and red survives exactly where it earns attention: the section-heading rules in `SectionHeading`, the before/after divider and badge, the closing band's top-left rule, and the contact button. Sand and timber are warmth added *around* the identity, not a replacement for it.
+### 1. Sand sections become white with the blueprint grid
+In `src/routes/index.tsx`:
+- Philosophy section (`bg-sand`) → `bg-background blueprint-grid`
+- Gallery section (`bg-sand`) → `bg-background blueprint-grid`
+- Credentials band (`bg-sand-sunk border-y border-timber/20`) → `bg-background blueprint-grid` with a hairline border top/bottom so the band still reads as a distinct strip
 
-One real drift: the hero has zero red. The first screen is navy, white and a timber hairline, so the accent doesn't register until the visitor scrolls. That's the only change I'd make.
+In `src/routes/about.tsx`:
+- The `bg-sand blueprint-grid` story section → `bg-background blueprint-grid` (keeps its existing grid, just loses the warm tint)
 
-## Plan
+FAQ and the navy bands stay exactly as they are.
 
-### 1. One red mark in the hero
-Return the hero eyebrow rule (currently timber) to `bg-red`. Single 2px × 32px mark next to "Steve & David Houser" — enough for the accent to register above the fold, small enough that it doesn't undo the red reduction. Homepage red count goes from 4 to 5, still well under the target of 8.
+### 2. Timber bars/rules in those sections become red
+Inside the now-white sections, the small accent marks currently on `bg-timber` switch to `bg-red`:
+- Philosophy: the 1×24 bar under the photo, the pull-quote rule
+- Gallery: the small rules under card labels
+- Credentials: the leading rule and border tint
 
-### 2. Keep the warm balance as-is
-Sand on philosophy and gallery, sand-sunk on credentials. This is the change that fixed the institutional feel; dialing it back would reintroduce the problem. No change.
+Timber stays where it lives on navy (footer headings, hero rail, closing band) so the warm accent isn't wiped out entirely.
 
-### 3. Verify, don't guess
-Screenshot the hero at 1280px and 375px after the change to confirm the red reads as intentional rather than stray, and confirm nothing else in the hero picked up red.
+### 3. Verify
+Screenshot the homepage at 1280px and 375px to check the grid isn't too loud on large white areas and that the red marks read as deliberate rather than scattered.
 
 ### Technical notes
-Single file: `src/routes/index.tsx`, hero eyebrow rule only. No token, type, or layout changes. `SectionHeading` untouched.
+Presentation-only class swaps in `src/routes/index.tsx` and `src/routes/about.tsx`. No token changes in `src/styles.css`, so reverting is a clean swap back to `bg-sand` / `bg-timber`.
