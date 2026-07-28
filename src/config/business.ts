@@ -89,7 +89,7 @@ export const featuredProject = {
   category: "Whole-home remodel",
   location: "Anchorage, AK",
   beforeImage:
-    "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=70",
+    "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1600&q=70",
   beforeAlt:
     "Reference photo of a home interior before renovation. Client photography coming soon.",
   afterImage:
