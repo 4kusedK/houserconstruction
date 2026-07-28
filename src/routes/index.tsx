@@ -132,7 +132,7 @@ function Hero() {
         fetchPriority="high"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/85 via-navy-deep/60 to-navy-deep/95" />
-      <div aria-hidden className="absolute inset-0" />
+      
       <div
         aria-hidden
         className="hidden lg:flex absolute left-6 top-1/2 -translate-y-1/2 items-center gap-4 [writing-mode:vertical-rl] rotate-180"
@@ -488,15 +488,15 @@ function Certifications() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-background blueprint-grid border-y border-hairline">
+    <section className="py-16 md:py-24 bg-navy text-white">
       <div className="mx-auto max-w-[1200px] px-6">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
-          <p className="eyebrow">Credentials</p>
+          <p className="eyebrow text-white/70">Credentials</p>
           <div className="flex flex-wrap items-center gap-x-8 gap-y-3">
             {items.map((c) => (
               <span
                 key={c}
-                className="font-ui text-xs font-bold uppercase tracking-[0.18em] text-silver"
+                className="font-ui text-xs font-bold uppercase tracking-[0.18em] text-white/70"
               >
                 {c}
               </span>
