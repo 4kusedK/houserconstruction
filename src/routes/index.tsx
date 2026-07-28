@@ -6,7 +6,8 @@ import { SiteFooter } from "@/components/site/SiteFooter";
 import { SectionHeading } from "@/components/brand/SectionHeading";
 import { BrandButton } from "@/components/brand/BrandButton";
 import { Reveal } from "@/components/brand/Reveal";
-import handshakeImg from "@/assets/promise-handshake.jpg";
+const HANDSHAKE_IMG =
+  "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=75";
 import {
   business,
   stats,
@@ -109,7 +110,7 @@ function Hero() {
         fetchPriority="high"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/85 via-navy-deep/60 to-navy-deep/95" />
-      <div className="relative mx-auto max-w-[1200px] px-6 pt-52 md:pt-64 pb-24 min-h-[100svh] flex flex-col justify-end">
+      <div className="relative mx-auto max-w-[1200px] px-6 pt-44 md:pt-56 pb-24 min-h-[100svh] flex flex-col justify-end">
         <div className="max-w-3xl">
           <div className="flex items-center gap-3 mb-6">
             <span className="h-[2px] w-10 bg-red" aria-hidden />
