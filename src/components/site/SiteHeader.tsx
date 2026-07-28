@@ -91,8 +91,9 @@ export function SiteHeader() {
             exit={reduce ? { opacity: 0 } : { opacity: 0, y: -12 }}
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="flex items-center justify-between h-16 md:h-20 px-6 border-b border-white/10">
-              <Logo variant="full-white" className="h-16 w-auto" />
+            <div className="flex items-center justify-between h-20 md:h-24 px-6 border-b border-white/10">
+              <Logo variant="full-white" className="h-16 md:h-20 w-auto" />
+
               <button
                 onClick={() => setOpen(false)}
                 className="inline-flex h-11 w-11 items-center justify-center text-white"
