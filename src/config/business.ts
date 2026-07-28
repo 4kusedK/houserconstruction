@@ -133,7 +133,7 @@ export const processSteps = [
   {
     n: "01",
     title: "Consultation",
-    body: "We walk the site with you, talk through what you want, and note the real constraints: schedule, budget, code, and Alaska weather.",
+    body: "We walk the site with you, talk through scope, and note the real constraints: schedule, budget, code, occupancy, and Alaska weather.",
   },
   {
     n: "02",
@@ -164,37 +164,36 @@ export const testimonials: ReadonlyArray<{
 
 export const faqs = [
   {
+    q: "Do you take on commercial projects?",
+    a: "Yes — commercial work is the core of what we do. Retail, office, mixed-use, church and community buildings, tenant improvements, and commercial restoration. We take that work anywhere in Alaska, not just around Anchorage and the Mat-Su Valley.",
+  },
+  {
+    q: "What types of projects do you take on?",
+    a: "Commercial and real estate projects first: ground-up commercial builds, tenant improvements, restoration, and development from single-property repositioning to full subdivisions. We also build and remodel homes, and handle exterior and site work alongside that.",
+  },
+  {
+    q: "Do you handle real estate projects?",
+    a: "Yes. Real estate and development work is a standing part of the business — acquisition-to-delivery renovation, repositioning, and subdivision development across Alaska.",
+  },
+  {
     q: "What areas does Houser Construction serve?",
-    a: "We work across Alaska, statewide. Most of our residential and commercial projects are in Anchorage, Eagle River, Palmer, Wasilla and the wider Mat-Su Valley, and Girdwood, but we travel for the right job anywhere in the state.",
+    a: "We work across Alaska, statewide. Most of our commercial, real estate, and residential projects are in Anchorage, Eagle River, Palmer, Wasilla and the wider Mat-Su Valley, and Girdwood, but we travel for the right job anywhere in the state.",
   },
   {
     q: "Do you build in the Mat-Su Valley?",
-    a: "Yes. We build throughout the Mat-Su Valley, including Palmer and Wasilla, and the Valley is one of our busiest areas alongside Anchorage. New construction, additions, and exterior work are all regular work for us out there.",
-  },
-  {
-    q: "Do you take on commercial projects?",
-    a: "Yes. Commercial and mixed-use work is a large part of what we do — retail, office, church and community buildings, tenant improvements, and commercial restoration. We take that work anywhere in Alaska, not just around Anchorage and the Mat-Su Valley.",
+    a: "Yes. We build throughout the Mat-Su Valley, including Palmer and Wasilla, and the Valley is one of our busiest areas alongside Anchorage. Commercial builds, new construction, additions, and exterior work are all regular work for us out there.",
   },
   {
     q: "Do you do remodels in Anchorage?",
-    a: "Yes. Anchorage remodels are a core part of what we do, from single-room renovations in Turnagain and Government Hill to whole-home remodels across the city, and we also remodel in Eagle River and Girdwood.",
-  },
-
-  {
-    q: "Is Houser Construction family owned?",
-    a: "Yes. Houser Construction is family owned and operated. The people who meet you at the start are the ones running your project through to the end.",
+    a: "Yes. Anchorage is core territory for us, from commercial tenant improvements and restoration downtown to whole-home remodels in Turnagain and Government Hill, and we also work in Eagle River and Girdwood.",
   },
   {
     q: "Are you licensed, bonded, and insured?",
     a: "Yes. Houser Construction is fully licensed in Alaska, bonded, and carries general liability and workers' compensation coverage.",
   },
   {
-    q: "What types of projects do you take on?",
-    a: "New construction and remodels for homes and businesses. We also handle exterior work like decks and fences, plus real estate development including subdivisions.",
-  },
-  {
-    q: "Do you handle real estate projects?",
-    a: "Yes. We take on renovation and development work, from single-property flips to full subdivisions.",
+    q: "Is Houser Construction family owned?",
+    a: "Yes — David Houser runs the company in partnership with his father, Steve. It means the person who prices your job is the person accountable for delivering it.",
   },
   {
     q: "Do you offer a warranty?",
