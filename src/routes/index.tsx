@@ -151,7 +151,7 @@ function Hero() {
             <span className="h-[2px] w-10 bg-red" aria-hidden />
 
             <span className="eyebrow text-white/80">
-              Steve &amp; David Houser · Since {FOUNDED_YEAR}
+              Steve &amp; David Houser
             </span>
           </div>
           <h1 className="display-2xl text-white">
