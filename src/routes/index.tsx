@@ -194,11 +194,11 @@ function Positioning() {
         <Reveal>
           <div className="flex items-center gap-3 mb-6">
             <span className="rule-red" aria-hidden />
-            <span className="eyebrow">Our philosophy</span>
+            <span className="eyebrow">How we work</span>
           </div>
 
           <h2 className="display-lg text-navy max-w-3xl">
-            A handshake still means something.
+            Built on partnership.
           </h2>
         </Reveal>
 
@@ -208,7 +208,7 @@ function Positioning() {
               <div className="relative overflow-hidden aspect-[4/5] photo-frame">
                 <img
                   src={handshakeImg}
-                  alt="A contractor and a client shaking hands inside a partly framed build"
+                  alt="A contractor and a client shaking hands on site at a commercial build"
                   loading="lazy"
                   width={1200}
                   height={1408}
@@ -236,18 +236,20 @@ function Positioning() {
                 </p>
               </blockquote>
               <p className="mt-12 text-lg text-charcoal leading-[1.6]">
-                Houser Construction is family owned and family run. When we tell
-                you how a job will go, that is how it goes.
+                Commercial and real estate clients get one point of contact from
+                estimate through closeout. No account managers, no handoffs
+                between departments, no chasing someone down for a status.
               </p>
               <p className="mt-8 text-lg text-charcoal/80 leading-[1.6]">
-                We kept the company small on purpose. Whoever stands behind the
-                finished work still lives in the community it was built for.
+                The company is deliberately structured so the person who prices
+                your job is the person accountable for delivering it — and still
+                answers the phone six months after final walkthrough.
               </p>
               <Link
                 to="/about"
                 className="mt-12 inline-flex items-center gap-2 font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-navy hover:text-red transition-colors link-underline"
               >
-                Meet the family <ArrowRight className="h-4 w-4" />
+                Meet the team <ArrowRight className="h-4 w-4" />
               </Link>
             </Reveal>
           </div>
