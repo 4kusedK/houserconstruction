@@ -7,7 +7,7 @@ import { Reveal } from "@/components/brand/Reveal";
 import { BeforeAfter } from "@/components/brand/BeforeAfter";
 import { ProjectImage } from "@/components/brand/ProjectImage";
 import { ContactSection } from "@/components/brand/ContactSection";
-import { getProject } from "@/config/projects";
+import { getProject, type Project } from "@/config/projects";
 
 export const Route = createFileRoute("/work/$slug")({
   loader: ({ params }) => {
@@ -46,7 +46,7 @@ export const Route = createFileRoute("/work/$slug")({
 });
 
 function ProjectDetail() {
-  const { project } = Route.useLoaderData();
+  const { project } = Route.useLoaderData() as { project: Project };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
