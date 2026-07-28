@@ -32,17 +32,17 @@ const OG_IMAGE = `${SITE_URL}/og-houser-construction.jpg`;
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Houser Construction — Trusted to Serve | Alaska General Contractor" },
+      { title: "Houser Construction — Alaska Commercial General Contractor" },
       {
         name: "description",
         content:
-          "Houser Construction is a family owned, licensed Alaska general contractor. New construction, remodels, and real estate development, built to serve Alaskan communities with excellence.",
+          "Licensed Alaska general contractor working statewide on commercial, real estate, and residential projects. Ground-up builds, tenant improvements, restoration, and development. Family owned and operated.",
       },
-      { property: "og:title", content: "Houser Construction — Trusted to Serve | Alaska General Contractor" },
+      { property: "og:title", content: "Houser Construction — Alaska Commercial General Contractor" },
       {
         property: "og:description",
         content:
-          "Houser Construction is a family owned, licensed Alaska general contractor. New construction, remodels, and real estate development, built to serve Alaskan communities with excellence.",
+          "Licensed Alaska general contractor working statewide on commercial, real estate, and residential projects. Family owned and operated.",
       },
       { property: "og:url", content: `${SITE_URL}/` },
       { property: "og:type", content: "website" },
@@ -139,7 +139,7 @@ function Hero() {
       >
         <span className="h-16 w-[2px] bg-red" />
         <span className="font-ui text-[11px] font-bold uppercase tracking-[0.28em] text-white/60">
-          Family Owned · Alaska
+          Steve &amp; David Houser · Alaska
         </span>
       </div>
       <div className="relative mx-auto max-w-[1200px] px-6 pt-44 md:pt-56 pb-24 min-h-[100svh] flex flex-col justify-end">
@@ -158,9 +158,9 @@ function Hero() {
             <span className="text-white/85">with excellence.</span>
           </h1>
           <p className="mt-8 max-w-xl text-lg text-white/85 leading-[1.6]">
-            A father-and-son contractor building new homes and commercial
-            spaces, restoring the ones already standing, and developing
-            property across Alaska.
+            Licensed Alaska general contractor working statewide on commercial,
+            real estate, and residential projects. David runs the day-to-day
+            with Steve Houser at his side.
           </p>
 
           <span className="mt-10 block h-[2px] w-16 bg-red" aria-hidden />
