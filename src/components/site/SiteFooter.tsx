@@ -8,7 +8,6 @@ const COLS = [
     links: [
       { label: "About", href: "/about" },
       { label: "Work", href: "/#work" },
-      { label: "Careers", href: "#" },
     ],
   },
   {
@@ -19,6 +18,13 @@ const COLS = [
     ],
   },
 ];
+
+// Only rendered when a real profile URL exists in business.socials.
+const SOCIALS = [
+  { key: "instagram", label: "Instagram", Icon: Instagram, href: business.socials.instagram },
+  { key: "facebook", label: "Facebook", Icon: Facebook, href: business.socials.facebook },
+  { key: "linkedin", label: "LinkedIn", Icon: Linkedin, href: business.socials.linkedin },
+].filter((s) => s.href && s.href !== "#");
 
 export function SiteFooter() {
   return (
