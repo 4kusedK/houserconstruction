@@ -41,7 +41,7 @@ export const business = {
 
 export const stats = [
   { value: "Family", label: "Owned & Operated" },
-  { value: "Alaska", label: "Built Here, Serving Statewide" },
+  { value: "Anchorage", label: "Mat-Su · Palmer · Wasilla" },
   { value: "100%", label: "Licensed · Bonded · Insured" },
 ] as const;
 
