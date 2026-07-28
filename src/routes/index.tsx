@@ -152,60 +152,80 @@ function Hero() {
 
 function Positioning() {
   return (
-    <section id="about" className="py-28 md:py-40 bg-background">
-      <div className="mx-auto max-w-[1200px] px-6 grid md:grid-cols-12 gap-12 items-start">
-        <div className="md:col-span-5">
-          <Reveal>
-            <div className="flex items-center gap-3 mb-4">
-              <span className="h-[2px] w-8 bg-red" aria-hidden />
-              <span className="eyebrow">
-                <span className="text-navy">01</span>
-                <span className="mx-2 opacity-60">—</span>Our philosophy
-              </span>
-            </div>
-            <h2 className="display-lg text-navy">
-              A handshake still means something.
-            </h2>
-            <p className="mt-10 text-lg text-charcoal leading-relaxed">
-              Houser Construction is family owned and family run. When we tell
-              you how a job will go, that is how it goes. No layers of managers
-              between you and the people holding the tools.
-            </p>
-            <blockquote className="mt-12 border-l-2 border-red pl-6">
-              <p className="display-md text-navy">
-                The person who walks your site is the person who answers the
-                phone.
-              </p>
-            </blockquote>
-            <p className="mt-12 text-lg text-charcoal/85 leading-relaxed">
-              We kept the company small on purpose. Whoever stands behind the
-              finished work still lives in the community it was built for.
-            </p>
-          </Reveal>
-        </div>
+    <section
+      id="about"
+      className="relative overflow-hidden py-32 md:py-48 bg-sand blueprint-grid"
+    >
+      <span
+        aria-hidden
+        className="ghost-number absolute -top-6 right-4 md:right-10 hidden sm:block"
+      >
+        01
+      </span>
+      <div className="relative mx-auto max-w-[1200px] px-6">
+        <Reveal>
+          <div className="flex items-center gap-3 mb-6">
+            <span className="rule-red" aria-hidden />
+            <span className="eyebrow">
+              <span className="text-navy">01</span>
+              <span className="mx-2 opacity-60">—</span>Our philosophy
+            </span>
+          </div>
+          <h2 className="display-lg text-navy max-w-3xl">
+            A handshake still means something.
+          </h2>
+        </Reveal>
 
-        <div className="md:col-span-6 md:col-start-7">
-          <Reveal delay={0.1}>
-            <div className="relative overflow-hidden aspect-[4/5]">
-              <img
-                src={HANDSHAKE_IMG}
-                alt="A Houser Construction contractor shaking hands with a homeowner"
-                loading="lazy"
-                width={1200}
-                height={1408}
-                className="absolute inset-0 h-full w-full object-cover"
-              />
-              <span
-                aria-hidden
-                className="absolute bottom-0 left-0 h-1 w-24 bg-red"
-              />
-            </div>
-          </Reveal>
+        <div className="mt-16 md:mt-24 grid md:grid-cols-12 gap-x-16 gap-y-16 items-start">
+          <div className="md:col-span-6">
+            <Reveal delay={0.05}>
+              <div className="relative overflow-hidden aspect-[4/5]">
+                <img
+                  src={HANDSHAKE_IMG}
+                  alt="A Houser Construction contractor shaking hands with a homeowner"
+                  loading="lazy"
+                  width={1200}
+                  height={1408}
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+                <span
+                  aria-hidden
+                  className="absolute bottom-0 left-0 h-1 w-24 bg-red"
+                />
+              </div>
+            </Reveal>
+          </div>
+
+          <div className="md:col-span-5 md:col-start-8 md:pt-6">
+            <Reveal delay={0.1}>
+              <blockquote className="border-l-2 border-red pl-6">
+                <p className="display-md text-navy">
+                  The person who walks your site is the person who answers the
+                  phone.
+                </p>
+              </blockquote>
+              <p className="mt-12 text-lg text-charcoal leading-relaxed">
+                Houser Construction is family owned and family run. When we tell
+                you how a job will go, that is how it goes.
+              </p>
+              <p className="mt-8 text-lg text-charcoal/80 leading-relaxed">
+                We kept the company small on purpose. Whoever stands behind the
+                finished work still lives in the community it was built for.
+              </p>
+              <Link
+                to="/about"
+                className="mt-12 inline-flex items-center gap-2 font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-navy hover:text-red transition-colors"
+              >
+                Meet the family <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Reveal>
+          </div>
         </div>
       </div>
     </section>
   );
 }
+
 
 function StatBar() {
   return (
