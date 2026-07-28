@@ -261,6 +261,7 @@ function Positioning() {
 function StatBar() {
   return (
     <section className="relative overflow-hidden bg-navy-deep text-white">
+      <span aria-hidden className="navy-depth" />
       <span aria-hidden className="absolute top-0 left-0 h-1 w-40 bg-red" />
       <div className="relative mx-auto max-w-[1200px] px-6 py-16 md:py-24 grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-y-0 md:divide-x md:divide-white/10">
         {stats.map((s, i) => (
@@ -488,15 +489,17 @@ function Certifications() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-navy text-white">
-      <div className="mx-auto max-w-[1200px] px-6">
+    <section className="relative overflow-hidden py-16 md:py-24 bg-navy text-white">
+      <span aria-hidden className="absolute top-0 left-0 h-1 w-40 bg-red" />
+      <span aria-hidden className="navy-depth" />
+      <div className="relative mx-auto max-w-[1200px] px-6">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
           <p className="eyebrow text-white/70">Credentials</p>
-          <div className="flex flex-wrap items-center gap-x-8 gap-y-3">
+          <div className="flex flex-wrap items-center gap-3">
             {items.map((c) => (
               <span
                 key={c}
-                className="font-ui text-xs font-bold uppercase tracking-[0.18em] text-white/70"
+                className="font-ui text-xs font-bold uppercase tracking-[0.18em] text-white/75 border border-white/15 rounded-sm px-4 py-2.5"
               >
                 {c}
               </span>
@@ -510,7 +513,7 @@ function Certifications() {
 
 function FAQ() {
   return (
-    <section className="py-28 md:py-40 bg-background">
+    <section className="py-28 md:py-40 bg-background blueprint-grid">
       <div className="mx-auto max-w-[1200px] px-6 grid md:grid-cols-12 gap-12">
         <div className="md:col-span-4">
           <Reveal>
@@ -552,6 +555,7 @@ function FAQ() {
 function ClosingAndContact() {
   return (
     <section className="relative overflow-hidden bg-navy text-white">
+      <span aria-hidden className="navy-depth" />
       <span
         aria-hidden
         className="absolute top-0 left-0 h-1 w-40 md:w-64 bg-red"
