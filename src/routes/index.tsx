@@ -128,15 +128,16 @@ function Hero() {
               Alaska General Contractor · Family Owned
             </span>
           </div>
-          <h1 className="display-xl text-white">
+          <h1 className="display-2xl text-white">
             Trusted to serve
             <br />
             <span className="text-white/85">with excellence.</span>
           </h1>
-          <p className="mt-8 max-w-xl text-lg text-white/85 leading-relaxed">
+          <p className="mt-8 max-w-xl text-lg text-white/85 leading-[1.6]">
             A family owned Alaska contractor building new homes, restoring the
             ones already standing, and developing property across the state.
           </p>
+          <span className="mt-10 block h-[2px] w-16 bg-red" aria-hidden />
         </div>
       </div>
       <a
