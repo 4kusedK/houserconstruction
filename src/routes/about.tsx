@@ -131,7 +131,7 @@ function AboutHero() {
         fetchPriority="high"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/80 via-navy-deep/70 to-navy-deep/95" />
-      <div className="relative mx-auto max-w-[1200px] px-6 pt-40 md:pt-56 pb-20 md:pb-32">
+      <div className="relative mx-auto max-w-[1200px] px-6 pt-44 md:pt-60 pb-20 md:pb-32">
         <div className="flex items-center gap-3 mb-6">
           <span className="rule-red" aria-hidden />
           <span className="eyebrow text-white/80">Profile</span>

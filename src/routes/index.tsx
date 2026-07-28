@@ -502,7 +502,7 @@ function Certifications() {
           <Reveal key={c.value} delay={i * 0.08}>
             <div className={i === 0 ? "md:pr-8" : "md:px-8"}>
               <span className="block h-[2px] w-10 bg-red mb-5" aria-hidden />
-              <div className="display-sm text-white">{c.value}</div>
+              <div className="display-md text-white">{c.value}</div>
               <div className="eyebrow mt-4 text-white/60">{c.label}</div>
             </div>
           </Reveal>
