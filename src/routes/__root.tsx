@@ -88,8 +88,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Houser Construction is a family owned, licensed Alaska general contractor. New construction, remodels, and real estate development, built to serve Alaskan communities with excellence." },
       { property: "og:description", content: "Houser Construction is a family owned, licensed Alaska general contractor. New construction, remodels, and real estate development, built to serve Alaskan communities with excellence." },
       { name: "twitter:description", content: "Houser Construction is a family owned, licensed Alaska general contractor. New construction, remodels, and real estate development, built to serve Alaskan communities with excellence." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/605747e1-f771-4c50-bd55-7c22226f097e/id-preview-83e17859--f7683538-e72b-4065-9fc9-a79fdec108bb.lovable.app-1784159257652.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/605747e1-f771-4c50-bd55-7c22226f097e/id-preview-83e17859--f7683538-e72b-4065-9fc9-a79fdec108bb.lovable.app-1784159257652.png" },
+      { property: "og:image", content: "https://houserconstruction.net/og-houser-construction.jpg" },
+      { name: "twitter:image", content: "https://houserconstruction.net/og-houser-construction.jpg" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

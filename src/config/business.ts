@@ -18,11 +18,24 @@ export const business = {
     country: "US",
   },
   serviceArea: "Alaska",
+  // Statewide coverage. The hubs below are examples for humans and search
+  // engines — they are NOT a limit on where Houser Construction works.
+  serviceAreaHubs: [
+    "Anchorage",
+    "Eagle River",
+    "Palmer",
+    "Wasilla",
+    "Mat-Su Valley",
+    "Girdwood",
+  ],
+  serviceAreaLine:
+    "Alaska statewide — from Anchorage and Eagle River to Palmer, Wasilla and the Mat-Su Valley, Girdwood, and beyond.",
   regNumber: "Licensed · Bonded · Insured",
+  // Leave blank until real profile URLs are supplied — blank entries are not rendered.
   socials: {
-    instagram: "#",
-    facebook: "#",
-    linkedin: "#",
+    instagram: "",
+    facebook: "",
+    linkedin: "",
   },
 } as const;
 
@@ -95,20 +108,6 @@ export const projects = [
     image:
       "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=70",
   },
-  {
-    n: "05",
-    name: "Strip Mall Development",
-    category: "Commercial · Coming Soon",
-    image:
-      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=70",
-  },
-  {
-    n: "06",
-    name: "Community Restoration",
-    category: "Community · Coming Soon",
-    image:
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=70",
-  },
 ] as const;
 
 export const processSteps = [
@@ -158,7 +157,7 @@ export const testimonials = [
 export const faqs = [
   {
     q: "What areas does Houser Construction serve?",
-    a: "We work across Alaska. Residential and commercial projects, statewide.",
+    a: "We work across Alaska, statewide. Most of our residential and commercial projects are in Anchorage, Eagle River, Palmer, Wasilla and the wider Mat-Su Valley, and Girdwood, but we travel for the right job anywhere in the state.",
   },
   {
     q: "Is Houser Construction family owned?",

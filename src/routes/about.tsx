@@ -48,30 +48,37 @@ const VALUES = [
   },
 ];
 
+const SITE_URL = "https://houserconstruction.net";
+const OG_IMAGE = `${SITE_URL}/og-houser-construction.jpg`;
+
+const ABOUT_TITLE = "About Houser Construction — A Father, A Son, Built in Alaska";
+const ABOUT_DESC =
+  "Meet the family behind Houser Construction. David and Steve Houser build new homes, remodels, and real estate developments across Alaska, licensed, bonded, and insured.";
+
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Houser Construction — A Father, A Son, Built in Alaska" },
-      {
-        name: "description",
-        content:
-          "Meet the family behind Houser Construction. David and Steve Houser build new homes, remodels, and real estate developments across Alaska, licensed, bonded, and insured.",
-      },
-      {
-        property: "og:title",
-        content: "About Houser Construction — A Father, A Son, Built in Alaska",
-      },
+      { title: ABOUT_TITLE },
+      { name: "description", content: ABOUT_DESC },
+      { property: "og:title", content: ABOUT_TITLE },
       {
         property: "og:description",
         content:
           "Meet the family behind Houser Construction: David and Steve Houser, a father and son building across Alaska.",
       },
+      { property: "og:url", content: `${SITE_URL}/about` },
       { property: "og:type", content: "profile" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:image", content: ABOUT_HERO },
-      { name: "twitter:image", content: ABOUT_HERO },
+      { name: "twitter:title", content: ABOUT_TITLE },
+      {
+        name: "twitter:description",
+        content:
+          "Meet the family behind Houser Construction: David and Steve Houser, a father and son building across Alaska.",
+      },
+      { property: "og:image", content: OG_IMAGE },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/about` }],
     scripts: [
       {
         type: "application/ld+json",
@@ -243,7 +250,7 @@ function Owners() {
             <div className="relative aspect-[16/7] overflow-hidden border border-white/10 photo-frame">
               <img
                 src={CREW_IMG}
-                alt="Houser Construction crew on an Alaska job site"
+                alt="Reference photo of an Alaska job site. Photography of the Houser Construction crew is coming soon."
                 loading="lazy"
                 className="absolute inset-0 h-full w-full object-cover"
               />

@@ -1,64 +1,51 @@
-## My read on the feedback
+## Answers to your bracketed notes
 
-Mostly right, and the priority order is right: credibility and metadata first, `/work` second. I verified each claim against the code — here's where it holds and where it doesn't.
+**Testimonials stay.** You and the client like them — I'll leave the Client voice section as-is. I'd only add attribution (first name + town) when David supplies real ones.
 
-**Confirmed:**
+**Privacy/Terms.** Agreed, don't lose the thread. I'll remove the dead footer links now and drop a `TODO-LEGAL.md` at the repo root noting exactly when they become required (contact form that stores data, analytics/tracking scripts, or any email capture). If we wire up Formspree or Google Analytics later, that's the trigger.
 
-- `canonical` and `og:url` are `"/"` on both routes. Since houserconstruction.net is live, these should be absolute.
-- Root `og:image`/`twitter:image` is a Lovable preview screenshot on an r2.dev bucket — not durable, not branded.
-- About's `twitter:title`/`twitter:description` are wrong, though not by copy-paste: About sets no twitter text tags at all, so it inherits the homepage's from `__root`.
-- Six dead `href="#"` links: three socials (from `business.socials`), Careers, Privacy, Terms.
-- Projects 05 and 06 are labeled "Coming Soon"; all six are Unsplash stock with service-label names.
-- Crew photo alt says "Houser Construction crew on an Alaska job site" while the caption says the real photo is coming — the alt should not assert what the caption denies.
-- Location signal is only "Alaska". No town ever appears in body copy; `areaServed` is the string "Alaska".
+**Statewide vs. towns.** Yes, still list towns — but framed as *statewide with hubs*, not as a limited service area. Search doesn't have a "whole state" query; people type "general contractor Wasilla." A page that says "Statewide — from Anchorage and the Mat-Su Valley to the Kenai and beyond" reads truthfully to a human *and* gives crawlers the town tokens. It never claims he's regional. Schema handles this cleanly: `areaServed` becomes the `State: Alaska` plus a few `City` entries as examples.
 
-**Where I'd push back:**
+**FAQ.** Keeping your existing questions. Instead of adding two location FAQs, I'll fold the coverage answer into one existing FAQ's body copy (the "where do you work" style one) so the statewide + hub-town language lands in `FAQPage` schema without new questions. If none of the current FAQs is a natural fit, I'll add exactly one: "Do you work outside Anchorage?" — answered statewide.
 
-- No double space in the H1 — it's "Trusted to serve" / "with excellence." on two lines; the space is a line break in extraction.
-- JSON-LD survived: `GeneralContractor` on Home and `FAQPage` are both present, plus `AboutPage` on /about.
-- The testimonials aren't fake *reviews* so much as unattributed placeholder copy with real-sounding locales. Still a liability on a trust-first site — same conclusion, less alarm: they come down until David supplies real ones.
-- The stock handshake is a fair hit, but it's illustrative, not a claim about Houser's own crew. Lower priority than the alt text, which actively misdescribes.
+---
 
-## Plan
+## Revised plan
 
-### 1. Credibility (do first)
+### 1. Credibility
 
-- Remove the three testimonial quotes from `business.ts` and the Client voice section from Home. Keep the section shell commented/ready so real quotes drop in later. (No I like the place holder testimonial. client likes it to)
-- Fix the crew photo alt to describe it honestly ("Alaska job site, reference photo") or swap the section to placeholder framing like the owner portraits.
-- Drop projects 05 and 06 ("Coming Soon") from the gallery until they're real work.
+- Keep the testimonials (unchanged).
+- Fix the crew photo alt text so it doesn't assert something the caption denies — describe it as a reference/job-site photo.
+- Drop projects 05 and 06 ("Coming Soon") from the homepage gallery until real work replaces them.
 
 ### 2. Metadata correctness
 
-- Absolute `canonical` + `og:url` on Home (`https://houserconstruction.net/`) and About (`/about`).
-- Add route-specific `twitter:title` and `twitter:description` to About so it stops inheriting the homepage's.
-- Generate a real 1200×630 branded OG image, ship it as a local asset, and replace the r2.dev preview screenshot in `__root`. Replace About's hotlinked Unsplash OG with the same branded image until real photos exist.
-- Note: social platforms cache previews, so shared links won't update until they re-scrape.
+- Absolute `canonical` + `og:url`: `https://houserconstruction.net/` on Home, `https://houserconstruction.net/about` on About.
+- Add route-specific `twitter:title` / `twitter:description` to About so it stops inheriting the homepage's.
+- Generate a branded 1200×630 OG image, ship it as a local asset, and use its absolute URL for `og:image` / `twitter:image` on the leaf routes — replacing the r2.dev preview screenshot and About's hotlinked Unsplash image.
+- Note: platforms cache link previews; shared links won't update until they re-scrape (can be forced in each platform's debugger).
 
 ### 3. Dead links
 
-- Socials: hide the icon row until David provides real Instagram/Facebook URLs (keep the code driven by `business.socials`, render only entries that aren't `#`).
+- Socials: render only `business.socials` entries with a real URL — the row hides itself until David provides Instagram/Facebook.
 - Remove Careers from the footer.
-- Keep Privacy and Terms only if we build them — otherwise remove. Recommend removing for now; a contractor portfolio site collecting nothing doesn't need them. ( i dont want to forget to but them in if we do collect data or people reach out to us )
+- Remove Privacy and Terms links; add `TODO-LEGAL.md` documenting the conditions that make them required.
 
-### 4. Local SEO — biggest upside
+### 4. Local SEO (statewide framing)
 
-- Add a real service-area list to `business.ts`: Anchorage, Eagle River, Palmer, Wasilla / Mat-Su Valley, Girdwood. (he services all of alaska, not a spcif region tho. youthink he should still do that?)
-- Name those towns in body copy (philosophy section, closing band) and in the footer Office block, not just in schema. (should we really tho? he services all alaska, what ould you reccomment?)
-- Expand `areaServed` in the `GeneralContractor` JSON-LD to an array of `City` entries.
-- Add two location FAQs matching real search phrasing ("Do you build in the Mat-Su Valley?", "Do you do remodels in Anchorage?") to feed both the FAQ section and `FAQPage` schema. (i like our current FAQ questions. and based on the answer above decide what we do here in this section)
-- Off-site (client action, not code): claim the Google Business Profile with the exact phone and email on the site. That likely outranks everything above.
+- Add a `serviceArea` block to `business.ts`: statewide primary, with hub examples (Anchorage, Eagle River, Palmer, Wasilla / Mat-Su Valley, Girdwood).
+- Work that phrasing into body copy — closing band and the footer Office block — always as "Alaska statewide, from X to Y," never as a limited region.
+- Expand `areaServed` in the `GeneralContractor` JSON-LD to `State: Alaska` plus `City` entries.
+- Fold statewide coverage language into an existing FAQ answer (or add one coverage FAQ if none fits).
+- Client action, off-site: claim the Google Business Profile using the exact phone and email on the site. Highest-leverage item on this list.
 
-### 5. Then build `/work`
+### 5. `/work` (separate build, after real photos)
 
-Only after 1–4, and ideally after real photos arrive:
-
-- `src/config/projects.ts` as the content model (slug, name, town, category, scope, images, optional before/after pair).
-- `/work` index route with a filterable grid; homepage `#work` gallery becomes a teaser linking there.
-- `/work/$slug` detail route with per-project `head()` and images.
+- `src/config/projects.ts` content model (slug, name, town, category, scope, images, optional before/after pair).
+- `/work` index with filterable grid; homepage `#work` becomes a teaser linking there.
+- `/work/$slug` detail route with per-project `head()`.
 - `HOW-TO-ADD-A-PROJECT.md` for handoff.
 
 ### Technical notes
 
-Files touched in steps 1–4: `src/config/business.ts`, `src/routes/index.tsx`, `src/routes/about.tsx`, `src/routes/__root.tsx`, `src/components/site/SiteFooter.tsx`, plus one new OG image asset and a `sitemap.xml` update when `/work` lands.
-
-Steps 1–4 are one pass. Step 5 is a separate build.
+Steps 1–4 are one pass touching `src/config/business.ts`, `src/routes/index.tsx`, `src/routes/about.tsx`, `src/routes/__root.tsx`, `src/components/site/SiteFooter.tsx`, plus one new OG image asset and `TODO-LEGAL.md`. `sitemap.xml` updates when `/work` lands in step 5.

@@ -8,7 +8,6 @@ const COLS = [
     links: [
       { label: "About", href: "/about" },
       { label: "Work", href: "/#work" },
-      { label: "Careers", href: "#" },
     ],
   },
   {
@@ -19,6 +18,13 @@ const COLS = [
     ],
   },
 ];
+
+// Only rendered when a real profile URL exists in business.socials.
+const SOCIALS = [
+  { key: "instagram", label: "Instagram", Icon: Instagram, href: business.socials.instagram },
+  { key: "facebook", label: "Facebook", Icon: Facebook, href: business.socials.facebook },
+  { key: "linkedin", label: "LinkedIn", Icon: Linkedin, href: business.socials.linkedin },
+].filter((s) => s.href && s.href !== "#");
 
 export function SiteFooter() {
   return (
@@ -32,29 +38,22 @@ export function SiteFooter() {
               stand behind our work across {business.serviceArea}.
             </p>
 
-            <div className="mt-6 flex items-center gap-3">
-              <a
-                href={business.socials.instagram}
-                aria-label="Instagram"
-                className="inline-flex h-10 w-10 items-center justify-center border border-white/20 hover:bg-timber hover:border-timber hover:text-white transition-colors rounded-sm"
-              >
-                <Instagram className="h-4 w-4" />
-              </a>
-              <a
-                href={business.socials.facebook}
-                aria-label="Facebook"
-                className="inline-flex h-10 w-10 items-center justify-center border border-white/20 hover:bg-timber hover:border-timber hover:text-white transition-colors rounded-sm"
-              >
-                <Facebook className="h-4 w-4" />
-              </a>
-              <a
-                href={business.socials.linkedin}
-                aria-label="LinkedIn"
-                className="inline-flex h-10 w-10 items-center justify-center border border-white/20 hover:bg-timber hover:border-timber hover:text-white transition-colors rounded-sm"
-              >
-                <Linkedin className="h-4 w-4" />
-              </a>
-            </div>
+            {SOCIALS.length > 0 && (
+              <div className="mt-6 flex items-center gap-3">
+                {SOCIALS.map(({ key, label, Icon, href }) => (
+                  <a
+                    key={key}
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    aria-label={label}
+                    className="inline-flex h-10 w-10 items-center justify-center border border-white/20 hover:bg-timber hover:border-timber hover:text-white transition-colors rounded-sm"
+                  >
+                    <Icon className="h-4 w-4" />
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
 
           {COLS.map((col) => (
@@ -81,7 +80,8 @@ export function SiteFooter() {
               Based in {business.address.city}
               <br />
               <span className="text-white/60">
-                Serving {business.serviceArea} statewide
+                Serving Alaska statewide — Anchorage, Eagle River, Palmer,
+                Wasilla and the Mat-Su Valley, Girdwood, and beyond.
               </span>
             </address>
           </div>
@@ -114,14 +114,8 @@ export function SiteFooter() {
               © {new Date().getFullYear()} {business.legalName}. All rights
               reserved. · {business.regNumber}
             </div>
-            <div className="flex gap-6">
-              <a href="#" className="hover:text-white transition-colors">
-                Privacy
-              </a>
-              <a href="#" className="hover:text-white transition-colors">
-                Terms
-              </a>
-            </div>
+            {/* Privacy / Terms links intentionally removed — see TODO-LEGAL.md.
+                Restore them the moment the site collects data or adds analytics. */}
           </div>
         </div>
       </div>
