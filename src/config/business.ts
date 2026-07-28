@@ -95,20 +95,6 @@ export const projects = [
     image:
       "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=70",
   },
-  {
-    n: "05",
-    name: "Strip Mall Development",
-    category: "Commercial · Coming Soon",
-    image:
-      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=70",
-  },
-  {
-    n: "06",
-    name: "Community Restoration",
-    category: "Community · Coming Soon",
-    image:
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=70",
-  },
 ] as const;
 
 export const processSteps = [
