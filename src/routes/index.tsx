@@ -403,7 +403,7 @@ function Certifications() {
 
 function FAQ() {
   return (
-    <section className="py-28 md:py-40 bg-sand">
+    <section className="py-28 md:py-40 bg-sand-sunk">
       <div className="mx-auto max-w-[1200px] px-6 grid md:grid-cols-12 gap-12">
         <div className="md:col-span-4">
           <Reveal>
@@ -430,7 +430,7 @@ function FAQ() {
                       +
                     </span>
                   </summary>
-                  <p className="mt-4 text-charcoal/85 leading-relaxed">
+                  <p className="mt-4 text-charcoal/85 leading-[1.6]">
                     {f.a}
                   </p>
                 </details>
@@ -445,7 +445,7 @@ function FAQ() {
 
 function ClosingBand() {
   return (
-    <section className="relative overflow-hidden bg-navy-deep text-white">
+    <section className="relative overflow-hidden bg-navy-deep text-white blueprint-grid-dark">
       <span
         aria-hidden
         className="absolute top-0 left-0 h-1 w-40 md:w-64 bg-red"
@@ -455,7 +455,7 @@ function ClosingBand() {
           <h2 className="display-lg text-white">
             Building better communities.
           </h2>
-          <p className="mt-8 text-lg text-white/80 leading-relaxed max-w-2xl">
+          <p className="mt-8 text-lg text-white/80 leading-[1.6] max-w-2xl">
             Every structure we put up outlasts the contract that paid for it.
             Houses become homes, empty lots become neighborhoods, and worn out
             buildings get another life. That is the part of this work that
@@ -474,7 +474,7 @@ function FinalCTA() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-navy text-white"
+      className="relative overflow-hidden bg-navy text-white blueprint-grid-dark"
     >
       {/* Editorial red rule accent, top-right */}
       <span
