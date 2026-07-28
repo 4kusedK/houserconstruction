@@ -206,6 +206,14 @@
   color: var(--silver);
 }
 
+@utility display-2xl {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(52px, 9vw, 96px);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+}
+
 @utility display-xl {
   font-family: var(--font-display);
   font-weight: 700;
