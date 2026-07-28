@@ -104,8 +104,8 @@ export const projects = [
   },
   {
     n: "06",
-    name: "Government Contract",
-    category: "Public Sector · Coming Soon",
+    name: "Community Restoration",
+    category: "Community · Coming Soon",
     image:
       "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=70",
   },
@@ -158,7 +158,11 @@ export const testimonials = [
 export const faqs = [
   {
     q: "What areas does Houser Construction serve?",
-    a: "We work across Alaska. Residential, commercial, and public projects, statewide.",
+    a: "We work across Alaska. Residential and commercial projects, statewide.",
+  },
+  {
+    q: "Is Houser Construction family owned?",
+    a: "Yes. Houser Construction is family owned and operated. The people who meet you at the start are the ones running your project through to the end.",
   },
   {
     q: "Are you licensed, bonded, and insured?",
@@ -166,11 +170,7 @@ export const faqs = [
   },
   {
     q: "What types of projects do you take on?",
-    a: "New construction and remodels for homes, businesses, and government agencies. We also handle exterior work like decks and fences, plus real estate development including subdivisions.",
-  },
-  {
-    q: "How do I get a quote?",
-    a: "Send a note through the contact form or call the office. We'll schedule a site visit and follow up with a written estimate.",
+    a: "New construction and remodels for homes and businesses. We also handle exterior work like decks and fences, plus real estate development including subdivisions.",
   },
   {
     q: "Do you handle real estate projects?",
