@@ -108,8 +108,8 @@ function Home() {
         <Testimonials />
         <Certifications />
         <FAQ />
-        <ClosingBand />
-        <FinalCTA />
+        <ClosingAndContact />
+
       </main>
       <SiteFooter />
       <MobileStickyCTA />
@@ -421,8 +421,11 @@ function initials(name: string) {
 }
 
 function Testimonials() {
+  // Renders nothing until real, permissioned client quotes exist.
+  if (testimonials.length === 0) return null;
+
   return (
-    <section className="relative overflow-hidden py-28 md:py-40 bg-navy text-white blueprint-grid-dark">
+    <section className="relative overflow-hidden py-28 md:py-40 bg-navy text-white">
       <span
         aria-hidden
         className="ghost-number-light absolute -top-8 right-4 md:right-10 hidden sm:block"
@@ -434,11 +437,11 @@ function Testimonials() {
         <Reveal>
           <SectionHeading
             eyebrow="Client voice"
-            number="03"
             title="Owners who've been through it."
             onDark
           />
         </Reveal>
+
         <div className="mt-16 md:mt-20 grid grid-cols-1 md:grid-cols-3 gap-10">
           {testimonials.map((t, i) => (
             <Reveal key={t.name} delay={i * 0.08}>
@@ -479,7 +482,7 @@ function Certifications() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-background border-y border-hairline">
+    <section className="py-16 md:py-24 bg-sand-sunk border-y border-timber/20">
       <div className="mx-auto max-w-[1200px] px-6">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
           <p className="eyebrow">Credentials</p>
@@ -505,11 +508,8 @@ function FAQ() {
       <div className="mx-auto max-w-[1200px] px-6 grid md:grid-cols-12 gap-12">
         <div className="md:col-span-4">
           <Reveal>
-            <SectionHeading
-              eyebrow="Answers"
-              number="04"
-              title="Frequently asked."
-            />
+            <SectionHeading eyebrow="Answers" title="Frequently asked." />
+
           </Reveal>
         </div>
         <div className="md:col-span-7 md:col-start-6">
