@@ -1,101 +1,64 @@
-## Houser Construction — Design Upgrade Plan
+## My read on the feedback
 
-### Goal
-Move the site from "polished but safe" to "editorial and expensive" while keeping the Houser brand identity intact: navy #0A2342, red #B5121B, Barlow/Archivo/Inter, family-owned Alaska story. No new routes, no backend. Pure design craft.
+Mostly right, and the priority order is right: credibility and metadata first, `/work` second. I verified each claim against the code — here's where it holds and where it doesn't.
 
----
+**Confirmed:**
 
-### 1. Fix the texture rhythm (the bottom 2 blue sections)
-Current state: the warm sand philosophy band and the navy stats band have blueprint grids. The bottom two navy sections — the closing statement band and the contact band — are plain navy.
+- `canonical` and `og:url` are `"/"` on both routes. Since houserconstruction.net is live, these should be absolute.
+- Root `og:image`/`twitter:image` is a Lovable preview screenshot on an r2.dev bucket — not durable, not branded.
+- About's `twitter:title`/`twitter:description` are wrong, though not by copy-paste: About sets no twitter text tags at all, so it inherits the homepage's from `__root`.
+- Six dead `href="#"` links: three socials (from `business.socials`), Careers, Privacy, Terms.
+- Projects 05 and 06 are labeled "Coming Soon"; all six are Unsplash stock with service-label names.
+- Crew photo alt says "Houser Construction crew on an Alaska job site" while the caption says the real photo is coming — the alt should not assert what the caption denies.
+- Location signal is only "Alaska". No town ever appears in body copy; `areaServed` is the string "Alaska".
 
-- Add `blueprint-grid-dark` to the **ClosingBand** section.
-- Add `blueprint-grid-dark` to the **FinalCTA** section.
-- Add `blueprint-grid-dark` to the **AboutCTA** section on `/about`.
-- Rule: **navy sections always get the grid; warm sand sections always get the grid; white sections stay clean.** This makes the grid a signature, not an accident.
+**Where I'd push back:**
 
----
+- No double space in the H1 — it's "Trusted to serve" / "with excellence." on two lines; the space is a line break in extraction.
+- JSON-LD survived: `GeneralContractor` on Home and `FAQPage` are both present, plus `AboutPage` on /about.
+- The testimonials aren't fake *reviews* so much as unattributed placeholder copy with real-sounding locales. Still a liability on a trust-first site — same conclusion, less alarm: they come down until David supplies real ones.
+- The stock handshake is a fair hit, but it's illustrative, not a claim about Houser's own crew. Lower priority than the alt text, which actively misdescribes.
 
-### 2. Warm up the palette so it stops feeling bland
-The site is currently navy/red/white/sand. The red is the only accent, so it reads flat. Add controlled warmth without diluting the brand.
+## Plan
 
-- Activate the existing `--timber` token (warm brown) for:
-  - Inline link hover states (not red; timber is quieter)
-  - Image caption / category text on the gallery
-  - Footer subheadings and small labels
-- Add a subtle warm overlay on all Unsplash placeholder images (a transparent warm gradient or slight sepia filter) so they feel like one collection, not a random stock-photo set.
-- Use `--sand-sunk` as a deliberate alternating background for one of the white sections (Values or Certifications) so the page gets warm/cool alternation instead of just warm-white-cool.
+### 1. Credibility (do first)
 
----
+- Remove the three testimonial quotes from `business.ts` and the Client voice section from Home. Keep the section shell commented/ready so real quotes drop in later. (No I like the place holder testimonial. client likes it to)
+- Fix the crew photo alt to describe it honestly ("Alaska job site, reference photo") or swap the section to placeholder framing like the owner portraits.
+- Drop projects 05 and 06 ("Coming Soon") from the gallery until they're real work.
 
-### 3. Image treatment consistency
-The biggest thing that will make the site feel less "mid" is treating the photos like a portfolio, not a gallery.
+### 2. Metadata correctness
 
-- Add a consistent **photo frame**: 1px `border-hairline`, subtle `shadow-sm`, and a small red bottom-left corner rule on every major image.
-- Apply the same frame to the philosophy handshake image, the About page portraits, and the crew photo.
-- In the gallery, add a warm hover overlay (`bg-red/10` or warm gradient) plus the existing zoom, and keep the clean grid but add a caption below each image instead of no context.
-- Replace the Unsplash URL in the About page hero with something that doesn't feel like a generic dusk sky; either a more specific Alaska job-site image or the same hero treatment as the home page.
+- Absolute `canonical` + `og:url` on Home (`https://houserconstruction.net/`) and About (`/about`).
+- Add route-specific `twitter:title` and `twitter:description` to About so it stops inheriting the homepage's.
+- Generate a real 1200×630 branded OG image, ship it as a local asset, and replace the r2.dev preview screenshot in `__root`. Replace About's hotlinked Unsplash OG with the same branded image until real photos exist.
+- Note: social platforms cache previews, so shared links won't update until they re-scrape.
 
----
+### 3. Dead links
 
-### 4. Typography hierarchy push
-The site leans heavily on one display size. Add a second gear.
+- Socials: hide the icon row until David provides real Instagram/Facebook URLs (keep the code driven by `business.socials`, render only entries that aren't `#`).
+- Remove Careers from the footer.
+- Keep Privacy and Terms only if we build them — otherwise remove. Recommend removing for now; a contractor portfolio site collecting nothing doesn't need them. ( i dont want to forget to but them in if we do collect data or people reach out to us )
 
-- Introduce a true `display-2xl` for the hero only — tighter, larger, more dominant.
-- Keep `display-lg` for section headings.
-- Keep `display-md` for pull quotes and owner names only.
-- Reduce body line-height slightly on desktop (`leading-relaxed` → `leading-[1.6]`) so long paragraphs read more like magazine copy.
-- Increase the eyebrow letter-spacing slightly so it reads as premium against the larger logo.
-- Add a small red rule under the hero subhead to mirror the section heading treatment.
+### 4. Local SEO — biggest upside
 
----
+- Add a real service-area list to `business.ts`: Anchorage, Eagle River, Palmer, Wasilla / Mat-Su Valley, Girdwood. (he services all of alaska, not a spcif region tho. youthink he should still do that?)
+- Name those towns in body copy (philosophy section, closing band) and in the footer Office block, not just in schema. (should we really tho? he services all alaska, what ould you reccomment?)
+- Expand `areaServed` in the `GeneralContractor` JSON-LD to an array of `City` entries.
+- Add two location FAQs matching real search phrasing ("Do you build in the Mat-Su Valley?", "Do you do remodels in Anchorage?") to feed both the FAQ section and `FAQPage` schema. (i like our current FAQ questions. and based on the answer above decide what we do here in this section)
+- Off-site (client action, not code): claim the Google Business Profile with the exact phone and email on the site. That likely outranks everything above.
 
-### 5. Tactile details — buttons, cards, links
-Right now buttons and cards feel flat. Add small physical cues.
+### 5. Then build `/work`
 
-- Buttons: add a subtle hover lift (`-translate-y-0.5` or stronger shadow) on `variant="accent"`. The red accent button should feel like it presses back.
-- Cards / gallery items: add a 1px warm border and `shadow-sm` that grows to `shadow-md` on hover.
-- Inline links: replace the simple color change with an animated red underline that slides in from the left.
-- Footer social icons: add a hover background fill instead of just border color change.
+Only after 1–4, and ideally after real photos arrive:
 
----
+- `src/config/projects.ts` as the content model (slug, name, town, category, scope, images, optional before/after pair).
+- `/work` index route with a filterable grid; homepage `#work` gallery becomes a teaser linking there.
+- `/work/$slug` detail route with per-project `head()` and images.
+- `HOW-TO-ADD-A-PROJECT.md` for handoff.
 
-### 6. Motion and stagger
-The current `Reveal` animation is single-block. Break it into staggered children so sections feel assembled.
+### Technical notes
 
-- Stagger the three stat cards in StatBar.
-- Stagger the three testimonials.
-- Stagger the three value cards on the About page.
-- Keep the existing `Reveal` timing and easing; just add `delay` increments to children.
-- Ensure `prefers-reduced-motion` is respected everywhere.
+Files touched in steps 1–4: `src/config/business.ts`, `src/routes/index.tsx`, `src/routes/about.tsx`, `src/routes/__root.tsx`, `src/components/site/SiteFooter.tsx`, plus one new OG image asset and a `sitemap.xml` update when `/work` lands.
 
----
-
-### 7. Copy and content polish
-A few words can make the site feel much more confident.
-
-- Hero: make the tagline/subhead relationship clearer. "Trusted to serve with excellence." as the headline, "Built for Alaska." as the subhead.
-- Closing band: keep "Building better communities." but add a short one-line supporting statement below it.
-- Pull quote: keep "The person who walks your site is the person who answers the phone." but consider adding a small attribution like "— David Houser".
-- Contact CTA: the current "Start the conversation" eyebrow is good. The form is decorative — add a note or keep it as a direct email/phone panel.
-
----
-
-### 8. Optional: Work page placeholder
-The original Pass B v2 plan called for a `/work` portfolio index and project detail pages. This is not required for the current design upgrade, but if the client wants a real portfolio, it would be the next major step after these design fixes. I would leave it as a separate phase and not include it here.
-
----
-
-### Files to edit
-- `src/styles.css` — add `display-2xl`, refine blueprint utilities, ensure timber token is usable, add warm overlay utilities
-- `src/routes/index.tsx` — apply grid to ClosingBand and FinalCTA, add image frames, stagger motion, update hero typography, update copy
-- `src/routes/about.tsx` — apply grid to AboutCTA, add image frames to portraits and crew photo, stagger motion, update copy attribution
-- `src/components/site/SiteHeader.tsx` — subtle nav hover underline or lift
-- `src/components/site/SiteFooter.tsx` — timber accent on subheads, social icon hover fill
-- `src/components/brand/BrandButton.tsx` — add hover lift/shadow
-
-### Verification
-- Check at 375px, 768px, 1280px, and 1600px.
-- Ensure no text overlaps the ghost numbers at any width.
-- Ensure the blueprint grid on the bottom navy sections doesn't make white text harder to read.
-- Confirm no hardcoded colors — all values come from CSS tokens.
-- Run a build and a visual pass in the preview before considering it done.
+Steps 1–4 are one pass. Step 5 is a separate build.
