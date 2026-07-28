@@ -541,9 +541,11 @@ function FAQ() {
   );
 }
 
-function ClosingBand() {
+// Closing statement and contact share one navy surface — the two used to be
+// navy-deep and navy back to back, which read as a seam rather than a move.
+function ClosingAndContact() {
   return (
-    <section className="relative overflow-hidden bg-navy-deep text-white blueprint-grid-dark">
+    <section className="relative overflow-hidden bg-navy text-white">
       <span
         aria-hidden
         className="absolute top-0 left-0 h-1 w-40 md:w-64 bg-red"
@@ -556,92 +558,74 @@ function ClosingBand() {
           <p className="mt-8 text-lg text-white/80 leading-[1.6] max-w-2xl">
             Every structure we put up outlasts the contract that paid for it.
             Houses become homes, empty lots become neighborhoods, and worn out
-            buildings get another life. We do that work across Alaska
-            statewide — in Anchorage and Eagle River, out in Palmer, Wasilla
-            and the Mat-Su Valley, up in Girdwood, and wherever else the job
-            takes us. That is the part of this work that matters to our
-            family.
+            buildings get another life. That is the part of this work that
+            matters to our family.
           </p>
           <p className="mt-12 display-md text-white/90">
             The old is gone. The new has come.
           </p>
         </div>
       </div>
-    </section>
-  );
-}
 
-function FinalCTA() {
-  return (
-    <section
-      id="contact"
-      className="relative overflow-hidden bg-navy text-white blueprint-grid-dark"
-    >
-      {/* Editorial red rule accent, top-right */}
-      <span
-        aria-hidden
-        className="absolute top-0 right-0 h-1 w-40 md:w-64 bg-red"
-      />
-      <span
-        aria-hidden
-        className="absolute top-0 right-0 h-40 md:h-64 w-1 bg-red"
-      />
-
-      <div className="relative mx-auto max-w-[1200px] px-6 py-28 md:py-40 grid md:grid-cols-12 gap-12 items-start">
-        <div className="md:col-span-7">
-          <div className="flex items-center gap-3 mb-6">
-            <span className="h-[2px] w-10 bg-red" aria-hidden />
-            <span className="eyebrow text-white/70">
-              <span className="text-white">05</span>
-              <span className="mx-2 opacity-60">—</span>Start the conversation
-            </span>
+      <div className="border-t border-white/12">
+        <div
+          id="contact"
+          className="relative mx-auto max-w-[1200px] px-6 py-28 md:py-40 grid md:grid-cols-12 gap-12 items-start scroll-mt-24"
+        >
+          <div className="md:col-span-7">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="h-[2px] w-10 bg-timber" aria-hidden />
+              <span className="eyebrow text-white/70">
+                Start the conversation
+              </span>
+            </div>
+            <h2 className="display-lg text-white max-w-2xl">
+              Let&apos;s talk.
+            </h2>
+            <p className="mt-6 text-white/80 max-w-xl text-lg leading-relaxed">
+              Whether you have drawings in hand or just an idea of what you
+              want built, reach out. We are happy to talk it through.
+            </p>
           </div>
-          <h2 className="display-lg text-white max-w-2xl">
-            Let&apos;s talk.
-          </h2>
-          <p className="mt-6 text-white/80 max-w-xl text-lg leading-relaxed">
-            Whether you have drawings in hand or just an idea of what you want
-            built, reach out. We are happy to talk it through.
-          </p>
-        </div>
 
-        <div className="md:col-span-5">
-          <div className="bg-navy-mid/60 border border-white/10 p-6 md:p-8 flex flex-col gap-3">
-            <BrandButton
-              as="a"
-              href={business.emailHref}
-              variant="accent"
-              size="lg"
-              block
-            >
-              Email us <ArrowRight className="h-4 w-4" />
-            </BrandButton>
-
-            <BrandButton
-              as="a"
-              href={business.phoneHref}
-              variant="outline-light"
-              size="lg"
-              block
-            >
-              <Phone className="h-4 w-4" /> {business.phone}
-            </BrandButton>
-
-            <div className="mt-4 pt-4 border-t border-white/10 space-y-2 text-sm">
-              <a
+          <div className="md:col-span-5">
+            <div className="bg-navy-mid/60 border border-white/10 p-6 md:p-8 flex flex-col gap-3">
+              <BrandButton
+                as="a"
                 href={business.emailHref}
-                className="flex items-center gap-3 text-white/80 hover:text-white transition-colors"
+                variant="accent"
+                size="lg"
+                block
               >
-                <Mail className="h-4 w-4 text-red" />
-                {business.email}
-              </a>
-              <a
+                Email us <ArrowRight className="h-4 w-4" />
+              </BrandButton>
+
+              <BrandButton
+                as="a"
                 href={business.phoneHref}
-                className="flex items-center gap-3 text-white/80 hover:text-white transition-colors"
+                variant="outline-light"
+                size="lg"
+                block
               >
-                <Phone className="h-4 w-4 text-red" />
-                {business.phone}
-              </a>
+                <Phone className="h-4 w-4" /> {business.phone}
+              </BrandButton>
+
+              <div className="mt-4 pt-4 border-t border-white/10 space-y-2 text-sm">
+                <a
+                  href={business.emailHref}
+                  className="flex items-center gap-3 text-white/80 hover:text-white transition-colors"
+                >
+                  <Mail className="h-4 w-4 text-timber" />
+                  {business.email}
+                </a>
+                <a
+                  href={business.phoneHref}
+                  className="flex items-center gap-3 text-white/80 hover:text-white transition-colors"
+                >
+                  <Phone className="h-4 w-4 text-timber" />
+                  {business.phone}
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -649,6 +633,7 @@ function FinalCTA() {
     </section>
   );
 }
+
 
 function MobileStickyCTA() {
   const [show, setShow] = useState(false);
