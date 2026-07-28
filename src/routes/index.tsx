@@ -142,7 +142,7 @@ function Hero() {
           Steve &amp; David Houser · Alaska
         </span>
       </div>
-      <div className="relative mx-auto max-w-[1200px] px-6 pt-44 md:pt-56 pb-24 min-h-[100svh] flex flex-col justify-end">
+      <div className="relative mx-auto max-w-[1200px] px-6 pt-48 md:pt-60 pb-24 min-h-[100svh] flex flex-col justify-end">
 
         <div className="max-w-3xl">
           <div className="flex items-center gap-3 mb-6">
