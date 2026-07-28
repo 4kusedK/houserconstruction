@@ -12,12 +12,12 @@ export const business = {
   // TODO: swap to hello@houserconstruction.com once the domain is live.
   email: "houserconstruction@gmail.com",
   emailHref: "mailto:houserconstruction@gmail.com",
+  // Service-area business: no fixed city base, so no locality is published.
   address: {
-    city: "Alaska",
     region: "AK",
     country: "US",
   },
-  serviceArea: "Alaska",
+  serviceArea: "Alaska statewide — no fixed base, wherever the job is",
   // Statewide coverage. The hubs below are examples for humans and search
   // engines — they are NOT a limit on where Houser Construction works.
   serviceAreaHubs: [
@@ -41,9 +41,10 @@ export const business = {
 
 export const stats = [
   { value: "Family", label: "Owned & Operated" },
-  { value: "Anchorage", label: "Mat-Su · Palmer · Wasilla" },
+  { value: "Statewide", label: "Wherever the job is" },
   { value: "100%", label: "Licensed · Bonded · Insured" },
 ] as const;
+
 
 
 export const services = [
@@ -151,27 +152,15 @@ export const processSteps = [
   },
 ] as const;
 
-// TODO: replace with real client names and towns, with written permission.
-export const testimonials = [
-  {
-    quote:
-      "Clear communication from day one, and the finished remodel looks better than we imagined. Highly recommend.",
-    name: "Jenna R.",
-    role: "Turnagain, Anchorage",
-  },
-  {
-    quote:
-      "Deck turned out solid and built to last through Alaska winters. Fair pricing and an honest timeline.",
-    name: "Mark T.",
-    role: "Wasilla, Mat-Su Valley",
-  },
-  {
-    quote:
-      "Professional, on time, and cleaned up after themselves every day. We'll be calling them for the next project.",
-    name: "Dana K.",
-    role: "Palmer, AK",
-  },
-] as const;
+// TODO: add real client quotes with written permission — name, town, project.
+// Empty on purpose: the testimonials section does not render until real
+// quotes exist. Never ship placeholder attributions on a live business site.
+export const testimonials: ReadonlyArray<{
+  quote: string;
+  name: string;
+  role: string;
+}> = [];
+
 
 export const faqs = [
   {
@@ -183,9 +172,14 @@ export const faqs = [
     a: "Yes. We build throughout the Mat-Su Valley, including Palmer and Wasilla, and the Valley is one of our busiest areas alongside Anchorage. New construction, additions, and exterior work are all regular work for us out there.",
   },
   {
+    q: "Do you take on commercial projects?",
+    a: "Yes. Commercial and mixed-use work is a large part of what we do — retail, office, church and community buildings, tenant improvements, and commercial restoration. We take that work anywhere in Alaska, not just around Anchorage and the Mat-Su Valley.",
+  },
+  {
     q: "Do you do remodels in Anchorage?",
     a: "Yes. Anchorage remodels are a core part of what we do, from single-room renovations in Turnagain and Government Hill to whole-home remodels across the city, and we also remodel in Eagle River and Girdwood.",
   },
+
   {
     q: "Is Houser Construction family owned?",
     a: "Yes. Houser Construction is family owned and operated. The people who meet you at the start are the ones running your project through to the end.",

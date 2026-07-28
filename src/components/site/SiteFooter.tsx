@@ -35,8 +35,9 @@ export function SiteFooter() {
             <Logo variant="full-white" className="h-12 w-auto" />
             <p className="mt-6 text-sm text-white/70 max-w-sm leading-relaxed">
               A family owned Alaska general contractor. We build, restore, and
-              stand behind our work across {business.serviceArea}.
+              stand behind our work anywhere in the state.
             </p>
+
 
             {SOCIALS.length > 0 && (
               <div className="mt-6 flex items-center gap-3">
@@ -75,16 +76,18 @@ export function SiteFooter() {
           ))}
 
           <div className="md:col-span-4 md:col-start-9">
-            <h3 className="eyebrow text-timber mb-4">Office</h3>
+            <h3 className="eyebrow text-timber mb-4">Where we work</h3>
             <address className="not-italic text-sm text-white/85 leading-relaxed">
-              Based in {business.address.city}
+              Alaska statewide — no fixed base
               <br />
               <span className="text-white/60">
-                Serving Alaska statewide — Anchorage, Eagle River, Palmer,
-                Wasilla and the Mat-Su Valley, Girdwood, and beyond.
+                Residential and commercial work in Anchorage, Eagle River,
+                Palmer, Wasilla and the Mat-Su Valley, Girdwood, and wherever
+                else the contract takes us.
               </span>
             </address>
           </div>
+
 
         </div>
 

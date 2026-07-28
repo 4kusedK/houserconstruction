@@ -6,8 +6,8 @@ import { SiteFooter } from "@/components/site/SiteFooter";
 import { SectionHeading } from "@/components/brand/SectionHeading";
 import { BrandButton } from "@/components/brand/BrandButton";
 import { Reveal } from "@/components/brand/Reveal";
-const HANDSHAKE_IMG =
-  "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=75";
+import handshakeImg from "@/assets/promise-handshake.jpg";
+
 import {
   business,
   stats,
@@ -18,10 +18,10 @@ import {
 } from "@/config/business";
 import { useEffect, useState } from "react";
 
-// TODO: client photo — replace with a real Houser Construction residential
-// jobsite or finished Alaska home once photography is available.
-const HERO_IMG =
-  "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=2400&q=75";
+// TODO: client photo — replace with a real Houser Construction finished home
+// or jobsite once client photography is available.
+import heroImg from "@/assets/hero-home.jpg";
+
 
 // TODO: confirm founding year with client.
 const FOUNDED_YEAR = "2013";
@@ -72,10 +72,10 @@ export const Route = createFileRoute("/")({
           ],
           address: {
             "@type": "PostalAddress",
-            addressLocality: business.address.city,
             addressRegion: business.address.region,
             addressCountry: business.address.country,
           },
+
         }),
       },
 
@@ -108,8 +108,8 @@ function Home() {
         <Testimonials />
         <Certifications />
         <FAQ />
-        <ClosingBand />
-        <FinalCTA />
+        <ClosingAndContact />
+
       </main>
       <SiteFooter />
       <MobileStickyCTA />
@@ -124,17 +124,20 @@ function Hero() {
       className="relative min-h-[100svh] w-full overflow-hidden bg-navy-deep text-white"
     >
       <img
-        src={HERO_IMG}
-        alt="Finished residential home in Alaska"
+        src={heroImg}
+        alt="Finished Alaska home at dusk with a metal roof and spruce and mountains behind it"
         className="absolute inset-0 h-full w-full object-cover"
+        width={1920}
+        height={1280}
         fetchPriority="high"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/85 via-navy-deep/60 to-navy-deep/95" />
+      <div aria-hidden className="absolute inset-0 blueprint-grid-dark" />
       <div
         aria-hidden
         className="hidden lg:flex absolute left-6 top-1/2 -translate-y-1/2 items-center gap-4 [writing-mode:vertical-rl] rotate-180"
       >
-        <span className="h-16 w-[2px] bg-red" />
+        <span className="h-16 w-[2px] bg-timber" />
         <span className="font-ui text-[11px] font-bold uppercase tracking-[0.28em] text-white/60">
           Family Owned · Alaska
         </span>
@@ -143,7 +146,7 @@ function Hero() {
 
         <div className="max-w-3xl">
           <div className="flex items-center gap-3 mb-6">
-            <span className="h-[2px] w-10 bg-red" aria-hidden />
+            <span className="h-[2px] w-10 bg-timber" aria-hidden />
             <span className="eyebrow text-white/80">
               Steve &amp; David Houser · Since {FOUNDED_YEAR}
             </span>
@@ -154,12 +157,14 @@ function Hero() {
             <span className="text-white/85">with excellence.</span>
           </h1>
           <p className="mt-8 max-w-xl text-lg text-white/85 leading-[1.6]">
-            A father-and-son contractor building new homes, restoring the
-            ones already standing, and developing property across Alaska.
+            A father-and-son contractor building new homes and commercial
+            spaces, restoring the ones already standing, and developing
+            property across Alaska.
           </p>
 
-          <span className="mt-10 block h-[2px] w-16 bg-red" aria-hidden />
+          <span className="mt-10 block h-[2px] w-16 bg-timber" aria-hidden />
         </div>
+
       </div>
       <a
         href="/#about"
@@ -176,7 +181,7 @@ function Positioning() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden py-32 md:py-48 bg-sand blueprint-grid"
+      className="relative overflow-hidden py-32 md:py-48 bg-sand"
     >
       <span
         aria-hidden
@@ -188,11 +193,9 @@ function Positioning() {
         <Reveal>
           <div className="flex items-center gap-3 mb-6">
             <span className="rule-red" aria-hidden />
-            <span className="eyebrow">
-              <span className="text-navy">01</span>
-              <span className="mx-2 opacity-60">—</span>Our philosophy
-            </span>
+            <span className="eyebrow">Our philosophy</span>
           </div>
+
           <h2 className="display-lg text-navy max-w-3xl">
             A handshake still means something.
           </h2>
@@ -203,8 +206,8 @@ function Positioning() {
             <Reveal delay={0.05}>
               <div className="relative overflow-hidden aspect-[4/5] photo-frame">
                 <img
-                  src={HANDSHAKE_IMG}
-                  alt="A Houser Construction contractor shaking hands with a homeowner"
+                  src={handshakeImg}
+                  alt="A contractor and a client shaking hands inside a partly framed build"
                   loading="lazy"
                   width={1200}
                   height={1408}
@@ -213,15 +216,16 @@ function Positioning() {
                 <div className="photo-warm absolute inset-0" />
                 <span
                   aria-hidden
-                  className="absolute bottom-0 left-0 h-1 w-24 bg-red"
+                  className="absolute bottom-0 left-0 h-1 w-24 bg-timber"
                 />
+
               </div>
             </Reveal>
           </div>
 
           <div className="md:col-span-5 md:col-start-8 md:pt-6">
             <Reveal delay={0.1}>
-              <blockquote className="border-l-2 border-red pl-4">
+              <blockquote className="border-l-2 border-timber pl-4">
                 <p className="display-md italic text-navy">
                   &ldquo;The person who walks your site is the person who
                   answers the phone.&rdquo;
@@ -256,12 +260,12 @@ function Positioning() {
 function StatBar() {
   return (
     <section className="relative overflow-hidden bg-navy-deep text-white blueprint-grid-dark">
-      <span aria-hidden className="absolute top-0 left-0 h-1 w-40 bg-red" />
+      <span aria-hidden className="absolute top-0 left-0 h-1 w-40 bg-timber" />
       <div className="relative mx-auto max-w-[1200px] px-6 py-16 md:py-24 grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-y-0 md:divide-x md:divide-white/10">
         {stats.map((s, i) => (
           <Reveal key={s.label} delay={i * 0.08}>
             <div className={i === 0 ? "md:pr-8" : "md:px-8"}>
-              <span className="rule-red mb-5" aria-hidden />
+              <span className="block h-[2px] w-10 bg-timber mb-5" aria-hidden />
               <div className="display-lg text-white">{s.value}</div>
               <div className="eyebrow mt-4 text-white/60">{s.label}</div>
             </div>
@@ -286,7 +290,7 @@ function ProjectsGallery() {
   return (
     <section
       id="work"
-      className="relative overflow-hidden py-28 md:py-40 bg-background"
+      className="relative overflow-hidden py-28 md:py-40 bg-sand"
     >
       <span
         aria-hidden
@@ -299,11 +303,11 @@ function ProjectsGallery() {
           <div className="mb-16 md:mb-20">
             <SectionHeading
               eyebrow="Gallery"
-              number="02"
               title="Places we've put our name on."
             />
           </div>
         </Reveal>
+
 
         {/* Featured before & after */}
         <Reveal>
@@ -355,7 +359,7 @@ function ProjectsGallery() {
                   </p>
                   <h3 className="display-md text-navy mt-1">{f.name}</h3>
                 </div>
-                <span className="font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-red inline-flex items-center gap-2 shrink-0">
+                <span className="font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-timber inline-flex items-center gap-2 shrink-0">
                   View project <ArrowRight className="h-4 w-4" />
                 </span>
               </div>
@@ -386,7 +390,7 @@ function ProjectsGallery() {
                       loading="lazy"
                       className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-red/20 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-timber/25 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                   </div>
                   <div className="mt-4">
                     <p className="font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-timber">
@@ -395,8 +399,9 @@ function ProjectsGallery() {
                     <h3 className="display-md text-navy mt-1">{p.name}</h3>
                     <span
                       aria-hidden
-                      className="mt-3 block h-[2px] w-8 bg-red"
+                      className="mt-3 block h-[2px] w-8 bg-timber"
                     />
+
                   </div>
                 </Link>
               </Reveal>
@@ -421,8 +426,11 @@ function initials(name: string) {
 }
 
 function Testimonials() {
+  // Renders nothing until real, permissioned client quotes exist.
+  if (testimonials.length === 0) return null;
+
   return (
-    <section className="relative overflow-hidden py-28 md:py-40 bg-navy text-white blueprint-grid-dark">
+    <section className="relative overflow-hidden py-28 md:py-40 bg-navy text-white">
       <span
         aria-hidden
         className="ghost-number-light absolute -top-8 right-4 md:right-10 hidden sm:block"
@@ -434,16 +442,16 @@ function Testimonials() {
         <Reveal>
           <SectionHeading
             eyebrow="Client voice"
-            number="03"
             title="Owners who've been through it."
             onDark
           />
         </Reveal>
+
         <div className="mt-16 md:mt-20 grid grid-cols-1 md:grid-cols-3 gap-10">
           {testimonials.map((t, i) => (
             <Reveal key={t.name} delay={i * 0.08}>
               <figure className="border-t border-white/15 pt-8 h-full flex flex-col">
-                <span className="h-[2px] w-8 bg-red block mb-6" aria-hidden />
+                <span className="h-[2px] w-8 bg-timber block mb-6" aria-hidden />
                 <blockquote className="font-display text-xl leading-snug text-white flex-1">
                   &ldquo;{t.quote}&rdquo;
                 </blockquote>
@@ -479,7 +487,7 @@ function Certifications() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-background border-y border-hairline">
+    <section className="py-16 md:py-24 bg-sand-sunk border-y border-timber/20">
       <div className="mx-auto max-w-[1200px] px-6">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
           <p className="eyebrow">Credentials</p>
@@ -505,11 +513,8 @@ function FAQ() {
       <div className="mx-auto max-w-[1200px] px-6 grid md:grid-cols-12 gap-12">
         <div className="md:col-span-4">
           <Reveal>
-            <SectionHeading
-              eyebrow="Answers"
-              number="04"
-              title="Frequently asked."
-            />
+            <SectionHeading eyebrow="Answers" title="Frequently asked." />
+
           </Reveal>
         </div>
         <div className="md:col-span-7 md:col-start-6">
@@ -541,9 +546,11 @@ function FAQ() {
   );
 }
 
-function ClosingBand() {
+// Closing statement and contact share one navy surface — the two used to be
+// navy-deep and navy back to back, which read as a seam rather than a move.
+function ClosingAndContact() {
   return (
-    <section className="relative overflow-hidden bg-navy-deep text-white blueprint-grid-dark">
+    <section className="relative overflow-hidden bg-navy text-white">
       <span
         aria-hidden
         className="absolute top-0 left-0 h-1 w-40 md:w-64 bg-red"
@@ -556,92 +563,74 @@ function ClosingBand() {
           <p className="mt-8 text-lg text-white/80 leading-[1.6] max-w-2xl">
             Every structure we put up outlasts the contract that paid for it.
             Houses become homes, empty lots become neighborhoods, and worn out
-            buildings get another life. We do that work across Alaska
-            statewide — in Anchorage and Eagle River, out in Palmer, Wasilla
-            and the Mat-Su Valley, up in Girdwood, and wherever else the job
-            takes us. That is the part of this work that matters to our
-            family.
+            buildings get another life. That is the part of this work that
+            matters to our family.
           </p>
           <p className="mt-12 display-md text-white/90">
             The old is gone. The new has come.
           </p>
         </div>
       </div>
-    </section>
-  );
-}
 
-function FinalCTA() {
-  return (
-    <section
-      id="contact"
-      className="relative overflow-hidden bg-navy text-white blueprint-grid-dark"
-    >
-      {/* Editorial red rule accent, top-right */}
-      <span
-        aria-hidden
-        className="absolute top-0 right-0 h-1 w-40 md:w-64 bg-red"
-      />
-      <span
-        aria-hidden
-        className="absolute top-0 right-0 h-40 md:h-64 w-1 bg-red"
-      />
-
-      <div className="relative mx-auto max-w-[1200px] px-6 py-28 md:py-40 grid md:grid-cols-12 gap-12 items-start">
-        <div className="md:col-span-7">
-          <div className="flex items-center gap-3 mb-6">
-            <span className="h-[2px] w-10 bg-red" aria-hidden />
-            <span className="eyebrow text-white/70">
-              <span className="text-white">05</span>
-              <span className="mx-2 opacity-60">—</span>Start the conversation
-            </span>
+      <div className="border-t border-white/12">
+        <div
+          id="contact"
+          className="relative mx-auto max-w-[1200px] px-6 py-28 md:py-40 grid md:grid-cols-12 gap-12 items-start scroll-mt-24"
+        >
+          <div className="md:col-span-7">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="h-[2px] w-10 bg-timber" aria-hidden />
+              <span className="eyebrow text-white/70">
+                Start the conversation
+              </span>
+            </div>
+            <h2 className="display-lg text-white max-w-2xl">
+              Let&apos;s talk.
+            </h2>
+            <p className="mt-6 text-white/80 max-w-xl text-lg leading-relaxed">
+              Whether you have drawings in hand or just an idea of what you
+              want built, reach out. We are happy to talk it through.
+            </p>
           </div>
-          <h2 className="display-lg text-white max-w-2xl">
-            Let&apos;s talk.
-          </h2>
-          <p className="mt-6 text-white/80 max-w-xl text-lg leading-relaxed">
-            Whether you have drawings in hand or just an idea of what you want
-            built, reach out. We are happy to talk it through.
-          </p>
-        </div>
 
-        <div className="md:col-span-5">
-          <div className="bg-navy-mid/60 border border-white/10 p-6 md:p-8 flex flex-col gap-3">
-            <BrandButton
-              as="a"
-              href={business.emailHref}
-              variant="accent"
-              size="lg"
-              block
-            >
-              Email us <ArrowRight className="h-4 w-4" />
-            </BrandButton>
-
-            <BrandButton
-              as="a"
-              href={business.phoneHref}
-              variant="outline-light"
-              size="lg"
-              block
-            >
-              <Phone className="h-4 w-4" /> {business.phone}
-            </BrandButton>
-
-            <div className="mt-4 pt-4 border-t border-white/10 space-y-2 text-sm">
-              <a
+          <div className="md:col-span-5">
+            <div className="bg-navy-mid/60 border border-white/10 p-6 md:p-8 flex flex-col gap-3">
+              <BrandButton
+                as="a"
                 href={business.emailHref}
-                className="flex items-center gap-3 text-white/80 hover:text-white transition-colors"
+                variant="accent"
+                size="lg"
+                block
               >
-                <Mail className="h-4 w-4 text-red" />
-                {business.email}
-              </a>
-              <a
+                Email us <ArrowRight className="h-4 w-4" />
+              </BrandButton>
+
+              <BrandButton
+                as="a"
                 href={business.phoneHref}
-                className="flex items-center gap-3 text-white/80 hover:text-white transition-colors"
+                variant="outline-light"
+                size="lg"
+                block
               >
-                <Phone className="h-4 w-4 text-red" />
-                {business.phone}
-              </a>
+                <Phone className="h-4 w-4" /> {business.phone}
+              </BrandButton>
+
+              <div className="mt-4 pt-4 border-t border-white/10 space-y-2 text-sm">
+                <a
+                  href={business.emailHref}
+                  className="flex items-center gap-3 text-white/80 hover:text-white transition-colors"
+                >
+                  <Mail className="h-4 w-4 text-timber" />
+                  {business.email}
+                </a>
+                <a
+                  href={business.phoneHref}
+                  className="flex items-center gap-3 text-white/80 hover:text-white transition-colors"
+                >
+                  <Phone className="h-4 w-4 text-timber" />
+                  {business.phone}
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -649,6 +638,7 @@ function FinalCTA() {
     </section>
   );
 }
+
 
 function MobileStickyCTA() {
   const [show, setShow] = useState(false);
