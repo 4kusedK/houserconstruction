@@ -132,12 +132,12 @@ function Hero() {
         fetchPriority="high"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/85 via-navy-deep/60 to-navy-deep/95" />
-      <div aria-hidden className="absolute inset-0 blueprint-grid-dark" />
+      <div aria-hidden className="absolute inset-0" />
       <div
         aria-hidden
         className="hidden lg:flex absolute left-6 top-1/2 -translate-y-1/2 items-center gap-4 [writing-mode:vertical-rl] rotate-180"
       >
-        <span className="h-16 w-[2px] bg-timber" />
+        <span className="h-16 w-[2px] bg-red" />
         <span className="font-ui text-[11px] font-bold uppercase tracking-[0.28em] text-white/60">
           Family Owned · Alaska
         </span>
@@ -163,7 +163,7 @@ function Hero() {
             property across Alaska.
           </p>
 
-          <span className="mt-10 block h-[2px] w-16 bg-timber" aria-hidden />
+          <span className="mt-10 block h-[2px] w-16 bg-red" aria-hidden />
         </div>
 
       </div>
@@ -231,7 +231,7 @@ function Positioning() {
                   &ldquo;The person who walks your site is the person who
                   answers the phone.&rdquo;
                 </p>
-                <p className="mt-4 font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-timber">
+                <p className="mt-4 font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-silver">
                   David Houser
                 </p>
               </blockquote>
@@ -245,7 +245,7 @@ function Positioning() {
               </p>
               <Link
                 to="/about"
-                className="mt-12 inline-flex items-center gap-2 font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-navy hover:text-timber transition-colors link-underline"
+                className="mt-12 inline-flex items-center gap-2 font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-navy hover:text-red transition-colors link-underline"
               >
                 Meet the family <ArrowRight className="h-4 w-4" />
               </Link>
@@ -260,13 +260,13 @@ function Positioning() {
 
 function StatBar() {
   return (
-    <section className="relative overflow-hidden bg-navy-deep text-white blueprint-grid-dark">
-      <span aria-hidden className="absolute top-0 left-0 h-1 w-40 bg-timber" />
+    <section className="relative overflow-hidden bg-navy-deep text-white">
+      <span aria-hidden className="absolute top-0 left-0 h-1 w-40 bg-red" />
       <div className="relative mx-auto max-w-[1200px] px-6 py-16 md:py-24 grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-y-0 md:divide-x md:divide-white/10">
         {stats.map((s, i) => (
           <Reveal key={s.label} delay={i * 0.08}>
             <div className={i === 0 ? "md:pr-8" : "md:px-8"}>
-              <span className="block h-[2px] w-10 bg-timber mb-5" aria-hidden />
+              <span className="block h-[2px] w-10 bg-red mb-5" aria-hidden />
               <div className="display-lg text-white">{s.value}</div>
               <div className="eyebrow mt-4 text-white/60">{s.label}</div>
             </div>
@@ -355,12 +355,12 @@ function ProjectsGallery() {
               </div>
               <div className="mt-4 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
                 <div className="min-w-0">
-                  <p className="font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-timber">
+                  <p className="font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-silver">
                     {f.category} · {f.location}
                   </p>
                   <h3 className="display-md text-navy mt-1">{f.name}</h3>
                 </div>
-                <span className="font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-timber inline-flex items-center gap-2 shrink-0">
+                <span className="font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-silver inline-flex items-center gap-2 shrink-0">
                   View project <ArrowRight className="h-4 w-4" />
                 </span>
               </div>
@@ -391,10 +391,10 @@ function ProjectsGallery() {
                       loading="lazy"
                       className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-timber/25 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy/40 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                   </div>
                   <div className="mt-4">
-                    <p className="font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-timber">
+                    <p className="font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-silver">
                       {p.category} · {p.location}
                     </p>
                     <h3 className="display-md text-navy mt-1">{p.name}</h3>
@@ -452,7 +452,7 @@ function Testimonials() {
           {testimonials.map((t, i) => (
             <Reveal key={t.name} delay={i * 0.08}>
               <figure className="border-t border-white/15 pt-8 h-full flex flex-col">
-                <span className="h-[2px] w-8 bg-timber block mb-6" aria-hidden />
+                <span className="h-[2px] w-8 bg-red block mb-6" aria-hidden />
                 <blockquote className="font-display text-xl leading-snug text-white flex-1">
                   &ldquo;{t.quote}&rdquo;
                 </blockquote>
@@ -580,7 +580,7 @@ function ClosingAndContact() {
         >
           <div className="md:col-span-7">
             <div className="flex items-center gap-3 mb-6">
-              <span className="h-[2px] w-10 bg-timber" aria-hidden />
+              <span className="h-[2px] w-10 bg-red" aria-hidden />
               <span className="eyebrow text-white/70">
                 Start the conversation
               </span>
@@ -621,14 +621,14 @@ function ClosingAndContact() {
                   href={business.emailHref}
                   className="flex items-center gap-3 text-white/80 hover:text-white transition-colors"
                 >
-                  <Mail className="h-4 w-4 text-timber" />
+                  <Mail className="h-4 w-4 text-white/70" />
                   {business.email}
                 </a>
                 <a
                   href={business.phoneHref}
                   className="flex items-center gap-3 text-white/80 hover:text-white transition-colors"
                 >
-                  <Phone className="h-4 w-4 text-timber" />
+                  <Phone className="h-4 w-4 text-white/70" />
                   {business.phone}
                 </a>
               </div>

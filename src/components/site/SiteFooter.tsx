@@ -48,7 +48,7 @@ export function SiteFooter() {
                     target="_blank"
                     rel="noreferrer noopener"
                     aria-label={label}
-                    className="inline-flex h-10 w-10 items-center justify-center border border-white/20 hover:bg-timber hover:border-timber hover:text-white transition-colors rounded-sm"
+                    className="inline-flex h-10 w-10 items-center justify-center border border-white/20 hover:bg-red hover:border-timber hover:text-white transition-colors rounded-sm"
                   >
                     <Icon className="h-4 w-4" />
                   </a>
@@ -59,7 +59,7 @@ export function SiteFooter() {
 
           {COLS.map((col) => (
             <div key={col.heading} className="md:col-span-3">
-              <h3 className="eyebrow text-timber mb-4">{col.heading}</h3>
+              <h3 className="eyebrow text-white/70 mb-4">{col.heading}</h3>
               <ul className="space-y-3">
                 {col.links.map((l) => (
                   <li key={l.label}>
@@ -76,7 +76,7 @@ export function SiteFooter() {
           ))}
 
           <div className="md:col-span-4 md:col-start-9">
-            <h3 className="eyebrow text-timber mb-4">Where we work</h3>
+            <h3 className="eyebrow text-white/70 mb-4">Where we work</h3>
             <address className="not-italic text-sm text-white/85 leading-relaxed">
               Alaska statewide — no fixed base
               <br />
