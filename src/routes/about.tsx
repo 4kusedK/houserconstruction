@@ -16,16 +16,16 @@ const CREW_IMG =
 const OWNERS = [
   {
     name: "Steve Houser",
-    role: "Founder",
+    role: "Founder & Partner",
     initials: "SH",
-    bio: "Steve came up through the trades the long way, framing, finishing, and running crews long before the company carried the family name. He is the one who set the standard the rest of us build to: do it right the first time, and stand behind it after the check clears.",
+    bio: "Steve came up through the trades the long way — framing, finishing, and running crews. He sets the field standard: quality control, site safety, and a closeout that holds up to inspection the first time through.",
     quote: "If it isn't good enough for my own house, it doesn't leave the site.",
   },
   {
     name: "David Houser",
     role: "Owner & Project Lead",
     initials: "DH",
-    bio: "David runs the day to day, from the first walkthrough to the final punch list. He is the person clients talk to when they call, and the person on site when the work is happening. Working alongside his dad is the reason the company exists in the first place.",
+    bio: "David runs estimating, client relationships, and project execution, from the first walkthrough to the final punch list. On commercial and real estate work he is the single point of contact — the person who prices the job and the person accountable for delivering it.",
     quote: "The person who walks your site is the person who answers the phone.",
   },
 ];
@@ -33,8 +33,8 @@ const OWNERS = [
 const VALUES = [
   {
     n: "01",
-    title: "Family first",
-    body: "A father and son on the same crew. There is no layer of managers between you and the people holding the tools.",
+    title: "Direct accountability",
+    body: "No account managers between you and the crew running the job. One point of contact from estimate through closeout.",
   },
   {
     n: "02",
@@ -51,9 +51,9 @@ const VALUES = [
 const SITE_URL = "https://houserconstruction.net";
 const OG_IMAGE = `${SITE_URL}/og-houser-construction.jpg`;
 
-const ABOUT_TITLE = "About Houser Construction — A Father, A Son, Built in Alaska";
+const ABOUT_TITLE = "About Houser Construction — Alaska Commercial Contractor";
 const ABOUT_DESC =
-  "Meet the family behind Houser Construction. David and Steve Houser build new homes, remodels, and real estate developments across Alaska, licensed, bonded, and insured.";
+  "Houser Construction builds commercial, real estate, and residential projects statewide in Alaska. David Houser runs the company in partnership with his father Steve. Licensed, bonded, and insured.";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
