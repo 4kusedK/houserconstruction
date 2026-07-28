@@ -79,32 +79,50 @@ export const services = [
   },
 ] as const;
 
+// TODO: confirm real project names, locations and photography with client.
+// Projects are named after places, never services — the category and town
+// carry the "what and where" underneath.
+export const featuredProject = {
+  n: "00",
+  // TODO: confirm real project name and location with client.
+  name: "Turnagain",
+  category: "Whole-home remodel",
+  location: "Anchorage, AK",
+  beforeImage:
+    "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=70",
+  beforeAlt:
+    "Reference photo of a home interior before renovation. Client photography coming soon.",
+  afterImage:
+    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=70",
+  afterAlt:
+    "Reference photo of a finished, renovated home interior. Client photography coming soon.",
+} as const;
+
 export const projects = [
   {
     n: "01",
-    name: "Residential Remodel",
-    category: "Before & After",
-    image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=70",
-  },
-  {
-    n: "02",
-    name: "Custom Deck Build",
-    category: "Exterior",
+    // TODO: confirm real project name and location with client.
+    name: "Birch Ridge",
+    category: "New construction",
+    location: "Palmer, AK",
     image:
       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=70",
   },
   {
-    n: "03",
-    name: "Cedar Fence Install",
-    category: "Exterior",
+    n: "02",
+    // TODO: confirm real project name and location with client.
+    name: "Government Hill",
+    category: "Exterior & decks",
+    location: "Anchorage, AK",
     image:
       "https://images.unsplash.com/photo-1416331108676-a22ccb276e35?auto=format&fit=crop&w=1600&q=70",
   },
   {
-    n: "04",
-    name: "Real Estate Renovation",
-    category: "Residential",
+    n: "03",
+    // TODO: confirm real project name and location with client.
+    name: "Palmer Church Hall",
+    category: "Commercial restoration",
+    location: "Palmer, AK",
     image:
       "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=70",
   },
