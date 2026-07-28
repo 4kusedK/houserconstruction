@@ -1,29 +1,26 @@
-## 1. Header (`src/components/site/SiteHeader.tsx`)
+## Small wins polish pass (no video)
 
-- Reduce bar height from `h-20 md:h-24` to `h-16 md:h-20` so the sticky nav takes less vertical space.
-- Increase the logo to `h-16 md:h-20 w-auto` and let it overflow the bar visually by allowing the logo wrapper to scale (`py-0`, `overflow-visible`) — bigger mark, shorter bar.
-- Same treatment in the mobile menu header (logo `h-16`).
-- Adjust hero top padding in `src/routes/index.tsx` (currently `pt-52 md:pt-64`) down to match the shorter header.
+Purely presentational changes to the homepage and header. No new routes, data, or dependencies.
 
-## 2. Rename section 01
+### 1. Whitespace rhythm
+Standardize vertical section padding on the home page so the page breathes consistently instead of the current mix of `py-16 / py-20 md:py-28 / py-24 md:py-32`:
+- Major content sections (Positioning, Gallery, Testimonials, FAQ, Closing, Contact): `py-28 md:py-40`
+- Thin band sections (StatBar, Credentials): `py-16 md:py-24`
+- Increase the gap between a section heading and its content (heading blocks get `mb-16 md:mb-20`).
 
-In `src/routes/index.tsx`, the `Positioning` block eyebrow "Our word" becomes **"Our philosophy"** (keeps the number `01`, heading, and copy). Say the word if you'd rather it read "Partners".
+### 2. Pull quote in section 01
+Inside the "01 — Our philosophy" text column, replace the second paragraph's plain treatment with a large pull quote set in the display font, left red rule, e.g. "The person who walks your site is the person who answers the phone." The remaining prose stays below it, trimmed so nothing is duplicated.
 
-## 3. Handshake image
+### 3. Vertical margin mark
+Add a rotated, small-caps "Family Owned · Alaska" mark pinned to the left margin of the hero (hidden below `lg` so it never crowds mobile), using the existing silver/white token and red hairline. Decorative only, `aria-hidden`.
 
-Replace the AI-generated `src/assets/promise-handshake.jpg` import with an Unsplash URL of two people shaking hands on a job site, sized `w=1200`, with matching alt text. The AI asset file is left in place unused (or removed).
+### 4. Nav refinement
+Widen nav letter-spacing from `0.14em` to `0.2em` and drop nav size to `12px` so the links read as quieter, more premium type against the larger logo. Same treatment on the phone link. Increase nav gap from `gap-8` to `gap-10`.
 
-## 4. Recent projects → Gallery
-
-Rewrite `ProjectsGallery` in `src/routes/index.tsx`:
-- Section heading becomes `02 — Gallery` / "Our work."
-- Keep the six Unsplash images from `business.ts`, but drop all on-image text: no numbers, no category eyebrow, no project name, no gradient scrim.
-- Layout: even 2-up on tablet / 3-up on desktop grid of `aspect-[4/3]` images with a subtle hover zoom and a thin hairline frame — a photo wall, not cards.
-- Alt text stays descriptive for SEO/accessibility, drawn from the existing project names.
-- `projects` entries keep `name`/`category` in config (used only for alt text), so nothing else breaks.
+### 5. Gallery breathing room
+Increase gallery grid gap from `gap-4 md:gap-6` to `gap-6 md:gap-10` so the photo wall reads as a curated grid rather than a contact sheet.
 
 ## Technical notes
-
-- Purely presentational; no new dependencies, no route or data-model changes.
-- Unused imports (e.g. `handshakeImg`) get cleaned up so the typecheck stays green.
+- All edits in `src/routes/index.tsx` and `src/components/site/SiteHeader.tsx`.
+- No token changes needed; uses existing `bg-red`, `text-silver`, `display-md`, `eyebrow`.
 - Verify at 375px and desktop after the change.
