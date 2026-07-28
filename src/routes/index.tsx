@@ -32,17 +32,17 @@ const OG_IMAGE = `${SITE_URL}/og-houser-construction.jpg`;
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Houser Construction — Trusted to Serve | Alaska General Contractor" },
+      { title: "Houser Construction — Alaska Commercial General Contractor" },
       {
         name: "description",
         content:
-          "Houser Construction is a family owned, licensed Alaska general contractor. New construction, remodels, and real estate development, built to serve Alaskan communities with excellence.",
+          "Licensed Alaska general contractor working statewide on commercial, real estate, and residential projects. Ground-up builds, tenant improvements, restoration, and development. Family owned and operated.",
       },
-      { property: "og:title", content: "Houser Construction — Trusted to Serve | Alaska General Contractor" },
+      { property: "og:title", content: "Houser Construction — Alaska Commercial General Contractor" },
       {
         property: "og:description",
         content:
-          "Houser Construction is a family owned, licensed Alaska general contractor. New construction, remodels, and real estate development, built to serve Alaskan communities with excellence.",
+          "Licensed Alaska general contractor working statewide on commercial, real estate, and residential projects. Family owned and operated.",
       },
       { property: "og:url", content: `${SITE_URL}/` },
       { property: "og:type", content: "website" },
@@ -139,7 +139,7 @@ function Hero() {
       >
         <span className="h-16 w-[2px] bg-red" />
         <span className="font-ui text-[11px] font-bold uppercase tracking-[0.28em] text-white/60">
-          Family Owned · Alaska
+          Steve &amp; David Houser · Alaska
         </span>
       </div>
       <div className="relative mx-auto max-w-[1200px] px-6 pt-44 md:pt-56 pb-24 min-h-[100svh] flex flex-col justify-end">
@@ -158,9 +158,9 @@ function Hero() {
             <span className="text-white/85">with excellence.</span>
           </h1>
           <p className="mt-8 max-w-xl text-lg text-white/85 leading-[1.6]">
-            A father-and-son contractor building new homes and commercial
-            spaces, restoring the ones already standing, and developing
-            property across Alaska.
+            Licensed Alaska general contractor working statewide on commercial,
+            real estate, and residential projects. David runs the day-to-day
+            with Steve Houser at his side.
           </p>
 
           <span className="mt-10 block h-[2px] w-16 bg-red" aria-hidden />
@@ -194,11 +194,11 @@ function Positioning() {
         <Reveal>
           <div className="flex items-center gap-3 mb-6">
             <span className="rule-red" aria-hidden />
-            <span className="eyebrow">Our philosophy</span>
+            <span className="eyebrow">How we work</span>
           </div>
 
           <h2 className="display-lg text-navy max-w-3xl">
-            A handshake still means something.
+            Built on partnership.
           </h2>
         </Reveal>
 
@@ -208,7 +208,7 @@ function Positioning() {
               <div className="relative overflow-hidden aspect-[4/5] photo-frame">
                 <img
                   src={handshakeImg}
-                  alt="A contractor and a client shaking hands inside a partly framed build"
+                  alt="A contractor and a client shaking hands on site at a commercial build"
                   loading="lazy"
                   width={1200}
                   height={1408}
@@ -236,18 +236,20 @@ function Positioning() {
                 </p>
               </blockquote>
               <p className="mt-12 text-lg text-charcoal leading-[1.6]">
-                Houser Construction is family owned and family run. When we tell
-                you how a job will go, that is how it goes.
+                Commercial and real estate clients get one point of contact from
+                estimate through closeout. No account managers, no handoffs
+                between departments, no chasing someone down for a status.
               </p>
               <p className="mt-8 text-lg text-charcoal/80 leading-[1.6]">
-                We kept the company small on purpose. Whoever stands behind the
-                finished work still lives in the community it was built for.
+                The company is deliberately structured so the person who prices
+                your job is the person accountable for delivering it — and still
+                answers the phone six months after final walkthrough.
               </p>
               <Link
                 to="/about"
                 className="mt-12 inline-flex items-center gap-2 font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-navy hover:text-red transition-colors link-underline"
               >
-                Meet the family <ArrowRight className="h-4 w-4" />
+                Meet the team <ArrowRight className="h-4 w-4" />
               </Link>
             </Reveal>
           </div>
@@ -305,8 +307,11 @@ function ProjectsGallery() {
           <div className="mb-16 md:mb-20">
             <SectionHeading
               eyebrow="Gallery"
-              title="Places we've put our name on."
-            />
+              title="Selected work."
+            >
+              Commercial, real estate, and residential projects across Alaska —
+              ground-up builds, restoration, and development.
+            </SectionHeading>
           </div>
         </Reveal>
 
@@ -567,9 +572,9 @@ function ClosingAndContact() {
           </h2>
           <p className="mt-8 text-lg text-white/80 leading-[1.6] max-w-2xl">
             Every structure we put up outlasts the contract that paid for it.
-            Houses become homes, empty lots become neighborhoods, and worn out
-            buildings get another life. That is the part of this work that
-            matters to our family.
+            Storefronts open, empty lots become neighborhoods, and worn out
+            buildings get another life. That is the standard we build to — on
+            every lot, in every borough, for every client.
           </p>
           <p className="mt-12 display-md text-white/90">
             The old is gone. The new has come.

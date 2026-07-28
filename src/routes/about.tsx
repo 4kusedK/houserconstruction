@@ -16,16 +16,16 @@ const CREW_IMG =
 const OWNERS = [
   {
     name: "Steve Houser",
-    role: "Founder",
+    role: "Founder & Partner",
     initials: "SH",
-    bio: "Steve came up through the trades the long way, framing, finishing, and running crews long before the company carried the family name. He is the one who set the standard the rest of us build to: do it right the first time, and stand behind it after the check clears.",
+    bio: "Steve came up through the trades the long way — framing, finishing, and running crews. He sets the field standard: quality control, site safety, and a closeout that holds up to inspection the first time through.",
     quote: "If it isn't good enough for my own house, it doesn't leave the site.",
   },
   {
     name: "David Houser",
     role: "Owner & Project Lead",
     initials: "DH",
-    bio: "David runs the day to day, from the first walkthrough to the final punch list. He is the person clients talk to when they call, and the person on site when the work is happening. Working alongside his dad is the reason the company exists in the first place.",
+    bio: "David runs estimating, client relationships, and project execution, from the first walkthrough to the final punch list. On commercial and real estate work he is the single point of contact — the person who prices the job and the person accountable for delivering it.",
     quote: "The person who walks your site is the person who answers the phone.",
   },
 ];
@@ -33,8 +33,8 @@ const OWNERS = [
 const VALUES = [
   {
     n: "01",
-    title: "Family first",
-    body: "A father and son on the same crew. There is no layer of managers between you and the people holding the tools.",
+    title: "Direct accountability",
+    body: "No account managers between you and the crew running the job. One point of contact from estimate through closeout.",
   },
   {
     n: "02",
@@ -51,9 +51,9 @@ const VALUES = [
 const SITE_URL = "https://houserconstruction.net";
 const OG_IMAGE = `${SITE_URL}/og-houser-construction.jpg`;
 
-const ABOUT_TITLE = "About Houser Construction — A Father, A Son, Built in Alaska";
+const ABOUT_TITLE = "About Houser Construction — Alaska Commercial Contractor";
 const ABOUT_DESC =
-  "Meet the family behind Houser Construction. David and Steve Houser build new homes, remodels, and real estate developments across Alaska, licensed, bonded, and insured.";
+  "Houser Construction builds commercial, real estate, and residential projects statewide in Alaska. David Houser runs the company in partnership with his father Steve. Licensed, bonded, and insured.";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -64,7 +64,7 @@ export const Route = createFileRoute("/about")({
       {
         property: "og:description",
         content:
-          "Meet the family behind Houser Construction: David and Steve Houser, a father and son building across Alaska.",
+          "Houser Construction builds commercial, real estate, and residential projects across Alaska. Run by David Houser in partnership with his father Steve.",
       },
       { property: "og:url", content: `${SITE_URL}/about` },
       { property: "og:type", content: "profile" },
@@ -73,7 +73,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "twitter:description",
         content:
-          "Meet the family behind Houser Construction: David and Steve Houser, a father and son building across Alaska.",
+          "Houser Construction builds commercial, real estate, and residential projects across Alaska. Run by David Houser in partnership with his father Steve.",
       },
       { property: "og:image", content: OG_IMAGE },
       { name: "twitter:image", content: OG_IMAGE },
@@ -137,14 +137,14 @@ function AboutHero() {
           <span className="eyebrow text-white/80">Profile</span>
         </div>
         <h1 className="display-xl text-white max-w-3xl">
-          A father, a son,
+          A construction partner
           <br />
-          <span className="text-white/85">and one standard.</span>
+          <span className="text-white/85">for Alaska.</span>
         </h1>
         <p className="mt-8 max-w-xl text-lg text-white/85 leading-relaxed">
-          Houser Construction is family owned and family run. Steve and David
-          Houser build across Alaska, and the name on the truck is the same one
-          on the family mailbox.
+          Houser Construction builds commercial, real estate, and residential
+          projects statewide. David Houser runs the day-to-day, with Steve
+          Houser as partner.
         </p>
       </div>
     </section>
@@ -163,17 +163,16 @@ function Story() {
       <div className="relative mx-auto max-w-[1200px] px-6 grid md:grid-cols-12 gap-x-16 gap-y-14 items-start">
         <div className="md:col-span-5">
           <Reveal>
-            <SectionHeading eyebrow="Our story" title="How it started." />
+            <SectionHeading eyebrow="Our story" title="How the company runs." />
           </Reveal>
         </div>
         <div className="md:col-span-6 md:col-start-7">
           <Reveal delay={0.08}>
             <p className="text-lg text-charcoal leading-relaxed">
-              Houser Construction started the way most good things in a family
-              do: two people who trusted each other decided to do the work
-              themselves. Steve had spent a career in the trades. David grew up
-              on his job sites, learning that a level is honest even when a
-              schedule is not.
+              Houser Construction was built on direct accountability — one crew,
+              one standard, one point of contact. Steve had spent a career in
+              the trades running jobs and crews. David came up on those sites
+              and now runs the company, with his father as partner.
             </p>
             <blockquote className="mt-12 border-l-2 border-red pl-6">
               <p className="display-md text-navy">
@@ -181,9 +180,11 @@ function Story() {
               </p>
             </blockquote>
             <p className="mt-12 text-lg text-charcoal/85 leading-relaxed">
-              Today we build new homes, take on full remodels, and develop real
-              estate across Alaska. The company stayed small on purpose. When
-              you hire us, you get the family, not a subcontracted stand-in.
+              Today the work is primarily commercial and real estate — ground-up
+              builds, tenant improvements, restoration, and development —
+              with residential construction and remodels alongside it, anywhere
+              in Alaska. The structure stayed lean on purpose: when you hire us,
+              the people who priced the job are the people delivering it.
             </p>
           </Reveal>
         </div>
@@ -249,7 +250,7 @@ function Owners() {
             <div className="relative aspect-[16/7] overflow-hidden border border-white/10 photo-frame">
               <img
                 src={CREW_IMG}
-                alt="Reference photo of an Alaska job site. Photography of the Houser Construction crew is coming soon."
+                alt="Reference photography of an Alaska job site, representing the type of work Houser Construction takes on."
                 loading="lazy"
                 className="absolute inset-0 h-full w-full object-cover"
               />
