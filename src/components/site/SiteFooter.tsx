@@ -80,7 +80,8 @@ export function SiteFooter() {
               Based in {business.address.city}
               <br />
               <span className="text-white/60">
-                Serving {business.serviceArea} statewide
+                Serving Alaska statewide — Anchorage, Eagle River, Palmer,
+                Wasilla and the Mat-Su Valley, Girdwood, and beyond.
               </span>
             </address>
           </div>
