@@ -110,7 +110,17 @@ function Hero() {
         fetchPriority="high"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/85 via-navy-deep/60 to-navy-deep/95" />
+      <div
+        aria-hidden
+        className="hidden lg:flex absolute left-6 top-1/2 -translate-y-1/2 items-center gap-4 [writing-mode:vertical-rl] rotate-180"
+      >
+        <span className="h-16 w-[2px] bg-red" />
+        <span className="font-ui text-[11px] font-bold uppercase tracking-[0.28em] text-white/60">
+          Family Owned · Alaska
+        </span>
+      </div>
       <div className="relative mx-auto max-w-[1200px] px-6 pt-44 md:pt-56 pb-24 min-h-[100svh] flex flex-col justify-end">
+
         <div className="max-w-3xl">
           <div className="flex items-center gap-3 mb-6">
             <span className="h-[2px] w-10 bg-red" aria-hidden />
