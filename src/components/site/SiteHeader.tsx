@@ -40,21 +40,21 @@ export function SiteHeader() {
           </Link>
 
           <nav
-            className="hidden md:flex items-center gap-8"
+            className="hidden md:flex items-center gap-10"
             aria-label="Primary"
           >
             {NAV.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="font-ui text-[13px] font-bold uppercase tracking-[0.14em] text-navy hover:text-red transition-colors"
+                className="font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-navy hover:text-red transition-colors"
               >
                 {item.label}
               </a>
             ))}
             <a
               href={business.phoneHref}
-              className="hidden lg:inline-flex items-center gap-2 font-ui text-[13px] font-bold uppercase tracking-[0.14em] text-navy hover:text-red transition-colors"
+              className="hidden lg:inline-flex items-center gap-2 font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-navy hover:text-red transition-colors"
               aria-label={`Call ${business.phone}`}
             >
               <Phone className="h-4 w-4" />
