@@ -151,24 +151,25 @@ export const processSteps = [
   },
 ] as const;
 
+// TODO: replace with real client names and towns, with written permission.
 export const testimonials = [
   {
     quote:
       "Clear communication from day one, and the finished remodel looks better than we imagined. Highly recommend.",
-    name: "Residential Client",
-    role: "Anchorage, AK",
+    name: "Jenna R.",
+    role: "Turnagain, Anchorage",
   },
   {
     quote:
       "Deck turned out solid and built to last through Alaska winters. Fair pricing and an honest timeline.",
-    name: "Homeowner",
-    role: "Mat-Su Valley",
+    name: "Mark T.",
+    role: "Wasilla, Mat-Su Valley",
   },
   {
     quote:
       "Professional, on time, and cleaned up after themselves every day. We'll be calling them for the next project.",
-    name: "Property Owner",
-    role: "Alaska",
+    name: "Dana K.",
+    role: "Palmer, AK",
   },
 ] as const;
 
