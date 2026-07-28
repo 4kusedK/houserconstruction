@@ -137,7 +137,7 @@ function Hero() {
         aria-hidden
         className="hidden lg:flex absolute left-6 top-1/2 -translate-y-1/2 items-center gap-4 [writing-mode:vertical-rl] rotate-180"
       >
-        <span className="h-16 w-[2px] bg-red" />
+        <span className="h-16 w-[2px] bg-timber" />
         <span className="font-ui text-[11px] font-bold uppercase tracking-[0.28em] text-white/60">
           Family Owned · Alaska
         </span>
@@ -265,7 +265,7 @@ function StatBar() {
         {stats.map((s, i) => (
           <Reveal key={s.label} delay={i * 0.08}>
             <div className={i === 0 ? "md:pr-8" : "md:px-8"}>
-              <span className="rule-red mb-5" aria-hidden />
+              <span className="block h-[2px] w-10 bg-timber mb-5" aria-hidden />
               <div className="display-lg text-white">{s.value}</div>
               <div className="eyebrow mt-4 text-white/60">{s.label}</div>
             </div>
@@ -451,7 +451,7 @@ function Testimonials() {
           {testimonials.map((t, i) => (
             <Reveal key={t.name} delay={i * 0.08}>
               <figure className="border-t border-white/15 pt-8 h-full flex flex-col">
-                <span className="h-[2px] w-8 bg-red block mb-6" aria-hidden />
+                <span className="h-[2px] w-8 bg-timber block mb-6" aria-hidden />
                 <blockquote className="font-display text-xl leading-snug text-white flex-1">
                   &ldquo;{t.quote}&rdquo;
                 </blockquote>

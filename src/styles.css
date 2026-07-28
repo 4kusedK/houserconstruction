@@ -312,7 +312,8 @@
     bottom: -2px;
     width: 100%;
     height: 1px;
-    background: var(--red);
+    background: var(--timber);
+
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
