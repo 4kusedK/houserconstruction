@@ -352,13 +352,16 @@ function ProjectsGallery() {
           </article>
         </Reveal>
 
-        {/* Staggered three-up */}
+        {/* Staggered remaining projects */}
         <ul
           aria-label="Photo gallery of Houser Construction work"
-          className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr_1fr] gap-8 md:gap-10 list-none p-0"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 list-none p-0"
         >
-          {workProjects.map((p, i) => (
-            <li key={p.slug} className={i === 1 ? "md:pt-8" : undefined}>
+          {workProjects
+            .filter((p) => p.slug !== f.project.slug)
+            .map((p, i) => (
+            <li key={p.slug} className={i === 1 ? "md:pt-10" : undefined}>
+
               <Reveal delay={i * 0.05}>
                 <Link
                   to="/work"
