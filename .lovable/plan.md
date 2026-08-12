@@ -1,31 +1,47 @@
-# Site audit + closing band cleanup
+# Contact section to match the reference + site audit
 
-## What the tests found
+## 1. Contact section — match the reference exactly
 
-I loaded Home, About, and Work at mobile (390px) and desktop (1280px) widths in a real browser:
+Right now the navy side shows one generic "Houser Construction · Project inquiries · Estimates · houserconstruction@gmail.com" card. Replace it with the two-person layout from your reference:
 
-- No horizontal overflow on any page at either width — nothing spills off screen.
-- No broken images or failed requests.
-- One React console warning on every page: an image attribute is spelled `fetchpriority` instead of `fetchPriority`. Harmless today, but it's noise in the console and should be fixed.
-- Mobile hero fills nearly the full screen before any text appears; the headline sits low. Worth tightening so the value line is visible sooner on a phone.
+```text
+PROJECT LINE
+[phone icon] (907) 310-6828
+Call the company
+------------------------------------
+(env) | DAVID HOUSER
+      | Project inquiries · Day-to-day
+      | david@houserconstruction.net
+------------------------------------
+(env) | STEVE HOUSER
+      | Planning · Project support
+      | steve@houserconstruction.net
+```
 
-Nothing is broken. The fixes below are polish plus the section change you asked about.
+- Each row: circled envelope icon, name in bold display caps, muted role line, email as the link.
+- Hairline dividers above and between the rows, matching the reference.
+- Left panel unchanged: off-white, "Bring the plans. / Or just the idea.", "We'll tell you the next practical step.", red "START HERE →", red vertical slab on the right edge.
 
-## Changes
+**Emails become the real ones**: `david@houserconstruction.net` and `steve@houserconstruction.net`. I'll add both to the business config as `contacts` (name, role, email) and drop the placeholder gmail from the visible UI. The footer and any other "email us" links point to David's address as the primary inbox.
 
-1. **Remove "Building better communities."**
-   Delete the full statement block (heading, paragraph, and the "The old is gone. The new has come." line) so the page goes from the FAQ straight into the split contact panel. The navy field and the red rule stay, so the flow into contact and footer is unchanged — the page just closes faster and with less preaching.
+Note: those addresses only receive mail once Google Workspace is set up on houserconstruction.net — the site will be correct in advance.
 
-   If you'd rather not lose the sentiment entirely, the alternative is keeping only "The old is gone. The new has come." as a single short line above the contact split. Tell me which you want; the plan assumes full removal.
+On mobile the two rows stack full width with the icon beside the text, and the whole panel sits under the invitation panel.
 
-2. **Fix the console warning** — correct the image priority attribute casing on the hero image so the console is clean.
+## 2. Remove "Building better communities."
 
-3. **Mobile hero tightening** — reduce hero min-height on small screens and trim the top spacing so the eyebrow and headline land inside the first screen instead of below the fold.
+Delete the closing statement block (heading, paragraph, and "The old is gone. The new has come.") so the FAQ runs straight into the contact split. The navy field and red rule stay, so the flow into the footer is unchanged.
 
-4. **Mobile spacing pass on the contact split** — the two panels each carry large vertical padding, which stacks into a very long scroll on a phone. Reduce the mobile padding on both halves (desktop untouched).
+## 3. Audit results and fixes
+
+I tested Home, About, and Work at 390px and 1280px in a real browser:
+
+- No horizontal overflow anywhere, no broken images, no failed requests.
+- One React console warning on every page: an image attribute spelled `fetchpriority` instead of `fetchPriority`. I'll fix it.
+- Mobile hero fills the screen before any text shows — I'll reduce the hero min-height on small screens so the headline lands above the fold.
+- Contact panels carry heavy vertical padding that stacks into a long scroll on a phone — reduce mobile padding on both halves, desktop untouched.
 
 ## Technical notes
 
-- All edits are in `src/routes/index.tsx`; no config, data, or route changes.
-- Removing the statement block does not affect anchors — `#contact` lives on the split grid, not the statement.
-- After the edits I'll re-run the same mobile/desktop browser pass to confirm no overflow, no console errors, and correct layout.
+- Edits: `src/config/business.ts` (add `contacts`, update primary email), `src/routes/index.tsx` (contact panel, closing block removal, hero/mobile spacing), `src/components/site/SiteFooter.tsx` (email link).
+- Re-run the mobile/desktop browser pass afterwards to confirm no overflow and a clean console.
