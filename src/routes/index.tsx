@@ -550,27 +550,9 @@ function ClosingAndContact() {
     <section className="relative overflow-hidden bg-navy text-white">
       <span aria-hidden className="navy-depth" />
 
-      <div className="relative mx-auto max-w-[1200px] px-6 pt-28 md:pt-44 pb-20 md:pb-28">
-        <div className="max-w-3xl">
-          <span className="block h-[2px] w-16 bg-red mb-8" aria-hidden />
-          <h2 className="display-lg text-white">
-            Building better communities.
-          </h2>
-          <p className="mt-8 text-lg text-white/75 leading-[1.6] max-w-2xl">
-            Every structure we put up outlasts the contract that paid for it.
-            Storefronts open, empty lots become neighborhoods, and worn out
-            buildings get another life. That is the standard we build to — on
-            every lot, in every borough, for every client.
-          </p>
-          <p className="mt-12 display-md text-white/90">
-            The old is gone. The new has come.
-          </p>
-        </div>
-      </div>
-
       <div id="contact" className="relative scroll-mt-24 grid md:grid-cols-2">
         {/* Left: invitation panel */}
-        <div className="relative bg-white text-navy px-6 py-20 md:py-32 flex items-center md:justify-end">
+        <div className="relative bg-white text-navy px-6 py-16 md:py-32 flex items-center md:justify-end">
           <div className="w-full max-w-[520px] md:pr-14">
             <h2 className="display-lg text-navy">
               Bring the plans.
