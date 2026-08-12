@@ -286,10 +286,10 @@ function StatBar() {
 
 // Deliberately unequal heights so the row does not read as a flat grid.
 const TILE_HEIGHTS = [
-  "h-[200px] md:h-[215px]",
-  "h-[200px] md:h-[150px]",
-  "h-[200px] md:h-[190px]",
+  "h-[220px] md:h-[320px]",
+  "h-[220px] md:h-[260px]",
 ] as const;
+
 
 function ProjectsGallery() {
   const f = featuredWork;
