@@ -576,7 +576,7 @@ function ClosingAndContact() {
         </div>
 
         {/* Right: contact details */}
-        <div className="relative bg-navy-deep px-6 py-20 md:py-32 flex items-center border-t-[6px] md:border-t-0 border-red">
+        <div className="relative bg-navy-deep px-6 py-16 md:py-32 flex items-center border-t-[6px] md:border-t-0 border-red">
           <div className="w-full max-w-[520px] md:pl-14">
             <p className="eyebrow text-white/60">Project line</p>
             <a
@@ -590,26 +590,29 @@ function ClosingAndContact() {
             </a>
             <p className="mt-3 text-white/60">Call the company</p>
 
-            <div className="mt-10 pt-10 border-t border-white/15">
-              <a
-                href={business.emailHref}
-                className="flex items-start gap-5 group"
-              >
-                <span className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-white/25 text-white group-hover:border-red group-hover:text-red transition-colors">
-                  <Mail className="h-5 w-5" />
-                </span>
-                <span className="border-l border-white/15 pl-5">
-                  <span className="block font-display text-xl font-bold uppercase tracking-[0.04em] text-white">
-                    Houser Construction
+            <div className="mt-10 border-t border-white/15">
+              {business.contacts.map((c) => (
+                <a
+                  key={c.email}
+                  href={c.emailHref}
+                  className="flex items-start gap-5 group py-8 border-b border-white/15"
+                >
+                  <span className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-white/25 text-white group-hover:border-red group-hover:text-red transition-colors">
+                    <Mail className="h-5 w-5" />
                   </span>
-                  <span className="block text-sm text-white/60 mt-1">
-                    Project inquiries · Estimates
+                  <span className="min-w-0 border-l border-white/15 pl-5">
+                    <span className="block font-display text-xl font-bold uppercase tracking-[0.04em] text-white">
+                      {c.name}
+                    </span>
+                    <span className="block text-sm text-white/60 mt-1">
+                      {c.role}
+                    </span>
+                    <span className="block break-words text-white/85 mt-2 group-hover:text-white transition-colors">
+                      {c.email}
+                    </span>
                   </span>
-                  <span className="block text-white/85 mt-2 group-hover:text-white transition-colors">
-                    {business.email}
-                  </span>
-                </span>
-              </a>
+                </a>
+              ))}
             </div>
           </div>
         </div>
