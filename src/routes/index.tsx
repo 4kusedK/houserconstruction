@@ -49,7 +49,7 @@ export const Route = createFileRoute("/")({
     ],
     links: [
       { rel: "canonical", href: `${SITE_URL}/` },
-      { rel: "preload", as: "image", href: heroImg, fetchpriority: "high" },
+      { rel: "preload", as: "image", href: heroImg },
     ],
     scripts: [
       {
@@ -122,7 +122,7 @@ function Hero() {
   return (
     <section
       id="top"
-      className="relative min-h-[100svh] w-full overflow-hidden bg-navy-deep text-white"
+      className="relative min-h-[78svh] md:min-h-[100svh] w-full overflow-hidden bg-navy-deep text-white"
     >
       <img
         src={heroImg}
@@ -143,7 +143,7 @@ function Hero() {
           Steve &amp; David Houser · Alaska
         </span>
       </div>
-      <div className="relative mx-auto max-w-[1200px] px-6 pt-48 md:pt-60 pb-24 min-h-[100svh] flex flex-col justify-end">
+      <div className="relative mx-auto max-w-[1200px] px-6 pt-32 md:pt-60 pb-16 md:pb-24 min-h-[78svh] md:min-h-[100svh] flex flex-col justify-end">
 
         <div className="max-w-3xl">
           <div className="flex items-center gap-3 mb-6">
@@ -550,27 +550,9 @@ function ClosingAndContact() {
     <section className="relative overflow-hidden bg-navy text-white">
       <span aria-hidden className="navy-depth" />
 
-      <div className="relative mx-auto max-w-[1200px] px-6 pt-28 md:pt-44 pb-20 md:pb-28">
-        <div className="max-w-3xl">
-          <span className="block h-[2px] w-16 bg-red mb-8" aria-hidden />
-          <h2 className="display-lg text-white">
-            Building better communities.
-          </h2>
-          <p className="mt-8 text-lg text-white/75 leading-[1.6] max-w-2xl">
-            Every structure we put up outlasts the contract that paid for it.
-            Storefronts open, empty lots become neighborhoods, and worn out
-            buildings get another life. That is the standard we build to — on
-            every lot, in every borough, for every client.
-          </p>
-          <p className="mt-12 display-md text-white/90">
-            The old is gone. The new has come.
-          </p>
-        </div>
-      </div>
-
       <div id="contact" className="relative scroll-mt-24 grid md:grid-cols-2">
         {/* Left: invitation panel */}
-        <div className="relative bg-white text-navy px-6 py-20 md:py-32 flex items-center md:justify-end">
+        <div className="relative bg-white text-navy px-6 py-16 md:py-32 flex items-center md:justify-end">
           <div className="w-full max-w-[520px] md:pr-14">
             <h2 className="display-lg text-navy">
               Bring the plans.
@@ -594,7 +576,7 @@ function ClosingAndContact() {
         </div>
 
         {/* Right: contact details */}
-        <div className="relative bg-navy-deep px-6 py-20 md:py-32 flex items-center border-t-[6px] md:border-t-0 border-red">
+        <div className="relative bg-navy-deep px-6 py-16 md:py-32 flex items-center border-t-[6px] md:border-t-0 border-red">
           <div className="w-full max-w-[520px] md:pl-14">
             <p className="eyebrow text-white/60">Project line</p>
             <a
@@ -608,26 +590,29 @@ function ClosingAndContact() {
             </a>
             <p className="mt-3 text-white/60">Call the company</p>
 
-            <div className="mt-10 pt-10 border-t border-white/15">
-              <a
-                href={business.emailHref}
-                className="flex items-start gap-5 group"
-              >
-                <span className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-white/25 text-white group-hover:border-red group-hover:text-red transition-colors">
-                  <Mail className="h-5 w-5" />
-                </span>
-                <span className="border-l border-white/15 pl-5">
-                  <span className="block font-display text-xl font-bold uppercase tracking-[0.04em] text-white">
-                    Houser Construction
+            <div className="mt-10 border-t border-white/15">
+              {business.contacts.map((c) => (
+                <a
+                  key={c.email}
+                  href={c.emailHref}
+                  className="flex items-start gap-5 group py-8 border-b border-white/15"
+                >
+                  <span className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-white/25 text-white group-hover:border-red group-hover:text-red transition-colors">
+                    <Mail className="h-5 w-5" />
                   </span>
-                  <span className="block text-sm text-white/60 mt-1">
-                    Project inquiries · Estimates
+                  <span className="min-w-0 border-l border-white/15 pl-5">
+                    <span className="block font-display text-xl font-bold uppercase tracking-[0.04em] text-white">
+                      {c.name}
+                    </span>
+                    <span className="block text-sm text-white/60 mt-1">
+                      {c.role}
+                    </span>
+                    <span className="block break-words text-white/85 mt-2 group-hover:text-white transition-colors">
+                      {c.email}
+                    </span>
                   </span>
-                  <span className="block text-white/85 mt-2 group-hover:text-white transition-colors">
-                    {business.email}
-                  </span>
-                </span>
-              </a>
+                </a>
+              ))}
             </div>
           </div>
         </div>

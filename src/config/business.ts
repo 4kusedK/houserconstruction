@@ -9,9 +9,24 @@ export const business = {
     "Houser Construction is a licensed Alaska general contractor working statewide on commercial, real estate, and residential projects. We build new commercial spaces and homes, restore the ones already standing, and take on development across the state. Family owned and operated.",
   phone: "(907) 310-6828",
   phoneHref: "tel:+19073106828",
-  // TODO: swap to hello@houserconstruction.com once the domain is live.
-  email: "houserconstruction@gmail.com",
-  emailHref: "mailto:houserconstruction@gmail.com",
+  // Primary inbox — routes to David, who runs day-to-day.
+  email: "david@houserconstruction.net",
+  emailHref: "mailto:david@houserconstruction.net",
+  // Named contacts shown in the contact panel.
+  contacts: [
+    {
+      name: "David Houser",
+      role: "Project inquiries · Day-to-day",
+      email: "david@houserconstruction.net",
+      emailHref: "mailto:david@houserconstruction.net",
+    },
+    {
+      name: "Steve Houser",
+      role: "Planning · Project support",
+      email: "steve@houserconstruction.net",
+      emailHref: "mailto:steve@houserconstruction.net",
+    },
+  ],
   // Service-area business: no fixed city base, so no locality is published.
   address: {
     region: "AK",
