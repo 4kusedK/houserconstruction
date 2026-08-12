@@ -244,22 +244,29 @@ function WorkCTA() {
     <section className="relative overflow-hidden bg-navy text-white py-20 md:py-28">
       <span aria-hidden className="navy-depth" />
       <div className="relative mx-auto max-w-[1200px] px-6">
-        <SectionHeading eyebrow="Next" title="Have a project in mind?" invert>
+        <SectionHeading eyebrow="Next" title="Have a project in mind?" onDark>
           Tell us what you are building or restoring and we will walk the site
           with you.
         </SectionHeading>
         <div className="mt-10 flex flex-col sm:flex-row gap-4">
-          <BrandButton asChild>
-            <Link to="/" hash="contact">
-              Let&apos;s talk <ArrowRight className="h-4 w-4" />
-            </Link>
+          <BrandButton
+            as="a"
+            href={business.emailHref}
+            variant="accent"
+            size="lg"
+          >
+            Email us <ArrowRight className="h-4 w-4" />
           </BrandButton>
-          <BrandButton asChild variant="ghost-light">
-            <a href={business.phoneHref}>
-              <Phone className="h-4 w-4" /> {business.phone}
-            </a>
+          <BrandButton
+            as="a"
+            href={business.phoneHref}
+            variant="outline-light"
+            size="lg"
+          >
+            <Phone className="h-4 w-4" /> {business.phone}
           </BrandButton>
         </div>
+
       </div>
     </section>
   );
