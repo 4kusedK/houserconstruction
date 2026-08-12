@@ -1,4 +1,4 @@
-# Real project photos — placement plan
+Real project photos — placement plan
 
 ## What's in the zip
 
