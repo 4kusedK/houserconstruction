@@ -4,7 +4,6 @@ import { ArrowRight, ChevronDown, Phone, Mail } from "lucide-react";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SectionHeading } from "@/components/brand/SectionHeading";
-import { BrandButton } from "@/components/brand/BrandButton";
 import { Reveal } from "@/components/brand/Reveal";
 import handshakeImg from "@/assets/promise-handshake.jpg";
 
