@@ -122,7 +122,7 @@ function Hero() {
   return (
     <section
       id="top"
-      className="relative min-h-[100svh] w-full overflow-hidden bg-navy-deep text-white"
+      className="relative min-h-[78svh] md:min-h-[100svh] w-full overflow-hidden bg-navy-deep text-white"
     >
       <img
         src={heroImg}
