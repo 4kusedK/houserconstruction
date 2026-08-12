@@ -568,69 +568,71 @@ function ClosingAndContact() {
         </div>
       </div>
 
-      <div
-        id="contact"
-        className="relative scroll-mt-24 mx-auto max-w-[1200px] px-6 pb-24 md:pb-32"
-      >
-        <div className="grid md:grid-cols-2 border-t border-white/12 pt-16 md:pt-20">
-          {/* Left: invitation */}
-          <div className="md:pr-14 md:border-r md:border-white/12">
-            <p className="eyebrow text-white/50">Let&apos;s talk</p>
-            <h2 className="mt-5 display-md text-white">
+      <div id="contact" className="relative scroll-mt-24 grid md:grid-cols-2">
+        {/* Left: invitation panel */}
+        <div className="relative bg-white text-navy px-6 py-20 md:py-32 flex items-center md:justify-end">
+          <div className="w-full max-w-[520px] md:pr-14">
+            <h2 className="display-lg text-navy">
               Bring the plans.
               <br />
               Or just the idea.
             </h2>
-            <p className="mt-5 text-lg text-white/70 leading-relaxed max-w-md">
+            <p className="mt-6 text-lg text-silver leading-relaxed">
               We&apos;ll tell you the next practical step.
             </p>
             <a
               href={business.emailHref}
-              className="mt-8 inline-flex items-center gap-3 font-ui text-sm font-bold uppercase tracking-[0.18em] text-red hover:gap-5 transition-all"
+              className="mt-10 inline-flex items-center gap-3 font-ui text-sm font-bold uppercase tracking-[0.18em] text-red hover:gap-5 transition-all"
             >
               Start here <ArrowRight className="h-4 w-4" />
             </a>
           </div>
+          <span
+            aria-hidden
+            className="hidden md:block absolute top-0 right-0 h-full w-[6px] bg-red"
+          />
+        </div>
 
-          {/* Right: contact card */}
-          <div className="mt-14 md:mt-0 md:pl-14">
-            <div className="bg-navy-deep/70 border border-white/10 px-6 py-8 md:px-9 md:py-10">
-              <p className="eyebrow text-white/50">Project line</p>
+        {/* Right: contact details */}
+        <div className="relative bg-navy-deep px-6 py-20 md:py-32 flex items-center border-t-[6px] md:border-t-0 border-red">
+          <div className="w-full max-w-[520px] md:pl-14">
+            <p className="eyebrow text-white/60">Project line</p>
+            <a
+              href={business.phoneHref}
+              className="mt-2 flex items-center gap-4 group"
+            >
+              <Phone className="h-8 w-8 md:h-10 md:w-10 text-red shrink-0" />
+              <span className="display-md text-white group-hover:text-white/85 transition-colors">
+                {business.phone}
+              </span>
+            </a>
+            <p className="mt-3 text-white/60">Call the company</p>
+
+            <div className="mt-10 pt-10 border-t border-white/15">
               <a
-                href={business.phoneHref}
-                className="mt-3 flex items-center gap-4 group"
+                href={business.emailHref}
+                className="flex items-start gap-5 group"
               >
-                <Phone className="h-7 w-7 md:h-8 md:w-8 text-red shrink-0" />
-                <span className="display-md text-white group-hover:text-white/85 transition-colors">
-                  {business.phone}
+                <span className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-white/25 text-white group-hover:border-red group-hover:text-red transition-colors">
+                  <Mail className="h-5 w-5" />
+                </span>
+                <span className="border-l border-white/15 pl-5">
+                  <span className="block font-display text-xl font-bold uppercase tracking-[0.04em] text-white">
+                    Houser Construction
+                  </span>
+                  <span className="block text-sm text-white/60 mt-1">
+                    Project inquiries · Estimates
+                  </span>
+                  <span className="block text-white/85 mt-2 group-hover:text-white transition-colors">
+                    {business.email}
+                  </span>
                 </span>
               </a>
-
-              <div className="mt-8 pt-8 border-t border-white/10">
-                <a
-                  href={business.emailHref}
-                  className="flex items-start gap-5 group"
-                >
-                  <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/20 text-white/80 group-hover:border-white/50 group-hover:text-white transition-colors">
-                    <Mail className="h-5 w-5" />
-                  </span>
-                  <span>
-                    <span className="block font-display text-lg font-bold uppercase tracking-[0.04em] text-white">
-                      Houser Construction
-                    </span>
-                    <span className="block text-sm text-white/55 mt-1">
-                      Project inquiries · Estimates
-                    </span>
-                    <span className="block text-white/85 mt-2 group-hover:text-white transition-colors">
-                      {business.email}
-                    </span>
-                  </span>
-                </a>
-              </div>
             </div>
           </div>
         </div>
       </div>
+
     </section>
   );
 }
