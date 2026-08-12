@@ -11,11 +11,11 @@ import handshakeImg from "@/assets/promise-handshake.jpg";
 import {
   business,
   stats,
-  projects,
-  featuredProject,
   testimonials,
   faqs,
 } from "@/config/business";
+import { workProjects, featuredWork } from "@/config/projects";
+
 import { useEffect, useState } from "react";
 
 // TODO: replace with a real Houser Construction project photo once available.
