@@ -557,13 +557,14 @@ function FAQ() {
 // navy-deep and navy back to back, which read as a seam rather than a move.
 function ClosingAndContact() {
   return (
-    <section className="relative overflow-hidden bg-navy text-white">
+    <section className="relative overflow-hidden bg-navy text-white border-t border-hairline">
       <span aria-hidden className="navy-depth" />
 
       <div id="contact" className="relative scroll-mt-24 grid md:grid-cols-2">
         {/* Left: invitation panel */}
-        <div className="relative bg-white text-navy px-6 py-16 md:py-32 flex items-center md:justify-end">
+        <div className="relative bg-sand text-navy px-6 py-16 md:py-32 flex items-center md:justify-end">
           <div className="w-full max-w-[520px] md:pr-14">
+            <span className="mb-6 block h-[2px] w-10 bg-red" aria-hidden />
             <h2 className="display-lg text-navy">
               Bring the plans.
               <br />
@@ -581,12 +582,17 @@ function ClosingAndContact() {
           </div>
           <span
             aria-hidden
-            className="hidden md:block absolute top-0 right-0 h-full w-[6px] bg-red"
+            className="hidden md:block absolute top-0 right-0 h-full w-px bg-navy/15"
+          />
+          <span
+            aria-hidden
+            className="hidden md:block absolute top-32 right-0 h-16 w-[2px] bg-red"
           />
         </div>
 
         {/* Right: contact details */}
-        <div className="relative bg-navy-deep px-6 py-16 md:py-32 flex items-center border-t-[6px] md:border-t-0 border-red">
+        <div className="relative bg-navy-deep px-6 py-16 md:py-32 flex items-center border-t-2 md:border-t-0 border-red">
+
           <div className="w-full max-w-[520px] md:pl-14">
             <p className="eyebrow text-white/60">Project line</p>
             <a
