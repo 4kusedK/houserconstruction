@@ -4,7 +4,6 @@ import { ArrowRight, ChevronDown, Phone, Mail } from "lucide-react";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SectionHeading } from "@/components/brand/SectionHeading";
-import { BrandButton } from "@/components/brand/BrandButton";
 import { Reveal } from "@/components/brand/Reveal";
 import handshakeImg from "@/assets/promise-handshake.jpg";
 
@@ -571,69 +570,71 @@ function ClosingAndContact() {
         </div>
       </div>
 
-      <div className="border-t border-white/12">
-        <div
-          id="contact"
-          className="relative mx-auto max-w-[1200px] px-6 py-28 md:py-40 grid md:grid-cols-12 gap-12 items-start scroll-mt-24"
-        >
-          <div className="md:col-span-7">
-            <div className="flex items-center gap-3 mb-6">
-              <span className="h-[2px] w-10 bg-red" aria-hidden />
-              <span className="eyebrow text-white/70">
-                Start the conversation
-              </span>
-            </div>
-            <h2 className="display-lg text-white max-w-2xl">
-              Let&apos;s talk.
+      <div id="contact" className="scroll-mt-24 grid md:grid-cols-2">
+        {/* Left: invitation panel */}
+        <div className="relative bg-white text-navy px-6 py-20 md:py-32 flex items-center md:justify-end">
+          <div className="w-full max-w-[520px] md:pr-14">
+            <h2 className="display-lg text-navy">
+              Bring the plans.
+              <br />
+              Or just the idea.
             </h2>
-            <p className="mt-6 text-white/80 max-w-xl text-lg leading-relaxed">
-              Whether you have drawings in hand or just an idea of what you
-              want built, reach out. We are happy to talk it through.
+            <p className="mt-6 text-lg text-silver leading-relaxed">
+              We&apos;ll tell you the next practical step.
             </p>
+            <a
+              href={business.emailHref}
+              className="mt-10 inline-flex items-center gap-3 font-ui text-sm font-bold uppercase tracking-[0.18em] text-red hover:gap-5 transition-all"
+            >
+              Start here <ArrowRight className="h-4 w-4" />
+            </a>
           </div>
+          <span
+            aria-hidden
+            className="hidden md:block absolute top-0 right-0 h-full w-[6px] bg-red"
+          />
+        </div>
 
-          <div className="md:col-span-5">
-            <div className="bg-navy-mid/60 border border-white/10 p-6 md:p-8 flex flex-col gap-3">
-              <BrandButton
-                as="a"
+        {/* Right: contact details */}
+        <div className="relative bg-navy-deep px-6 py-20 md:py-32 flex items-center border-t-[6px] md:border-t-0 border-red">
+          <div className="w-full max-w-[520px] md:pl-14">
+            <p className="eyebrow text-white/60">Project line</p>
+            <a
+              href={business.phoneHref}
+              className="mt-2 flex items-center gap-4 group"
+            >
+              <Phone className="h-8 w-8 md:h-10 md:w-10 text-red shrink-0" />
+              <span className="display-md text-white group-hover:text-white/85 transition-colors">
+                {business.phone}
+              </span>
+            </a>
+            <p className="mt-3 text-white/60">Call the company</p>
+
+            <div className="mt-10 pt-10 border-t border-white/15">
+              <a
                 href={business.emailHref}
-                variant="accent"
-                size="lg"
-                block
+                className="flex items-start gap-5 group"
               >
-                Email us <ArrowRight className="h-4 w-4" />
-              </BrandButton>
-
-              <BrandButton
-                as="a"
-                href={business.phoneHref}
-                variant="outline-light"
-                size="lg"
-                block
-              >
-                <Phone className="h-4 w-4" /> {business.phone}
-              </BrandButton>
-
-              <div className="mt-4 pt-4 border-t border-white/10 space-y-2 text-sm">
-                <a
-                  href={business.emailHref}
-                  className="flex items-center gap-3 text-white/80 hover:text-white transition-colors"
-                >
-                  <Mail className="h-4 w-4 text-white/70" />
-                  {business.email}
-                </a>
-                <a
-                  href={business.phoneHref}
-                  className="flex items-center gap-3 text-white/80 hover:text-white transition-colors"
-                >
-                  <Phone className="h-4 w-4 text-white/70" />
-                  {business.phone}
-                </a>
-              </div>
+                <span className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-white/25 text-white group-hover:border-red group-hover:text-red transition-colors">
+                  <Mail className="h-5 w-5" />
+                </span>
+                <span className="border-l border-white/15 pl-5">
+                  <span className="block font-display text-xl font-bold uppercase tracking-[0.04em] text-white">
+                    Houser Construction
+                  </span>
+                  <span className="block text-sm text-white/60 mt-1">
+                    Project inquiries · Estimates
+                  </span>
+                  <span className="block text-white/85 mt-2 group-hover:text-white transition-colors">
+                    {business.email}
+                  </span>
+                </span>
+              </a>
             </div>
           </div>
         </div>
       </div>
+
     </section>
   );
 }
