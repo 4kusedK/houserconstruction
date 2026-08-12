@@ -292,7 +292,7 @@ const TILE_HEIGHTS = [
 ] as const;
 
 function ProjectsGallery() {
-  const f = featuredProject;
+  const f = featuredWork;
   return (
     <section
       id="work"
@@ -307,66 +307,42 @@ function ProjectsGallery() {
       <div className="relative mx-auto max-w-[1200px] px-6">
         <Reveal>
           <div className="mb-16 md:mb-20">
-            <SectionHeading
-              eyebrow="Gallery"
-              title="Selected work."
-            >
-              Commercial, real estate, and residential projects across Alaska —
-              ground-up builds, restoration, and development.
+            <SectionHeading eyebrow="Gallery" title="Selected work.">
+              Recent Anchorage remodel and renovation work, photographed on
+              completion. Commercial, real estate, and development projects run
+              alongside it across Alaska.
             </SectionHeading>
           </div>
         </Reveal>
 
-
-        {/* Featured before & after */}
+        {/* Featured project */}
         <Reveal>
           <article className="mb-16 md:mb-24">
             <Link
-              to="/"
-              hash="contact"
-              aria-label={`${f.name} — ${f.category} in ${f.location}`}
+              to="/work"
+              hash={f.project.slug}
+              aria-label={`${f.project.name} — ${f.project.category} in ${f.project.location}`}
               className="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red"
             >
-              <div className="relative overflow-hidden bg-navy photo-frame">
-                <div className="grid grid-cols-1 md:grid-cols-2">
-                  <div className="relative h-[180px] md:h-[320px] overflow-hidden">
-                    <img
-                      src={f.beforeImage}
-                      alt={f.beforeAlt}
-                      loading="lazy"
-                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
-                    />
-                    <span className="absolute bottom-3 left-4 font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-white/60">
-                      Before
-                    </span>
-                  </div>
-                  <div className="relative h-[180px] md:h-[320px] overflow-hidden">
-                    <img
-                      src={f.afterImage}
-                      alt={f.afterAlt}
-                      loading="lazy"
-                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
-                    />
-                    <span className="absolute bottom-3 left-4 font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-white/60">
-                      After
-                    </span>
-                  </div>
-                </div>
-                {/* divider: horizontal on mobile, vertical on desktop */}
-                <span
-                  aria-hidden
-                  className="pointer-events-none absolute left-0 right-0 top-[180px] h-[3px] bg-red md:inset-y-0 md:left-1/2 md:right-auto md:top-0 md:h-auto md:w-[3px] md:-translate-x-1/2"
+              <div className="relative overflow-hidden bg-navy photo-frame h-[240px] md:h-[440px]">
+                <img
+                  src={f.photo.src}
+                  alt={f.photo.alt}
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/50 via-transparent to-transparent" />
                 <span className="absolute top-0 left-0 bg-red px-3 py-1.5 font-ui text-[10px] font-bold uppercase tracking-[0.2em] text-white">
-                  Before &amp; After
+                  Featured project
                 </span>
               </div>
               <div className="mt-4 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
                 <div className="min-w-0">
                   <p className="font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-silver">
-                    {f.category} · {f.location}
+                    {f.project.category} · {f.project.location}
                   </p>
-                  <h3 className="display-md text-navy mt-1">{f.name}</h3>
+                  <h3 className="display-md text-navy mt-1">
+                    {f.project.name}
+                  </h3>
                 </div>
                 <span className="font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-silver inline-flex items-center gap-2 shrink-0">
                   View project <ArrowRight className="h-4 w-4" />
@@ -381,12 +357,12 @@ function ProjectsGallery() {
           aria-label="Photo gallery of Houser Construction work"
           className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr_1fr] gap-8 md:gap-10 list-none p-0"
         >
-          {projects.map((p, i) => (
-            <li key={p.n} className={i === 1 ? "md:pt-8" : undefined}>
+          {workProjects.map((p, i) => (
+            <li key={p.slug} className={i === 1 ? "md:pt-8" : undefined}>
               <Reveal delay={i * 0.05}>
                 <Link
-                  to="/"
-                  hash="contact"
+                  to="/work"
+                  hash={p.slug}
                   aria-label={`${p.name} — ${p.category} in ${p.location}`}
                   className="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red"
                 >
@@ -394,8 +370,8 @@ function ProjectsGallery() {
                     className={`relative overflow-hidden bg-navy photo-frame shadow-sm transition-shadow duration-300 hover:shadow-md ${TILE_HEIGHTS[i] ?? "h-[200px] md:h-[190px]"}`}
                   >
                     <img
-                      src={p.image}
-                      alt={`${p.name} in ${p.location} — ${p.category} by Houser Construction`}
+                      src={p.photos[1]?.src ?? p.photos[0]!.src}
+                      alt={p.photos[1]?.alt ?? p.photos[0]!.alt}
                       loading="lazy"
                       className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                     />
@@ -410,17 +386,28 @@ function ProjectsGallery() {
                       aria-hidden
                       className="mt-3 block h-[2px] w-8 bg-red"
                     />
-
                   </div>
                 </Link>
               </Reveal>
             </li>
           ))}
         </ul>
+
+        <Reveal>
+          <div className="mt-14 md:mt-16">
+            <Link
+              to="/work"
+              className="link-underline font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-navy inline-flex items-center gap-2"
+            >
+              See all projects <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
 }
+
 
 
 
