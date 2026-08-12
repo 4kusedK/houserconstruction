@@ -1,0 +1,198 @@
+// Real Houser Construction project photography (client supplied).
+// Photos live on the Lovable CDN; these imports are small JSON pointers.
+// Naming rule: street name only, never the house number.
+
+import w12 from "@/assets/projects/westland-12.jpg.asset.json";
+import w13 from "@/assets/projects/westland-13.jpg.asset.json";
+import w17 from "@/assets/projects/westland-17.jpg.asset.json";
+import w19 from "@/assets/projects/westland-19.jpg.asset.json";
+import w21 from "@/assets/projects/westland-21.jpg.asset.json";
+import w23 from "@/assets/projects/westland-23.jpg.asset.json";
+import w30 from "@/assets/projects/westland-30.jpg.asset.json";
+import w34 from "@/assets/projects/westland-34.jpg.asset.json";
+import w38 from "@/assets/projects/westland-38.jpg.asset.json";
+import w39 from "@/assets/projects/westland-39.jpg.asset.json";
+import w48 from "@/assets/projects/westland-48.jpg.asset.json";
+import w49 from "@/assets/projects/westland-49.jpg.asset.json";
+import w5 from "@/assets/projects/westland-5.jpg.asset.json";
+import w50 from "@/assets/projects/westland-50.jpg.asset.json";
+import w6 from "@/assets/projects/westland-6.jpg.asset.json";
+import w7 from "@/assets/projects/westland-7.jpg.asset.json";
+import w8 from "@/assets/projects/westland-8.jpg.asset.json";
+
+import s17 from "@/assets/projects/w77th-17.jpg.asset.json";
+import s20 from "@/assets/projects/w77th-20.jpg.asset.json";
+import s23 from "@/assets/projects/w77th-23.jpg.asset.json";
+import s32 from "@/assets/projects/w77th-32.jpg.asset.json";
+import s42 from "@/assets/projects/w77th-42.jpg.asset.json";
+import s44 from "@/assets/projects/w77th-44.jpg.asset.json";
+
+import t16 from "@/assets/projects/w30th-16.jpg.asset.json";
+import t21 from "@/assets/projects/w30th-21.jpg.asset.json";
+import t22 from "@/assets/projects/w30th-22.jpg.asset.json";
+import t31 from "@/assets/projects/w30th-31.jpg.asset.json";
+
+export interface ProjectPhoto {
+  src: string;
+  alt: string;
+}
+
+export interface Project {
+  slug: string;
+  n: string;
+  name: string;
+  category: string;
+  location: string;
+  blurb: string;
+  photos: ProjectPhoto[];
+}
+
+export const workProjects: Project[] = [
+  {
+    slug: "westland-avenue",
+    n: "01",
+    name: "Westland Avenue",
+    category: "Whole-home remodel",
+    location: "Anchorage, AK",
+    blurb:
+      "A full interior rebuild: new kitchen, refinished stone fireplace wall, four reworked bathrooms, and new flooring and lighting throughout.",
+    photos: [
+      {
+        src: w21.url,
+        alt: "Renovated open living room with a stone fireplace and new wide-plank flooring — Westland Avenue, Anchorage",
+      },
+      {
+        src: w12.url,
+        alt: "New kitchen island with granite counters and pendant lighting — Westland Avenue, Anchorage",
+      },
+      {
+        src: w13.url,
+        alt: "Remodeled kitchen with hickory cabinets, granite counters and a black composite sink — Westland Avenue, Anchorage",
+      },
+      {
+        src: w17.url,
+        alt: "Kitchen range wall with stainless appliances and custom cabinetry — Westland Avenue, Anchorage",
+      },
+      {
+        src: w19.url,
+        alt: "Vaulted living space opened up to the entry with a stone fireplace surround — Westland Avenue, Anchorage",
+      },
+      {
+        src: w23.url,
+        alt: "Living room looking through to the remodeled kitchen — Westland Avenue, Anchorage",
+      },
+      {
+        src: w8.url,
+        alt: "Finished dining area with new window trim and flooring — Westland Avenue, Anchorage",
+      },
+      {
+        src: w5.url,
+        alt: "Entry hallway with a new front door and wide-plank flooring — Westland Avenue, Anchorage",
+      },
+      {
+        src: w30.url,
+        alt: "Upper landing with a rebuilt stair railing and new carpet — Westland Avenue, Anchorage",
+      },
+      {
+        src: w38.url,
+        alt: "Finished primary bedroom with new carpet and built-in shelving — Westland Avenue, Anchorage",
+      },
+      {
+        src: w39.url,
+        alt: "Second bedroom finished with new carpet and paint — Westland Avenue, Anchorage",
+      },
+      {
+        src: w34.url,
+        alt: "Guest bathroom with a wood vanity, round mirror and marble-look tub surround — Westland Avenue, Anchorage",
+      },
+      {
+        src: w48.url,
+        alt: "Double-vanity bathroom with a skylight and tiled tub surround — Westland Avenue, Anchorage",
+      },
+      {
+        src: w49.url,
+        alt: "Double vanity beside a tiled walk-in shower — Westland Avenue, Anchorage",
+      },
+      {
+        src: w50.url,
+        alt: "Tiled walk-in shower with a mosaic accent band — Westland Avenue, Anchorage",
+      },
+      {
+        src: w7.url,
+        alt: "Half bath with a wood vanity and matte black fixtures — Westland Avenue, Anchorage",
+      },
+      {
+        src: w6.url,
+        alt: "Hallway leading to a finished bathroom — Westland Avenue, Anchorage",
+      },
+    ],
+  },
+  {
+    slug: "west-77th-avenue",
+    n: "02",
+    name: "West 77th Avenue",
+    category: "Kitchen & bath renovation",
+    location: "Anchorage, AK",
+    blurb:
+      "New kitchen with butcher-block counters and white cabinetry, plus three bathrooms rebuilt from the studs out.",
+    photos: [
+      {
+        src: s17.url,
+        alt: "Renovated kitchen with white cabinets and butcher-block counters opening to the living room — West 77th Avenue, Anchorage",
+      },
+      {
+        src: s20.url,
+        alt: "Kitchen with a gas range, stainless appliances and butcher-block counters — West 77th Avenue, Anchorage",
+      },
+      {
+        src: s23.url,
+        alt: "Bathroom with a marble-look tub surround and a white vanity — West 77th Avenue, Anchorage",
+      },
+      {
+        src: s32.url,
+        alt: "Tiled curbless walk-in shower in a remodeled bathroom — West 77th Avenue, Anchorage",
+      },
+      {
+        src: s42.url,
+        alt: "Double-vanity bathroom with gray cabinetry and open shelving — West 77th Avenue, Anchorage",
+      },
+      {
+        src: s44.url,
+        alt: "Double vanity with framed mirrors and new lighting — West 77th Avenue, Anchorage",
+      },
+    ],
+  },
+  {
+    slug: "west-30th-avenue",
+    n: "03",
+    name: "West 30th Avenue",
+    category: "Interior renovation",
+    location: "Anchorage, AK",
+    blurb:
+      "Opened-up main floor with a cedar accent wall and fireplace, a new hickory kitchen, and a refinished bathroom.",
+    photos: [
+      {
+        src: t16.url,
+        alt: "Living room with a cedar accent wall and a fireplace insert — West 30th Avenue, Anchorage",
+      },
+      {
+        src: t21.url,
+        alt: "New kitchen with hickory cabinets, granite counters and stainless appliances — West 30th Avenue, Anchorage",
+      },
+      {
+        src: t22.url,
+        alt: "Open living area looking through to the renovated kitchen — West 30th Avenue, Anchorage",
+      },
+      {
+        src: t31.url,
+        alt: "Refinished bathroom with a wood vanity and new lighting — West 30th Avenue, Anchorage",
+      },
+    ],
+  },
+];
+
+// Lead image used for the home page featured block and social previews.
+export const featuredWork = {
+  project: workProjects[0]!,
+  photo: workProjects[0]!.photos[0]!,
+};

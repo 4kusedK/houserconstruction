@@ -80,54 +80,8 @@ export const services = [
   },
 ] as const;
 
-// TODO: confirm real project names, locations and photography with client.
-// Projects are named after places, never services — the category and town
-// carry the "what and where" underneath.
-export const featuredProject = {
-  n: "00",
-  // TODO: confirm real project name and location with client.
-  name: "Turnagain",
-  category: "Whole-home remodel",
-  location: "Anchorage, AK",
-  beforeImage:
-    "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1600&q=70",
-  beforeAlt:
-    "Reference photography of a building interior before renovation, representing the scope of a whole-property remodel.",
-  afterImage:
-    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=70",
-  afterAlt:
-    "Reference photography of a finished, renovated interior, representing the scope of a whole-property remodel.",
-} as const;
+// Real project photography and metadata now live in src/config/projects.ts.
 
-export const projects = [
-  {
-    n: "01",
-    // TODO: confirm real project name and location with client.
-    name: "Birch Ridge",
-    category: "New construction",
-    location: "Palmer, AK",
-    image:
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=70",
-  },
-  {
-    n: "02",
-    // TODO: confirm real project name and location with client.
-    name: "Government Hill",
-    category: "Exterior & decks",
-    location: "Anchorage, AK",
-    image:
-      "https://images.unsplash.com/photo-1416331108676-a22ccb276e35?auto=format&fit=crop&w=1600&q=70",
-  },
-  {
-    n: "03",
-    // TODO: confirm real project name and location with client.
-    name: "Palmer Church Hall",
-    category: "Commercial restoration",
-    location: "Palmer, AK",
-    image:
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=70",
-  },
-] as const;
 
 export const processSteps = [
   {
