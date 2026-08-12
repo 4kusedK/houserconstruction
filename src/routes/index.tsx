@@ -163,8 +163,18 @@ function Hero() {
             real estate, and residential projects. David runs the day-to-day
             with Steve Houser at his side.
           </p>
+          <div className="mt-10">
+            <Link
+              to="/work"
+              className="group inline-flex w-full sm:w-auto items-center justify-center gap-3 bg-red px-8 py-4 font-ui text-sm font-bold uppercase tracking-[0.18em] text-white transition-colors hover:bg-red/90"
+            >
+              Selected work
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
 
           <span className="mt-10 block h-[2px] w-16 bg-red" aria-hidden />
+
         </div>
 
       </div>
