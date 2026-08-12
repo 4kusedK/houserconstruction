@@ -29,8 +29,9 @@ const SOCIALS = [
 export function SiteFooter() {
   return (
     <footer className="bg-navy text-white">
-      <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-24">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
+      <div className="mx-auto max-w-[1200px] px-6 pb-14 md:pb-16">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 border-t border-white/12 pt-16 md:pt-20">
+
           <div className="md:col-span-5">
             <Logo variant="full-white" className="h-12 w-auto" />
             <p className="mt-6 text-sm text-white/70 max-w-sm leading-relaxed">
