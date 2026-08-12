@@ -2,12 +2,11 @@
 
 ## 1. Hero call to action
 
-Add a button pair under the hero paragraph, above the red rule:
+Add a single button under the hero paragraph, above the red rule:
 
-- Primary: **Selected work** — solid red block button, uppercase UI type, arrow that slides on hover, links to `/work`.
-- Secondary: **Get in touch** — outlined/ghost button in white hairline, links to `/#contact`.
+- **Selected work** — solid red block button, uppercase UI type, arrow that slides on hover, links to `/work`.
 
-Both stack full-width on mobile, sit side by side from `sm` up. The red hero rule moves below the buttons so the composition still ends on the accent. Scroll chevron stays.
+Full-width on mobile, inline from `sm` up. The red hero rule moves below the button so the composition still ends on the accent. Scroll chevron stays.
 
 ## 2. Make the contact section flow
 
