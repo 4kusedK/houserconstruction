@@ -511,6 +511,17 @@ function ClosingAndContact() {
         <div className="relative bg-navy-deep px-6 py-16 md:py-32 flex items-center border-t-2 md:border-t-0 border-red">
 
           <div className="w-full max-w-[520px] md:pl-14">
+            <ul className="mb-10 flex flex-wrap items-center gap-x-6 gap-y-3 border-b border-white/15 pb-6 list-none p-0">
+              {CREDENTIALS.map((c) => (
+                <li
+                  key={c}
+                  className="flex items-center gap-2 font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-white/70"
+                >
+                  <span aria-hidden className="h-[2px] w-4 bg-red" />
+                  {c}
+                </li>
+              ))}
+            </ul>
             <p className="eyebrow text-white/60">Project line</p>
             <a
               href={business.phoneHref}
