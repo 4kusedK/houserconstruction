@@ -5,7 +5,7 @@ import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SectionHeading } from "@/components/brand/SectionHeading";
 import { Reveal } from "@/components/brand/Reveal";
-import handshakeAsset from "@/assets/handshake-lineart.png.asset.json";
+import handshakeAsset from "@/assets/handshake-mark.png.asset.json";
 import blueprintAsset from "@/assets/blueprint-pattern.png.asset.json";
 import patternAsset from "@/assets/pattern-navy.png.asset.json";
 
@@ -112,10 +112,11 @@ function Hero() {
     >
       <img
         src={heroImg}
-        alt="Modern commercial building in Alaska with snow-capped mountains and spruce trees in the background"
+        alt="Wide view of a snow-capped Alaskan mountain range at golden hour"
         className="absolute inset-0 h-full w-full object-cover"
         width={1920}
-        height={1280}
+        height={1088}
+
         fetchPriority="high"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/85 via-navy-deep/60 to-navy-deep/95" />
@@ -205,9 +206,10 @@ function Positioning() {
                   alt="Line-art illustration of two people shaking hands, representing partnership on a construction project"
                   loading="lazy"
                   width={1200}
-                  height={880}
-                  className="relative w-full object-contain"
+                  height={912}
+                  className="relative w-[88%] max-w-[560px] object-contain invert"
                 />
+
                 <span
                   aria-hidden
                   className="absolute bottom-0 left-0 h-1 w-24 bg-red"
