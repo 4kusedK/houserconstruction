@@ -147,13 +147,24 @@ function Hero() {
         </div>
 
       </div>
-      <a
-        href="/#work"
-        aria-label="Scroll to next section"
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70 hover:text-white motion-safe:animate-bounce"
+      <button
+        type="button"
+        onClick={() => {
+          const el = document.getElementById("work");
+          if (!el) return;
+          const reduce = window.matchMedia(
+            "(prefers-reduced-motion: reduce)",
+          ).matches;
+          el.scrollIntoView({
+            behavior: reduce ? "auto" : "smooth",
+            block: "start",
+          });
+        }}
+        aria-label="Scroll to residential works"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70 hover:text-white motion-safe:animate-bounce focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red"
       >
         <ChevronDown className="h-6 w-6" />
-      </a>
+      </button>
     </section>
   );
 }
