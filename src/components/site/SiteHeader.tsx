@@ -8,7 +8,6 @@ import { BrandButton } from "@/components/brand/BrandButton";
 import { business } from "@/config/business";
 
 const NAV = [
-  { label: "About", href: "/about" },
   { label: "Work", href: "/work" },
 ];
 
