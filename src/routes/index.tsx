@@ -220,7 +220,7 @@ function Positioning() {
               <p className="mt-10 text-lg text-charcoal leading-[1.6]">
                 Our standard of integrity has been a leading line of trust on every project and our
                 partnerships reflect this standard. With the industries best we create the team that
-                gets the job done and done right.
+                gets the job done right.
               </p>
               <Link
                 to="/work"
