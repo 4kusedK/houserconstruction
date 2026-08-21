@@ -5,7 +5,7 @@ import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SectionHeading } from "@/components/brand/SectionHeading";
 import { Reveal } from "@/components/brand/Reveal";
-import handshakeAsset from "@/assets/handshake-illustration.png.asset.json";
+import handshakeAsset from "@/assets/handshake-lineart.png.asset.json";
 import blueprintAsset from "@/assets/blueprint-pattern.png.asset.json";
 import patternAsset from "@/assets/pattern-navy.png.asset.json";
 
@@ -94,7 +94,7 @@ function Home() {
         <StatBar />
         <ProjectsGallery />
         <Testimonials />
-        <Certifications />
+        
         <ClosingAndContact />
 
       </main>
@@ -120,7 +120,7 @@ function Hero() {
       />
       <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/85 via-navy-deep/60 to-navy-deep/95" />
       
-      <div className="relative mx-auto max-w-[1200px] px-6 pt-32 md:pt-60 pb-16 md:pb-24 min-h-[78svh] md:min-h-[100svh] flex flex-col justify-end">
+      <div className="relative mx-auto max-w-[1200px] px-6 pt-32 md:pt-60 pb-20 md:pb-32 min-h-[78svh] md:min-h-[100svh] flex flex-col justify-end">
 
         <div className="max-w-3xl">
           <h1 className="display-2xl text-white">
@@ -161,7 +161,7 @@ function Hero() {
           });
         }}
         aria-label="Scroll to residential works"
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70 hover:text-white motion-safe:animate-bounce focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/60 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red"
       >
         <ChevronDown className="h-6 w-6" />
       </button>
@@ -187,26 +187,26 @@ function Positioning() {
           </h2>
         </Reveal>
 
-        <div className="mt-16 md:mt-20 grid md:grid-cols-12 gap-x-16 gap-y-16 items-start">
+        <div className="mt-12 md:mt-16 grid md:grid-cols-12 gap-x-16 gap-y-16 items-start">
 
           <div className="md:col-span-6">
             <Reveal delay={0.05}>
-              <div className="relative overflow-hidden aspect-[4/5] photo-frame bg-navy-deep flex items-center justify-center p-8 md:p-10">
+              <div className="relative overflow-hidden aspect-[4/3] photo-frame bg-navy-deep flex items-center justify-center p-6 md:p-8">
                 <img
                   src={patternAsset.url}
                   alt=""
                   aria-hidden
                   loading="lazy"
-                  className="absolute inset-0 h-full w-full object-cover"
+                  className="absolute inset-0 h-full w-full object-cover opacity-70"
                 />
-                <span aria-hidden className="absolute inset-0 bg-navy-deep/25" />
+                <span aria-hidden className="absolute inset-0 bg-navy-deep/70" />
                 <img
                   src={handshakeAsset.url}
-                  alt="Illustration of two people shaking hands, representing partnership on a construction project"
+                  alt="Line-art illustration of two people shaking hands, representing partnership on a construction project"
                   loading="lazy"
-                  width={1920}
-                  height={1080}
-                  className="relative w-full object-contain bg-background p-4 shadow-lg"
+                  width={1200}
+                  height={880}
+                  className="relative w-full object-contain"
                 />
                 <span
                   aria-hidden
@@ -217,6 +217,7 @@ function Positioning() {
             </Reveal>
           </div>
 
+
           <div className="md:col-span-5 md:col-start-8 md:pt-6">
             <Reveal delay={0.1}>
               <blockquote className="border-l-2 border-red pl-4">
@@ -224,7 +225,7 @@ function Positioning() {
                   &ldquo;Perfection is not attainable, but if we chase
                   perfection we can catch excellence&quot;&nbsp;
                 </p>
-                <p className="mt-4 font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-silver">
+                <p className="mt-4 font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-silver">
                   COACH VINCE LOMBARDI
                 </p>
               </blockquote>
@@ -234,12 +235,9 @@ function Positioning() {
                 the industries best we create the team that gets the job done
                 and done right.
               </p>
-              <p className="mt-6 text-lg text-charcoal/80 leading-[1.6]">
-{"\n"}
-              </p>
               <Link
                 to="/work"
-                className="mt-12 inline-flex items-center gap-2 font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-navy hover:text-red transition-colors link-underline"
+                className="mt-12 inline-flex items-center gap-2 font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-navy hover:text-red transition-colors link-underline"
               >
                 See our work <ArrowRight className="h-4 w-4" />
               </Link>
@@ -274,11 +272,8 @@ function StatBar() {
 
 
 
-// Deliberately unequal heights so the row does not read as a flat grid.
-const TILE_HEIGHTS = [
-  "h-[220px] md:h-[320px]",
-  "h-[220px] md:h-[260px]",
-] as const;
+// Equal tile heights — the row is offset with a top push instead.
+const TILE_HEIGHT = "h-[220px] md:h-[300px]";
 
 
 function ProjectsGallery() {
@@ -315,7 +310,7 @@ function ProjectsGallery() {
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/50 via-transparent to-transparent" />
-                <span className="absolute top-0 left-0 bg-red px-3 py-1.5 font-ui text-[10px] font-bold uppercase tracking-[0.2em] text-white">
+                <span className="absolute top-0 left-0 bg-navy-deep px-3 py-1.5 font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-white">
                   Featured project
                 </span>
               </div>
@@ -328,7 +323,7 @@ function ProjectsGallery() {
                     {f.project.name}
                   </h3>
                 </div>
-                <span className="font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-silver inline-flex items-center gap-2 shrink-0">
+                <span className="font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-silver inline-flex items-center gap-2 shrink-0">
                   View project <ArrowRight className="h-4 w-4" />
                 </span>
               </div>
@@ -354,7 +349,7 @@ function ProjectsGallery() {
                   className="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red"
                 >
                   <div
-                    className={`relative overflow-hidden bg-navy photo-frame shadow-sm transition-shadow duration-300 hover:shadow-md ${TILE_HEIGHTS[i] ?? "h-[200px] md:h-[190px]"}`}
+                    className={`relative overflow-hidden bg-navy photo-frame shadow-sm transition-shadow duration-300 hover:shadow-md ${TILE_HEIGHT}`}
                   >
                     <img
                       src={p.photos[1]?.src ?? p.photos[0]!.src}
@@ -365,10 +360,7 @@ function ProjectsGallery() {
                     <div className="absolute inset-0 bg-gradient-to-t from-navy/40 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                   </div>
                   <div className="mt-4">
-                    <p className="font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-silver">
-                      Residential
-                    </p>
-                    <h3 className="display-md text-navy mt-1">{p.name}</h3>
+                    <h3 className="display-md text-navy">{p.name}</h3>
                     <span
                       aria-hidden
                       className="mt-3 block h-[2px] w-8 bg-red"
@@ -381,10 +373,10 @@ function ProjectsGallery() {
         </ul>
 
         <Reveal>
-          <div className="mt-14 md:mt-16">
+          <div className="mt-16 md:mt-24">
             <Link
               to="/work"
-              className="link-underline font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-navy inline-flex items-center gap-2"
+              className="link-underline font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-navy inline-flex items-center gap-2"
             >
               See all projects <ArrowRight className="h-4 w-4" />
             </Link>
@@ -455,32 +447,10 @@ function Testimonials() {
   );
 }
 
-function Certifications() {
-  const items = [
-    { value: "Licensed", label: "State of Alaska contractor" },
-    { value: "Bonded", label: "Fully bonded on every job" },
-    { value: "Insured", label: "Liability & workers' comp" },
-    { value: "Family Owned", label: "Steve & David Houser" },
-  ];
+// Credentials live in the stat bar ("100% — licensed · bonded · insured");
+// the second navy strip that repeated them has been removed.
 
-  return (
-    <section className="relative overflow-hidden bg-navy-deep text-white">
-      <span aria-hidden className="navy-depth" />
-      <span aria-hidden className="absolute top-0 left-0 h-1 w-40 bg-red" />
-      <div className="relative mx-auto max-w-[1200px] px-6 py-16 md:py-24 grid grid-cols-2 md:grid-cols-4 gap-y-10 md:gap-y-0 md:divide-x md:divide-white/10">
-        {items.map((c, i) => (
-          <Reveal key={c.value} delay={i * 0.08}>
-            <div className={i === 0 ? "md:pr-8" : "md:px-8"}>
-              <span className="block h-[2px] w-10 bg-red mb-5" aria-hidden />
-              <div className="display-md text-white">{c.value}</div>
-              <div className="eyebrow mt-4 text-white/60">{c.label}</div>
-            </div>
-          </Reveal>
-        ))}
-      </div>
-    </section>
-  );
-}
+
 
 
 // Closing statement and contact share one navy surface — the two used to be
