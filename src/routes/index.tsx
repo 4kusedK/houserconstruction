@@ -7,12 +7,7 @@ import { SectionHeading } from "@/components/brand/SectionHeading";
 import { Reveal } from "@/components/brand/Reveal";
 import handshakeImg from "@/assets/promise-handshake.jpg";
 
-import {
-  business,
-  stats,
-  testimonials,
-  faqs,
-} from "@/config/business";
+import { business, stats, testimonials } from "@/config/business";
 import { workProjects, featuredWork } from "@/config/projects";
 
 import { useEffect, useState } from "react";
@@ -20,6 +15,10 @@ import { useEffect, useState } from "react";
 // TODO: replace with a real Houser Construction project photo once available.
 // This is a generated placeholder used to set the commercial-Alaska tone.
 import heroImg from "@/assets/hero-home.jpg";
+
+// Alaska jobsite at dusk — used as a washed backdrop behind the contact panel.
+const CONTACT_BG =
+  "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2400&q=75";
 
 
 // TODO: confirm founding year with client.
@@ -79,19 +78,6 @@ export const Route = createFileRoute("/")({
 
         }),
       },
-
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: faqs.map((f) => ({
-            "@type": "Question",
-            name: f.q,
-            acceptedAnswer: { "@type": "Answer", text: f.a },
-          })),
-        }),
-      },
     ],
   }),
   component: Home,
@@ -108,7 +94,6 @@ function Home() {
         <ProjectsGallery />
         <Testimonials />
         <Certifications />
-        <FAQ />
         <ClosingAndContact />
 
       </main>
@@ -134,25 +119,9 @@ function Hero() {
       />
       <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/85 via-navy-deep/60 to-navy-deep/95" />
       
-      <div
-        aria-hidden
-        className="hidden lg:flex absolute left-6 top-1/2 -translate-y-1/2 items-center gap-4 [writing-mode:vertical-rl] rotate-180"
-      >
-        <span className="h-16 w-[2px] bg-red" />
-        <span className="font-ui text-[11px] font-bold uppercase tracking-[0.28em] text-white/60">
-          Steve &amp; David Houser · Alaska
-        </span>
-      </div>
       <div className="relative mx-auto max-w-[1200px] px-6 pt-32 md:pt-60 pb-16 md:pb-24 min-h-[78svh] md:min-h-[100svh] flex flex-col justify-end">
 
         <div className="max-w-3xl">
-          <div className="flex items-center gap-3 mb-6">
-            <span className="h-[2px] w-10 bg-red" aria-hidden />
-
-            <span className="eyebrow text-white/80">
-              Steve &amp; David Houser
-            </span>
-          </div>
           <h1 className="display-2xl text-white">
             Trusted to serve
             <br />
@@ -164,13 +133,13 @@ function Hero() {
             with Steve Houser at his side.
           </p>
           <div className="mt-10">
-            <Link
-              to="/work"
+            <a
+              href="/#contact"
               className="group inline-flex w-full sm:w-auto items-center justify-center gap-3 bg-red px-8 py-4 font-ui text-sm font-bold uppercase tracking-[0.18em] text-white transition-colors hover:bg-red/90"
             >
-              Selected work
+              Contact us
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
+            </a>
           </div>
 
           <span className="mt-10 block h-[2px] w-16 bg-red" aria-hidden />
@@ -179,7 +148,7 @@ function Hero() {
 
       </div>
       <a
-        href="/#about"
+        href="/#work"
         aria-label="Scroll to next section"
         className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70 hover:text-white motion-safe:animate-bounce"
       >
@@ -307,19 +276,13 @@ function ProjectsGallery() {
       id="work"
       className="relative overflow-hidden py-28 md:py-40 bg-background blueprint-grid"
     >
-      <span
-        aria-hidden
-        className="ghost-number absolute -top-8 left-4 md:left-10 hidden sm:block"
-      >
-        02
-      </span>
       <div className="relative mx-auto max-w-[1200px] px-6">
         <Reveal>
           <div className="mb-16 md:mb-20">
-            <SectionHeading eyebrow="Gallery" title="Selected work.">
-              Recent Anchorage remodel and renovation work, photographed on
-              completion. Commercial, real estate, and development projects run
-              alongside it across Alaska.
+            <SectionHeading eyebrow="Residential" title="Residential works.">
+              Recent remodel and renovation work, photographed on completion.
+              Commercial, real estate, and development projects run alongside it
+              across Alaska.
             </SectionHeading>
           </div>
         </Reveal>
@@ -330,7 +293,7 @@ function ProjectsGallery() {
             <Link
               to="/work"
               hash={f.project.slug}
-              aria-label={`${f.project.name} — ${f.project.category} in ${f.project.location}`}
+              aria-label={`Featured project — ${f.project.name}`}
               className="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red"
             >
               <div className="relative overflow-hidden bg-navy photo-frame h-[240px] md:h-[440px]">
@@ -347,7 +310,7 @@ function ProjectsGallery() {
               <div className="mt-4 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
                 <div className="min-w-0">
                   <p className="font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-silver">
-                    {f.project.category} · {f.project.location}
+                    Residential
                   </p>
                   <h3 className="display-md text-navy mt-1">
                     {f.project.name}
@@ -375,7 +338,7 @@ function ProjectsGallery() {
                 <Link
                   to="/work"
                   hash={p.slug}
-                  aria-label={`${p.name} — ${p.category} in ${p.location}`}
+                  aria-label={`Project — ${p.name}`}
                   className="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red"
                 >
                   <div
@@ -391,7 +354,7 @@ function ProjectsGallery() {
                   </div>
                   <div className="mt-4">
                     <p className="font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-silver">
-                      {p.category} · {p.location}
+                      Residential
                     </p>
                     <h3 className="display-md text-navy mt-1">{p.name}</h3>
                     <span
@@ -514,45 +477,6 @@ function Certifications() {
 }
 
 
-function FAQ() {
-  return (
-    <section className="py-28 md:py-40 bg-background blueprint-grid">
-      <div className="mx-auto max-w-[1200px] px-6 grid md:grid-cols-12 gap-12">
-        <div className="md:col-span-4">
-          <Reveal>
-            <SectionHeading eyebrow="Answers" title="Frequently asked." />
-
-          </Reveal>
-        </div>
-        <div className="md:col-span-7 md:col-start-6">
-          <div className="divide-y divide-hairline border-y border-hairline">
-            {faqs.map((f, i) => (
-              <Reveal key={f.q} delay={i * 0.04}>
-                <details className="group py-6" open={i === 0}>
-                  <summary className="flex cursor-pointer items-start justify-between gap-6 list-none">
-                    <h3 className="font-display text-lg md:text-xl font-bold text-navy pr-4">
-                      {f.q}
-                    </h3>
-                    <span
-                      className="mt-1 shrink-0 h-6 w-6 border-2 border-navy flex items-center justify-center text-navy transition-transform group-open:rotate-45"
-                      aria-hidden
-                    >
-                      +
-                    </span>
-                  </summary>
-                  <p className="mt-4 text-charcoal/85 leading-[1.6]">
-                    {f.a}
-                  </p>
-                </details>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 // Closing statement and contact share one navy surface — the two used to be
 // navy-deep and navy back to back, which read as a seam rather than a move.
 function ClosingAndContact() {
@@ -562,8 +486,19 @@ function ClosingAndContact() {
 
       <div id="contact" className="relative scroll-mt-24 grid md:grid-cols-2">
         {/* Left: invitation panel */}
-        <div className="relative bg-sand text-navy px-6 py-16 md:py-32 flex items-center md:justify-end">
-          <div className="w-full max-w-[520px] md:pr-14">
+        <div className="relative overflow-hidden bg-sand text-navy px-6 py-16 md:py-32 flex items-center md:justify-end">
+          <img
+            src={CONTACT_BG}
+            alt=""
+            aria-hidden
+            loading="lazy"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <span
+            aria-hidden
+            className="absolute inset-0 bg-sand/90 md:bg-gradient-to-r md:from-sand/95 md:via-sand/90 md:to-sand/80"
+          />
+          <div className="relative w-full max-w-[520px] md:pr-14">
             <span className="mb-6 block h-[2px] w-10 bg-red" aria-hidden />
             <h2 className="display-lg text-navy">
               Bring the plans.
