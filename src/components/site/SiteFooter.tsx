@@ -74,12 +74,7 @@ export function SiteFooter() {
           <div className="md:col-span-4 md:col-start-9">
             <h3 className="eyebrow text-white/70 mb-4">Where we work</h3>
             <address className="not-italic text-sm text-white/85 leading-relaxed">
-              Alaska statewide — no fixed base
-              <br />
-              <span className="text-white/60">
-                Commercial, real estate, and residential work in Anchorage, Eagle River, Palmer,
-                Wasilla and the Mat-Su Valley, Girdwood, and wherever else the contract takes us.
-              </span>
+              Based in Anchorage, serving Alaska statewide
             </address>
           </div>
         </div>
