@@ -220,7 +220,7 @@ function Positioning() {
               <p className="mt-10 text-lg text-charcoal leading-[1.6]">
                 Our standard of integrity has been a leading line of trust on every project and our
                 partnerships reflect this standard. With the industries best we create the team that
-                gets the job done and done right.
+                gets the job done right.
               </p>
               <Link
                 to="/work"
@@ -243,11 +243,11 @@ function StatBar() {
       <span aria-hidden className="absolute top-0 left-0 h-1 w-40 bg-red" />
       <div className="relative mx-auto max-w-[1200px] px-6 py-16 md:py-24 grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-y-0 md:divide-x md:divide-white/10">
         {stats.map((s, i) => (
-          <Reveal key={s.label} delay={i * 0.08}>
+          <Reveal key={s.value} delay={i * 0.08}>
             <div className={i === 0 ? "md:pr-8" : "md:px-8"}>
               <span className="block h-[2px] w-10 bg-red mb-5" aria-hidden />
               <div className="display-lg text-white">{s.value}</div>
-              <div className="eyebrow mt-4 text-white/60">{s.label}</div>
+              {s.label && <div className="eyebrow mt-4 text-white/60">{s.label}</div>}
             </div>
           </Reveal>
         ))}

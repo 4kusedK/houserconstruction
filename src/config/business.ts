@@ -48,8 +48,8 @@ export const business = {
 } as const;
 
 export const stats = [
-  { value: "Commercial", label: "Retail, office, mixed-use · Family owned" },
-  { value: "Statewide", label: "Wherever the job is" },
+  { value: "Commercial", label: "Commercial and residential" },
+  { value: "Statewide", label: "" },
   { value: "100%", label: "Licensed · Bonded · Insured" },
 ] as const;
 
