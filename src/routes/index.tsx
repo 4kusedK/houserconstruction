@@ -129,8 +129,7 @@ function Hero() {
           </h1>
           <p className="mt-8 max-w-xl text-lg text-white/85 leading-[1.6]">
             Licensed Alaska general contractor working statewide on commercial,
-            real estate, and residential projects. David runs the day-to-day
-            with Steve Houser at his side.
+            real estate, and residential projects.&nbsp;
           </p>
           <div className="mt-10">
             <a
@@ -208,11 +207,11 @@ function Positioning() {
             <Reveal delay={0.1}>
               <blockquote className="border-l-2 border-red pl-4">
                 <p className="display-md italic text-navy">
-                  &ldquo;The person who walks your site is the person who
-                  answers the phone.&rdquo;
+                  &ldquo;Perfection is not attainable, but if we chase
+                  perfection we can catch excellence&quot; .&rdquo;
                 </p>
                 <p className="mt-4 font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-silver">
-                  David Houser
+                  COACH VINCE LOMBARDI
                 </p>
               </blockquote>
               <p className="mt-12 text-lg text-charcoal leading-[1.6]">
