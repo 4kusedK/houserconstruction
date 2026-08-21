@@ -94,7 +94,7 @@ function Home() {
         <StatBar />
         <ProjectsGallery />
         <Testimonials />
-        <Certifications />
+        
         <ClosingAndContact />
 
       </main>
@@ -447,32 +447,16 @@ function Testimonials() {
   );
 }
 
-function Certifications() {
-  const items = [
-    { value: "Licensed", label: "State of Alaska contractor" },
-    { value: "Bonded", label: "Fully bonded on every job" },
-    { value: "Insured", label: "Liability & workers' comp" },
-    { value: "Family Owned", label: "Steve & David Houser" },
-  ];
+// Credentials now ride as a slim row inside the contact band instead of a
+// second navy strip of their own.
+const CREDENTIALS = [
+  "Licensed",
+  "Bonded",
+  "Insured",
+  "Family owned",
+] as const;
 
-  return (
-    <section className="relative overflow-hidden bg-navy-deep text-white">
-      <span aria-hidden className="navy-depth" />
-      <span aria-hidden className="absolute top-0 left-0 h-1 w-40 bg-red" />
-      <div className="relative mx-auto max-w-[1200px] px-6 py-16 md:py-24 grid grid-cols-2 md:grid-cols-4 gap-y-10 md:gap-y-0 md:divide-x md:divide-white/10">
-        {items.map((c, i) => (
-          <Reveal key={c.value} delay={i * 0.08}>
-            <div className={i === 0 ? "md:pr-8" : "md:px-8"}>
-              <span className="block h-[2px] w-10 bg-red mb-5" aria-hidden />
-              <div className="display-md text-white">{c.value}</div>
-              <div className="eyebrow mt-4 text-white/60">{c.label}</div>
-            </div>
-          </Reveal>
-        ))}
-      </div>
-    </section>
-  );
-}
+
 
 
 // Closing statement and contact share one navy surface — the two used to be
