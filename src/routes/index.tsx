@@ -338,10 +338,8 @@ function ProjectsGallery() {
           aria-label="Photo gallery of Houser Construction work"
           className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 list-none p-0"
         >
-          {workProjects
-            .filter((p) => p.slug !== f.project.slug)
-            .map((p, i) => (
-            <li key={p.slug} className={i === 1 ? "md:pt-10" : undefined}>
+          {homeTiles.map((p, i) => (
+            <li key={p.slug + i} className={i === 1 ? "md:pt-10" : undefined}>
 
               <Reveal delay={i * 0.05}>
                 <Link
@@ -354,8 +352,8 @@ function ProjectsGallery() {
                     className={`relative overflow-hidden bg-navy photo-frame shadow-sm transition-shadow duration-300 hover:shadow-md ${TILE_HEIGHT}`}
                   >
                     <img
-                      src={p.photos[1]?.src ?? p.photos[0]!.src}
-                      alt={p.photos[1]?.alt ?? p.photos[0]!.alt}
+                      src={p.photo.src}
+                      alt={p.photo.alt}
                       loading="lazy"
                       className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                     />
@@ -372,6 +370,7 @@ function ProjectsGallery() {
               </Reveal>
             </li>
           ))}
+
         </ul>
 
         <Reveal>
