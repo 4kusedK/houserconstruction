@@ -48,9 +48,9 @@ export const business = {
 } as const;
 
 export const stats = [
-  { value: "Residencial", label: "" },
-  { value: "Statewide", label: "Licensed · Bonded · Insured" },
-  { value: "Commercial", label: "" },
+  { value: "Residencial", label: "Licensed" },
+  { value: "Statewide", label: "Bonded" },
+  { value: "Commercial", label: "Insured" },
 ] as const;
 
 export const services = [
