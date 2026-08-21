@@ -3,10 +3,11 @@
 Everything below is styling, spacing, and copy on the existing home page (plus the `/work` gallery). No new routes, no new sections, no backend.
 
 ## 1. Fix the handshake block
-The flat cartoon handshake is the weakest visual on the site and undercuts the "licensed commercial contractor" tone.
-- Replace it with one of the real project photos (a wide, structural shot from the Westland set), framed in the same navy panel with the red corner rule.
-- Keep the blueprint pattern backdrop, but let the photo carry the panel instead of an illustration floating on white.
-- If the illustration must stay, shrink it and drop the white card so it reads as a mark, not a stock graphic.
+The current flat cartoon handshake reads as clip art. Keep it an illustration, but upgrade the style: a refined line-art / engraved handshake in the brand navy with a single red accent, on the blueprint pattern panel — more architectural drawing than stock graphic.
+- Generate a new illustrated handshake in that style and swap it in.
+- Keep the blueprint pattern backdrop; drop the white card so the illustration sits directly on the panel as a mark.
+- If the line-art direction isn't right, alternates: monochrome navy silhouette, or a blueprint-schematic handshake drawn as construction linework.
+
 
 ## 2. Merge the two navy bands
 Right now the stat bar and the credentials bar are two nearly identical navy strips separated only by the gallery. That repetition flattens the page.
