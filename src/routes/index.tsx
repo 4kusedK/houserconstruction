@@ -191,7 +191,7 @@ function Positioning() {
 
           <div className="md:col-span-6">
             <Reveal delay={0.05}>
-              <div className="relative overflow-hidden aspect-[4/5] photo-frame bg-navy-deep flex items-center justify-center p-8 md:p-12">
+              <div className="relative overflow-hidden aspect-[4/3] photo-frame bg-navy-deep flex items-center justify-center p-6 md:p-8">
                 <img
                   src={patternAsset.url}
                   alt=""
