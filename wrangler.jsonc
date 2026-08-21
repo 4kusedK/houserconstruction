@@ -1,0 +1,16 @@
+{
+  // Cloudflare Workers config for hosting Houser Construction outside Lovable.
+  // Run `npm run build` first — it emits dist/server (worker) and dist/client (assets).
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "houser-construction",
+  "main": "dist/server/index.mjs",
+  "compatibility_date": "2025-04-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": "dist/client",
+    "binding": "ASSETS"
+  },
+  "observability": {
+    "enabled": true
+  }
+}
