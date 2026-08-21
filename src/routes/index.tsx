@@ -226,10 +226,10 @@ function Positioning() {
                 answers the phone six months after final walkthrough.
               </p>
               <Link
-                to="/about"
+                to="/work"
                 className="mt-12 inline-flex items-center gap-2 font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-navy hover:text-red transition-colors link-underline"
               >
-                Meet the team <ArrowRight className="h-4 w-4" />
+                See our work <ArrowRight className="h-4 w-4" />
               </Link>
             </Reveal>
           </div>
