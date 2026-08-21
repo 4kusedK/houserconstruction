@@ -17,9 +17,8 @@ import { useEffect, useState } from "react";
 // This is a generated placeholder used to set the commercial-Alaska tone.
 import heroImg from "@/assets/hero-home.jpg";
 
-// Alaska jobsite at dusk — used as a washed backdrop behind the contact panel.
-const CONTACT_BG =
-  "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2400&q=75";
+// Houser blueprint pattern — backdrop behind the contact invitation panel.
+const CONTACT_BG = blueprintAsset.url;
 
 
 // TODO: confirm founding year with client.
