@@ -402,7 +402,8 @@ function initials(name: string) {
 }
 
 function Testimonials() {
-  // Renders nothing until real, permissioned client quotes exist.
+  // Intentional placeholder, not dead code: this section renders as soon as
+  // `testimonials` in src/config/business.ts has real, permissioned quotes.
   if (testimonials.length === 0) return null;
 
   return (
