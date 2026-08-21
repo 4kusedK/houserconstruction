@@ -472,7 +472,7 @@ function ClosingAndContact() {
 
       <div id="contact" className="relative scroll-mt-24 grid md:grid-cols-2">
         {/* Left: invitation panel */}
-        <div className="relative overflow-hidden bg-sand text-navy px-6 py-16 md:py-32 flex items-center md:justify-end">
+        <div className="relative overflow-hidden bg-navy text-white px-6 py-16 md:py-32 flex items-center md:justify-end">
           <img
             src={CONTACT_BG}
             alt=""
@@ -482,16 +482,16 @@ function ClosingAndContact() {
           />
           <span
             aria-hidden
-            className="absolute inset-0 bg-sand/75 md:bg-gradient-to-r md:from-sand/85 md:via-sand/70 md:to-sand/55"
+            className="absolute inset-0 bg-navy-deep/75 md:bg-gradient-to-r md:from-navy-deep/90 md:via-navy-deep/75 md:to-navy-deep/60"
           />
           <div className="relative w-full max-w-[520px] md:pr-14">
             <span className="mb-6 block h-[2px] w-10 bg-red" aria-hidden />
-            <h2 className="display-lg text-navy">
+            <h2 className="display-lg text-white">
               Bring the plans.
               <br />
               Or just the idea.
             </h2>
-            <p className="mt-6 text-lg text-silver leading-relaxed">
+            <p className="mt-6 text-lg text-white/70 leading-relaxed">
               We&apos;ll tell you the next practical step.
             </p>
             <a
@@ -503,7 +503,7 @@ function ClosingAndContact() {
           </div>
           <span
             aria-hidden
-            className="hidden md:block absolute top-0 right-0 h-full w-px bg-navy/15"
+            className="hidden md:block absolute top-0 right-0 h-full w-px bg-white/15"
           />
           <span
             aria-hidden
