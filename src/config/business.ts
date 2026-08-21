@@ -35,14 +35,7 @@ export const business = {
   serviceArea: "Alaska statewide — no fixed base, wherever the job is",
   // Statewide coverage. The hubs below are examples for humans and search
   // engines — they are NOT a limit on where Houser Construction works.
-  serviceAreaHubs: [
-    "Anchorage",
-    "Eagle River",
-    "Palmer",
-    "Wasilla",
-    "Mat-Su Valley",
-    "Girdwood",
-  ],
+  serviceAreaHubs: ["Anchorage", "Eagle River", "Palmer", "Wasilla", "Mat-Su Valley", "Girdwood"],
   serviceAreaLine:
     "Commercial, real estate, and residential work across Alaska — from Anchorage and Eagle River to Palmer, Wasilla and the Mat-Su Valley, Girdwood, and beyond.",
   regNumber: "Licensed · Bonded · Insured",
@@ -59,8 +52,6 @@ export const stats = [
   { value: "Statewide", label: "Wherever the job is" },
   { value: "100%", label: "Licensed · Bonded · Insured" },
 ] as const;
-
-
 
 export const services = [
   {
@@ -96,7 +87,6 @@ export const services = [
 ] as const;
 
 // Real project photography and metadata now live in src/config/projects.ts.
-
 
 export const processSteps = [
   {
