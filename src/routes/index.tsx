@@ -286,7 +286,7 @@ function ProjectsGallery() {
   return (
     <section
       id="work"
-      className="relative overflow-hidden py-28 md:py-40 bg-background blueprint-grid"
+      className="relative overflow-hidden scroll-mt-24 py-28 md:py-40 bg-background blueprint-grid"
     >
       <div className="relative mx-auto max-w-[1200px] px-6">
         <Reveal>
