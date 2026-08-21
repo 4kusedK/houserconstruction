@@ -203,7 +203,7 @@ function Positioning() {
               <blockquote className="border-l-2 border-red pl-4">
                 <p className="display-md italic text-navy">
                   &ldquo;Perfection is not attainable, but if we chase
-                  perfection we can catch excellence&quot; .&rdquo;
+                  perfection we can catch excellence&quot;&nbsp;
                 </p>
                 <p className="mt-4 font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-silver">
                   COACH VINCE LOMBARDI
