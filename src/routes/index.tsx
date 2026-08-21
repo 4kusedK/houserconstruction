@@ -396,12 +396,6 @@ function Testimonials() {
 
   return (
     <section className="relative overflow-hidden py-28 md:py-40 bg-navy text-white">
-      <span
-        aria-hidden
-        className="ghost-number-light absolute -top-8 right-4 md:right-10 hidden sm:block"
-      >
-        03
-      </span>
       <div className="relative mx-auto max-w-[1200px] px-6">
 
         <Reveal>
