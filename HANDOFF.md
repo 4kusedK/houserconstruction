@@ -88,6 +88,45 @@ requirement above.
 ```
 bun install
 bun run dev      # http://localhost:8080
-bun run build    # production build
+bun run build    # production build -> dist/server + dist/client
 bun run lint     # eslint + prettier
 ```
+
+## Hosting on Cloudflare Workers
+
+The site is server-rendered, so it runs as a Cloudflare **Worker with static
+assets** — not Cloudflare Pages. `wrangler.jsonc` in the repo root already
+declares the worker entry (`dist/server/index.mjs`), the asset folder
+(`dist/client`), and the required `nodejs_compat` flag.
+
+**Deploy from GitHub (recommended)**
+
+1. Cloudflare dashboard → Workers & Pages → Create → Import a repository.
+2. Pick the GitHub repo for this project.
+3. Build command: `npm run build`
+4. Deploy command: `npx wrangler deploy`
+5. Root directory: repository root.
+
+Every push to the default branch rebuilds and redeploys automatically.
+
+**Deploy manually**
+
+```
+npx wrangler login
+bun run deploy
+```
+
+**Custom domain**
+
+In Cloudflare: Workers & Pages → the worker → Settings → Domains & Routes → Add
+custom domain → `houserconstruction.net` (and `www`). Cloudflare creates the DNS
+records itself if the domain's nameservers point at Cloudflare; otherwise it
+shows the records to add at the current registrar.
+
+Point the domain at one host only. If the domain was previously attached to
+Lovable, remove that custom domain in Lovable's project settings first, or the
+two hosts will compete for the same records.
+
+Once Cloudflare serves the domain, the Publish button in Lovable no longer
+updates the live site — pushes to GitHub do.
+
