@@ -225,7 +225,7 @@ function Positioning() {
                   &ldquo;Perfection is not attainable, but if we chase
                   perfection we can catch excellence&quot;&nbsp;
                 </p>
-                <p className="mt-4 font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-silver">
+                <p className="mt-4 font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-silver">
                   COACH VINCE LOMBARDI
                 </p>
               </blockquote>
@@ -272,11 +272,8 @@ function StatBar() {
 
 
 
-// Deliberately unequal heights so the row does not read as a flat grid.
-const TILE_HEIGHTS = [
-  "h-[220px] md:h-[320px]",
-  "h-[220px] md:h-[260px]",
-] as const;
+// Equal tile heights — the row is offset with a top push instead.
+const TILE_HEIGHT = "h-[220px] md:h-[300px]";
 
 
 function ProjectsGallery() {
@@ -313,7 +310,7 @@ function ProjectsGallery() {
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/50 via-transparent to-transparent" />
-                <span className="absolute top-0 left-0 bg-red px-3 py-1.5 font-ui text-[10px] font-bold uppercase tracking-[0.2em] text-white">
+                <span className="absolute top-0 left-0 bg-navy-deep px-3 py-1.5 font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-white">
                   Featured project
                 </span>
               </div>
@@ -326,7 +323,7 @@ function ProjectsGallery() {
                     {f.project.name}
                   </h3>
                 </div>
-                <span className="font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-silver inline-flex items-center gap-2 shrink-0">
+                <span className="font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-silver inline-flex items-center gap-2 shrink-0">
                   View project <ArrowRight className="h-4 w-4" />
                 </span>
               </div>
@@ -352,7 +349,7 @@ function ProjectsGallery() {
                   className="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red"
                 >
                   <div
-                    className={`relative overflow-hidden bg-navy photo-frame shadow-sm transition-shadow duration-300 hover:shadow-md ${TILE_HEIGHTS[i] ?? "h-[200px] md:h-[190px]"}`}
+                    className={`relative overflow-hidden bg-navy photo-frame shadow-sm transition-shadow duration-300 hover:shadow-md ${TILE_HEIGHT}`}
                   >
                     <img
                       src={p.photos[1]?.src ?? p.photos[0]!.src}
@@ -363,10 +360,7 @@ function ProjectsGallery() {
                     <div className="absolute inset-0 bg-gradient-to-t from-navy/40 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                   </div>
                   <div className="mt-4">
-                    <p className="font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-silver">
-                      Residential
-                    </p>
-                    <h3 className="display-md text-navy mt-1">{p.name}</h3>
+                    <h3 className="display-md text-navy">{p.name}</h3>
                     <span
                       aria-hidden
                       className="mt-3 block h-[2px] w-8 bg-red"
@@ -379,10 +373,10 @@ function ProjectsGallery() {
         </ul>
 
         <Reveal>
-          <div className="mt-14 md:mt-16">
+          <div className="mt-16 md:mt-24">
             <Link
               to="/work"
-              className="link-underline font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-navy inline-flex items-center gap-2"
+              className="link-underline font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-navy inline-flex items-center gap-2"
             >
               See all projects <ArrowRight className="h-4 w-4" />
             </Link>
