@@ -10,7 +10,7 @@ import blueprintAsset from "@/assets/blueprint-pattern.png.asset.json";
 import patternAsset from "@/assets/pattern-navy.png.asset.json";
 
 import { business, stats, testimonials } from "@/config/business";
-import { workProjects, featuredWork } from "@/config/projects";
+import { workProjects, featuredWork, homeTiles } from "@/config/projects";
 
 import { useEffect, useState } from "react";
 
