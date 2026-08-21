@@ -7,6 +7,7 @@ import { SectionHeading } from "@/components/brand/SectionHeading";
 import { Reveal } from "@/components/brand/Reveal";
 import handshakeAsset from "@/assets/handshake-illustration.png.asset.json";
 import blueprintAsset from "@/assets/blueprint-pattern.png.asset.json";
+import patternAsset from "@/assets/pattern-navy.png.asset.json";
 
 import { business, stats, testimonials } from "@/config/business";
 import { workProjects, featuredWork } from "@/config/projects";
@@ -146,13 +147,24 @@ function Hero() {
         </div>
 
       </div>
-      <a
-        href="/#work"
-        aria-label="Scroll to next section"
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70 hover:text-white motion-safe:animate-bounce"
+      <button
+        type="button"
+        onClick={() => {
+          const el = document.getElementById("work");
+          if (!el) return;
+          const reduce = window.matchMedia(
+            "(prefers-reduced-motion: reduce)",
+          ).matches;
+          el.scrollIntoView({
+            behavior: reduce ? "auto" : "smooth",
+            block: "start",
+          });
+        }}
+        aria-label="Scroll to residential works"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70 hover:text-white motion-safe:animate-bounce focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red"
       >
         <ChevronDown className="h-6 w-6" />
-      </a>
+      </button>
     </section>
   );
 }
@@ -179,14 +191,22 @@ function Positioning() {
 
           <div className="md:col-span-6">
             <Reveal delay={0.05}>
-              <div className="relative overflow-hidden aspect-[4/5] photo-frame bg-muted flex items-center justify-center">
+              <div className="relative overflow-hidden aspect-[4/5] photo-frame bg-navy-deep flex items-center justify-center p-8 md:p-10">
+                <img
+                  src={patternAsset.url}
+                  alt=""
+                  aria-hidden
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+                <span aria-hidden className="absolute inset-0 bg-navy-deep/25" />
                 <img
                   src={handshakeAsset.url}
                   alt="Illustration of two people shaking hands, representing partnership on a construction project"
                   loading="lazy"
                   width={1920}
                   height={1080}
-                  className="h-full w-full object-contain p-6"
+                  className="relative w-full object-contain bg-background p-4 shadow-lg"
                 />
                 <span
                   aria-hidden
@@ -266,7 +286,7 @@ function ProjectsGallery() {
   return (
     <section
       id="work"
-      className="relative overflow-hidden py-28 md:py-40 bg-background blueprint-grid"
+      className="relative overflow-hidden scroll-mt-24 py-28 md:py-40 bg-background blueprint-grid"
     >
       <div className="relative mx-auto max-w-[1200px] px-6">
         <Reveal>
