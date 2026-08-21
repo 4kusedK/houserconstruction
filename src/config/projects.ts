@@ -183,8 +183,37 @@ export const workProjects: Project[] = [
   },
 ];
 
-// Lead image used for the home page featured block and social previews.
+// ---------------------------------------------------------------------------
+// HOME PAGE PICKS — edit these to change which photos show on the home page.
+// Each entry names the project slug and the photo file to use.
+// ---------------------------------------------------------------------------
+
+// Big featured image at the top of the home gallery.
 export const featuredWork = {
   project: workProjects[0]!,
-  photo: workProjects[0]!.photos[0]!,
+  photo: {
+    src: w19.url,
+    alt: "Open living room with a stone fireplace and new wide-plank flooring",
+  },
 };
+
+// The two smaller tiles below the featured image.
+export const homeTiles: { slug: string; name: string; photo: ProjectPhoto }[] = [
+  {
+    slug: "project-01",
+    name: "Kitchen renovation",
+    photo: {
+      src: w17.url,
+      alt: "Renovated kitchen with hickory cabinets, granite counters and a black sink",
+    },
+  },
+  {
+    slug: "project-02",
+    name: "Bathroom renovation",
+    photo: {
+      src: s42.url,
+      alt: "Double-vanity bathroom with gray cabinetry and framed mirrors",
+    },
+  },
+];
+
