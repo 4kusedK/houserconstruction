@@ -5,7 +5,8 @@ import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SectionHeading } from "@/components/brand/SectionHeading";
 import { Reveal } from "@/components/brand/Reveal";
-import handshakeImg from "@/assets/promise-handshake.jpg";
+import handshakeAsset from "@/assets/handshake-illustration.png.asset.json";
+import blueprintAsset from "@/assets/blueprint-pattern.png.asset.json";
 
 import { business, stats, testimonials } from "@/config/business";
 import { workProjects, featuredWork } from "@/config/projects";
