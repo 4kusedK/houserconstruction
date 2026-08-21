@@ -5,7 +5,8 @@ import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SectionHeading } from "@/components/brand/SectionHeading";
 import { Reveal } from "@/components/brand/Reveal";
-import handshakeImg from "@/assets/promise-handshake.jpg";
+import handshakeAsset from "@/assets/handshake-illustration.png.asset.json";
+import blueprintAsset from "@/assets/blueprint-pattern.png.asset.json";
 
 import { business, stats, testimonials } from "@/config/business";
 import { workProjects, featuredWork } from "@/config/projects";
@@ -16,9 +17,8 @@ import { useEffect, useState } from "react";
 // This is a generated placeholder used to set the commercial-Alaska tone.
 import heroImg from "@/assets/hero-home.jpg";
 
-// Alaska jobsite at dusk — used as a washed backdrop behind the contact panel.
-const CONTACT_BG =
-  "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2400&q=75";
+// Houser blueprint pattern — backdrop behind the contact invitation panel.
+const CONTACT_BG = blueprintAsset.url;
 
 
 // TODO: confirm founding year with client.
@@ -179,16 +179,15 @@ function Positioning() {
 
           <div className="md:col-span-6">
             <Reveal delay={0.05}>
-              <div className="relative overflow-hidden aspect-[4/5] photo-frame">
+              <div className="relative overflow-hidden aspect-[4/5] photo-frame bg-muted flex items-center justify-center">
                 <img
-                  src={handshakeImg}
-                  alt="A contractor and a client shaking hands on site at a commercial build"
+                  src={handshakeAsset.url}
+                  alt="Illustration of two people shaking hands, representing partnership on a construction project"
                   loading="lazy"
-                  width={1200}
-                  height={1408}
-                  className="absolute inset-0 h-full w-full object-cover"
+                  width={1920}
+                  height={1080}
+                  className="h-full w-full object-contain p-6"
                 />
-                <div className="photo-warm absolute inset-0" />
                 <span
                   aria-hidden
                   className="absolute bottom-0 left-0 h-1 w-24 bg-red"
@@ -473,7 +472,7 @@ function ClosingAndContact() {
 
       <div id="contact" className="relative scroll-mt-24 grid md:grid-cols-2">
         {/* Left: invitation panel */}
-        <div className="relative overflow-hidden bg-sand text-navy px-6 py-16 md:py-32 flex items-center md:justify-end">
+        <div className="relative overflow-hidden bg-navy text-white px-6 py-16 md:py-32 flex items-center md:justify-end">
           <img
             src={CONTACT_BG}
             alt=""
@@ -483,16 +482,16 @@ function ClosingAndContact() {
           />
           <span
             aria-hidden
-            className="absolute inset-0 bg-sand/75 md:bg-gradient-to-r md:from-sand/85 md:via-sand/70 md:to-sand/55"
+            className="absolute inset-0 bg-navy-deep/75 md:bg-gradient-to-r md:from-navy-deep/90 md:via-navy-deep/75 md:to-navy-deep/60"
           />
           <div className="relative w-full max-w-[520px] md:pr-14">
             <span className="mb-6 block h-[2px] w-10 bg-red" aria-hidden />
-            <h2 className="display-lg text-navy">
+            <h2 className="display-lg text-white">
               Bring the plans.
               <br />
               Or just the idea.
             </h2>
-            <p className="mt-6 text-lg text-silver leading-relaxed">
+            <p className="mt-6 text-lg text-white/70 leading-relaxed">
               We&apos;ll tell you the next practical step.
             </p>
             <a
@@ -504,7 +503,7 @@ function ClosingAndContact() {
           </div>
           <span
             aria-hidden
-            className="hidden md:block absolute top-0 right-0 h-full w-px bg-navy/15"
+            className="hidden md:block absolute top-0 right-0 h-full w-px bg-white/15"
           />
           <span
             aria-hidden
