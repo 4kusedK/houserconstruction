@@ -5,7 +5,7 @@ Drop the large faded "01" / "03" numerals from every section that shows one:
 - Home: the partnership section and the testimonials band.
 - Work page: the per-project numeral on each project block.
 
-Spacing stays as-is; nothing else in those headers changes.
+With the numerals gone, tighten the space they occupied: pull the top padding of those sections back to a consistent scale so every band breathes the same, and keep the eyebrow-to-heading and heading-to-body gaps on one rhythm instead of the current mix. Nothing else in those headers changes.
 
 ## 2. Hero copy
 Replace the hero paragraph with the client's line:
