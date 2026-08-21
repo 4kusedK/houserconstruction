@@ -5,7 +5,7 @@ import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SectionHeading } from "@/components/brand/SectionHeading";
 import { Reveal } from "@/components/brand/Reveal";
-import handshakeAsset from "@/assets/handshake-illustration.png.asset.json";
+import handshakeAsset from "@/assets/handshake-lineart.png.asset.json";
 import blueprintAsset from "@/assets/blueprint-pattern.png.asset.json";
 import patternAsset from "@/assets/pattern-navy.png.asset.json";
 
@@ -120,7 +120,7 @@ function Hero() {
       />
       <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/85 via-navy-deep/60 to-navy-deep/95" />
       
-      <div className="relative mx-auto max-w-[1200px] px-6 pt-32 md:pt-60 pb-16 md:pb-24 min-h-[78svh] md:min-h-[100svh] flex flex-col justify-end">
+      <div className="relative mx-auto max-w-[1200px] px-6 pt-32 md:pt-60 pb-20 md:pb-32 min-h-[78svh] md:min-h-[100svh] flex flex-col justify-end">
 
         <div className="max-w-3xl">
           <h1 className="display-2xl text-white">
@@ -161,7 +161,7 @@ function Hero() {
           });
         }}
         aria-label="Scroll to residential works"
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70 hover:text-white motion-safe:animate-bounce focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/60 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red"
       >
         <ChevronDown className="h-6 w-6" />
       </button>
@@ -187,26 +187,26 @@ function Positioning() {
           </h2>
         </Reveal>
 
-        <div className="mt-16 md:mt-20 grid md:grid-cols-12 gap-x-16 gap-y-16 items-start">
+        <div className="mt-12 md:mt-16 grid md:grid-cols-12 gap-x-16 gap-y-16 items-start">
 
           <div className="md:col-span-6">
             <Reveal delay={0.05}>
-              <div className="relative overflow-hidden aspect-[4/5] photo-frame bg-navy-deep flex items-center justify-center p-8 md:p-10">
+              <div className="relative overflow-hidden aspect-[4/5] photo-frame bg-navy-deep flex items-center justify-center p-8 md:p-12">
                 <img
                   src={patternAsset.url}
                   alt=""
                   aria-hidden
                   loading="lazy"
-                  className="absolute inset-0 h-full w-full object-cover"
+                  className="absolute inset-0 h-full w-full object-cover opacity-70"
                 />
-                <span aria-hidden className="absolute inset-0 bg-navy-deep/25" />
+                <span aria-hidden className="absolute inset-0 bg-navy-deep/70" />
                 <img
                   src={handshakeAsset.url}
-                  alt="Illustration of two people shaking hands, representing partnership on a construction project"
+                  alt="Line-art illustration of two people shaking hands, representing partnership on a construction project"
                   loading="lazy"
-                  width={1920}
-                  height={1080}
-                  className="relative w-full object-contain bg-background p-4 shadow-lg"
+                  width={1200}
+                  height={880}
+                  className="relative w-full object-contain"
                 />
                 <span
                   aria-hidden
@@ -216,6 +216,7 @@ function Positioning() {
               </div>
             </Reveal>
           </div>
+
 
           <div className="md:col-span-5 md:col-start-8 md:pt-6">
             <Reveal delay={0.1}>
@@ -234,12 +235,9 @@ function Positioning() {
                 the industries best we create the team that gets the job done
                 and done right.
               </p>
-              <p className="mt-6 text-lg text-charcoal/80 leading-[1.6]">
-{"\n"}
-              </p>
               <Link
                 to="/work"
-                className="mt-12 inline-flex items-center gap-2 font-ui text-[12px] font-bold uppercase tracking-[0.2em] text-navy hover:text-red transition-colors link-underline"
+                className="mt-12 inline-flex items-center gap-2 font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-navy hover:text-red transition-colors link-underline"
               >
                 See our work <ArrowRight className="h-4 w-4" />
               </Link>
