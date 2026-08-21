@@ -496,7 +496,7 @@ function ClosingAndContact() {
           />
           <span
             aria-hidden
-            className="absolute inset-0 bg-sand/90 md:bg-gradient-to-r md:from-sand/95 md:via-sand/90 md:to-sand/80"
+            className="absolute inset-0 bg-sand/85 md:bg-gradient-to-r md:from-sand/90 md:via-sand/80 md:to-sand/65"
           />
           <div className="relative w-full max-w-[520px] md:pr-14">
             <span className="mb-6 block h-[2px] w-10 bg-red" aria-hidden />
