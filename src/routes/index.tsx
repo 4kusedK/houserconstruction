@@ -128,8 +128,8 @@ function Hero() {
             <span className="text-white/85">with excellence.</span>
           </h1>
           <p className="mt-8 max-w-xl text-lg text-white/85 leading-[1.6]">
-            Licensed Alaska general contractor working statewide on commercial,
-            real estate, and residential projects.&nbsp;
+            Licensed Alaska general contractor committed to serving our clients
+            statewide with all their building needs, commercial and residential.
           </p>
           <div className="mt-10">
             <a
