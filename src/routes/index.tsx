@@ -216,8 +216,7 @@ function Positioning() {
                 and done right.
               </p>
               <p className="mt-6 text-lg text-charcoal/80 leading-[1.6]">
-                Get the solutions to your project needs without the runarounds,
-                setbacks, and delayed scheduling.
+{"\n"}
               </p>
               <Link
                 to="/work"
