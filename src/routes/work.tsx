@@ -50,6 +50,27 @@ export const Route = createFileRoute("/work")({
           },
         }),
       },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: `${SITE_URL}/`,
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Selected work",
+              item: `${SITE_URL}/work`,
+            },
+          ],
+        }),
+      },
     ],
   }),
   component: WorkPage,
@@ -115,9 +136,7 @@ function WorkPage() {
                   </p>
                   <h2 className="display-lg text-navy mt-2">{p.name}</h2>
                   <span aria-hidden className="mt-4 block h-[2px] w-10 bg-red" />
-                  <p className="mt-5 text-[17px] leading-relaxed text-silver">
-                    {p.blurb}
-                  </p>
+                  <p className="mt-5 text-[17px] leading-relaxed text-silver">{p.blurb}</p>
                 </div>
               </Reveal>
 
@@ -193,10 +212,7 @@ function WorkPage() {
           >
             <ChevronRight className="h-7 w-7" />
           </button>
-          <figure
-            className="max-w-[1100px] w-full"
-            onClick={(e) => e.stopPropagation()}
-          >
+          <figure className="max-w-[1100px] w-full" onClick={(e) => e.stopPropagation()}>
             <img
               src={active.photo.src}
               alt={active.photo.alt}
@@ -223,10 +239,9 @@ function WorkHero() {
         </div>
         <h1 className="display-xl text-white max-w-3xl">Selected work.</h1>
         <p className="mt-6 max-w-2xl text-[17px] md:text-lg leading-relaxed text-white/70">
-          Finished projects photographed on completion. Houser Construction
-          works statewide on commercial, real estate, and residential
-          projects — the remodels and renovations below are recent residential
-          work.
+          Finished projects photographed on completion. Houser Construction works statewide on
+          commercial, real estate, and residential projects — the remodels and renovations below are
+          recent residential work.
         </p>
       </div>
     </section>
@@ -239,28 +254,16 @@ function WorkCTA() {
       <span aria-hidden className="navy-depth" />
       <div className="relative mx-auto max-w-[1200px] px-6">
         <SectionHeading eyebrow="Next" title="Have a project in mind?" onDark>
-          Tell us what you are building or restoring and we will walk the site
-          with you.
+          Tell us what you are building or restoring and we will walk the site with you.
         </SectionHeading>
         <div className="mt-10 flex flex-col sm:flex-row gap-4">
-          <BrandButton
-            as="a"
-            href={business.emailHref}
-            variant="accent"
-            size="lg"
-          >
+          <BrandButton as="a" href={business.emailHref} variant="accent" size="lg">
             Email us <ArrowRight className="h-4 w-4" />
           </BrandButton>
-          <BrandButton
-            as="a"
-            href={business.phoneHref}
-            variant="outline-light"
-            size="lg"
-          >
+          <BrandButton as="a" href={business.phoneHref} variant="outline-light" size="lg">
             <Phone className="h-4 w-4" /> {business.phone}
           </BrandButton>
         </div>
-
       </div>
     </section>
   );

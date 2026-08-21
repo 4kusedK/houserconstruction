@@ -21,7 +21,6 @@ import heroImg from "@/assets/hero-home.jpg";
 // Houser blueprint pattern — backdrop behind the contact invitation panel.
 const CONTACT_BG = blueprintAsset.url;
 
-
 // TODO: confirm founding year with client.
 
 const SITE_URL = "https://houserconstruction.net";
@@ -36,7 +35,10 @@ export const Route = createFileRoute("/")({
         content:
           "Licensed Alaska general contractor working statewide on commercial, real estate, and residential projects. Ground-up builds, tenant improvements, restoration, and development. Family owned and operated.",
       },
-      { property: "og:title", content: "Houser Construction — Alaska Commercial General Contractor" },
+      {
+        property: "og:title",
+        content: "Houser Construction — Alaska Commercial General Contractor",
+      },
       {
         property: "og:description",
         content:
@@ -76,7 +78,6 @@ export const Route = createFileRoute("/")({
             addressRegion: business.address.region,
             addressCountry: business.address.country,
           },
-
         }),
       },
     ],
@@ -94,9 +95,8 @@ function Home() {
         <StatBar />
         <ProjectsGallery />
         <Testimonials />
-        
-        <ClosingAndContact />
 
+        <ClosingAndContact />
       </main>
       <SiteFooter />
       <MobileStickyCTA />
@@ -116,13 +116,11 @@ function Hero() {
         className="absolute inset-0 h-full w-full object-cover"
         width={1920}
         height={1088}
-
         fetchPriority="high"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/85 via-navy-deep/60 to-navy-deep/95" />
-      
-      <div className="relative mx-auto max-w-[1200px] px-6 pt-32 md:pt-60 pb-20 md:pb-32 min-h-[78svh] md:min-h-[100svh] flex flex-col justify-end">
 
+      <div className="relative mx-auto max-w-[1200px] px-6 pt-32 md:pt-60 pb-20 md:pb-32 min-h-[78svh] md:min-h-[100svh] flex flex-col justify-end">
         <div className="max-w-3xl">
           <h1 className="display-2xl text-white">
             Trusted to serve
@@ -130,8 +128,8 @@ function Hero() {
             <span className="text-white/85">with excellence.</span>
           </h1>
           <p className="mt-8 max-w-xl text-lg text-white/85 leading-[1.6]">
-            Licensed Alaska general contractor committed to serving our clients
-            statewide with all their building needs, commercial and residential.
+            Licensed Alaska general contractor committed to serving our clients statewide with all
+            their building needs, commercial and residential.
           </p>
           <div className="mt-10">
             <a
@@ -144,18 +142,14 @@ function Hero() {
           </div>
 
           <span className="mt-10 block h-[2px] w-16 bg-red" aria-hidden />
-
         </div>
-
       </div>
       <button
         type="button"
         onClick={() => {
           const el = document.getElementById("work");
           if (!el) return;
-          const reduce = window.matchMedia(
-            "(prefers-reduced-motion: reduce)",
-          ).matches;
+          const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
           el.scrollIntoView({
             behavior: reduce ? "auto" : "smooth",
             block: "start",
@@ -183,13 +177,10 @@ function Positioning() {
             <span className="eyebrow">How we work</span>
           </div>
 
-          <h2 className="display-lg text-navy max-w-3xl">
-            Built on partnership.
-          </h2>
+          <h2 className="display-lg text-navy max-w-3xl">Built on partnership.</h2>
         </Reveal>
 
         <div className="mt-12 md:mt-16 grid md:grid-cols-12 gap-x-16 gap-y-16 items-start">
-
           <div className="md:col-span-6">
             <Reveal delay={0.05}>
               <div className="relative overflow-hidden aspect-[4/3] photo-frame bg-navy-deep flex items-center justify-center p-6 md:p-8">
@@ -210,32 +201,26 @@ function Positioning() {
                   className="relative w-[88%] max-w-[560px] object-contain invert"
                 />
 
-                <span
-                  aria-hidden
-                  className="absolute bottom-0 left-0 h-1 w-24 bg-red"
-                />
-
+                <span aria-hidden className="absolute bottom-0 left-0 h-1 w-24 bg-red" />
               </div>
             </Reveal>
           </div>
-
 
           <div className="md:col-span-5 md:col-start-8 md:pt-6">
             <Reveal delay={0.1}>
               <blockquote className="border-l-2 border-red pl-4">
                 <p className="display-md italic text-navy">
-                  &ldquo;Perfection is not attainable, but if we chase
-                  perfection we can catch excellence&quot;&nbsp;
+                  &ldquo;Perfection is not attainable, but if we chase perfection we can catch
+                  excellence&quot;&nbsp;
                 </p>
                 <p className="mt-4 font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-silver">
                   COACH VINCE LOMBARDI
                 </p>
               </blockquote>
               <p className="mt-10 text-lg text-charcoal leading-[1.6]">
-                Our standard of integrity has been a leading line of trust on
-                every project and our partnerships reflect this standard. With
-                the industries best we create the team that gets the job done
-                and done right.
+                Our standard of integrity has been a leading line of trust on every project and our
+                partnerships reflect this standard. With the industries best we create the team that
+                gets the job done and done right.
               </p>
               <Link
                 to="/work"
@@ -250,7 +235,6 @@ function Positioning() {
     </section>
   );
 }
-
 
 function StatBar() {
   return (
@@ -272,11 +256,8 @@ function StatBar() {
   );
 }
 
-
-
 // Equal tile heights — the row is offset with a top push instead.
 const TILE_HEIGHT = "h-[220px] md:h-[300px]";
-
 
 function ProjectsGallery() {
   const f = featuredWork;
@@ -289,9 +270,8 @@ function ProjectsGallery() {
         <Reveal>
           <div className="mb-16 md:mb-20">
             <SectionHeading eyebrow="Residential" title="Residential works.">
-              Recent remodel and renovation work, photographed on completion.
-              Commercial, real estate, and development projects run alongside it
-              across Alaska.
+              Recent remodel and renovation work, photographed on completion. Commercial, real
+              estate, and development projects run alongside it across Alaska.
             </SectionHeading>
           </div>
         </Reveal>
@@ -321,9 +301,7 @@ function ProjectsGallery() {
                   <p className="font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-silver">
                     Residential
                   </p>
-                  <h3 className="display-md text-navy mt-1">
-                    {f.project.name}
-                  </h3>
+                  <h3 className="display-md text-navy mt-1">{f.project.name}</h3>
                 </div>
                 <span className="font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-silver inline-flex items-center gap-2 shrink-0">
                   View project <ArrowRight className="h-4 w-4" />
@@ -340,7 +318,6 @@ function ProjectsGallery() {
         >
           {homeTiles.map((p, i) => (
             <li key={p.slug + i} className={i === 1 ? "md:pt-10" : undefined}>
-
               <Reveal delay={i * 0.05}>
                 <Link
                   to="/work"
@@ -361,16 +338,12 @@ function ProjectsGallery() {
                   </div>
                   <div className="mt-4">
                     <h3 className="display-md text-navy">{p.name}</h3>
-                    <span
-                      aria-hidden
-                      className="mt-3 block h-[2px] w-8 bg-red"
-                    />
+                    <span aria-hidden className="mt-3 block h-[2px] w-8 bg-red" />
                   </div>
                 </Link>
               </Reveal>
             </li>
           ))}
-
         </ul>
 
         <Reveal>
@@ -388,9 +361,6 @@ function ProjectsGallery() {
   );
 }
 
-
-
-
 function initials(name: string) {
   return name
     .replace(/[&.]/g, " ")
@@ -402,19 +372,15 @@ function initials(name: string) {
 }
 
 function Testimonials() {
-  // Renders nothing until real, permissioned client quotes exist.
+  // Intentional placeholder, not dead code: this section renders as soon as
+  // `testimonials` in src/config/business.ts has real, permissioned quotes.
   if (testimonials.length === 0) return null;
 
   return (
     <section className="relative overflow-hidden py-28 md:py-40 bg-navy text-white">
       <div className="relative mx-auto max-w-[1200px] px-6">
-
         <Reveal>
-          <SectionHeading
-            eyebrow="Client voice"
-            title="Owners who've been through it."
-            onDark
-          />
+          <SectionHeading eyebrow="Client voice" title="Owners who've been through it." onDark />
         </Reveal>
 
         <div className="mt-16 md:mt-20 grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -450,9 +416,6 @@ function Testimonials() {
 
 // Credentials live in the stat bar ("100% — licensed · bonded · insured");
 // the second navy strip that repeated them has been removed.
-
-
-
 
 // Closing statement and contact share one navy surface — the two used to be
 // navy-deep and navy back to back, which read as a seam rather than a move.
@@ -504,13 +467,9 @@ function ClosingAndContact() {
 
         {/* Right: contact details */}
         <div className="relative bg-navy-deep px-6 py-16 md:py-32 flex items-center border-t-2 md:border-t-0 border-red">
-
           <div className="w-full max-w-[520px] md:pl-14">
             <p className="eyebrow text-white/60">Project line</p>
-            <a
-              href={business.phoneHref}
-              className="mt-2 flex items-center gap-4 group"
-            >
+            <a href={business.phoneHref} className="mt-2 flex items-center gap-4 group">
               <Phone className="h-8 w-8 md:h-10 md:w-10 text-red shrink-0" />
               <span className="display-md text-white group-hover:text-white/85 transition-colors">
                 {business.phone}
@@ -532,9 +491,7 @@ function ClosingAndContact() {
                     <span className="block font-display text-xl font-bold uppercase tracking-[0.04em] text-white">
                       {c.name}
                     </span>
-                    <span className="block text-sm text-white/60 mt-1">
-                      {c.role}
-                    </span>
+                    <span className="block text-sm text-white/60 mt-1">{c.role}</span>
                     <span className="block break-words text-white/85 mt-2 group-hover:text-white transition-colors">
                       {c.email}
                     </span>
@@ -545,12 +502,9 @@ function ClosingAndContact() {
           </div>
         </div>
       </div>
-
     </section>
   );
 }
-
-
 
 function MobileStickyCTA() {
   const [show, setShow] = useState(false);

@@ -18,31 +18,14 @@ export function SectionHeading({
   children?: React.ReactNode;
 }) {
   return (
-    <div
-      className={cn(
-        align === "center" ? "text-center" : "text-left",
-        className,
-      )}
-    >
+    <div className={cn(align === "center" ? "text-center" : "text-left", className)}>
       {eyebrow ? (
-        <div
-          className={cn(
-            "flex items-center gap-3 mb-4",
-            align === "center" && "justify-center",
-          )}
-        >
+        <div className={cn("flex items-center gap-3 mb-4", align === "center" && "justify-center")}>
           <span className="h-[2px] w-8 bg-red" aria-hidden />
-          <span
-            className={cn(
-              "eyebrow",
-              onDark ? "text-white/70" : "text-silver",
-            )}
-          >
+          <span className={cn("eyebrow", onDark ? "text-white/70" : "text-silver")}>
             {number ? (
               <>
-                <span className={onDark ? "text-white" : "text-navy"}>
-                  {number}
-                </span>
+                <span className={onDark ? "text-white" : "text-navy"}>{number}</span>
                 <span className="mx-2 opacity-60">—</span>
               </>
             ) : null}
@@ -50,14 +33,7 @@ export function SectionHeading({
           </span>
         </div>
       ) : null}
-      <h2
-        className={cn(
-          "display-lg",
-          onDark ? "text-white" : "text-navy",
-        )}
-      >
-        {title}
-      </h2>
+      <h2 className={cn("display-lg", onDark ? "text-white" : "text-navy")}>{title}</h2>
       {children ? (
         <div
           className={cn(

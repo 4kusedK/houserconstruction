@@ -5,9 +5,7 @@ import { Facebook, Instagram, Linkedin } from "lucide-react";
 const COLS = [
   {
     heading: "Company",
-    links: [
-      { label: "Work", href: "/work" },
-    ],
+    links: [{ label: "Work", href: "/work" }],
   },
   {
     heading: "Contact",
@@ -30,15 +28,12 @@ export function SiteFooter() {
     <footer className="bg-navy text-white">
       <div className="mx-auto max-w-[1200px] px-6 pb-14 md:pb-16">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 border-t border-white/12 pt-16 md:pt-20">
-
           <div className="md:col-span-5">
             <Logo variant="full-white" className="h-12 w-auto" />
             <p className="mt-6 text-sm text-white/70 max-w-sm leading-relaxed">
-              Licensed Alaska general contractor working statewide on
-              commercial, real estate, and residential projects. Built and run
-              by David and Steve Houser.
+              Licensed Alaska general contractor working statewide on commercial, real estate, and
+              residential projects. Built and run by David and Steve Houser.
             </p>
-
 
             {SOCIALS.length > 0 && (
               <div className="mt-6 flex items-center gap-3">
@@ -82,41 +77,34 @@ export function SiteFooter() {
               Alaska statewide — no fixed base
               <br />
               <span className="text-white/60">
-                Commercial, real estate, and residential work in Anchorage,
-                Eagle River, Palmer, Wasilla and the Mat-Su Valley, Girdwood,
-                and wherever else the contract takes us.
+                Commercial, real estate, and residential work in Anchorage, Eagle River, Palmer,
+                Wasilla and the Mat-Su Valley, Girdwood, and wherever else the contract takes us.
               </span>
             </address>
           </div>
-
-
         </div>
 
         <div className="mt-16 pt-8 border-t border-white/10">
           <div className="mb-6">
             <p className="eyebrow text-white/50 mb-4">Licensed &amp; Insured</p>
             <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
-              {[
-                "Licensed AK Contractor",
-                "Bonded",
-                "Insured",
-                "Family Owned & Operated",
-              ].map((c) => (
-
-                <span
-                  key={c}
-                  className="font-ui text-[11px] font-bold uppercase tracking-[0.18em] text-white/40 border border-white/15 px-3 py-2 rounded-sm"
-                >
-                  {c}
-                </span>
-              ))}
+              {["Licensed AK Contractor", "Bonded", "Insured", "Family Owned & Operated"].map(
+                (c) => (
+                  <span
+                    key={c}
+                    className="font-ui text-[11px] font-bold uppercase tracking-[0.18em] text-white/40 border border-white/15 px-3 py-2 rounded-sm"
+                  >
+                    {c}
+                  </span>
+                ),
+              )}
             </div>
           </div>
 
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-white/50">
             <div>
-              © {new Date().getFullYear()} {business.legalName}. All rights
-              reserved. · {business.regNumber}
+              © {new Date().getFullYear()} {business.legalName}. All rights reserved. ·{" "}
+              {business.regNumber}
             </div>
             {/* Privacy / Terms links intentionally removed — see TODO-LEGAL.md.
                 Restore them the moment the site collects data or adds analytics. */}

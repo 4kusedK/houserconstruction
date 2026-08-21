@@ -5,12 +5,9 @@ type Variant = "primary" | "accent" | "outline" | "ghost" | "outline-light";
 type Size = "sm" | "md" | "lg";
 
 const VARIANTS: Record<Variant, string> = {
-  primary:
-    "bg-navy text-white border-2 border-navy hover:bg-navy-mid hover:border-navy-mid",
-  accent:
-    "bg-red text-white border-2 border-red hover:bg-red-dark hover:border-red-dark",
-  outline:
-    "bg-transparent text-navy border-2 border-navy hover:bg-navy hover:text-white",
+  primary: "bg-navy text-white border-2 border-navy hover:bg-navy-mid hover:border-navy-mid",
+  accent: "bg-red text-white border-2 border-red hover:bg-red-dark hover:border-red-dark",
+  outline: "bg-transparent text-navy border-2 border-navy hover:bg-navy hover:text-white",
   "outline-light":
     "bg-transparent text-white border-2 border-white/70 hover:bg-white hover:text-navy",
   ghost: "bg-transparent text-navy border-2 border-transparent hover:bg-navy/5",

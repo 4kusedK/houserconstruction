@@ -82,14 +82,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "Houser Construction" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { title: "Houser Construction — Trusted to Serve | Alaska General Contractor" },
-      { property: "og:title", content: "Houser Construction — Trusted to Serve | Alaska General Contractor" },
-      { name: "twitter:title", content: "Houser Construction — Trusted to Serve | Alaska General Contractor" },
-      { name: "description", content: "Houser Construction is a family owned, licensed Alaska general contractor. New construction, remodels, and real estate development, built to serve Alaskan communities with excellence." },
-      { property: "og:description", content: "Houser Construction is a family owned, licensed Alaska general contractor. New construction, remodels, and real estate development, built to serve Alaskan communities with excellence." },
-      { name: "twitter:description", content: "Houser Construction is a family owned, licensed Alaska general contractor. New construction, remodels, and real estate development, built to serve Alaskan communities with excellence." },
-      { property: "og:image", content: "https://houserconstruction.net/og-houser-construction.jpg" },
-      { name: "twitter:image", content: "https://houserconstruction.net/og-houser-construction.jpg" },
+      // Page-specific title/description/og:image live on the leaf routes
+      // (src/routes/index.tsx and src/routes/work.tsx), never here — a root
+      // og:image would override every child's share preview.
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Houser Construction",
+          legalName: "Houser Construction LLC",
+          url: "https://houserconstruction.net",
+          logo: "https://houserconstruction.net/favicon.png",
+          telephone: "(907) 310-6828",
+          email: "david@houserconstruction.net",
+          areaServed: { "@type": "State", name: "Alaska" },
+        }),
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

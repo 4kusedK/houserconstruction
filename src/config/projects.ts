@@ -216,4 +216,3 @@ export const homeTiles: { slug: string; name: string; photo: ProjectPhoto }[] = 
     },
   },
 ];
-

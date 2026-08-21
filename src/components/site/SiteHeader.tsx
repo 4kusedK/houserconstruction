@@ -7,10 +7,7 @@ import { Logo } from "@/components/brand/Logo";
 import { BrandButton } from "@/components/brand/BrandButton";
 import { business } from "@/config/business";
 
-const NAV = [
-  { label: "Work", href: "/work" },
-];
-
+const NAV = [{ label: "Work", href: "/work" }];
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -37,13 +34,9 @@ export function SiteHeader() {
             aria-label="Houser Construction — home"
           >
             <Logo variant="full" className="h-16 md:h-20 w-auto" />
-
           </Link>
 
-          <nav
-            className="hidden md:flex items-center gap-10"
-            aria-label="Primary"
-          >
+          <nav className="hidden md:flex items-center gap-10" aria-label="Primary">
             {NAV.map((item) => (
               <a
                 key={item.href}
@@ -102,10 +95,7 @@ export function SiteHeader() {
                 <X className="h-6 w-6" />
               </button>
             </div>
-            <nav
-              className="flex-1 flex flex-col justify-center gap-6 px-8"
-              aria-label="Mobile"
-            >
+            <nav className="flex-1 flex flex-col justify-center gap-6 px-8" aria-label="Mobile">
               {NAV.map((item) => (
                 <a
                   key={item.href}

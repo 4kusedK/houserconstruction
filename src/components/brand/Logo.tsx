@@ -22,12 +22,6 @@ export function Logo({
   alt?: string;
 }) {
   return (
-    <img
-      src={SRC[variant]}
-      alt={alt}
-      className={className}
-      loading="eager"
-      decoding="async"
-    />
+    <img src={SRC[variant]} alt={alt} className={className} loading="eager" decoding="async" />
   );
 }
