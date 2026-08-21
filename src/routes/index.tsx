@@ -179,14 +179,22 @@ function Positioning() {
 
           <div className="md:col-span-6">
             <Reveal delay={0.05}>
-              <div className="relative overflow-hidden aspect-[4/5] photo-frame bg-muted flex items-center justify-center">
+              <div className="relative overflow-hidden aspect-[4/5] photo-frame bg-navy-deep flex items-center justify-center p-8 md:p-10">
+                <img
+                  src={patternAsset.url}
+                  alt=""
+                  aria-hidden
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+                <span aria-hidden className="absolute inset-0 bg-navy-deep/25" />
                 <img
                   src={handshakeAsset.url}
                   alt="Illustration of two people shaking hands, representing partnership on a construction project"
                   loading="lazy"
                   width={1920}
                   height={1080}
-                  className="h-full w-full object-contain p-6"
+                  className="relative w-full object-contain bg-background p-4 shadow-lg"
                 />
                 <span
                   aria-hidden
