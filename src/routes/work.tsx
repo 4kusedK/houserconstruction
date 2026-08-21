@@ -13,9 +13,9 @@ import { workProjects, featuredWork } from "@/config/projects";
 const SITE_URL = "https://houserconstruction.net";
 const OG_IMAGE = `${SITE_URL}${featuredWork.photo.src}`;
 
-const WORK_TITLE = "Selected Work — Houser Construction, Anchorage AK";
+const WORK_TITLE = "Selected Work — Houser Construction, Alaska";
 const WORK_DESC =
-  "Completed Houser Construction projects across Anchorage and Alaska: whole-home remodels, kitchen and bath renovations, and interior restoration. Photos of finished work.";
+  "Completed Houser Construction projects across Alaska: whole-home remodels, kitchen and bath renovations, and interior restoration. Photos of finished work.";
 
 export const Route = createFileRoute("/work")({
   head: () => ({
@@ -117,7 +117,7 @@ function WorkPage() {
               <Reveal>
                 <div className="mb-10 md:mb-14 max-w-2xl">
                   <p className="font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-silver">
-                    {p.category} · {p.location}
+                    Residential
                   </p>
                   <h2 className="display-lg text-navy mt-2">{p.name}</h2>
                   <span aria-hidden className="mt-4 block h-[2px] w-10 bg-red" />
@@ -209,7 +209,7 @@ function WorkPage() {
               className="mx-auto max-h-[76vh] w-auto object-contain"
             />
             <figcaption className="mt-4 text-center font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-white/70">
-              {active.project.name} · {active.project.location}
+              {active.project.name}
             </figcaption>
           </figure>
         </div>
@@ -231,7 +231,7 @@ function WorkHero() {
         <p className="mt-6 max-w-2xl text-[17px] md:text-lg leading-relaxed text-white/70">
           Finished projects photographed on completion. Houser Construction
           works statewide on commercial, real estate, and residential
-          projects — the remodels and renovations below are recent Anchorage
+          projects — the remodels and renovations below are recent residential
           work.
         </p>
       </div>
