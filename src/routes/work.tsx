@@ -107,12 +107,6 @@ function WorkPage() {
               pi % 2 === 0 ? "bg-background blueprint-grid" : "bg-paper-sunk"
             }`}
           >
-            <span
-              aria-hidden
-              className="ghost-number absolute -top-8 right-4 md:right-10 hidden sm:block"
-            >
-              {p.n}
-            </span>
             <div className="relative mx-auto max-w-[1200px] px-6">
               <Reveal>
                 <div className="mb-10 md:mb-14 max-w-2xl">

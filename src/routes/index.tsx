@@ -128,8 +128,8 @@ function Hero() {
             <span className="text-white/85">with excellence.</span>
           </h1>
           <p className="mt-8 max-w-xl text-lg text-white/85 leading-[1.6]">
-            Licensed Alaska general contractor working statewide on commercial,
-            real estate, and residential projects.&nbsp;
+            Licensed Alaska general contractor committed to serving our clients
+            statewide with all their building needs, commercial and residential.
           </p>
           <div className="mt-10">
             <a
@@ -161,14 +161,8 @@ function Positioning() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden py-32 md:py-48 bg-background blueprint-grid"
+      className="relative overflow-hidden py-28 md:py-40 bg-background blueprint-grid"
     >
-      <span
-        aria-hidden
-        className="ghost-number absolute -top-6 right-4 md:right-10 hidden sm:block"
-      >
-        01
-      </span>
       <div className="relative mx-auto max-w-[1200px] px-6">
         <Reveal>
           <div className="flex items-center gap-3 mb-6">
@@ -181,7 +175,8 @@ function Positioning() {
           </h2>
         </Reveal>
 
-        <div className="mt-16 md:mt-24 grid md:grid-cols-12 gap-x-16 gap-y-16 items-start">
+        <div className="mt-16 md:mt-20 grid md:grid-cols-12 gap-x-16 gap-y-16 items-start">
+
           <div className="md:col-span-6">
             <Reveal delay={0.05}>
               <div className="relative overflow-hidden aspect-[4/5] photo-frame">
@@ -214,15 +209,15 @@ function Positioning() {
                   COACH VINCE LOMBARDI
                 </p>
               </blockquote>
-              <p className="mt-12 text-lg text-charcoal leading-[1.6]">
-                Commercial and real estate clients get one point of contact from
-                estimate through closeout. No account managers, no handoffs
-                between departments, no chasing someone down for a status.
+              <p className="mt-10 text-lg text-charcoal leading-[1.6]">
+                Our standard of integrity has been a leading line of trust on
+                every project and our partnerships reflect this standard. With
+                the industries best we create the team that gets the job done
+                and done right.
               </p>
-              <p className="mt-8 text-lg text-charcoal/80 leading-[1.6]">
-                The company is deliberately structured so the person who prices
-                your job is the person accountable for delivering it — and still
-                answers the phone six months after final walkthrough.
+              <p className="mt-6 text-lg text-charcoal/80 leading-[1.6]">
+                Get the solutions to your project needs without the runarounds,
+                setbacks, and delayed scheduling.
               </p>
               <Link
                 to="/work"
@@ -401,12 +396,6 @@ function Testimonials() {
 
   return (
     <section className="relative overflow-hidden py-28 md:py-40 bg-navy text-white">
-      <span
-        aria-hidden
-        className="ghost-number-light absolute -top-8 right-4 md:right-10 hidden sm:block"
-      >
-        03
-      </span>
       <div className="relative mx-auto max-w-[1200px] px-6">
 
         <Reveal>
