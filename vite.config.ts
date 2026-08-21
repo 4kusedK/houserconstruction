@@ -12,4 +12,18 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Pinned so builds outside Lovable (e.g. Cloudflare Workers CI) always target the
+  // Worker runtime and emit dist/server + dist/client, matching wrangler.jsonc.
+  nitro: {
+    preset: "cloudflare-module",
+    output: {
+      dir: "dist",
+      serverDir: "dist/server",
+      publicDir: "dist/client",
+    },
+    cloudflare: {
+      nodeCompat: true,
+    },
+  },
 });
+
