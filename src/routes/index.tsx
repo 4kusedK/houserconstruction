@@ -161,14 +161,8 @@ function Positioning() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden py-32 md:py-48 bg-background blueprint-grid"
+      className="relative overflow-hidden py-28 md:py-40 bg-background blueprint-grid"
     >
-      <span
-        aria-hidden
-        className="ghost-number absolute -top-6 right-4 md:right-10 hidden sm:block"
-      >
-        01
-      </span>
       <div className="relative mx-auto max-w-[1200px] px-6">
         <Reveal>
           <div className="flex items-center gap-3 mb-6">
@@ -180,6 +174,7 @@ function Positioning() {
             Built on partnership.
           </h2>
         </Reveal>
+
 
         <div className="mt-16 md:mt-24 grid md:grid-cols-12 gap-x-16 gap-y-16 items-start">
           <div className="md:col-span-6">
